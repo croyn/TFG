@@ -1,0 +1,43 @@
+{
+	"content": [{
+			"RewardName": "RewardAlien_02",
+			"RotationAxis": "x",
+			"RotationSpeed": 75
+		},
+		{
+			"RewardName": "RewardRocket_01",
+			"RotationAxis": "x",
+			"RotationSpeed": 75
+		},
+		{
+			"RewardName": "RewardSaucer",
+			"RotationAxis": "y",
+			"RotationSpeed": 75
+		},
+		{
+			"RewardName": "RewardRobot_0",
+			"RotationAxis": "z",
+			"RotationSpeed": 30
+		},
+		{
+			"RewardName": "RewardSatellite",
+			"RotationAxis": "x",
+			"RotationSpeed": 50
+		},
+		{
+			"RewardName": "RewardSpaceShip",
+			"RotationAxis": "x",
+			"RotationSpeed": 75
+		},{
+			"RewardName": "RewardRocket_02",
+			"RotationAxis": "z",
+			"RotationSpeed": 75,
+			"Reflect": true
+		},
+		{
+			"RewardName": "RewardSolarSatellite",
+			"RotationAxis": "y",
+			"RotationSpeed": 50
+		}
+	]
+}
