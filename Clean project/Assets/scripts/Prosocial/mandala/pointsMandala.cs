@@ -13,14 +13,21 @@ public class pointsMandala : MonoBehaviour
     public bool doneAbsorv = false;
     public bool allowAbsorv = false;
     private GameObject lineaTemp;
+    public GameObject particles=null;
     // Start is called before the first frame update
+    private int num_particles = 0;
+    private ParticleSystem.Particle[] m_rParticlesArray = null;
+
     void Start()
     {
          lineaTemp = Instantiate(linea);
         LineRenderer temp = lineaTemp.GetComponent<LineRenderer>();
         temp.SetPosition(0, gameObject.transform.position);
         temp.SetPosition(1, gameObject.transform.position);
-        
+        allowAbsorv = false;
+        //particles.transform.position=gameObject.transform.position;
+
+
     }
 
     // Update is called once per frame
@@ -46,9 +53,9 @@ public class pointsMandala : MonoBehaviour
     {
         
             number_particles_catch = number_particles_catch + 1;
-           
-             
-             if (number_particles_catch > 60)
+            line_true();
+
+        if (number_particles_catch > 60)
              {
                   //make_line = true;
                  doneAbsorv = true;
@@ -58,6 +65,9 @@ public class pointsMandala : MonoBehaviour
 
         //Debug.Log("Numero de particulas cogidas " + number_particles_catch);
     }
+
+
+  
 
 
     void assignarLinea() {
@@ -79,7 +89,7 @@ public class pointsMandala : MonoBehaviour
             /*Debug.Log("Partner " + partnerPoint.transform.position);
             Debug.Log("gameObject " + gameObject.transform.position);
             Debug.Log("Director " + director);*/
-            Debug.Log(punto);
+            //Debug.Log(punto);
             temp.SetPosition(1, punto);
             
             /*if (director.Equals(director)) {
@@ -92,4 +102,22 @@ public class pointsMandala : MonoBehaviour
        
     }
 
-}
+
+    private void OnTriggerEnter(Collider other)
+    {
+        Debug.Log("En bola" + other.name);
+        Debug.Log("ENTRO BOLA");
+        //Destroy(other.gameObject);
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        Debug.Log("entro collision bola");
+        
+    }
+
+    void OnParticleTrigger()
+    {
+        Debug.Log("entro trigger bola");
+    }
+   }
