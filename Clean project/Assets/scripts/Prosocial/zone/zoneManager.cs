@@ -5,7 +5,9 @@ using UnityEngine;
 public class zoneManager : MonoBehaviour
 {
     
-    private ParticleSystem AffectedParticles = null;
+    public ParticleSystem AffectedParticles = null;
+
+    public ParticleSystem positionParticles = null;
 
     private GameObject sphereObjective = null;
     //public GameObject mandalaZone = null;
@@ -23,6 +25,7 @@ public class zoneManager : MonoBehaviour
     private bool m_bWorldPosition = false;
     private bool move_to_Objective = false;
     private bool animationPlaying = false;
+    private bool explosion = false;
 
     // Start is called before the first frame update
     void Start()
@@ -31,26 +34,32 @@ public class zoneManager : MonoBehaviour
         ColorParticle = Color.white;
         move_to_Objective = false;
         timeExplosion = 0.0f;
+        explosion = false;
+        //positionParticles.Play();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (!AffectedParticles.isPlaying) {
-            
-        }
-        sphereObjective = mandalamanager.instance.givePointFronTriangle();
-        if (animationPlaying)
+        if (explosion)
         {
-            timeExplosion = timeExplosion + Time.deltaTime;
-            if (timeExplosion > 1.0f)
+
+            positionParticles.Stop(true);
+            sphereObjective = mandalamanager.instance.givePointFronTriangle();
+            if (animationPlaying)
             {
-                move_to_Objective = true;
+                timeExplosion = timeExplosion + Time.deltaTime;
+                if (timeExplosion > 1.0f)
+                {
+                    move_to_Objective = true;
 
+                }
             }
+
         }
-
-
+        else {
+            //positionParticles.Play();
+        }
 
     }
 
@@ -71,18 +80,15 @@ public class zoneManager : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         Debug.Log("entro collider");
-        /* if (AffectedParticles != null)
-         {
-             Debug.Log("entro collider");
+      
 
-             GameObject point = mandalamanager.instance.givePoint();
-             ParticleAttractorBhv hinge = point.GetComponent(typeof(ParticleAttractorBhv)) as ParticleAttractorBhv;
-             hinge.AffectedParticles = AffectedParticles;
-             AffectedParticles.Play();
-         }*/
+        if (!explosion) {
+            explosion = true;
+            positionParticles.Stop(true);
+        }
 
 
-        if (sphereObjective != null && AffectedParticles!=null) {
+        if (sphereObjective != null && AffectedParticles!=null && explosion && animationPlaying==false) {
 
             AffectedParticles.Play();
             //sphereObjective.GetComponent<pointsMandala>().line_true();
@@ -98,7 +104,8 @@ public class zoneManager : MonoBehaviour
         // Let's cache the transform
         //m_rTransform = this.transform;
         // Setup particle system info
-        AffectedParticles = gameObject.GetComponentInChildren(typeof(ParticleSystem)) as ParticleSystem;
+        //AffectedParticles = gameObject.GetComponentInChildren(typeof(ParticleSystem)) as ParticleSystem;
+        
         Setup();
     }
 
@@ -107,6 +114,17 @@ public class zoneManager : MonoBehaviour
     // The attractor target
     private Vector3 m_vParticlesTarget = Vector3.zero;
     // A cursor for the movement interpolation
+
+
+    public void activateZone()
+    {
+        gameObject.SetActive(true);
+        explosion = false;
+        positionParticles.Play();
+        
+
+
+    }
 
     void LateUpdate()
     {
@@ -137,6 +155,8 @@ public class zoneManager : MonoBehaviour
                 timeExplosion = 0.0f;
                 move_to_Objective = false;
                 animationPlaying = false;
+                explosion = false;
+                gameObject.SetActive(false);
             }
 
             // For each active particle...

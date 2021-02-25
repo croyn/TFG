@@ -94,6 +94,7 @@
     <Compile Include="Assets\scripts\Prosocial\mandala\pointsMandala.cs" />
     <Compile Include="Assets\scripts\SPARK\particle behaviour\ParticleBehaviour.cs" />
     <Compile Include="Assets\scripts\utilities\utility tracking for unity\Uniducial\TUIOConnector\OSCMessage.cs" />
+    <Compile Include="Assets\scripts\Prosocial\mandala\Triangle.cs" />
     <Compile Include="Assets\scripts\Prosocial\zone\zoneManager.cs" />
     <Compile Include="Assets\scripts\Managers\RewardManager.cs" />
     <Compile Include="Assets\scripts\utilities\WorldParticleAssingment.cs" />
@@ -112,7 +113,7 @@
     <Compile Include="Assets\scripts\CreatedObjects\StarManager.cs" />
     <Compile Include="Assets\scripts\Managers\BackGroundManager.cs" />
     <Compile Include="Assets\scripts\utilities\ParticleTypeEnum.cs" />
-    <Compile Include="Assets\scripts\Prosocial\mandala\Triangle.cs" />
+    <Compile Include="Assets\scripts\Prosocial\zone\timerZone.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\scripts\utilities\utility tracking for unity\readme..txt" />
