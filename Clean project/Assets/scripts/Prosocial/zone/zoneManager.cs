@@ -45,7 +45,7 @@ public class zoneManager : MonoBehaviour
         {
 
             positionParticles.Stop(true);
-            sphereObjective = mandalamanager.instance.givePointFronTriangle();
+            //updateSpherePoint();
             if (animationPlaying)
             {
                 timeExplosion = timeExplosion + Time.deltaTime;
@@ -55,7 +55,8 @@ public class zoneManager : MonoBehaviour
 
                 }
             }
-
+           
+            
         }
         else {
             //positionParticles.Play();
@@ -63,6 +64,10 @@ public class zoneManager : MonoBehaviour
 
     }
 
+    public void updateSpherePoint() {
+        sphereObjective = mandalamanager.instance.givePointFronTriangle();
+
+    }
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -85,6 +90,7 @@ public class zoneManager : MonoBehaviour
         if (!explosion) {
             explosion = true;
             positionParticles.Stop(true);
+            updateSpherePoint();
         }
 
 
@@ -93,6 +99,7 @@ public class zoneManager : MonoBehaviour
             AffectedParticles.Play();
             //sphereObjective.GetComponent<pointsMandala>().line_true();
             sphereObjective.GetComponent<pointsMandala>().allowAbsorv = true;
+            sphereObjective.layer = 11;
             animationPlaying = true;
         }
 
@@ -149,7 +156,7 @@ public class zoneManager : MonoBehaviour
 
 
             timeColor = timeColor + Time.deltaTime;
-
+           // m_iNumActiveParticles = AffectedParticles.GetParticles(m_rParticlesArray);
             if (m_iNumActiveParticles == 0)
             {
                 timeExplosion = 0.0f;

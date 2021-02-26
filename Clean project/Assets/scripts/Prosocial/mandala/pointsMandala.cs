@@ -36,6 +36,13 @@ public class pointsMandala : MonoBehaviour
 
 
         assignarLinea();
+        if (number_particles_catch > 5)
+        {
+            //make_line = true;
+            doneAbsorv = true;
+            allowAbsorv = false;
+            gameObject.layer = 0;
+        }
 
     }
 
@@ -55,13 +62,8 @@ public class pointsMandala : MonoBehaviour
             number_particles_catch = number_particles_catch + 1;
             line_true();
 
-        if (number_particles_catch > 60)
-             {
-                  //make_line = true;
-                 doneAbsorv = true;
-                allowAbsorv = false;
-             }
-
+        
+        
 
         //Debug.Log("Numero de particulas cogidas " + number_particles_catch);
     }

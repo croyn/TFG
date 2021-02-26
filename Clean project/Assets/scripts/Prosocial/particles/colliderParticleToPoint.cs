@@ -32,6 +32,7 @@ public class colliderParticleToPoint : MonoBehaviour
         int numInside = gameObject.GetComponent<ParticleSystem>().GetTriggerParticles(ParticleSystemTriggerEventType.Inside, inside);
         int numOutside = gameObject.GetComponent<ParticleSystem>().GetTriggerParticles(ParticleSystemTriggerEventType.Outside, outside);
 
+        
         if (numEnter > 0) {
             Debug.Log("TRIGGER enter");
         }
@@ -53,6 +54,7 @@ public class colliderParticleToPoint : MonoBehaviour
         {
             ParticleSystem.Particle p = enter[i];
             p.startColor = new Color32(0, 255, 0, 255);
+            
             enter[i] = p;
            
         }
@@ -107,7 +109,7 @@ public class colliderParticleToPoint : MonoBehaviour
             other.GetComponent<pointsMandala>().add_count_particle();
         }*/
 
-        if (other.tag == "objectiveTriangle")
+        if (other.tag == "objectiveTriangle" && other.layer==11)
         {
             if (other.GetComponent<pointsMandala>().allowAbsorv) {
                 //other.SendMessage("OnCollisionEnter");

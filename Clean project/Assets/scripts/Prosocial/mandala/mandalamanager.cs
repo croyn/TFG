@@ -43,8 +43,18 @@ public class mandalamanager : MonoBehaviour
             indiceActualPoint = indiceActualPoint + 1;
         }*/
 
+        GameObject toReturn= actualTriangle.GetComponent<Triangle>().givePoint();
 
+        while (toReturn == null && indiceTriangle< triangleList.Capacity)
+        {
 
-        return actualTriangle.GetComponent<Triangle>().givePoint();
+            indiceTriangle = indiceTriangle + 1;
+            actualTriangle = triangleList[indiceTriangle].gameObject;
+            toReturn = actualTriangle.GetComponent<Triangle>().givePoint();
+
+        }
+
+        return toReturn;
+
     }
 }

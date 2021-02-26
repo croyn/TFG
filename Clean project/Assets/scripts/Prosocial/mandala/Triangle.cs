@@ -10,7 +10,7 @@ public class Triangle : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        indiceActualPoint = 0;
     }
 
     // Update is called once per frame
@@ -28,13 +28,20 @@ public class Triangle : MonoBehaviour
         while (actualPoint.GetComponent<pointsMandala>().partnerPoint == null)
         {
             indiceActualPoint = indiceActualPoint + 1;
-
+            if (indiceActualPoint >= PointsList.Capacity) {
+                return null;
+            }
+                
             actualPoint = PointsList[indiceActualPoint].gameObject;
         }
 
         if (actualPoint.GetComponent<pointsMandala>().done())
         {
             indiceActualPoint = indiceActualPoint + 1;
+            if (indiceActualPoint >= PointsList.Capacity)
+            {
+                return null;
+            }
         }
 
 
