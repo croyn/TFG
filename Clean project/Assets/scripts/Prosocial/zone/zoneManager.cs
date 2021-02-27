@@ -26,6 +26,9 @@ public class zoneManager : MonoBehaviour
     private bool move_to_Objective = false;
     private bool animationPlaying = false;
     private bool explosion = false;
+    private bool allowCollision = false;
+    private float whenCollision = 0.0f;
+
 
     // Start is called before the first frame update
     void Start()
@@ -35,6 +38,7 @@ public class zoneManager : MonoBehaviour
         move_to_Objective = false;
         timeExplosion = 0.0f;
         explosion = false;
+        allowCollision = false;
         //positionParticles.Play();
     }
 
@@ -84,27 +88,42 @@ public class zoneManager : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("entro collider");
-      
+        //Debug.Log("entro collider");
 
-        if (!explosion) {
-            explosion = true;
-            positionParticles.Stop(true);
-            updateSpherePoint();
+        if (allowCollision) {
+            whenCollision = Time.time;
+
+            allowCollision = false;
+            if (!explosion)
+            {
+                explosion = true;
+                positionParticles.Stop(true);
+                positionParticles.gameObject.SetActive(false);
+
+                updateSpherePoint();
+                if (sphereObjective != null && AffectedParticles != null && explosion && animationPlaying == false)
+                {
+
+                    AffectedParticles.Play();
+                    //sphereObjective.GetComponent<pointsMandala>().line_true();
+                    sphereObjective.GetComponent<pointsMandala>().allowAbsorv = true;
+                    sphereObjective.layer = 11;
+                    animationPlaying = true;
+                }
+            }
+
         }
+        
 
 
-        if (sphereObjective != null && AffectedParticles!=null && explosion && animationPlaying==false) {
-
-            AffectedParticles.Play();
-            //sphereObjective.GetComponent<pointsMandala>().line_true();
-            sphereObjective.GetComponent<pointsMandala>().allowAbsorv = true;
-            sphereObjective.layer = 11;
-            animationPlaying = true;
-        }
+        
 
     }
 
+
+    public float getWhenCollision() {
+        return whenCollision;
+    }
 
     void Awake()
     {
@@ -125,12 +144,21 @@ public class zoneManager : MonoBehaviour
 
     public void activateZone()
     {
-        gameObject.SetActive(true);
+       // gameObject.SetActive(true);
         explosion = false;
+        positionParticles.gameObject.SetActive(true);
         positionParticles.Play();
+        allowCollision = true;
+
+
+    }
+
+    public void deactivateZone() {
         
-
-
+        positionParticles.Stop();
+        positionParticles.gameObject.SetActive(false);
+        allowCollision = false;
+        whenCollision = 0.0f;
     }
 
     void LateUpdate()
@@ -163,7 +191,7 @@ public class zoneManager : MonoBehaviour
                 move_to_Objective = false;
                 animationPlaying = false;
                 explosion = false;
-                gameObject.SetActive(false);
+                
             }
 
             // For each active particle...
