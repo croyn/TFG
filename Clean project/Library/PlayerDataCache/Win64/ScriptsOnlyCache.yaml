@@ -6,11 +6,13 @@ ScriptsOnlyBuild:
     - FiducialController
     - Indicator
     - PlayerStateManager
+    - RotatingOnYourself
     - Triangle
     - colliderParticleToPoint
     - doublescreenCameramanager
     - mandalamanager
     - pointsMandala
+    - timerZone
     - zoneManager
     Unity.2D.Tilemap.Editor.dll:
     - UnityEditor.Tilemaps.GridPaintingState
@@ -65,6 +67,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 83
       Script: {instanceID: 0}
+    - Class: 90
+      Script: {instanceID: 0}
     - Class: 91
       Script: {instanceID: 0}
     - Class: 95
@@ -84,29 +88,33 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 12168}
     - Class: 114
-      Script: {instanceID: 12724}
+      Script: {instanceID: 12310}
     - Class: 114
       Script: {instanceID: 12726}
     - Class: 114
-      Script: {instanceID: 13018}
+      Script: {instanceID: 12728}
     - Class: 114
-      Script: {instanceID: 13092}
+      Script: {instanceID: 13020}
     - Class: 114
-      Script: {instanceID: 13206}
+      Script: {instanceID: 13094}
     - Class: 114
-      Script: {instanceID: 13252}
+      Script: {instanceID: 13104}
     - Class: 114
-      Script: {instanceID: 13618}
+      Script: {instanceID: 13208}
     - Class: 114
-      Script: {instanceID: 13736}
+      Script: {instanceID: 13254}
     - Class: 114
-      Script: {instanceID: 14020}
+      Script: {instanceID: 13620}
     - Class: 114
-      Script: {instanceID: 14054}
+      Script: {instanceID: 13710}
     - Class: 114
-      Script: {instanceID: 14544}
+      Script: {instanceID: 13740}
     - Class: 114
-      Script: {instanceID: 42346}
+      Script: {instanceID: 14024}
+    - Class: 114
+      Script: {instanceID: 14058}
+    - Class: 114
+      Script: {instanceID: 14548}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 120
@@ -300,6 +308,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: SignalAsset
+  - hash:
+      serializedVersion: 2
+      Hash: 15f4db8ec8310d0e459300deed3459e2
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: timerZone
   - hash:
       serializedVersion: 2
       Hash: 0dbc3be398b4869a5c8d0d8481ee402c
@@ -608,7 +622,7 @@ ScriptsOnlyBuild:
     className: ParticlePoolsManager
   - hash:
       serializedVersion: 2
-      Hash: 2d4882f006e02ef5cfbc80407a87eb2f
+      Hash: 49dab682ce2fae7292facfbc53f58e4d
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: pointsMandala
@@ -662,7 +676,13 @@ ScriptsOnlyBuild:
     className: Physics2DRaycaster
   - hash:
       serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+      Hash: f31b7c9b1a33ffed2b5c4a17eb53cd6e
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Triangle
+  - hash:
+      serializedVersion: 2
+      Hash: 4a6697f0dddcf41da99f6cb3232b6664
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: zoneManager
@@ -894,12 +914,6 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
-  - hash:
-      serializedVersion: 2
-      Hash: f31b7c9b1a33ffed2b5c4a17eb53cd6e
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: Triangle
   platform: 19
   scenePathNames:
   - Assets/Scenes/Edgar Scene.unity

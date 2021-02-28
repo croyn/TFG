@@ -90,6 +90,7 @@ public class timerZone : MonoBehaviour
                 control = false;
             }
         }
+        times.Clear();
 
 
     }
@@ -101,7 +102,7 @@ public class timerZone : MonoBehaviour
         for (int i = 0; i < zoneList.Capacity; i++)
         {
             int result = Random.Range(0, 3);
-            
+            //result = 1;
             switch (result)
             {
 

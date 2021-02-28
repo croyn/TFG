@@ -24,6 +24,9 @@ public class pointsMandala : MonoBehaviour
         LineRenderer temp = lineaTemp.GetComponent<LineRenderer>();
         temp.SetPosition(0, gameObject.transform.position);
         temp.SetPosition(1, gameObject.transform.position);
+        temp.startColor = Color.green;
+        temp.endColor = Color.green;
+        
         allowAbsorv = false;
         //particles.transform.position=gameObject.transform.position;
 
