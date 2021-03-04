@@ -17,20 +17,25 @@ public class pointsMandala : MonoBehaviour
     // Start is called before the first frame update
     private int num_particles = 0;
     private ParticleSystem.Particle[] m_rParticlesArray = null;
-
+    public float timeFirstLine = 2.0f;
+    public bool firstLineDraw = false;
     void Start()
     {
          lineaTemp = Instantiate(linea);
         LineRenderer temp = lineaTemp.GetComponent<LineRenderer>();
         temp.SetPosition(0, gameObject.transform.position);
         temp.SetPosition(1, gameObject.transform.position);
-        Color tempColor=Color.yellow;
-        tempColor.a = 0.6f;
+        Color tempColor=Color.gray;
+        tempColor.a = 0.5f;
         temp.startColor = tempColor;
         temp.endColor = tempColor;
       
         allowAbsorv = false;
         //particles.transform.position=gameObject.transform.position;
+        make_line = true;
+        firstLineDraw = false;
+
+
 
 
     }
@@ -38,16 +43,36 @@ public class pointsMandala : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-
-        assignarLinea();
-        if (number_particles_catch > 5)
-        {
-            //make_line = true;
-            doneAbsorv = true;
-            allowAbsorv = false;
-            gameObject.layer = 0;
+        timeFirstLine = timeFirstLine - Time.deltaTime;
+        if (firstLineDraw == false) {
+            assignarLinea();
         }
+        if (timeFirstLine <= 0.0f && firstLineDraw == false) {
+            
+            firstLineDraw = true;
+            make_line = false;
+            lineaTemp = Instantiate(linea);
+            LineRenderer temp = lineaTemp.GetComponent<LineRenderer>();
+            temp.SetPosition(0, gameObject.transform.position);
+            temp.SetPosition(1, gameObject.transform.position);
+            Color tempColor = Color.yellow;
+            tempColor.a = 0.6f;
+            temp.startColor = tempColor;
+            temp.endColor = tempColor;
+        }
+
+
+        if (firstLineDraw) {
+            assignarLinea();
+            if (number_particles_catch > 5)
+            {
+                //make_line = true;
+                doneAbsorv = true;
+                allowAbsorv = false;
+                gameObject.layer = 0;
+            }
+        }
+       
 
     }
 

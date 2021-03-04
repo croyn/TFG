@@ -16,7 +16,7 @@ public class zoneManager : MonoBehaviour
     private float currenttimePlayParticles = 0.0f;
     private float timeColor = 0.2f;
     private float timeExplosion = 0.0f;
-    private Color ColorParticle;
+    public Gradient GradientColor;
     // Transform cache
     private Transform m_rTransform = null;
     // Array to store particles info
@@ -34,7 +34,12 @@ public class zoneManager : MonoBehaviour
     void Start()
     {
         
-        ColorParticle = Color.white;
+     
+        ParticleSystem.ColorOverLifetimeModule temp= AffectedParticles.colorOverLifetime;
+        temp.color = GradientColor;
+
+        ParticleSystem.ColorOverLifetimeModule temp2 = positionParticles.colorOverLifetime;
+        temp2.color = GradientColor;
         move_to_Objective = false;
         timeExplosion = 0.0f;
         explosion = false;

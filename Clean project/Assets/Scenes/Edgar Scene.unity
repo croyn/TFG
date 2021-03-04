@@ -5298,6 +5298,8 @@ MonoBehaviour:
   doneAbsorv: 0
   allowAbsorv: 1
   particles: {fileID: 1730292703}
+  timeFirstLine: 2
+  firstLineDraw: 0
 --- !u!65 &68279069
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5859,6 +5861,8 @@ MonoBehaviour:
   doneAbsorv: 0
   allowAbsorv: 1
   particles: {fileID: 1730292703}
+  timeFirstLine: 2
+  firstLineDraw: 0
 --- !u!65 &98695164
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6015,6 +6019,8 @@ MonoBehaviour:
   doneAbsorv: 0
   allowAbsorv: 1
   particles: {fileID: 1730292703}
+  timeFirstLine: 2
+  firstLineDraw: 0
 --- !u!65 &112230166
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6148,6 +6154,8 @@ MonoBehaviour:
   doneAbsorv: 0
   allowAbsorv: 1
   particles: {fileID: 1730292703}
+  timeFirstLine: 2
+  firstLineDraw: 0
 --- !u!65 &116085401
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7193,6 +7201,8 @@ MonoBehaviour:
   doneAbsorv: 0
   allowAbsorv: 1
   particles: {fileID: 1730292703}
+  timeFirstLine: 2
+  firstLineDraw: 0
 --- !u!65 &151378424
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7450,6 +7460,8 @@ MonoBehaviour:
   doneAbsorv: 0
   allowAbsorv: 1
   particles: {fileID: 1730292703}
+  timeFirstLine: 2
+  firstLineDraw: 0
 --- !u!65 &170682343
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8929,6 +8941,8 @@ MonoBehaviour:
   doneAbsorv: 0
   allowAbsorv: 1
   particles: {fileID: 1730292703}
+  timeFirstLine: 2
+  firstLineDraw: 0
 --- !u!65 &245213210
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9148,6 +9162,8 @@ MonoBehaviour:
   doneAbsorv: 0
   allowAbsorv: 1
   particles: {fileID: 1730292703}
+  timeFirstLine: 2
+  firstLineDraw: 0
 --- !u!65 &254720448
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9778,6 +9794,8 @@ MonoBehaviour:
   doneAbsorv: 0
   allowAbsorv: 1
   particles: {fileID: 1730292703}
+  timeFirstLine: 2
+  firstLineDraw: 0
 --- !u!65 &339119245
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10298,6 +10316,8 @@ MonoBehaviour:
   doneAbsorv: 0
   allowAbsorv: 1
   particles: {fileID: 1730292703}
+  timeFirstLine: 2
+  firstLineDraw: 0
 --- !u!65 &401498594
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11059,6 +11079,8 @@ MonoBehaviour:
   doneAbsorv: 0
   allowAbsorv: 1
   particles: {fileID: 1730292703}
+  timeFirstLine: 2
+  firstLineDraw: 0
 --- !u!65 &475085574
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12020,6 +12042,8 @@ MonoBehaviour:
   doneAbsorv: 0
   allowAbsorv: 1
   particles: {fileID: 1730292703}
+  timeFirstLine: 2
+  firstLineDraw: 0
 --- !u!65 &557821270
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12597,6 +12621,8 @@ MonoBehaviour:
   doneAbsorv: 0
   allowAbsorv: 1
   particles: {fileID: 1730292703}
+  timeFirstLine: 2
+  firstLineDraw: 0
 --- !u!65 &635749447
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12730,6 +12756,8 @@ MonoBehaviour:
   doneAbsorv: 0
   allowAbsorv: 1
   particles: {fileID: 1730292703}
+  timeFirstLine: 2
+  firstLineDraw: 0
 --- !u!65 &646478278
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12980,6 +13008,8 @@ MonoBehaviour:
   doneAbsorv: 0
   allowAbsorv: 1
   particles: {fileID: 1730292703}
+  timeFirstLine: 2
+  firstLineDraw: 0
 --- !u!65 &667082543
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13132,6 +13162,8 @@ MonoBehaviour:
   doneAbsorv: 0
   allowAbsorv: 1
   particles: {fileID: 1730292703}
+  timeFirstLine: 2
+  firstLineDraw: 0
 --- !u!65 &676501046
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13901,6 +13933,8 @@ MonoBehaviour:
   doneAbsorv: 0
   allowAbsorv: 1
   particles: {fileID: 1730292703}
+  timeFirstLine: 2
+  firstLineDraw: 0
 --- !u!65 &700266746
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14034,6 +14068,8 @@ MonoBehaviour:
   doneAbsorv: 0
   allowAbsorv: 1
   particles: {fileID: 1730292703}
+  timeFirstLine: 2
+  firstLineDraw: 0
 --- !u!65 &701227126
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14179,6 +14215,8 @@ MonoBehaviour:
   doneAbsorv: 0
   allowAbsorv: 1
   particles: {fileID: 1730292703}
+  timeFirstLine: 2
+  firstLineDraw: 0
 --- !u!65 &704837607
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14510,6 +14548,8 @@ MonoBehaviour:
   doneAbsorv: 0
   allowAbsorv: 1
   particles: {fileID: 1730292703}
+  timeFirstLine: 2
+  firstLineDraw: 0
 --- !u!65 &737637068
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14643,6 +14683,8 @@ MonoBehaviour:
   doneAbsorv: 0
   allowAbsorv: 1
   particles: {fileID: 1730292703}
+  timeFirstLine: 2
+  firstLineDraw: 0
 --- !u!65 &737940694
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14776,6 +14818,8 @@ MonoBehaviour:
   doneAbsorv: 0
   allowAbsorv: 1
   particles: {fileID: 1730292703}
+  timeFirstLine: 2
+  firstLineDraw: 0
 --- !u!65 &737995044
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15167,6 +15211,8 @@ MonoBehaviour:
   doneAbsorv: 0
   allowAbsorv: 1
   particles: {fileID: 1730292703}
+  timeFirstLine: 2
+  firstLineDraw: 0
 --- !u!65 &805526602
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15380,6 +15426,8 @@ MonoBehaviour:
   doneAbsorv: 0
   allowAbsorv: 1
   particles: {fileID: 1730292703}
+  timeFirstLine: 2
+  firstLineDraw: 0
 --- !u!65 &816097453
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -16161,6 +16209,8 @@ MonoBehaviour:
   doneAbsorv: 0
   allowAbsorv: 1
   particles: {fileID: 1730292703}
+  timeFirstLine: 2
+  firstLineDraw: 0
 --- !u!65 &891090945
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -16685,6 +16735,8 @@ MonoBehaviour:
   doneAbsorv: 0
   allowAbsorv: 1
   particles: {fileID: 1730292703}
+  timeFirstLine: 2
+  firstLineDraw: 0
 --- !u!65 &901222065
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -18263,6 +18315,8 @@ MonoBehaviour:
   doneAbsorv: 0
   allowAbsorv: 1
   particles: {fileID: 1730292703}
+  timeFirstLine: 2
+  firstLineDraw: 0
 --- !u!65 &1041574398
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -18387,6 +18441,8 @@ MonoBehaviour:
   doneAbsorv: 0
   allowAbsorv: 1
   particles: {fileID: 1730292703}
+  timeFirstLine: 2
+  firstLineDraw: 0
 --- !u!65 &1066256210
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -18664,6 +18720,8 @@ MonoBehaviour:
   doneAbsorv: 0
   allowAbsorv: 1
   particles: {fileID: 1730292703}
+  timeFirstLine: 2
+  firstLineDraw: 0
 --- !u!65 &1074768669
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -19325,6 +19383,8 @@ MonoBehaviour:
   doneAbsorv: 0
   allowAbsorv: 1
   particles: {fileID: 1730292703}
+  timeFirstLine: 2
+  firstLineDraw: 0
 --- !u!65 &1114081326
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -19533,6 +19593,8 @@ MonoBehaviour:
   doneAbsorv: 0
   allowAbsorv: 1
   particles: {fileID: 1730292703}
+  timeFirstLine: 2
+  firstLineDraw: 0
 --- !u!65 &1117531751
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -20358,6 +20420,8 @@ MonoBehaviour:
   doneAbsorv: 0
   allowAbsorv: 1
   particles: {fileID: 1730292703}
+  timeFirstLine: 2
+  firstLineDraw: 0
 --- !u!65 &1167282555
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -20491,6 +20555,8 @@ MonoBehaviour:
   doneAbsorv: 0
   allowAbsorv: 1
   particles: {fileID: 1730292703}
+  timeFirstLine: 2
+  firstLineDraw: 0
 --- !u!65 &1169621622
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -20609,6 +20675,8 @@ MonoBehaviour:
   doneAbsorv: 0
   allowAbsorv: 1
   particles: {fileID: 1730292703}
+  timeFirstLine: 2
+  firstLineDraw: 0
 --- !u!65 &1183564434
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -20708,10 +20776,40 @@ PrefabInstance:
       propertyPath: ShapeModule.m_Rotation.y
       value: 45
       objectReference: {fileID: 0}
+    - target: {fileID: 5576526629906016216, guid: 8e13519e67dc7424191ced10949a2cb5,
+        type: 3}
+      propertyPath: GradientColor.key0.r
+      value: 0.9427508
+      objectReference: {fileID: 0}
+    - target: {fileID: 5576526629906016216, guid: 8e13519e67dc7424191ced10949a2cb5,
+        type: 3}
+      propertyPath: GradientColor.key0.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5576526629906016216, guid: 8e13519e67dc7424191ced10949a2cb5,
+        type: 3}
+      propertyPath: GradientColor.ctime1
+      value: 48380
+      objectReference: {fileID: 0}
     - target: {fileID: 5576526629906016220, guid: 8e13519e67dc7424191ced10949a2cb5,
         type: 3}
       propertyPath: m_LocalPosition.z
       value: 2.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5576526630779812651, guid: 8e13519e67dc7424191ced10949a2cb5,
+        type: 3}
+      propertyPath: GradientColor.key0.r
+      value: 0.9427508
+      objectReference: {fileID: 0}
+    - target: {fileID: 5576526630779812651, guid: 8e13519e67dc7424191ced10949a2cb5,
+        type: 3}
+      propertyPath: GradientColor.key0.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5576526630779812651, guid: 8e13519e67dc7424191ced10949a2cb5,
+        type: 3}
+      propertyPath: GradientColor.ctime1
+      value: 48380
       objectReference: {fileID: 0}
     - target: {fileID: 5576526630779812655, guid: 8e13519e67dc7424191ced10949a2cb5,
         type: 3}
@@ -20812,6 +20910,11 @@ PrefabInstance:
         type: 3}
       propertyPath: ShapeModule.m_Rotation.y
       value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 5576526631185758450, guid: 8e13519e67dc7424191ced10949a2cb5,
+        type: 3}
+      propertyPath: ColorModule.enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8e13519e67dc7424191ced10949a2cb5, type: 3}
@@ -21424,8 +21527,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fd6e2c236cddaf47b3f42640f5df0a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeToNext: 1.5
-  timeToOffZones: 0.5
+  timeToNext: 3
+  timeToOffZones: 2
   zoneList:
   - {fileID: 480343192}
   - {fileID: 2099173064}
@@ -21582,6 +21685,8 @@ MonoBehaviour:
   doneAbsorv: 0
   allowAbsorv: 1
   particles: {fileID: 1730292703}
+  timeFirstLine: 2
+  firstLineDraw: 0
 --- !u!65 &1223102241
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -23623,6 +23728,8 @@ MonoBehaviour:
   doneAbsorv: 0
   allowAbsorv: 1
   particles: {fileID: 1730292703}
+  timeFirstLine: 2
+  firstLineDraw: 0
 --- !u!65 &1328310871
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -24361,6 +24468,8 @@ MonoBehaviour:
   doneAbsorv: 0
   allowAbsorv: 1
   particles: {fileID: 1730292703}
+  timeFirstLine: 2
+  firstLineDraw: 0
 --- !u!65 &1381826072
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -25254,6 +25363,8 @@ MonoBehaviour:
   doneAbsorv: 0
   allowAbsorv: 1
   particles: {fileID: 1730292703}
+  timeFirstLine: 2
+  firstLineDraw: 0
 --- !u!65 &1442964178
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -25685,6 +25796,8 @@ MonoBehaviour:
   doneAbsorv: 0
   allowAbsorv: 1
   particles: {fileID: 1730292703}
+  timeFirstLine: 2
+  firstLineDraw: 0
 --- !u!65 &1467179783
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -25893,6 +26006,8 @@ MonoBehaviour:
   doneAbsorv: 0
   allowAbsorv: 1
   particles: {fileID: 1730292703}
+  timeFirstLine: 2
+  firstLineDraw: 0
 --- !u!65 &1496011260
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -26101,6 +26216,8 @@ MonoBehaviour:
   doneAbsorv: 0
   allowAbsorv: 1
   particles: {fileID: 1730292703}
+  timeFirstLine: 2
+  firstLineDraw: 0
 --- !u!65 &1512509350
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -26295,6 +26412,8 @@ MonoBehaviour:
   doneAbsorv: 0
   allowAbsorv: 1
   particles: {fileID: 1730292703}
+  timeFirstLine: 2
+  firstLineDraw: 0
 --- !u!65 &1537351071
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -26693,6 +26812,8 @@ MonoBehaviour:
   doneAbsorv: 0
   allowAbsorv: 1
   particles: {fileID: 1730292703}
+  timeFirstLine: 2
+  firstLineDraw: 0
 --- !u!65 &1567585578
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -27346,6 +27467,8 @@ MonoBehaviour:
   doneAbsorv: 0
   allowAbsorv: 1
   particles: {fileID: 1730292703}
+  timeFirstLine: 2
+  firstLineDraw: 0
 --- !u!65 &1613163138
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -27629,6 +27752,8 @@ MonoBehaviour:
   doneAbsorv: 0
   allowAbsorv: 1
   particles: {fileID: 1730292703}
+  timeFirstLine: 2
+  firstLineDraw: 0
 --- !u!65 &1639643019
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -28473,6 +28598,8 @@ MonoBehaviour:
   doneAbsorv: 0
   allowAbsorv: 1
   particles: {fileID: 1730292703}
+  timeFirstLine: 2
+  firstLineDraw: 0
 --- !u!65 &1710510880
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -28606,6 +28733,8 @@ MonoBehaviour:
   doneAbsorv: 0
   allowAbsorv: 1
   particles: {fileID: 1730292703}
+  timeFirstLine: 2
+  firstLineDraw: 0
 --- !u!65 &1712966875
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -34595,6 +34724,8 @@ MonoBehaviour:
   doneAbsorv: 0
   allowAbsorv: 1
   particles: {fileID: 1730292703}
+  timeFirstLine: 2
+  firstLineDraw: 0
 --- !u!65 &1761243132
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -34938,6 +35069,8 @@ MonoBehaviour:
   doneAbsorv: 0
   allowAbsorv: 1
   particles: {fileID: 1730292703}
+  timeFirstLine: 2
+  firstLineDraw: 0
 --- !u!65 &1802220104
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -35163,6 +35296,8 @@ MonoBehaviour:
   doneAbsorv: 0
   allowAbsorv: 1
   particles: {fileID: 1730292703}
+  timeFirstLine: 2
+  firstLineDraw: 0
 --- !u!65 &1845193783
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -35425,6 +35560,8 @@ MonoBehaviour:
   doneAbsorv: 0
   allowAbsorv: 1
   particles: {fileID: 1730292703}
+  timeFirstLine: 2
+  firstLineDraw: 0
 --- !u!65 &1860204769
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -36046,6 +36183,8 @@ MonoBehaviour:
   doneAbsorv: 0
   allowAbsorv: 1
   particles: {fileID: 1730292703}
+  timeFirstLine: 2
+  firstLineDraw: 0
 --- !u!65 &1904810268
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -36359,6 +36498,8 @@ MonoBehaviour:
   doneAbsorv: 0
   allowAbsorv: 1
   particles: {fileID: 1730292703}
+  timeFirstLine: 2
+  firstLineDraw: 0
 --- !u!65 &1919301477
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -36809,6 +36950,8 @@ MonoBehaviour:
   doneAbsorv: 0
   allowAbsorv: 1
   particles: {fileID: 1730292703}
+  timeFirstLine: 2
+  firstLineDraw: 0
 --- !u!65 &1946746291
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -37087,6 +37230,8 @@ MonoBehaviour:
   doneAbsorv: 0
   allowAbsorv: 1
   particles: {fileID: 1730292703}
+  timeFirstLine: 2
+  firstLineDraw: 0
 --- !u!65 &1950069914
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -37235,6 +37380,8 @@ MonoBehaviour:
   doneAbsorv: 0
   allowAbsorv: 1
   particles: {fileID: 1730292703}
+  timeFirstLine: 2
+  firstLineDraw: 0
 --- !u!65 &1954227918
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -37509,6 +37656,8 @@ MonoBehaviour:
   doneAbsorv: 0
   allowAbsorv: 1
   particles: {fileID: 1730292703}
+  timeFirstLine: 2
+  firstLineDraw: 0
 --- !u!65 &1985619448
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -37642,6 +37791,8 @@ MonoBehaviour:
   doneAbsorv: 0
   allowAbsorv: 1
   particles: {fileID: 1730292703}
+  timeFirstLine: 2
+  firstLineDraw: 0
 --- !u!65 &1991414658
 BoxCollider:
   m_ObjectHideFlags: 0

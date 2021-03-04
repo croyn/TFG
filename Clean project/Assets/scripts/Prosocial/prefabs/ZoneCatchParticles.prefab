@@ -5078,6 +5078,35 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AffectedParticles: {fileID: 5576526631185758450}
   positionParticles: {fileID: 5576526631431546760}
+  GradientColor:
+    serializedVersion: 2
+    key0: {r: 0.9427508, g: 1, b: 0, a: 1}
+    key1: {r: 1, g: 1, b: 1, a: 1}
+    key2: {r: 0.94896996, g: 1, b: 0.108633466, a: 0}
+    key3: {r: 1, g: 1, b: 1, a: 0}
+    key4: {r: 0.9501264, g: 1, b: 0.12883332, a: 0}
+    key5: {r: 1, g: 1, b: 1, a: 0}
+    key6: {r: 0.98732233, g: 1, b: 0, a: 0}
+    key7: {r: 0, g: 0, b: 0, a: 0}
+    ctime0: 0
+    ctime1: 11565
+    ctime2: 24287
+    ctime3: 35273
+    ctime4: 47609
+    ctime5: 58596
+    ctime6: 62451
+    ctime7: 0
+    atime0: 0
+    atime1: 60138
+    atime2: 0
+    atime3: 0
+    atime4: 0
+    atime5: 0
+    atime6: 0
+    atime7: 0
+    m_Mode: 0
+    m_NumColorKeys: 7
+    m_NumAlphaKeys: 2
 --- !u!1 &5576526629871210614
 GameObject:
   m_ObjectHideFlags: 0
@@ -14829,6 +14858,35 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AffectedParticles: {fileID: 5576526629708123686}
   positionParticles: {fileID: 5576526630988888423}
+  GradientColor:
+    serializedVersion: 2
+    key0: {r: 0.9427508, g: 1, b: 0, a: 1}
+    key1: {r: 1, g: 1, b: 1, a: 1}
+    key2: {r: 0.94896996, g: 1, b: 0.108633466, a: 0}
+    key3: {r: 1, g: 1, b: 1, a: 0}
+    key4: {r: 0.9501264, g: 1, b: 0.12883332, a: 0}
+    key5: {r: 1, g: 1, b: 1, a: 0}
+    key6: {r: 0.98732233, g: 1, b: 0, a: 0}
+    key7: {r: 0, g: 0, b: 0, a: 0}
+    ctime0: 0
+    ctime1: 11565
+    ctime2: 24287
+    ctime3: 35273
+    ctime4: 47609
+    ctime5: 58596
+    ctime6: 62451
+    ctime7: 0
+    atime0: 0
+    atime1: 60138
+    atime2: 0
+    atime3: 0
+    atime4: 0
+    atime5: 0
+    atime6: 0
+    atime7: 0
+    m_Mode: 0
+    m_NumColorKeys: 7
+    m_NumAlphaKeys: 2
 --- !u!1 &5576526630124585097
 GameObject:
   m_ObjectHideFlags: 0
@@ -15030,6 +15088,35 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AffectedParticles: {fileID: 5576526629888017072}
   positionParticles: {fileID: 5576526629871210609}
+  GradientColor:
+    serializedVersion: 2
+    key0: {r: 0.9427508, g: 1, b: 0, a: 1}
+    key1: {r: 1, g: 1, b: 1, a: 1}
+    key2: {r: 0.94896996, g: 1, b: 0.108633466, a: 0}
+    key3: {r: 1, g: 1, b: 1, a: 0}
+    key4: {r: 0.9501264, g: 1, b: 0.12883332, a: 0}
+    key5: {r: 1, g: 1, b: 1, a: 0}
+    key6: {r: 0.98732233, g: 1, b: 0, a: 0}
+    key7: {r: 0, g: 0, b: 0, a: 0}
+    ctime0: 0
+    ctime1: 11565
+    ctime2: 24287
+    ctime3: 35273
+    ctime4: 47609
+    ctime5: 58596
+    ctime6: 62451
+    ctime7: 0
+    atime0: 0
+    atime1: 60138
+    atime2: 0
+    atime3: 0
+    atime4: 0
+    atime5: 0
+    atime6: 0
+    atime7: 0
+    m_Mode: 0
+    m_NumColorKeys: 7
+    m_NumAlphaKeys: 2
 --- !u!1 &5576526630988888420
 GameObject:
   m_ObjectHideFlags: 0
@@ -19917,7 +20004,7 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5576526631185758455}
   serializedVersion: 6
-  lengthInSec: 1
+  lengthInSec: 2
   simulationSpeed: 1
   stopAction: 0
   cullingMode: 0
