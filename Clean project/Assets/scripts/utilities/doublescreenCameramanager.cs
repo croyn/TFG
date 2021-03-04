@@ -5,7 +5,7 @@ using UnityEngine;
 public class doublescreenCameramanager : MonoBehaviour
 {
     Vector3 shiftingCamera1 = new Vector3(50,0,29.21f);
-    Vector3 shiftingCamera2 = new Vector3(49.7f, 0, 72);
+    Vector3 shiftingCamera2 = new Vector3(50.0f, 0, 72);
 
 
     public Color backgroundColor;

@@ -6,7 +6,7 @@ ScriptsOnlyBuild:
     - FiducialController
     - Indicator
     - PlayerStateManager
-    - RotatingOnYourself
+    - PointCentralMandala
     - Triangle
     - colliderParticleToPoint
     - doublescreenCameramanager
@@ -67,8 +67,6 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 83
       Script: {instanceID: 0}
-    - Class: 90
-      Script: {instanceID: 0}
     - Class: 91
       Script: {instanceID: 0}
     - Class: 95
@@ -98,8 +96,6 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 13094}
     - Class: 114
-      Script: {instanceID: 13104}
-    - Class: 114
       Script: {instanceID: 13208}
     - Class: 114
       Script: {instanceID: 13254}
@@ -115,6 +111,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 14058}
     - Class: 114
       Script: {instanceID: 14548}
+    - Class: 114
+      Script: {instanceID: 250756}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 120
@@ -508,7 +506,7 @@ ScriptsOnlyBuild:
     className: SignalTrack
   - hash:
       serializedVersion: 2
-      Hash: ee44511e76efcd1de1de2679b21930b1
+      Hash: 2035455af1c4a366b8eebbcf681e9b48
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: mandalamanager
@@ -676,7 +674,7 @@ ScriptsOnlyBuild:
     className: Physics2DRaycaster
   - hash:
       serializedVersion: 2
-      Hash: f31b7c9b1a33ffed2b5c4a17eb53cd6e
+      Hash: 88a17a2447d9c0aa9795d0068fbf1de3
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Triangle
@@ -914,6 +912,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
+  - hash:
+      serializedVersion: 2
+      Hash: 41b96eb47a5f44eb106869034365febe
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: PointCentralMandala
   platform: 19
   scenePathNames:
   - Assets/Scenes/Edgar Scene.unity
