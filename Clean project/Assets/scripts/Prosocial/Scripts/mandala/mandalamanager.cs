@@ -11,6 +11,7 @@ public class mandalamanager : MonoBehaviour
     public GameObject centralPoint = null;
     public int numTrianglesLayer=8;
     public int layer = 0;
+    public int interLayer = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,6 +20,7 @@ public class mandalamanager : MonoBehaviour
         indiceActualPoint = 0;
         indiceTriangle = 0;
         layer = 0;
+        interLayer = 0;
     }
 
     // Update is called once per frame
@@ -35,7 +37,7 @@ public class mandalamanager : MonoBehaviour
 
     public GameObject givePointFronTriangle()
     {
-        GameObject actualTriangle = triangleList[indiceTriangle].gameObject;
+        /*GameObject actualTriangle = triangleList[indiceTriangle].gameObject;
        
 
         /*GameObject actualPoint = sphereObjectivelist[indiceActualPoint].gameObject;
@@ -50,7 +52,7 @@ public class mandalamanager : MonoBehaviour
             indiceActualPoint = indiceActualPoint + 1;
         }*/
 
-        GameObject toReturn= actualTriangle.GetComponent<Triangle>().givePoint();
+        /*GameObject toReturn= actualTriangle.GetComponent<Triangle>().givePoint();
 
         while (toReturn == null && indiceTriangle< triangleList.Capacity)
         {
@@ -59,26 +61,64 @@ public class mandalamanager : MonoBehaviour
             actualTriangle = triangleList[indiceTriangle].gameObject;
             toReturn = actualTriangle.GetComponent<Triangle>().givePoint();
 
+        }*/
+
+        return null;
+
+    }
+
+
+    public GameObject giveBrotherTriangle(int whoiam) {
+
+
+        int result = whoiam + 1;
+        if (result > 7) {
+            result = 0;
         }
 
-        return toReturn;
+        if (triangleList[result + 8].gameObject == null) {
+            Debug.Log("triangle null " + whoiam + " " + result);
+        }
+        Debug.Log("triangle  " + whoiam + " " + result);
+
+        return triangleList[result+8].gameObject;
 
     }
 
     public void ActivatePointsTriangles() {
         GameObject actualTriangle=null;
         GameObject actualPoint = null;
-        int actualIndexTriangle = layer * numTrianglesLayer;
+        int actualIndexTriangle = interLayer * numTrianglesLayer;
         for (int i = 0; i < numTrianglesLayer; i++) {
             actualTriangle = triangleList[actualIndexTriangle+i].gameObject;
             actualPoint = actualTriangle.GetComponent<Triangle>().activatePointFromTriangle();
         }
+        
+
 
         if (actualPoint == null) {
-            if (((layer* numTrianglesLayer) + numTrianglesLayer) < triangleList.Capacity)
+            interLayer = interLayer + 1;
+           if(interLayer>2)
             {
-                layer = layer + 1;
+                interLayer = 0;
+                if (((layer * numTrianglesLayer) + numTrianglesLayer) < triangleList.Capacity)
+                {
+                    layer = layer + 1;
+                    for (int i = 0; i < triangleList.Count; i++)
+                    {
+                        actualTriangle = triangleList[i].gameObject;
+                        actualTriangle.GetComponent<Triangle>().sendNextLayerEveryPoint();
+                    }
+
+                }
             }
+            else
+            {
+
+
+            }
+
+            
         }
         
 

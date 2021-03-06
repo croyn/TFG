@@ -12,9 +12,7 @@ public class zoneManager : MonoBehaviour
     private GameObject sphereObjective = null;
     //public GameObject mandalaZone = null;
 
-    private float timePlayParticles=5.0f;
-    private float currenttimePlayParticles = 0.0f;
-    private float timeColor = 0.2f;
+
     private float timeExplosion = 0.0f;
     public Gradient GradientColor;
     // Transform cache
@@ -58,9 +56,10 @@ public class zoneManager : MonoBehaviour
             if (animationPlaying)
             {
                 timeExplosion = timeExplosion + Time.deltaTime;
+                move_to_Objective = true;
                 if (timeExplosion > 1.0f)
                 {
-                    move_to_Objective = true;
+                    
 
                 }
             }
@@ -188,7 +187,7 @@ public class zoneManager : MonoBehaviour
                 m_vParticlesTarget -= AffectedParticles.transform.position;
 
 
-            timeColor = timeColor + Time.deltaTime;
+           
            // m_iNumActiveParticles = AffectedParticles.GetParticles(m_rParticlesArray);
             if (m_iNumActiveParticles == 0)
             {
@@ -204,19 +203,6 @@ public class zoneManager : MonoBehaviour
             { // The movement cursor is the opposite of the normalized particle's lifetime m_fCursor = 1.0f - (m_rParticlesArray[iParticle].lifetime / m_rParticlesArray[iParticle].startLifetime); // Are we over the activation treshold? if (m_fCursor >= ActivationTreshold)
                 {
                    
-                    
-                    // Take over the particle system imposed velocity
-                    //m_rParticlesArray[iParticle].velocity = Vector3.zero;
-
-                   /* if (m_rParticlesArray[iParticle].color == Color.white && timeColor > 0.2f)
-                    {
-                        m_rParticlesArray[iParticle].color = Color.red;
-                    }
-                    else if(m_rParticlesArray[iParticle].color == Color.red && timeColor > 0.2f)
-                    {
-                        m_rParticlesArray[iParticle].color = Color.white;
-                    }*/
-
                     float dist = Vector3.Distance(m_rParticlesArray[iParticle].position, m_vParticlesTarget);
                     
                     // Interpolate the movement towards the target with a nice quadratic easing					
@@ -224,9 +210,6 @@ public class zoneManager : MonoBehaviour
                 }
             }
 
-            if (timeColor > 0.2f) {
-                timeColor = 0.0f;
-            }
             // Let's update the active particles
             AffectedParticles.SetParticles(m_rParticlesArray, m_iNumActiveParticles);
         }

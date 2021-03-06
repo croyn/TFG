@@ -108,13 +108,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d5e9ff95ec4d58439ca470d972891c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  partnerPoint: {fileID: 4575682111668748485}
+  partnerPoint: {fileID: 0}
+  ColorLine1: {r: 1, g: 0.91456765, b: 0, a: 0}
+  partnerPoint1: {fileID: 0}
+  ColorLine2: {r: 1, g: 0.7027648, b: 0, a: 0}
+  partnerPoint2: {fileID: 0}
+  ColorLine3: {r: 1, g: 0, b: 0, a: 0}
+  actualPartnerPoint: {fileID: 0}
   make_line: 0
   linea: {fileID: 0}
   number_particles_catch: 0
   doneAbsorv: 0
   allowAbsorv: 0
   particles: {fileID: 0}
+  timeFirstLine: 2
+  firstLineDraw: 0
 --- !u!1 &4575682111012511068
 GameObject:
   m_ObjectHideFlags: 0
@@ -223,13 +231,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d5e9ff95ec4d58439ca470d972891c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  partnerPoint: {fileID: 4575682111359064088}
+  partnerPoint: {fileID: 0}
+  ColorLine1: {r: 1, g: 0.91456765, b: 0, a: 0}
+  partnerPoint1: {fileID: 0}
+  ColorLine2: {r: 1, g: 0.7027648, b: 0, a: 0}
+  partnerPoint2: {fileID: 0}
+  ColorLine3: {r: 1, g: 0, b: 0, a: 0}
+  actualPartnerPoint: {fileID: 0}
   make_line: 0
   linea: {fileID: 0}
   number_particles_catch: 0
   doneAbsorv: 0
   allowAbsorv: 0
   particles: {fileID: 0}
+  timeFirstLine: 2
+  firstLineDraw: 0
 --- !u!1 &4575682111114563963
 GameObject:
   m_ObjectHideFlags: 0
@@ -338,13 +354,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d5e9ff95ec4d58439ca470d972891c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  partnerPoint: {fileID: 4575682111305353642}
+  partnerPoint: {fileID: 0}
+  ColorLine1: {r: 1, g: 0.91456765, b: 0, a: 0}
+  partnerPoint1: {fileID: 0}
+  ColorLine2: {r: 1, g: 0.7027648, b: 0, a: 0}
+  partnerPoint2: {fileID: 0}
+  ColorLine3: {r: 1, g: 0, b: 0, a: 0}
+  actualPartnerPoint: {fileID: 0}
   make_line: 0
   linea: {fileID: 0}
   number_particles_catch: 0
   doneAbsorv: 0
   allowAbsorv: 0
   particles: {fileID: 0}
+  timeFirstLine: 2
+  firstLineDraw: 0
 --- !u!1 &4575682111305353642
 GameObject:
   m_ObjectHideFlags: 0
@@ -454,12 +478,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   partnerPoint: {fileID: 0}
+  ColorLine1: {r: 1, g: 0.91456765, b: 0, a: 0}
+  partnerPoint1: {fileID: 0}
+  ColorLine2: {r: 1, g: 0.7027648, b: 0, a: 0}
+  partnerPoint2: {fileID: 0}
+  ColorLine3: {r: 1, g: 0, b: 0, a: 0}
+  actualPartnerPoint: {fileID: 0}
   make_line: 0
   linea: {fileID: 0}
   number_particles_catch: 0
   doneAbsorv: 0
   allowAbsorv: 0
   particles: {fileID: 0}
+  timeFirstLine: 2
+  firstLineDraw: 0
 --- !u!1 &4575682111359064088
 GameObject:
   m_ObjectHideFlags: 0
@@ -569,12 +601,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   partnerPoint: {fileID: 0}
+  ColorLine1: {r: 1, g: 0.91456765, b: 0, a: 0}
+  partnerPoint1: {fileID: 0}
+  ColorLine2: {r: 1, g: 0.7027648, b: 0, a: 0}
+  partnerPoint2: {fileID: 0}
+  ColorLine3: {r: 1, g: 0, b: 0, a: 0}
+  actualPartnerPoint: {fileID: 0}
   make_line: 0
   linea: {fileID: 0}
   number_particles_catch: 0
   doneAbsorv: 0
   allowAbsorv: 0
   particles: {fileID: 0}
+  timeFirstLine: 2
+  firstLineDraw: 0
 --- !u!1 &4575682111368206998
 GameObject:
   m_ObjectHideFlags: 0
@@ -683,13 +723,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d5e9ff95ec4d58439ca470d972891c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  partnerPoint: {fileID: 4575682111819686045}
+  partnerPoint: {fileID: 0}
+  ColorLine1: {r: 1, g: 0.91456765, b: 0, a: 0}
+  partnerPoint1: {fileID: 0}
+  ColorLine2: {r: 1, g: 0.7027648, b: 0, a: 0}
+  partnerPoint2: {fileID: 0}
+  ColorLine3: {r: 1, g: 0, b: 0, a: 0}
+  actualPartnerPoint: {fileID: 0}
   make_line: 0
   linea: {fileID: 0}
   number_particles_catch: 0
   doneAbsorv: 0
   allowAbsorv: 0
   particles: {fileID: 0}
+  timeFirstLine: 2
+  firstLineDraw: 0
 --- !u!1 &4575682111668748485
 GameObject:
   m_ObjectHideFlags: 0
@@ -799,12 +847,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   partnerPoint: {fileID: 0}
+  ColorLine1: {r: 1, g: 0.91456765, b: 0, a: 0}
+  partnerPoint1: {fileID: 0}
+  ColorLine2: {r: 1, g: 0.7027648, b: 0, a: 0}
+  partnerPoint2: {fileID: 0}
+  ColorLine3: {r: 1, g: 0, b: 0, a: 0}
+  actualPartnerPoint: {fileID: 0}
   make_line: 0
   linea: {fileID: 0}
   number_particles_catch: 0
   doneAbsorv: 0
   allowAbsorv: 0
   particles: {fileID: 0}
+  timeFirstLine: 2
+  firstLineDraw: 0
 --- !u!1 &4575682111819686045
 GameObject:
   m_ObjectHideFlags: 0
@@ -914,12 +970,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   partnerPoint: {fileID: 0}
+  ColorLine1: {r: 1, g: 0.91456765, b: 0, a: 0}
+  partnerPoint1: {fileID: 0}
+  ColorLine2: {r: 1, g: 0.7027648, b: 0, a: 0}
+  partnerPoint2: {fileID: 0}
+  ColorLine3: {r: 1, g: 0, b: 0, a: 0}
+  actualPartnerPoint: {fileID: 0}
   make_line: 0
   linea: {fileID: 0}
   number_particles_catch: 0
   doneAbsorv: 0
   allowAbsorv: 0
   particles: {fileID: 0}
+  timeFirstLine: 2
+  firstLineDraw: 0
 --- !u!1 &4575682111826248676
 GameObject:
   m_ObjectHideFlags: 0
@@ -1029,12 +1093,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   partnerPoint: {fileID: 0}
+  ColorLine1: {r: 1, g: 0.91456765, b: 0, a: 0}
+  partnerPoint1: {fileID: 0}
+  ColorLine2: {r: 1, g: 0.7027648, b: 0, a: 0}
+  partnerPoint2: {fileID: 0}
+  ColorLine3: {r: 1, g: 0, b: 0, a: 0}
+  actualPartnerPoint: {fileID: 0}
   make_line: 0
   linea: {fileID: 0}
   number_particles_catch: 0
   doneAbsorv: 0
   allowAbsorv: 0
   particles: {fileID: 0}
+  timeFirstLine: 2
+  firstLineDraw: 0
 --- !u!1 &4575682111964781827
 GameObject:
   m_ObjectHideFlags: 0
@@ -1143,13 +1215,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d5e9ff95ec4d58439ca470d972891c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  partnerPoint: {fileID: 4575682112184092009}
+  partnerPoint: {fileID: 0}
+  ColorLine1: {r: 1, g: 0.91456765, b: 0, a: 0}
+  partnerPoint1: {fileID: 0}
+  ColorLine2: {r: 1, g: 0.7027648, b: 0, a: 0}
+  partnerPoint2: {fileID: 0}
+  ColorLine3: {r: 1, g: 0, b: 0, a: 0}
+  actualPartnerPoint: {fileID: 0}
   make_line: 0
   linea: {fileID: 0}
   number_particles_catch: 0
   doneAbsorv: 0
   allowAbsorv: 0
   particles: {fileID: 0}
+  timeFirstLine: 2
+  firstLineDraw: 0
 --- !u!1 &4575682112184092009
 GameObject:
   m_ObjectHideFlags: 0
@@ -1259,12 +1339,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   partnerPoint: {fileID: 0}
+  ColorLine1: {r: 1, g: 0.91456765, b: 0, a: 0}
+  partnerPoint1: {fileID: 0}
+  ColorLine2: {r: 1, g: 0.7027648, b: 0, a: 0}
+  partnerPoint2: {fileID: 0}
+  ColorLine3: {r: 1, g: 0, b: 0, a: 0}
+  actualPartnerPoint: {fileID: 0}
   make_line: 0
   linea: {fileID: 0}
   number_particles_catch: 0
   doneAbsorv: 0
   allowAbsorv: 0
   particles: {fileID: 0}
+  timeFirstLine: 2
+  firstLineDraw: 0
 --- !u!1 &4575682112324867089
 GameObject:
   m_ObjectHideFlags: 0
@@ -1374,12 +1462,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   partnerPoint: {fileID: 4575682112504988183}
+  ColorLine1: {r: 1, g: 0.91456765, b: 0, a: 0}
+  partnerPoint1: {fileID: 0}
+  ColorLine2: {r: 1, g: 0.7027648, b: 0, a: 0}
+  partnerPoint2: {fileID: 0}
+  ColorLine3: {r: 1, g: 0, b: 0, a: 0}
+  actualPartnerPoint: {fileID: 0}
   make_line: 0
   linea: {fileID: 0}
   number_particles_catch: 0
   doneAbsorv: 0
   allowAbsorv: 0
   particles: {fileID: 0}
+  timeFirstLine: 2
+  firstLineDraw: 0
 --- !u!1 &4575682112331541690
 GameObject:
   m_ObjectHideFlags: 0
@@ -1489,12 +1585,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   partnerPoint: {fileID: 0}
+  ColorLine1: {r: 1, g: 0.91456765, b: 0, a: 0}
+  partnerPoint1: {fileID: 0}
+  ColorLine2: {r: 1, g: 0.7027648, b: 0, a: 0}
+  partnerPoint2: {fileID: 0}
+  ColorLine3: {r: 1, g: 0, b: 0, a: 0}
+  actualPartnerPoint: {fileID: 0}
   make_line: 0
   linea: {fileID: 0}
   number_particles_catch: 0
   doneAbsorv: 0
   allowAbsorv: 0
   particles: {fileID: 0}
+  timeFirstLine: 2
+  firstLineDraw: 0
 --- !u!1 &4575682112416057644
 GameObject:
   m_ObjectHideFlags: 0
@@ -1555,16 +1659,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f32227a57ff5bc479fc126b3f8244c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PointsList:
-  - {fileID: 4575682112673501229}
-  - {fileID: 4575682112324867089}
-  - {fileID: 4575682110758697751}
-  - {fileID: 4575682111012511068}
-  - {fileID: 4575682111964781827}
-  - {fileID: 4575682112815648587}
-  - {fileID: 4575682111368206998}
-  - {fileID: 4575682112766331558}
-  - {fileID: 4575682111114563963}
+  LadoBase: []
+  LadoIzquierda:
   - {fileID: 4575682111305353642}
   - {fileID: 4575682112331541690}
   - {fileID: 4575682111819686045}
@@ -1573,7 +1669,19 @@ MonoBehaviour:
   - {fileID: 4575682111359064088}
   - {fileID: 4575682111668748485}
   - {fileID: 4575682112504988183}
+  LadoDerecha:
+  - {fileID: 4575682112324867089}
+  - {fileID: 4575682110758697751}
+  - {fileID: 4575682111012511068}
+  - {fileID: 4575682111964781827}
+  - {fileID: 4575682112815648587}
+  - {fileID: 4575682111368206998}
+  - {fileID: 4575682112766331558}
+  - {fileID: 4575682111114563963}
+  puntaCentral: {fileID: 4575682112673501229}
   indiceActualPoint: 0
+  typeTriangle: 0
+  id_triangle: 0
 --- !u!1 &4575682112504988183
 GameObject:
   m_ObjectHideFlags: 0
@@ -1683,12 +1791,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   partnerPoint: {fileID: 0}
+  ColorLine1: {r: 1, g: 0.91456765, b: 0, a: 0}
+  partnerPoint1: {fileID: 0}
+  ColorLine2: {r: 1, g: 0.7027648, b: 0, a: 0}
+  partnerPoint2: {fileID: 0}
+  ColorLine3: {r: 1, g: 0, b: 0, a: 0}
+  actualPartnerPoint: {fileID: 0}
   make_line: 0
   linea: {fileID: 0}
   number_particles_catch: 0
   doneAbsorv: 0
   allowAbsorv: 0
   particles: {fileID: 0}
+  timeFirstLine: 2
+  firstLineDraw: 0
 --- !u!1 &4575682112673501229
 GameObject:
   m_ObjectHideFlags: 0
@@ -1798,12 +1914,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   partnerPoint: {fileID: 0}
+  ColorLine1: {r: 1, g: 0.91456765, b: 0, a: 0}
+  partnerPoint1: {fileID: 0}
+  ColorLine2: {r: 1, g: 0.7027648, b: 0, a: 0}
+  partnerPoint2: {fileID: 0}
+  ColorLine3: {r: 1, g: 0, b: 0, a: 0}
+  actualPartnerPoint: {fileID: 0}
   make_line: 0
   linea: {fileID: 0}
   number_particles_catch: 0
   doneAbsorv: 0
   allowAbsorv: 0
   particles: {fileID: 0}
+  timeFirstLine: 2
+  firstLineDraw: 0
 --- !u!1 &4575682112766331558
 GameObject:
   m_ObjectHideFlags: 0
@@ -1912,13 +2036,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d5e9ff95ec4d58439ca470d972891c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  partnerPoint: {fileID: 4575682112331541690}
+  partnerPoint: {fileID: 0}
+  ColorLine1: {r: 1, g: 0.91456765, b: 0, a: 0}
+  partnerPoint1: {fileID: 0}
+  ColorLine2: {r: 1, g: 0.7027648, b: 0, a: 0}
+  partnerPoint2: {fileID: 0}
+  ColorLine3: {r: 1, g: 0, b: 0, a: 0}
+  actualPartnerPoint: {fileID: 0}
   make_line: 0
   linea: {fileID: 0}
   number_particles_catch: 0
   doneAbsorv: 0
   allowAbsorv: 0
   particles: {fileID: 0}
+  timeFirstLine: 2
+  firstLineDraw: 0
 --- !u!1 &4575682112815648587
 GameObject:
   m_ObjectHideFlags: 0
@@ -2027,10 +2159,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d5e9ff95ec4d58439ca470d972891c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  partnerPoint: {fileID: 4575682111826248676}
+  partnerPoint: {fileID: 0}
+  ColorLine1: {r: 1, g: 0.91456765, b: 0, a: 0}
+  partnerPoint1: {fileID: 0}
+  ColorLine2: {r: 1, g: 0.7027648, b: 0, a: 0}
+  partnerPoint2: {fileID: 0}
+  ColorLine3: {r: 1, g: 0, b: 0, a: 0}
+  actualPartnerPoint: {fileID: 0}
   make_line: 0
   linea: {fileID: 0}
   number_particles_catch: 0
   doneAbsorv: 0
   allowAbsorv: 0
   particles: {fileID: 0}
+  timeFirstLine: 2
+  firstLineDraw: 0

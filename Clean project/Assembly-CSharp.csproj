@@ -100,6 +100,7 @@
     <Compile Include="Assets\scripts\Managers\RewardManager.cs" />
     <Compile Include="Assets\scripts\utilities\WorldParticleAssingment.cs" />
     <Compile Include="Assets\scripts\SPARK\motion script\OrbitBehaviour.cs" />
+    <Compile Include="Assets\scripts\Prosocial\Scripts\mandala\PointCentralMandala.cs" />
     <Compile Include="Assets\scripts\Managers\ObjectGeneratorManager.cs" />
     <Compile Include="Assets\scripts\Managers\RandomObjectmanager.cs" />
     <Compile Include="Assets\scripts\utilities\utility tracking for unity\Uniducial\TUIOConnector\OSCReceiver.cs" />
@@ -114,7 +115,7 @@
     <Compile Include="Assets\scripts\CreatedObjects\StarManager.cs" />
     <Compile Include="Assets\scripts\Managers\BackGroundManager.cs" />
     <Compile Include="Assets\scripts\utilities\ParticleTypeEnum.cs" />
-    <Compile Include="Assets\scripts\Prosocial\Scripts\mandala\PointCentralMandala.cs" />
+    <Compile Include="Assets\scripts\Prosocial\Scripts\zone\zoneManagerMove.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\scripts\utilities\utility tracking for unity\readme..txt" />

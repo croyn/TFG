@@ -28,7 +28,10 @@ public class PointCentralMandala : MonoBehaviour
            
             timeNextLine = 0.0f;
         }*/
-
+        if (Input.GetKey(KeyCode.Space))
+        {
+            mandalamanager.instance.ActivatePointsTriangles();
+        }
     }
 
     public void addParticle() {
@@ -42,5 +45,6 @@ public class PointCentralMandala : MonoBehaviour
         }
     }
 
+    
 
 }

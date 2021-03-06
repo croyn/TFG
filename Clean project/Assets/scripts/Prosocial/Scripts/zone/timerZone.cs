@@ -10,15 +10,20 @@ public class timerZone : MonoBehaviour
     public float timeToOffZones = 1.0f;
     float timeNextOff = 0.0f;
     public List<GameObject> zoneList = null;
+    public List<GameObject> zoneListMove = null;
     private List<Transform> zoneListActive = new List<Transform>();
+    private List<Transform> zoneListActiveMove = new List<Transform>();
     bool active = false;
     private int ControlWhichZone = 2;
+    private int ControlWhichMove = 0;
+    public int controlFase = 1; //0 absorv , 1 move
     
     // Start is called before the first frame update
     void Start()
     {
         timeNextAppear = 0.0f;
         timeNextOff = 0.0f;
+        controlFase = 1;
     }
 
     // Update is called once per frame
@@ -30,8 +35,14 @@ public class timerZone : MonoBehaviour
         {
 
 
-
-            activateZones();
+            if (controlFase == 0)
+            {
+                activateZones();
+            }
+            else if (controlFase == 1) {
+                activateZonesMove();
+            }
+            
 
 
             timeNextAppear = 0.0f;
@@ -41,7 +52,15 @@ public class timerZone : MonoBehaviour
             if (active)
             {
                     //getAllTimes();
+                   
+                if (controlFase == 0)
+                {
                     deactivateZones();
+                }
+                else if (controlFase == 1)
+                {
+                    deactivateZonesMove();
+                }
             }
         }     
 
@@ -109,6 +128,69 @@ public class timerZone : MonoBehaviour
         
     }
 
+    private void ChangeZoneMove()
+    {
+        ControlWhichMove = ControlWhichMove + 1;
+
+
+        if (ControlWhichMove > 6) {
+            ControlWhichMove = -1;
+        }
+
+    }
+
+    void activateZonesMove() {
+
+        Transform temp = null;
+        
+        for (int i = 0; i < zoneListMove.Capacity; i++)
+        {
+            //int result = Random.Range(0, 3);
+            //result = 1;
+
+            switch (ControlWhichMove)
+            {
+
+                case 0:
+                    temp = zoneListMove[i].transform.Find("Move_0");
+                    break;
+                case 1:
+                    temp = zoneListMove[i].transform.Find("Move_1");
+                    break;
+                case 2:
+                    temp = zoneListMove[i].transform.Find("Move_2");
+                    break;
+                case 3:
+                    temp = zoneListMove[i].transform.Find("Move_3");
+                    break;
+                case 4:
+                    temp = zoneListMove[i].transform.Find("Move_4");
+                    break;
+                case 5:
+                    temp = zoneListMove[i].transform.Find("Move_5");
+                    break;
+                case 6:
+                    temp = zoneListMove[i].transform.Find("Move_6");
+                    break;
+            }
+
+            if (temp != null)
+            {
+                temp.GetComponent<zoneManagerMove>().activateZone();
+
+                zoneListActiveMove.Add(temp);
+                // temp.GetComponent<zoneManager>().updateSpherePoint();
+            }
+        }
+
+        timeStartAppear = Time.time;
+        active = true;
+        ChangeZoneMove();
+        if (ControlWhichMove == -1) {
+            controlFase = 0;
+        }
+    }
+
     void activateZones() {
         Transform temp = null;
         ChangeZone();
@@ -147,8 +229,18 @@ public class timerZone : MonoBehaviour
     }
 
 
-    public void deactiveZone() {
+    public void deactivateZonesMove() {
+        Transform temp = null;
 
+        for (int i = 0; i < zoneListActiveMove.Count; i++)
+        {
+
+            temp = zoneListActiveMove[i];
+            temp.GetComponent<zoneManagerMove>().deactivateZone();
+
+        }
+        zoneListActive.Clear();
+        active = false;
     }
 
     void deactivateZones() {
