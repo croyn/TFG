@@ -29,6 +29,7 @@ public class pointsMandala : MonoBehaviour
     public float timeFirstLine = 2.0f;
     private float firstLinesControl = 2.0f;
     public bool firstLineDraw = false;
+    public bool retriveColors = false;
 
     void Start()
     {
@@ -41,7 +42,7 @@ public class pointsMandala : MonoBehaviour
         tempColor.a = 0.2f;
         temp.startColor = tempColor;
         temp.endColor = tempColor;
-      
+        retriveColors = false;
         allowAbsorv = false;
         //particles.transform.position=gameObject.transform.position;
         make_line = true;
@@ -52,6 +53,11 @@ public class pointsMandala : MonoBehaviour
 
     }
 
+    void giveColors() {
+        ColorLine1 = mandalamanager.instance.colorSolid1;
+        ColorLine2 = mandalamanager.instance.colorSolid2;
+        ColorLine3 = mandalamanager.instance.colorSolid3;
+    }
 
     public void nextLayer() {
 
@@ -98,6 +104,11 @@ public class pointsMandala : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!retriveColors) {
+            giveColors();
+            retriveColors = true;
+        }
+
         firstLinesControl = firstLinesControl - Time.deltaTime;
         if (firstLineDraw == false) {
             assignarLinea();

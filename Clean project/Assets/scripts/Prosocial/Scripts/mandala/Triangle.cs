@@ -122,7 +122,7 @@ public class Triangle : MonoBehaviour
 
         if (PointsList == null)
         {
-            Debug.Log("POINTS LIST NULL " + ladoMirando);
+           // Debug.Log("POINTS LIST NULL " + ladoMirando);
             return null;
         }
         else {
@@ -265,7 +265,7 @@ public class Triangle : MonoBehaviour
                 //second partner
 
                 if (mandalamanager.instance == null) {
-                    Debug.Log("Instance  null");
+                    //Debug.Log("Instance  null");
                 }
 
                 GameObject tempTriangle = mandalamanager.instance.gameObject.GetComponent<mandalamanager>().giveBrotherTriangle(id_triangle);

@@ -7,7 +7,7 @@ public class zoneManagerMove : MonoBehaviour
     public ParticleSystem AffectedParticles = null;
 
     public ParticleSystem positionParticles = null;
-
+    public GameObject cube = null;
 
 
     private float timeExplosion = 0.0f;
@@ -52,10 +52,10 @@ public class zoneManagerMove : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        Debug.Log("entro collision");
+       // Debug.Log("entro collision");
         if (AffectedParticles != null)
         {
-            Debug.Log("entro collision");
+           // Debug.Log("entro collision");
 
             AffectedParticles.Play();
 
@@ -95,6 +95,19 @@ public class zoneManagerMove : MonoBehaviour
 
 
     }
+    public void actiaveCircle()
+    {
+        cube.SetActive(true);
+        cube.GetComponent<MeshRenderer>().enabled = true;
+
+    }
+
+    public void deactiaveCircle()
+    {
+        cube.SetActive(true);
+        cube.GetComponent<MeshRenderer>().enabled = false;
+    }
+
 
     public void activateZone()
     {
@@ -103,6 +116,7 @@ public class zoneManagerMove : MonoBehaviour
         positionParticles.gameObject.SetActive(true);
         positionParticles.Play();
         allowCollision = true;
+        animationPlaying = false;
 
 
     }
@@ -114,5 +128,6 @@ public class zoneManagerMove : MonoBehaviour
         positionParticles.gameObject.SetActive(false);
         allowCollision = false;
         whenCollision = 0.0f;
+        
     }
 }

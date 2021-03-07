@@ -14,6 +14,7 @@ ScriptsOnlyBuild:
     - pointsMandala
     - timerZone
     - zoneManager
+    - zoneManagerMove
     Unity.2D.Tilemap.Editor.dll:
     - UnityEditor.Tilemaps.GridPaintingState
     - UnityEditor.Tilemaps.GridPaletteBrushes
@@ -88,31 +89,33 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 12310}
     - Class: 114
-      Script: {instanceID: 12726}
+      Script: {instanceID: 12618}
     - Class: 114
       Script: {instanceID: 12728}
     - Class: 114
-      Script: {instanceID: 13020}
+      Script: {instanceID: 12730}
     - Class: 114
-      Script: {instanceID: 13094}
+      Script: {instanceID: 13022}
     - Class: 114
-      Script: {instanceID: 13208}
+      Script: {instanceID: 13096}
     - Class: 114
-      Script: {instanceID: 13254}
+      Script: {instanceID: 13210}
     - Class: 114
-      Script: {instanceID: 13620}
+      Script: {instanceID: 13256}
     - Class: 114
-      Script: {instanceID: 13710}
+      Script: {instanceID: 13622}
     - Class: 114
-      Script: {instanceID: 13740}
+      Script: {instanceID: 13712}
     - Class: 114
-      Script: {instanceID: 13892}
+      Script: {instanceID: 13742}
     - Class: 114
-      Script: {instanceID: 14026}
+      Script: {instanceID: 13894}
     - Class: 114
-      Script: {instanceID: 14060}
+      Script: {instanceID: 14028}
     - Class: 114
-      Script: {instanceID: 14550}
+      Script: {instanceID: 14062}
+    - Class: 114
+      Script: {instanceID: 14552}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 120
@@ -308,7 +311,7 @@ ScriptsOnlyBuild:
     className: SignalAsset
   - hash:
       serializedVersion: 2
-      Hash: 15f4db8ec8310d0e459300deed3459e2
+      Hash: 28e67fb44a0ea3acffd40f6885fdd74d
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: timerZone
@@ -390,6 +393,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: Shadow
+  - hash:
+      serializedVersion: 2
+      Hash: 682520788ed2394b84ff2f3f635a0451
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: zoneManagerMove
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -506,7 +515,7 @@ ScriptsOnlyBuild:
     className: SignalTrack
   - hash:
       serializedVersion: 2
-      Hash: 2035455af1c4a366b8eebbcf681e9b48
+      Hash: 3c838b1517b910d45a9f73db9430766f
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: mandalamanager
@@ -620,7 +629,7 @@ ScriptsOnlyBuild:
     className: ParticlePoolsManager
   - hash:
       serializedVersion: 2
-      Hash: 599681cb8bef31629a97f131a9cbca5e
+      Hash: 086a0b30372d151c6c469787c46e8372
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: pointsMandala
@@ -674,7 +683,7 @@ ScriptsOnlyBuild:
     className: Physics2DRaycaster
   - hash:
       serializedVersion: 2
-      Hash: 88a17a2447d9c0aa9795d0068fbf1de3
+      Hash: 861b977731023bc063b948412e9be6ef
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Triangle

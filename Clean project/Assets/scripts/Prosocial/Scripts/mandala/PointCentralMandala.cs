@@ -39,7 +39,7 @@ public class PointCentralMandala : MonoBehaviour
         if (allowAbsorv) { 
             num_particles_absorv = num_particles_absorv + 1;
             
-            if (num_particles_absorv % numParticlesNextLine == 0 && num_particles_absorv<8400) {
+            if (num_particles_absorv % numParticlesNextLine == 0) {
                 mandalamanager.instance.ActivatePointsTriangles();
             }
         }

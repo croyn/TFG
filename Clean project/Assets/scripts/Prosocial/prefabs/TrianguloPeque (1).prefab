@@ -1461,7 +1461,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d5e9ff95ec4d58439ca470d972891c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  partnerPoint: {fileID: 4575682112504988183}
+  partnerPoint: {fileID: 0}
   ColorLine1: {r: 1, g: 0.91456765, b: 0, a: 0}
   partnerPoint1: {fileID: 0}
   ColorLine2: {r: 1, g: 0.7027648, b: 0, a: 0}

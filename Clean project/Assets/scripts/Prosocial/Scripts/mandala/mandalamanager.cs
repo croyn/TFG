@@ -12,6 +12,14 @@ public class mandalamanager : MonoBehaviour
     public int numTrianglesLayer=8;
     public int layer = 0;
     public int interLayer = 0;
+    public Gradient color1;
+    public Gradient color2;
+    public Gradient color3;
+    public Color colorSolid1;
+    public Color colorSolid2;
+    public Color colorSolid3;
+    private Gradient actualColor = null;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -32,7 +40,27 @@ public class mandalamanager : MonoBehaviour
 
     public GameObject giveCentralPoint() {
         return centralPoint;
-    } 
+    }
+
+    
+
+
+    public Gradient switchColor() {
+        switch (layer) {
+            case 0:
+                actualColor = color1;
+                break;
+            case 1:
+                actualColor = color2;
+                break;
+           case 2:
+                actualColor = color3;
+                break;
+
+
+        }
+        return actualColor;
+    }
 
 
     public GameObject givePointFronTriangle()
@@ -77,9 +105,9 @@ public class mandalamanager : MonoBehaviour
         }
 
         if (triangleList[result + 8].gameObject == null) {
-            Debug.Log("triangle null " + whoiam + " " + result);
+            //Debug.Log("triangle null " + whoiam + " " + result);
         }
-        Debug.Log("triangle  " + whoiam + " " + result);
+       // Debug.Log("triangle  " + whoiam + " " + result);
 
         return triangleList[result+8].gameObject;
 
@@ -98,7 +126,8 @@ public class mandalamanager : MonoBehaviour
 
         if (actualPoint == null) {
             interLayer = interLayer + 1;
-           if(interLayer>2)
+            timerZone.instance.gameObject.GetComponent<timerZone>().changeFaseTo(1);
+           if (interLayer>2)
             {
                 interLayer = 0;
                 if (((layer * numTrianglesLayer) + numTrianglesLayer) < triangleList.Capacity)

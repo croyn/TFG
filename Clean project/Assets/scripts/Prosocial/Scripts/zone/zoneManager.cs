@@ -79,9 +79,9 @@ public class zoneManager : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        Debug.Log("entro collision");
+        //Debug.Log("entro collision");
         if (AffectedParticles != null) {
-            Debug.Log("entro collision");
+           // Debug.Log("entro collision");
             
             AffectedParticles.Play();
             
@@ -157,6 +157,26 @@ public class zoneManager : MonoBehaviour
 
     }
 
+    public void ChangeColorTo(Gradient color) {
+
+        ParticleSystem.ColorOverLifetimeModule temp = positionParticles.gameObject.GetComponent<ParticleSystem>().colorOverLifetime;
+        temp.color = color;
+        ParticleSystem.ColorOverLifetimeModule temp2 = AffectedParticles.gameObject.GetComponent<ParticleSystem>().colorOverLifetime;
+        temp2.color = color;
+    }
+
+
+    public void actiaveCircle()
+    {
+        transform.Find("Cube").gameObject.SetActive(true);
+
+    }
+
+    public void deactiaveCircle() {
+        transform.Find("Cube").gameObject.SetActive(false);
+
+    }
+
     public void deactivateZone() {
         
         positionParticles.Stop();
@@ -164,6 +184,9 @@ public class zoneManager : MonoBehaviour
         allowCollision = false;
         whenCollision = 0.0f;
     }
+
+
+   
 
     void LateUpdate()
     {

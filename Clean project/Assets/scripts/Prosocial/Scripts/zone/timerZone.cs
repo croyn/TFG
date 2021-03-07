@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class timerZone : MonoBehaviour
 {
+    public static timerZone instance;
     float timeStartAppear = 0.0f;
     float timeNextAppear = 0.0f;
     public float timeToNext=1.0f;
@@ -13,17 +14,20 @@ public class timerZone : MonoBehaviour
     public List<GameObject> zoneListMove = null;
     private List<Transform> zoneListActive = new List<Transform>();
     private List<Transform> zoneListActiveMove = new List<Transform>();
+    public GameObject pointCentralMandala;
     bool active = false;
     private int ControlWhichZone = 2;
     private int ControlWhichMove = 0;
-    public int controlFase = 1; //0 absorv , 1 move
+    public int controlFase = 0; //0 absorv , 1 move
+    Gradient actualGradient = null;
     
     // Start is called before the first frame update
     void Start()
     {
+        instance = this;
         timeNextAppear = 0.0f;
         timeNextOff = 0.0f;
-        controlFase = 1;
+        controlFase = 0;
     }
 
     // Update is called once per frame
@@ -41,6 +45,12 @@ public class timerZone : MonoBehaviour
             }
             else if (controlFase == 1) {
                 activateZonesMove();
+                if (ControlWhichMove == -1)
+                {
+                    deactivateZonesMove();
+                    changeFaseTo(0);
+                    ControlWhichMove = 0;
+                }
             }
             
 
@@ -59,11 +69,35 @@ public class timerZone : MonoBehaviour
                 }
                 else if (controlFase == 1)
                 {
+                    activateNextMove();
                     deactivateZonesMove();
+                   
                 }
             }
         }     
 
+    }
+
+
+    public void changeFaseTo(int cual) {
+
+        switch (cual) {
+            case 0://absorv
+                pointCentralMandala.GetComponent<PointCentralMandala>().allowAbsorv = true;
+                deactivateZonesMove();
+                activateZonesCircles();
+                break;
+            case 1://move
+                pointCentralMandala.GetComponent<PointCentralMandala>().allowAbsorv = false;
+                deactivateZones();
+                deactivateZonesCircles();
+
+
+                break;
+
+        }
+
+        controlFase = cual;
     }
 
     void getAllTimes() {
@@ -133,7 +167,7 @@ public class timerZone : MonoBehaviour
         ControlWhichMove = ControlWhichMove + 1;
 
 
-        if (ControlWhichMove > 6) {
+        if (ControlWhichMove > 7) {
             ControlWhichMove = -1;
         }
 
@@ -142,12 +176,72 @@ public class timerZone : MonoBehaviour
     void activateZonesMove() {
 
         Transform temp = null;
+        Transform temp1 = null;
         
         for (int i = 0; i < zoneListMove.Capacity; i++)
         {
             //int result = Random.Range(0, 3);
             //result = 1;
 
+            switch (ControlWhichMove)
+            {
+
+                case 0:
+                    temp = zoneListMove[i].transform.Find("Move_0");
+                   // temp1= zoneListMove[i].transform.Find("Move_1");
+                    break;
+                case 1:
+                    temp = zoneListMove[i].transform.Find("Move_1");
+                    //temp1 = zoneListMove[i].transform.Find("Move_2");
+                    break;
+                case 2:
+                    temp = zoneListMove[i].transform.Find("Move_2");
+                    //temp1 = zoneListMove[i].transform.Find("Move_3");
+                    break;
+                case 3:
+                    temp = zoneListMove[i].transform.Find("Move_3");
+                    temp1 = zoneListMove[i].transform.Find("Move_4");
+                    break;
+                case 4:
+                    temp = zoneListMove[i].transform.Find("Move_4");
+                   // temp1 = zoneListMove[i].transform.Find("Move_5");
+                    break;
+                case 5:
+                    temp = zoneListMove[i].transform.Find("Move_5");
+                   // temp1 = zoneListMove[i].transform.Find("Move_6");
+                    break;
+                case 6:
+                    temp = zoneListMove[i].transform.Find("Move_6");
+                    //temp1 = zoneListMove[i].transform.Find("Move_6");
+                    break;
+                case 7:
+                    temp = null;
+                    break;
+            }
+
+            if (temp != null)
+            {
+                temp.GetComponent<zoneManagerMove>().activateZone();
+                //temp1.GetComponent<zoneManagerMove>().actiaveCircle();
+                zoneListActiveMove.Add(temp);
+                // temp.GetComponent<zoneManager>().updateSpherePoint();
+            }
+        }
+
+        timeStartAppear = Time.time;
+        active = true;
+        ChangeZoneMove();
+        
+        
+    }
+
+    void activateNextMove() {
+        Transform temp = null;
+        for (int i = 0; i < zoneListMove.Count; i++)
+        {
+            //int result = Random.Range(0, 3);
+            //result = 1;
+            Debug.Log("Control num" + ControlWhichMove);
             switch (ControlWhichMove)
             {
 
@@ -172,28 +266,30 @@ public class timerZone : MonoBehaviour
                 case 6:
                     temp = zoneListMove[i].transform.Find("Move_6");
                     break;
+                case 7:
+                    temp = null;
+                    break;
+                default:
+                    temp = null;
+                    break;
             }
 
             if (temp != null)
             {
-                temp.GetComponent<zoneManagerMove>().activateZone();
+                Debug.Log("no null");
+                temp.GetComponent<zoneManagerMove>().actiaveCircle();
 
-                zoneListActiveMove.Add(temp);
+                //zoneListActiveMove.Add(temp);
                 // temp.GetComponent<zoneManager>().updateSpherePoint();
             }
         }
 
-        timeStartAppear = Time.time;
-        active = true;
-        ChangeZoneMove();
-        if (ControlWhichMove == -1) {
-            controlFase = 0;
-        }
     }
 
     void activateZones() {
         Transform temp = null;
         ChangeZone();
+        Gradient colorActual = mandalamanager.instance.switchColor();
         for (int i = 0; i < zoneList.Capacity; i++)
         {
             //int result = Random.Range(0, 3);
@@ -217,7 +313,7 @@ public class timerZone : MonoBehaviour
             if (temp != null)
             {
                 temp.GetComponent<zoneManager>().activateZone();
-                
+                temp.GetComponent<zoneManager>().ChangeColorTo(colorActual);
                 zoneListActive.Add(temp);
                 // temp.GetComponent<zoneManager>().updateSpherePoint();
             }
@@ -231,15 +327,16 @@ public class timerZone : MonoBehaviour
 
     public void deactivateZonesMove() {
         Transform temp = null;
-
+        
         for (int i = 0; i < zoneListActiveMove.Count; i++)
         {
 
             temp = zoneListActiveMove[i];
             temp.GetComponent<zoneManagerMove>().deactivateZone();
+            temp.GetComponent<zoneManagerMove>().deactiaveCircle();
 
         }
-        zoneListActive.Clear();
+        zoneListActiveMove.Clear();
         active = false;
     }
 
@@ -257,6 +354,44 @@ public class timerZone : MonoBehaviour
         }
         zoneListActive.Clear();
         active = false;
+    }
+
+    void deactivateZonesCircles() {
+        Transform temp;
+        Transform temp1;
+        Transform temp2;
+
+
+        for (int i = 0; i < zoneList.Count; i++) {
+
+            temp = zoneList[i].transform.Find("derechaZone");
+            temp1 = zoneList[i].transform.Find("frenteZone");
+            temp2 = zoneList[i].transform.Find("izquierdaZone");
+
+            temp.gameObject.GetComponent<zoneManager>().deactiaveCircle();
+            temp1.gameObject.GetComponent<zoneManager>().deactiaveCircle();
+            temp2.gameObject.GetComponent<zoneManager>().deactiaveCircle();
+        }
+    }
+
+    void activateZonesCircles()
+    {
+        Transform temp;
+        Transform temp1;
+        Transform temp2;
+
+
+        for (int i = 0; i < zoneList.Count; i++)
+        {
+
+            temp = zoneList[i].transform.Find("derechaZone");
+            temp1 = zoneList[i].transform.Find("frenteZone");
+            temp2 = zoneList[i].transform.Find("izquierdaZone");
+
+            temp.gameObject.GetComponent<zoneManager>().actiaveCircle();
+            temp1.gameObject.GetComponent<zoneManager>().actiaveCircle();
+            temp2.gameObject.GetComponent<zoneManager>().actiaveCircle();
+        }
     }
 
 }
