@@ -290,7 +290,7 @@ public class timerZone : MonoBehaviour
         Transform temp = null;
         ChangeZone();
         Gradient colorActual = mandalamanager.instance.switchColor();
-        for (int i = 0; i < zoneList.Capacity; i++)
+        for (int i = 0; i < zoneList.Count; i++)
         {
             //int result = Random.Range(0, 3);
             //result = 1;
@@ -312,8 +312,9 @@ public class timerZone : MonoBehaviour
             
             if (temp != null)
             {
-                temp.GetComponent<zoneManager>().activateZone();
                 temp.GetComponent<zoneManager>().ChangeColorTo(colorActual);
+                temp.GetComponent<zoneManager>().activateZone();
+                
                 zoneListActive.Add(temp);
                 // temp.GetComponent<zoneManager>().updateSpherePoint();
             }

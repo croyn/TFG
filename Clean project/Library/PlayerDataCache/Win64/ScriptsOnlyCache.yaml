@@ -311,7 +311,7 @@ ScriptsOnlyBuild:
     className: SignalAsset
   - hash:
       serializedVersion: 2
-      Hash: 28e67fb44a0ea3acffd40f6885fdd74d
+      Hash: 8a5d7aa9eb85905d5e097736e60a0d1f
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: timerZone
@@ -395,7 +395,7 @@ ScriptsOnlyBuild:
     className: Shadow
   - hash:
       serializedVersion: 2
-      Hash: 682520788ed2394b84ff2f3f635a0451
+      Hash: ad18469b059ad17a150d83a2ba09ac44
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: zoneManagerMove

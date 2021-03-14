@@ -1112,7 +1112,7 @@ ParticleSystem:
     m_BurstCount: 0
     m_Bursts: []
   SizeModule:
-    enabled: 1
+    enabled: 0
     curve:
       serializedVersion: 2
       minMaxState: 1
@@ -5062,8 +5062,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 4.2613754, y: 1, z: 4.132202}
-  m_Center: {x: -0.24033737, y: 0, z: 0.05474472}
+  m_Size: {x: 6.4077606, y: 1, z: 6.536701}
+  m_Center: {x: 0.2301178, y: 0, z: 0.011896133}
 --- !u!114 &5576526629743722194
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10892,7 +10892,7 @@ ParticleSystem:
     m_BurstCount: 0
     m_Bursts: []
   SizeModule:
-    enabled: 1
+    enabled: 0
     curve:
       serializedVersion: 2
       minMaxState: 1
@@ -14842,8 +14842,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 3.9343948, y: 1.6780884, z: 4.2213097}
-  m_Center: {x: 0.022891998, y: -0.3390442, z: 0.4541149}
+  m_Size: {x: 6.303261, y: 1.6780884, z: 5.8921356}
+  m_Center: {x: -0.07123184, y: -0.3390442, z: 0.48485947}
 --- !u!114 &5576526629906016216
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15072,8 +15072,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 4.6102295, y: 1, z: 4.208664}
-  m_Center: {x: 0.08782959, y: 0, z: 0.1739769}
+  m_Size: {x: 6.0978546, y: 1, z: 6.23592}
+  m_Center: {x: 0.03996277, y: 0, z: 0.16235161}
 --- !u!114 &5576526630779812651
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20935,7 +20935,7 @@ ParticleSystem:
     m_BurstCount: 0
     m_Bursts: []
   SizeModule:
-    enabled: 1
+    enabled: 0
     curve:
       serializedVersion: 2
       minMaxState: 1

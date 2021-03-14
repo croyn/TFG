@@ -95,6 +95,36 @@ public class zoneManagerMove : MonoBehaviour
 
 
     }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (allowCollision)
+        {
+            whenCollision = Time.time;
+
+            allowCollision = false;
+            if (!explosion)
+            {
+                explosion = true;
+                positionParticles.Stop(true);
+                positionParticles.gameObject.SetActive(false);
+
+
+                if (AffectedParticles != null && explosion && animationPlaying == false)
+                {
+
+                    AffectedParticles.Play();
+                    //sphereObjective.GetComponent<pointsMandala>().line_true();
+
+                    animationPlaying = true;
+                }
+            }
+
+        }
+
+
+    }
+
     public void actiaveCircle()
     {
         cube.SetActive(true);

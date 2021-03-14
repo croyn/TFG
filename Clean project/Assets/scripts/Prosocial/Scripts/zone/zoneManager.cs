@@ -125,6 +125,34 @@ public class zoneManager : MonoBehaviour
     }
 
 
+    private void OnTriggerStay(Collider other)
+    {
+        if (allowCollision)
+        {
+            whenCollision = Time.time;
+
+            allowCollision = false;
+            if (!explosion)
+            {
+                explosion = true;
+                positionParticles.Stop(true);
+                positionParticles.gameObject.SetActive(false);
+
+                updateSpherePoint();
+                if (sphereObjective != null && AffectedParticles != null && explosion && animationPlaying == false)
+                {
+
+                    AffectedParticles.Play();
+                    //sphereObjective.GetComponent<pointsMandala>().line_true();
+                    sphereObjective.GetComponent<PointCentralMandala>().allowAbsorv = true;
+                    sphereObjective.layer = 11;
+                    animationPlaying = true;
+                }
+            }
+
+        }
+    }
+
     public float getWhenCollision() {
         return whenCollision;
     }
