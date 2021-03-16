@@ -35,6 +35,19 @@ public class timerZone : MonoBehaviour
     {
         timeNextAppear = timeNextAppear + Time.deltaTime;
 
+        if (controlFase == 1)
+        {
+            if (isDoneMoving())
+            {
+
+                deactiveMoveZones();
+                changeFaseTo(0);
+            }
+        }
+
+
+
+
         if (timeNextAppear >= timeToNext)
         {
 
@@ -43,17 +56,7 @@ public class timerZone : MonoBehaviour
             {
                 activateZones();
             }
-            else if (controlFase == 1) {
-                activateZonesMove();
-                if (ControlWhichMove == -1)
-                {
-                    deactivateZonesMove();
-                    changeFaseTo(0);
-                    ControlWhichMove = 0;
-                }
-            }
-            
-
+          
 
             timeNextAppear = 0.0f;
 
@@ -67,12 +70,7 @@ public class timerZone : MonoBehaviour
                 {
                     deactivateZones();
                 }
-                else if (controlFase == 1)
-                {
-                    activateNextMove();
-                    deactivateZonesMove();
-                   
-                }
+               
             }
         }     
 
@@ -84,7 +82,7 @@ public class timerZone : MonoBehaviour
         switch (cual) {
             case 0://absorv
                 pointCentralMandala.GetComponent<PointCentralMandala>().allowAbsorv = true;
-                deactivateZonesMove();
+                //deactivateZonesMove();
                 activateZonesCircles();
                 break;
             case 1://move
@@ -92,6 +90,8 @@ public class timerZone : MonoBehaviour
                 deactivateZones();
                 deactivateZonesCircles();
 
+                activaMovezones();
+                timeNextAppear = -1.0f;
 
                 break;
 
@@ -99,6 +99,14 @@ public class timerZone : MonoBehaviour
 
         controlFase = cual;
     }
+
+    public void activaMovezones() {
+        for (int i = 0; i < zoneListMove.Count;i++) {
+            zoneListMove[i].GetComponent<MoveZone>().initMoveZone();
+
+        }
+    }
+
 
     void getAllTimes() {
         bool control = true;
@@ -161,6 +169,39 @@ public class timerZone : MonoBehaviour
         }
         
     }
+
+    private bool isDoneMoving() {
+
+        int control = 0;
+        for (int i = 0; i < zoneListMove.Count; i++) {
+            if (zoneListMove[i].GetComponent<MoveZone>().isInPosition()) {
+                control = control + 1;
+            }
+
+        }
+
+        if (control == zoneListMove.Count)
+        {
+            return true;
+        }
+        else {
+            return false;
+        }
+
+    }
+
+    private void deactiveMoveZones() {
+
+        for (int i = 0; i < zoneListMove.Count; i++)
+        {
+            zoneListMove[i].GetComponent<MoveZone>().deactiveMoveZone();
+
+        }
+
+    }
+
+
+
 
     private void ChangeZoneMove()
     {

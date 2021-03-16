@@ -65,6 +65,7 @@
     <Compile Include="Assets\scripts\Effects\AudioEffect.cs" />
     <Compile Include="Assets\scripts\Effects\JustParticleEffect.cs" />
     <Compile Include="Assets\scripts\utilities\CreationTable.cs" />
+    <Compile Include="Assets\scripts\Prosocial\Scripts\zone\zoneManagerMove.cs" />
     <Compile Include="Assets\scripts\utilities\Logger.cs" />
     <Compile Include="Assets\scripts\SPARK\motion script\RandomMotionInTheSpace.cs" />
     <Compile Include="Assets\scripts\utilities\utility tracking for unity\Uniducial\TUIOConnector\OSCBundle.cs" />
@@ -115,7 +116,7 @@
     <Compile Include="Assets\scripts\CreatedObjects\StarManager.cs" />
     <Compile Include="Assets\scripts\Managers\BackGroundManager.cs" />
     <Compile Include="Assets\scripts\utilities\ParticleTypeEnum.cs" />
-    <Compile Include="Assets\scripts\Prosocial\Scripts\zone\zoneManagerMove.cs" />
+    <Compile Include="Assets\scripts\Prosocial\Scripts\zone\MoveZone.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\scripts\utilities\utility tracking for unity\readme..txt" />
