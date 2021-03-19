@@ -26,7 +26,7 @@ public class zoneManager : MonoBehaviour
     private bool explosion = false;
     private bool allowCollision = false;
     private float whenCollision = 0.0f;
-
+    private bool catched = false;
 
     // Start is called before the first frame update
     void Start()
@@ -41,6 +41,7 @@ public class zoneManager : MonoBehaviour
         move_to_Objective = false;
         timeExplosion = 0.0f;
         explosion = false;
+        catched = false;
         allowCollision = false;
         //positionParticles.Play();
     }
@@ -72,6 +73,39 @@ public class zoneManager : MonoBehaviour
 
     }
 
+
+    public bool isMovingParticles() {
+
+        return move_to_Objective;
+    }
+
+    public bool isCatched() {
+
+        return catched;
+    }
+
+    public void activeExplosion() {
+        if (!explosion)
+        {
+            explosion = true;
+            positionParticles.Stop(true);
+            positionParticles.gameObject.SetActive(false);
+
+            updateSpherePoint();
+            if (sphereObjective != null && AffectedParticles != null && explosion && animationPlaying == false)
+            {
+
+                AffectedParticles.Play();
+                //sphereObjective.GetComponent<pointsMandala>().line_true();
+                sphereObjective.GetComponent<PointCentralMandala>().allowAbsorv = true;
+                sphereObjective.layer = 11;
+                animationPlaying = true;
+            }
+        }
+
+    }
+
+
     public void updateSpherePoint() {
         sphereObjective = mandalamanager.instance.giveCentralPoint();
 
@@ -98,22 +132,9 @@ public class zoneManager : MonoBehaviour
             whenCollision = Time.time;
 
             allowCollision = false;
-            if (!explosion)
+            if (!catched)
             {
-                explosion = true;
-                positionParticles.Stop(true);
-                positionParticles.gameObject.SetActive(false);
-
-                updateSpherePoint();
-                if (sphereObjective != null && AffectedParticles != null && explosion && animationPlaying == false)
-                {
-
-                    AffectedParticles.Play();
-                    //sphereObjective.GetComponent<pointsMandala>().line_true();
-                    sphereObjective.GetComponent<PointCentralMandala>().allowAbsorv = true;
-                    sphereObjective.layer = 11;
-                    animationPlaying = true;
-                }
+                catched = true;
             }
 
         }
@@ -132,22 +153,9 @@ public class zoneManager : MonoBehaviour
             whenCollision = Time.time;
 
             allowCollision = false;
-            if (!explosion)
+            if (!catched)
             {
-                explosion = true;
-                positionParticles.Stop(true);
-                positionParticles.gameObject.SetActive(false);
-
-                updateSpherePoint();
-                if (sphereObjective != null && AffectedParticles != null && explosion && animationPlaying == false)
-                {
-
-                    AffectedParticles.Play();
-                    //sphereObjective.GetComponent<pointsMandala>().line_true();
-                    sphereObjective.GetComponent<PointCentralMandala>().allowAbsorv = true;
-                    sphereObjective.layer = 11;
-                    animationPlaying = true;
-                }
+                catched = true;
             }
 
         }
@@ -178,6 +186,7 @@ public class zoneManager : MonoBehaviour
     {
        // gameObject.SetActive(true);
         explosion = false;
+        catched = false;
         positionParticles.gameObject.SetActive(true);
         positionParticles.Play();
         allowCollision = true;

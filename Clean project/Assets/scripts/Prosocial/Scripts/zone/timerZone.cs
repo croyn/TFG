@@ -20,7 +20,9 @@ public class timerZone : MonoBehaviour
     private int ControlWhichMove = 0;
     public int controlFase = 0; //0 absorv , 1 move
     Gradient actualGradient = null;
-    
+    private bool ParticlesDoneAbosorving = false;
+    private bool controlOneTimeAppering = false;
+    private bool controlminiMoveZone = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -35,44 +37,72 @@ public class timerZone : MonoBehaviour
     {
         timeNextAppear = timeNextAppear + Time.deltaTime;
 
+
+        if (controlFase == 0)
+        {
+            if (timeNextAppear >= timeToNext)
+            {
+
+                activateZones();
+
+                timeNextAppear = 0.0f;
+            }
+            else if (timeNextAppear >= timeToNext - timeToOffZones)
+            {
+                if (active)
+                {
+                    //getAllTimes();
+
+                    activeZonesTouched();
+                    deactivateZones();
+
+                }
+            }
+        }
+
+
+
         if (controlFase == 1)
         {
-            if (isDoneMoving())
+            if (!ParticlesDoneAbosorving)
+            {
+                if (!isAbsorbParticlesDone())
+                {
+                    deactivateZones();
+                    deactivateZonesCircles();
+                    ParticlesDoneAbosorving = true;
+                    activaMovezones();
+                }
+            }
+            
+
+            if (isDoneMoving() && ParticlesDoneAbosorving)
             {
 
                 deactiveMoveZones();
+                changeFaseTo(2);
+            }
+
+           
+        }
+
+
+        
+        if (controlFase == 2)
+        {
+            if (!controlminiMoveZone) {
+                activaMiniMovezones();
+                controlminiMoveZone = true;
+            }
+
+
+            if (isDoneMovingMiniZone() && controlminiMoveZone) {
+                deactiveMiniMoveZones();
                 changeFaseTo(0);
             }
-        }
-
-
-
-
-        if (timeNextAppear >= timeToNext)
-        {
-
-
-            if (controlFase == 0)
-            {
-                activateZones();
-            }
-          
-
-            timeNextAppear = 0.0f;
 
         }
-        else if (timeNextAppear >= timeToNext- timeToOffZones) {
-            if (active)
-            {
-                    //getAllTimes();
-                   
-                if (controlFase == 0)
-                {
-                    deactivateZones();
-                }
-               
-            }
-        }     
+
 
     }
 
@@ -83,15 +113,15 @@ public class timerZone : MonoBehaviour
             case 0://absorv
                 pointCentralMandala.GetComponent<PointCentralMandala>().allowAbsorv = true;
                 //deactivateZonesMove();
+                timeNextAppear = -1.0f;
                 activateZonesCircles();
                 break;
             case 1://move
                 pointCentralMandala.GetComponent<PointCentralMandala>().allowAbsorv = false;
-                deactivateZones();
-                deactivateZonesCircles();
-
-                activaMovezones();
-                timeNextAppear = -1.0f;
+                ParticlesDoneAbosorving = false;
+                break;
+            case 2://activating circles
+                controlminiMoveZone = false;
 
                 break;
 
@@ -101,12 +131,73 @@ public class timerZone : MonoBehaviour
     }
 
     public void activaMovezones() {
-        for (int i = 0; i < zoneListMove.Count;i++) {
-            zoneListMove[i].GetComponent<MoveZone>().initMoveZone();
 
+        ParticleSystem.ColorOverLifetimeModule temp = zoneList[0].transform.Find("derechaZone").GetComponent<zoneManager>().AffectedParticles.gameObject.GetComponent<ParticleSystem>().colorOverLifetime;
+
+        ParticleSystem.MinMaxGradient tempColor = temp.color;
+
+        for (int i = 0; i < zoneListMove.Count;i++) {
+            zoneListMove[i].GetComponent<MoveZone>().ChangeColorTo(tempColor);
+            zoneListMove[i].GetComponent<MoveZone>().initMoveZone();
+            
         }
     }
 
+
+    public void activaMiniMovezones()
+    {
+        ParticleSystem.ColorOverLifetimeModule temp = zoneList[0].transform.Find("derechaZone").GetComponent<zoneManager>().AffectedParticles.gameObject.GetComponent<ParticleSystem>().colorOverLifetime;
+
+        ParticleSystem.MinMaxGradient tempColor = temp.color;
+        for (int i = 0; i < zoneList.Count; i++)
+        {
+            Transform minizone1 = zoneList[i].transform.Find("MiniMoveZone1");
+            Transform minizone2 = zoneList[i].transform.Find("MiniMoveZone2");
+            Transform minizone3 = zoneList[i].transform.Find("MiniMoveZone3");
+            minizone1.gameObject.GetComponent<MoveZone>().ChangeColorTo(tempColor);
+            minizone2.gameObject.GetComponent<MoveZone>().ChangeColorTo(tempColor);
+            minizone3.gameObject.GetComponent<MoveZone>().ChangeColorTo(tempColor);
+            minizone1.gameObject.GetComponent<MoveZone>().initMoveZone();
+             minizone2.gameObject.GetComponent<MoveZone>().initMoveZone();
+             minizone3.gameObject.GetComponent<MoveZone>().initMoveZone();
+            
+
+        }
+ 
+    }
+
+
+    private bool isAbsorbParticlesDone()
+    {
+        bool control = false;
+        for (int i = 0; i < zoneList.Count; i++)
+        {
+            control= control || zoneList[i].transform.Find("derechaZone").GetComponent<zoneManager>().isMovingParticles();
+            control = control || zoneList[i].transform.Find("frenteZone").GetComponent<zoneManager>().isMovingParticles();
+            control = control || zoneList[i].transform.Find("izquierdaZone").GetComponent<zoneManager>().isMovingParticles();
+     
+        }
+
+        return control;
+
+    }
+
+
+    private void activeZonesTouched() {
+        Transform temp = null;
+        for (int i = 0; i < zoneListActive.Count; i++)
+        {
+
+            temp = zoneListActive[i];
+            if (temp.GetComponent<zoneManager>().isCatched()) {
+                temp.GetComponent<zoneManager>().activeExplosion();
+            }
+            
+            
+
+        }
+
+    }
 
     void getAllTimes() {
         bool control = true;
@@ -189,6 +280,36 @@ public class timerZone : MonoBehaviour
         }
 
     }
+    private bool isDoneMovingMiniZone()
+    {
+
+        int control = 0;
+        for (int i = 0; i < zoneList.Count; i++)
+        {
+            Transform minizone1= zoneList[i].transform.Find("MiniMoveZone1");
+            Transform minizone2 = zoneList[i].transform.Find("MiniMoveZone2");
+            Transform minizone3 = zoneList[i].transform.Find("MiniMoveZone3");
+            bool inPos1 = minizone1.gameObject.GetComponent<MoveZone>().isInPosition();
+            bool inPos2 = minizone2.gameObject.GetComponent<MoveZone>().isInPosition();
+            bool inPos3 = minizone3.gameObject.GetComponent<MoveZone>().isInPosition();
+            if (inPos1 && inPos2 && inPos3)
+            {
+                control = control + 1;
+            }
+
+        }
+
+        if (control == zoneListMove.Count)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+
+    }
+
 
     private void deactiveMoveZones() {
 
@@ -199,7 +320,22 @@ public class timerZone : MonoBehaviour
         }
 
     }
+    private void deactiveMiniMoveZones()
+    {
 
+        for (int i = 0; i < zoneList.Count; i++)
+        {
+            Transform minizone1 = zoneList[i].transform.Find("MiniMoveZone1");
+            Transform minizone2 = zoneList[i].transform.Find("MiniMoveZone2");
+            Transform minizone3 = zoneList[i].transform.Find("MiniMoveZone3");
+            minizone1.gameObject.GetComponent<MoveZone>().deactiveMoveZone();
+            minizone2.gameObject.GetComponent<MoveZone>().deactiveMoveZone();
+            minizone3.gameObject.GetComponent<MoveZone>().deactiveMoveZone();
+
+
+        }
+
+    }
 
 
 
@@ -328,7 +464,7 @@ public class timerZone : MonoBehaviour
     }
 
     void activateZones() {
-        Transform temp = null;
+        Transform internalZone = null;
         ChangeZone();
         Gradient colorActual = mandalamanager.instance.switchColor();
         for (int i = 0; i < zoneList.Count; i++)
@@ -341,22 +477,22 @@ public class timerZone : MonoBehaviour
 
                 case 0:
 
-                    temp = zoneList[i].transform.Find("derechaZone");
+                    internalZone = zoneList[i].transform.Find("derechaZone");
                     break;
                 case 1:
-                    temp = zoneList[i].transform.Find("frenteZone");
+                    internalZone = zoneList[i].transform.Find("frenteZone");
                     break;
                 case 2:
-                    temp = zoneList[i].transform.Find("izquierdaZone");
+                    internalZone = zoneList[i].transform.Find("izquierdaZone");
                     break;
             }
             
-            if (temp != null)
+            if (internalZone != null)
             {
-                temp.GetComponent<zoneManager>().ChangeColorTo(colorActual);
-                temp.GetComponent<zoneManager>().activateZone();
+                internalZone.GetComponent<zoneManager>().ChangeColorTo(colorActual);
+                internalZone.GetComponent<zoneManager>().activateZone();
                 
-                zoneListActive.Add(temp);
+                zoneListActive.Add(internalZone);
                 // temp.GetComponent<zoneManager>().updateSpherePoint();
             }
         }
@@ -378,6 +514,9 @@ public class timerZone : MonoBehaviour
             temp.GetComponent<zoneManagerMove>().deactiaveCircle();
 
         }
+
+
+
         zoneListActiveMove.Clear();
         active = false;
     }
