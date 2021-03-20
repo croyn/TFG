@@ -23,6 +23,8 @@ public class timerZone : MonoBehaviour
     private bool ParticlesDoneAbosorving = false;
     private bool controlOneTimeAppering = false;
     private bool controlminiMoveZone = false;
+    public float timeBetweenFases;
+    private bool timeBetweenFasesControl = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -66,22 +68,38 @@ public class timerZone : MonoBehaviour
         {
             if (!ParticlesDoneAbosorving)
             {
+                deactivateZones();
                 if (!isAbsorbParticlesDone())
                 {
-                    deactivateZones();
-                    deactivateZonesCircles();
+                    
                     ParticlesDoneAbosorving = true;
-                    activaMovezones();
+                    timeNextAppear = 0.0f;
+
+
                 }
             }
-            
 
-            if (isDoneMoving() && ParticlesDoneAbosorving)
+            if (!timeBetweenFasesControl && timeNextAppear >= timeBetweenFases && ParticlesDoneAbosorving) {
+                
+                deactivateZonesCircles();
+                activaMovezones();
+                timeBetweenFasesControl = true;
+                timeNextAppear = 0.0f;
+
+            }
+
+
+            if (isDoneMoving() && ParticlesDoneAbosorving && timeBetweenFasesControl && timeNextAppear >= timeBetweenFases)
             {
 
                 deactiveMoveZones();
+
+                activateZonesCircles();
                 changeFaseTo(2);
+            } else if (!isDoneMoving() && ParticlesDoneAbosorving && timeBetweenFasesControl ) {
+                timeNextAppear = -1.0f;
             }
+            
 
            
         }
@@ -119,6 +137,7 @@ public class timerZone : MonoBehaviour
             case 1://move
                 pointCentralMandala.GetComponent<PointCentralMandala>().allowAbsorv = false;
                 ParticlesDoneAbosorving = false;
+                timeBetweenFasesControl = false;
                 break;
             case 2://activating circles
                 controlminiMoveZone = false;
