@@ -129,6 +129,7 @@ public class timerZone : MonoBehaviour
 
         switch (cual) {
             case 0://absorv
+                ControlWhichZone = 2;
                 pointCentralMandala.GetComponent<PointCentralMandala>().allowAbsorv = true;
                 //deactivateZonesMove();
                 timeNextAppear = -1.0f;
@@ -153,10 +154,10 @@ public class timerZone : MonoBehaviour
 
         ParticleSystem.ColorOverLifetimeModule temp = zoneList[0].transform.Find("derechaZone").GetComponent<zoneManager>().AffectedParticles.gameObject.GetComponent<ParticleSystem>().colorOverLifetime;
 
-        ParticleSystem.MinMaxGradient tempColor = temp.color;
-
+        ParticleSystem.MinMaxGradient colorNormal = temp.color;
+        ParticleSystem.MinMaxGradient colorNotouch = zoneList[0].transform.Find("derechaZone").GetComponent<zoneManager>().GradientColorMove;
         for (int i = 0; i < zoneListMove.Count;i++) {
-            zoneListMove[i].GetComponent<MoveZone>().ChangeColorTo(tempColor);
+            zoneListMove[i].GetComponent<MoveZone>().ChangeColorTo(colorNormal, colorNotouch);
             zoneListMove[i].GetComponent<MoveZone>().initMoveZone();
             
         }
@@ -173,14 +174,26 @@ public class timerZone : MonoBehaviour
             Transform minizone1 = zoneList[i].transform.Find("MiniMoveZone1");
             Transform minizone2 = zoneList[i].transform.Find("MiniMoveZone2");
             Transform minizone3 = zoneList[i].transform.Find("MiniMoveZone3");
-            minizone1.gameObject.GetComponent<MoveZone>().ChangeColorTo(tempColor);
-            minizone2.gameObject.GetComponent<MoveZone>().ChangeColorTo(tempColor);
-            minizone3.gameObject.GetComponent<MoveZone>().ChangeColorTo(tempColor);
-            minizone1.gameObject.GetComponent<MoveZone>().initMoveZone();
-             minizone2.gameObject.GetComponent<MoveZone>().initMoveZone();
-             minizone3.gameObject.GetComponent<MoveZone>().initMoveZone();
-            
+            if (minizone1.gameObject.GetComponent<MoveZone>().isActiveAndEnabled) {
+                Debug.Log("Entro moveZone activate");
+                minizone1.gameObject.GetComponent<MoveZone>().ChangeColorTo(tempColor, tempColor);
+                minizone2.gameObject.GetComponent<MoveZone>().ChangeColorTo(tempColor, tempColor);
+                minizone3.gameObject.GetComponent<MoveZone>().ChangeColorTo(tempColor, tempColor);
+                minizone1.gameObject.GetComponent<MoveZone>().initMoveZone();
+                minizone2.gameObject.GetComponent<MoveZone>().initMoveZone();
+                minizone3.gameObject.GetComponent<MoveZone>().initMoveZone();
+            }
 
+            if (minizone1.gameObject.GetComponent<miniRiverZone>().isActiveAndEnabled) {
+                Debug.Log("Entro miniRiverZone activate");
+                minizone1.gameObject.GetComponent<miniRiverZone>().ChangeColorTo(tempColor, tempColor);
+                minizone2.gameObject.GetComponent<miniRiverZone>().ChangeColorTo(tempColor, tempColor);
+                minizone3.gameObject.GetComponent<miniRiverZone>().ChangeColorTo(tempColor, tempColor);
+                minizone1.gameObject.GetComponent<miniRiverZone>().PlayRiver();
+                minizone2.gameObject.GetComponent<miniRiverZone>().PlayRiver();
+                minizone3.gameObject.GetComponent<miniRiverZone>().PlayRiver();
+            }
+          
         }
  
     }
@@ -308,9 +321,24 @@ public class timerZone : MonoBehaviour
             Transform minizone1= zoneList[i].transform.Find("MiniMoveZone1");
             Transform minizone2 = zoneList[i].transform.Find("MiniMoveZone2");
             Transform minizone3 = zoneList[i].transform.Find("MiniMoveZone3");
-            bool inPos1 = minizone1.gameObject.GetComponent<MoveZone>().isInPosition();
-            bool inPos2 = minizone2.gameObject.GetComponent<MoveZone>().isInPosition();
-            bool inPos3 = minizone3.gameObject.GetComponent<MoveZone>().isInPosition();
+            bool inPos1=false;
+            bool inPos2 = false;
+            bool inPos3 = false;
+            if (minizone1.gameObject.GetComponent<MoveZone>().isActiveAndEnabled) {
+                Debug.Log("Entro movezone doneMoving:");
+                inPos1 = minizone1.gameObject.GetComponent<MoveZone>().isInPosition();
+                inPos2 = minizone2.gameObject.GetComponent<MoveZone>().isInPosition();
+                inPos3 = minizone3.gameObject.GetComponent<MoveZone>().isInPosition();
+            }
+
+            if (minizone1.gameObject.GetComponent<miniRiverZone>().isActiveAndEnabled)
+            {
+                Debug.Log("Entro miniRiverZone doneMoving:");
+                inPos1 = minizone1.gameObject.GetComponent<miniRiverZone>().movingDone();
+                inPos2 = minizone2.gameObject.GetComponent<miniRiverZone>().movingDone();
+                inPos3 = minizone3.gameObject.GetComponent<miniRiverZone>().movingDone();
+            }
+
             if (inPos1 && inPos2 && inPos3)
             {
                 control = control + 1;
@@ -320,6 +348,7 @@ public class timerZone : MonoBehaviour
 
         if (control == zoneListMove.Count)
         {
+            Debug.Log("Entro en control true");
             return true;
         }
         else
@@ -485,7 +514,8 @@ public class timerZone : MonoBehaviour
     void activateZones() {
         Transform internalZone = null;
         ChangeZone();
-        Gradient colorActual = mandalamanager.instance.switchColor();
+        Gradient colorActual = mandalamanager.instance.switchColor(); 
+         Gradient colorActualMove = mandalamanager.instance.switchColorMove();
         for (int i = 0; i < zoneList.Count; i++)
         {
             //int result = Random.Range(0, 3);
@@ -508,7 +538,7 @@ public class timerZone : MonoBehaviour
             
             if (internalZone != null)
             {
-                internalZone.GetComponent<zoneManager>().ChangeColorTo(colorActual);
+                internalZone.GetComponent<zoneManager>().ChangeColorTo(colorActual, colorActualMove);
                 internalZone.GetComponent<zoneManager>().activateZone();
                 
                 zoneListActive.Add(internalZone);

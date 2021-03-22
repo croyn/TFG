@@ -45,6 +45,8 @@ public class collisionMovingZone : MonoBehaviour
             ParticleSystem.EmissionModule tempEmisionModule2 = affectectParticles2.gameObject.GetComponent<ParticleSystem>().emission;
             tempEmisionModule2.rateOverTime = 800;
             //affectectParticles.Stop();*/
+            ParticleSystem.ColorOverLifetimeModule temp = affectectParticles.gameObject.GetComponent<ParticleSystem>().colorOverLifetime;
+            temp.color = gameObject.transform.parent.GetComponent<MoveZone>().colorTouch;
             affectectParticles.Play();
 
             //affectectParticles2.Play();
@@ -65,6 +67,9 @@ public class collisionMovingZone : MonoBehaviour
             tempMainModule.maxParticles = 10000;
             ParticleSystem.EmissionModule tempEmisionModule=affectectParticles.gameObject.GetComponent<ParticleSystem>().emission;
             tempEmisionModule.rateOverTime = 200;
+           
+           ParticleSystem.ColorOverLifetimeModule temp = affectectParticles.gameObject.GetComponent<ParticleSystem>().colorOverLifetime;
+           temp.color=gameObject.transform.parent.GetComponent<MoveZone>().colorNoTouch;
             //affectectParticles.Stop();
 
            /* ParticleSystem.MainModule tempMainModule2 = affectectParticles2.gameObject.GetComponent<ParticleSystem>().main;

@@ -15,6 +15,7 @@ public class zoneManager : MonoBehaviour
 
     private float timeExplosion = 0.0f;
     public Gradient GradientColor;
+    public Gradient GradientColorMove;
     // Transform cache
     private Transform m_rTransform = null;
     // Array to store particles info
@@ -194,12 +195,15 @@ public class zoneManager : MonoBehaviour
 
     }
 
-    public void ChangeColorTo(Gradient color) {
+    public void ChangeColorTo(Gradient color, Gradient color2) {
 
         ParticleSystem.ColorOverLifetimeModule temp = positionParticles.gameObject.GetComponent<ParticleSystem>().colorOverLifetime;
         temp.color = color;
         ParticleSystem.ColorOverLifetimeModule temp2 = AffectedParticles.gameObject.GetComponent<ParticleSystem>().colorOverLifetime;
         temp2.color = color;
+
+        GradientColorMove = color2;
+
     }
 
 

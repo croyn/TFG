@@ -11,7 +11,8 @@ public class MoveZone : MonoBehaviour
     public ParticleSystem affectectParticles2;
     private bool inPosition = false;
     public float velocity;
-    public Gradient color;
+    public ParticleSystem.MinMaxGradient colorTouch;
+    public ParticleSystem.MinMaxGradient colorNoTouch;
     public bool allowMoving;
     // Start is called before the first frame update
     void Start()
@@ -98,22 +99,30 @@ public class MoveZone : MonoBehaviour
         return inPosition;
     }
 
-    public void ChangeColorTo(ParticleSystem.MinMaxGradient color)
+    public void ChangeColorTo(ParticleSystem.MinMaxGradient colorTouchfun, ParticleSystem.MinMaxGradient colorNoTouchfun)
     {
         if (affectectParticles != null)
         {
+
             ParticleSystem.ColorOverLifetimeModule temp = affectectParticles.gameObject.GetComponent<ParticleSystem>().colorOverLifetime;
-            temp.color = color;
+
+            colorTouch = colorTouchfun;
+            colorNoTouch = colorNoTouchfun;
+            temp.color = colorNoTouchfun;
+
+
         }
      
         if (affectectParticles2 != null)
         {
             ParticleSystem.ColorOverLifetimeModule temp2 = affectectParticles2.gameObject.GetComponent<ParticleSystem>().colorOverLifetime;
-            temp2.color = color;
+            temp2.color = colorNoTouchfun;
         }
 
         
     }
 
+
+ 
    
 }

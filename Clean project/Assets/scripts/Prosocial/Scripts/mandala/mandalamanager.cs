@@ -13,8 +13,11 @@ public class mandalamanager : MonoBehaviour
     public int layer = 0;
     public int interLayer = 0;
     public Gradient color1;
+    public Gradient color1Move;
     public Gradient color2;
+    public Gradient color2Move;
     public Gradient color3;
+    public Gradient color3Move;
     public Color colorSolid1;
     public Color colorSolid2;
     public Color colorSolid3;
@@ -61,7 +64,24 @@ public class mandalamanager : MonoBehaviour
         }
         return actualColor;
     }
+    public Gradient switchColorMove()
+    {
+        switch (layer)
+        {
+            case 0:
+                actualColor = color1Move;
+                break;
+            case 1:
+                actualColor = color2Move;
+                break;
+            case 2:
+                actualColor = color3Move;
+                break;
 
+
+        }
+        return actualColor;
+    }
 
     public GameObject givePointFronTriangle()
     {

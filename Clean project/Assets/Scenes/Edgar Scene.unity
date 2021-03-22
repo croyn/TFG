@@ -8229,6 +8229,35 @@ MonoBehaviour:
     m_Mode: 0
     m_NumColorKeys: 7
     m_NumAlphaKeys: 2
+  color1Move:
+    serializedVersion: 2
+    key0: {r: 1, g: 0.7607843, b: 0, a: 1}
+    key1: {r: 1, g: 0.7607843, b: 0, a: 1}
+    key2: {r: 0.9528302, g: 0.8601349, b: 0.57978815, a: 0}
+    key3: {r: 1, g: 0.8126144, b: 0.21666667, a: 0}
+    key4: {r: 1, g: 0.7607843, b: 0, a: 0}
+    key5: {r: 1, g: 0.7607843, b: 0, a: 0}
+    key6: {r: 1, g: 0.7607843, b: 0, a: 0}
+    key7: {r: 0, g: 0, b: 0, a: 0}
+    ctime0: 0
+    ctime1: 14649
+    ctime2: 26021
+    ctime3: 36044
+    ctime4: 59560
+    ctime5: 59560
+    ctime6: 59560
+    ctime7: 0
+    atime0: 0
+    atime1: 65535
+    atime2: 0
+    atime3: 0
+    atime4: 0
+    atime5: 0
+    atime6: 0
+    atime7: 0
+    m_Mode: 0
+    m_NumColorKeys: 5
+    m_NumAlphaKeys: 2
   color2:
     serializedVersion: 2
     key0: {r: 0.36862746, g: 0.8862745, b: 0, a: 1}
@@ -8258,6 +8287,35 @@ MonoBehaviour:
     m_Mode: 0
     m_NumColorKeys: 7
     m_NumAlphaKeys: 2
+  color2Move:
+    serializedVersion: 2
+    key0: {r: 0.36862746, g: 0.8862745, b: 0, a: 1}
+    key1: {r: 0.36862746, g: 0.8862745, b: 0, a: 1}
+    key2: {r: 0.7205242, g: 0.990566, b: 0.62144, a: 0}
+    key3: {r: 0.36862746, g: 0.8862745, b: 0, a: 0}
+    key4: {r: 0.36862746, g: 0.8862745, b: 0, a: 0}
+    key5: {r: 0.36862746, g: 0.8862745, b: 0, a: 0}
+    key6: {r: 0.36862746, g: 0.8862745, b: 0, a: 0}
+    key7: {r: 0, g: 0, b: 0, a: 0}
+    ctime0: 0
+    ctime1: 19275
+    ctime2: 26021
+    ctime3: 36044
+    ctime4: 59560
+    ctime5: 59560
+    ctime6: 59560
+    ctime7: 0
+    atime0: 0
+    atime1: 65535
+    atime2: 0
+    atime3: 0
+    atime4: 0
+    atime5: 0
+    atime6: 0
+    atime7: 0
+    m_Mode: 0
+    m_NumColorKeys: 5
+    m_NumAlphaKeys: 2
   color3:
     serializedVersion: 2
     key0: {r: 0.46666667, g: 0.011764706, b: 0.6784314, a: 1}
@@ -8286,6 +8344,35 @@ MonoBehaviour:
     atime7: 0
     m_Mode: 0
     m_NumColorKeys: 7
+    m_NumAlphaKeys: 2
+  color3Move:
+    serializedVersion: 2
+    key0: {r: 0.46666667, g: 0.011764706, b: 0.6784314, a: 1}
+    key1: {r: 0.46666667, g: 0.011764706, b: 0.6784314, a: 1}
+    key2: {r: 0.5849056, g: 0.013794942, b: 0.45590687, a: 0}
+    key3: {r: 0.46666667, g: 0.011764706, b: 0.6784314, a: 0}
+    key4: {r: 0.46666667, g: 0.011764706, b: 0.6784314, a: 0}
+    key5: {r: 0.46666667, g: 0.011764706, b: 0.6784314, a: 0}
+    key6: {r: 0.46666667, g: 0.011764706, b: 0.6784314, a: 0}
+    key7: {r: 0, g: 0, b: 0, a: 0}
+    ctime0: 0
+    ctime1: 19275
+    ctime2: 26021
+    ctime3: 36044
+    ctime4: 59560
+    ctime5: 59560
+    ctime6: 59560
+    ctime7: 0
+    atime0: 0
+    atime1: 65535
+    atime2: 0
+    atime3: 0
+    atime4: 0
+    atime5: 0
+    atime6: 0
+    atime7: 0
+    m_Mode: 0
+    m_NumColorKeys: 5
     m_NumAlphaKeys: 2
   colorSolid1: {r: 1, g: 0.7607843, b: 0, a: 0}
   colorSolid2: {r: 0.36862746, g: 0.8862745, b: 0, a: 0}
@@ -15826,6 +15913,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4990374868091926092, guid: 8e13519e67dc7424191ced10949a2cb5,
+        type: 3}
+      propertyPath: cualCiruclo
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5576526629708123686, guid: 8e13519e67dc7424191ced10949a2cb5,
         type: 3}
       propertyPath: ShapeModule.m_Rotation.y
@@ -15940,6 +16032,16 @@ PrefabInstance:
         type: 3}
       propertyPath: SizeModule.enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6111523238287948134, guid: 8e13519e67dc7424191ced10949a2cb5,
+        type: 3}
+      propertyPath: cualCiruclo
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6558057225208079295, guid: 8e13519e67dc7424191ced10949a2cb5,
+        type: 3}
+      propertyPath: cualCiruclo
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6995161480634788098, guid: 8e13519e67dc7424191ced10949a2cb5,
         type: 3}
@@ -21462,6 +21564,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -6.29
       objectReference: {fileID: 0}
+    - target: {fileID: 4990374868091926092, guid: 8e13519e67dc7424191ced10949a2cb5,
+        type: 3}
+      propertyPath: cualCiruclo
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 5576526629708123686, guid: 8e13519e67dc7424191ced10949a2cb5,
         type: 3}
       propertyPath: ShapeModule.m_Rotation.y
@@ -21656,6 +21763,16 @@ PrefabInstance:
         type: 3}
       propertyPath: ColorModule.enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6111523238287948134, guid: 8e13519e67dc7424191ced10949a2cb5,
+        type: 3}
+      propertyPath: cualCiruclo
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6558057225208079295, guid: 8e13519e67dc7424191ced10949a2cb5,
+        type: 3}
+      propertyPath: cualCiruclo
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6995161480634788098, guid: 8e13519e67dc7424191ced10949a2cb5,
         type: 3}
@@ -23340,6 +23457,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4990374868091926092, guid: 8e13519e67dc7424191ced10949a2cb5,
+        type: 3}
+      propertyPath: cualCiruclo
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 5576526629708123686, guid: 8e13519e67dc7424191ced10949a2cb5,
         type: 3}
       propertyPath: ShapeModule.m_Rotation.y
@@ -23444,6 +23566,16 @@ PrefabInstance:
         type: 3}
       propertyPath: ShapeModule.m_Rotation.y
       value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 6111523238287948134, guid: 8e13519e67dc7424191ced10949a2cb5,
+        type: 3}
+      propertyPath: cualCiruclo
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6558057225208079295, guid: 8e13519e67dc7424191ced10949a2cb5,
+        type: 3}
+      propertyPath: cualCiruclo
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6995161480634788098, guid: 8e13519e67dc7424191ced10949a2cb5,
         type: 3}
@@ -24413,6 +24545,35 @@ MonoBehaviour:
     m_Mode: 0
     m_NumColorKeys: 2
     m_NumAlphaKeys: 2
+  color1Move:
+    serializedVersion: 2
+    key0: {r: 1, g: 1, b: 1, a: 1}
+    key1: {r: 1, g: 1, b: 1, a: 1}
+    key2: {r: 0, g: 0, b: 0, a: 0}
+    key3: {r: 0, g: 0, b: 0, a: 0}
+    key4: {r: 0, g: 0, b: 0, a: 0}
+    key5: {r: 0, g: 0, b: 0, a: 0}
+    key6: {r: 0, g: 0, b: 0, a: 0}
+    key7: {r: 0, g: 0, b: 0, a: 0}
+    ctime0: 0
+    ctime1: 65535
+    ctime2: 0
+    ctime3: 0
+    ctime4: 0
+    ctime5: 0
+    ctime6: 0
+    ctime7: 0
+    atime0: 0
+    atime1: 65535
+    atime2: 0
+    atime3: 0
+    atime4: 0
+    atime5: 0
+    atime6: 0
+    atime7: 0
+    m_Mode: 0
+    m_NumColorKeys: 2
+    m_NumAlphaKeys: 2
   color2:
     serializedVersion: 2
     key0: {r: 1, g: 1, b: 1, a: 1}
@@ -24442,7 +24603,65 @@ MonoBehaviour:
     m_Mode: 0
     m_NumColorKeys: 2
     m_NumAlphaKeys: 2
+  color2Move:
+    serializedVersion: 2
+    key0: {r: 1, g: 1, b: 1, a: 1}
+    key1: {r: 1, g: 1, b: 1, a: 1}
+    key2: {r: 0, g: 0, b: 0, a: 0}
+    key3: {r: 0, g: 0, b: 0, a: 0}
+    key4: {r: 0, g: 0, b: 0, a: 0}
+    key5: {r: 0, g: 0, b: 0, a: 0}
+    key6: {r: 0, g: 0, b: 0, a: 0}
+    key7: {r: 0, g: 0, b: 0, a: 0}
+    ctime0: 0
+    ctime1: 65535
+    ctime2: 0
+    ctime3: 0
+    ctime4: 0
+    ctime5: 0
+    ctime6: 0
+    ctime7: 0
+    atime0: 0
+    atime1: 65535
+    atime2: 0
+    atime3: 0
+    atime4: 0
+    atime5: 0
+    atime6: 0
+    atime7: 0
+    m_Mode: 0
+    m_NumColorKeys: 2
+    m_NumAlphaKeys: 2
   color3:
+    serializedVersion: 2
+    key0: {r: 1, g: 1, b: 1, a: 1}
+    key1: {r: 1, g: 1, b: 1, a: 1}
+    key2: {r: 0, g: 0, b: 0, a: 0}
+    key3: {r: 0, g: 0, b: 0, a: 0}
+    key4: {r: 0, g: 0, b: 0, a: 0}
+    key5: {r: 0, g: 0, b: 0, a: 0}
+    key6: {r: 0, g: 0, b: 0, a: 0}
+    key7: {r: 0, g: 0, b: 0, a: 0}
+    ctime0: 0
+    ctime1: 65535
+    ctime2: 0
+    ctime3: 0
+    ctime4: 0
+    ctime5: 0
+    ctime6: 0
+    ctime7: 0
+    atime0: 0
+    atime1: 65535
+    atime2: 0
+    atime3: 0
+    atime4: 0
+    atime5: 0
+    atime6: 0
+    atime7: 0
+    m_Mode: 0
+    m_NumColorKeys: 2
+    m_NumAlphaKeys: 2
+  color3Move:
     serializedVersion: 2
     key0: {r: 1, g: 1, b: 1, a: 1}
     key1: {r: 1, g: 1, b: 1, a: 1}
