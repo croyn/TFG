@@ -1,0 +1,932 @@
+Using pre-set license
+Built from '2020.2/release' branch; Version is '2020.2.4f1 (becced5a802b) revision 12504301'; Using compiler version '192528614'; Build Type 'Release'
+OS: 'Windows 10 Enterprise; OS build 19041.610; Version 2004; 64bit' Language: 'ca' Physical Memory: 16276 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 0
+
+ COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity\Hub\Editor\2020.2.4f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker1
+-projectPath
+C:/Users/u150283/Desktop/Clean project
+-logFile
+Logs/AssetImportWorker1.log
+-srvPort
+61401
+Successfully changed project path to: C:/Users/u150283/Desktop/Clean project
+C:/Users/u150283/Desktop/Clean project
+Using Asset Import Pipeline V2.
+Refreshing native plugins compatible for Editor in 214.85 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2020.2.4f1 (becced5a802b)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2020.2.4f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/Users/u150283/Desktop/Clean project/Assets
+GfxDevice: creating device client; threaded=0
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce GTX 960 (ID=0x1401)
+    Vendor:   
+    VRAM:     2007 MB
+    Driver:   27.21.14.6109
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2020.2.4f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2020.2.4f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/2020.2.4f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56480
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.2.4f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.005964 seconds.
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 162.75 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  5.758 seconds
+Platform modules already initialized, skipping
+Registering precompiled user dll's ...
+Registered in 0.011222 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.80 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  5.110 seconds
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.33 seconds
+Refreshing native plugins compatible for Editor in 1.28 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1445 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 140.1 MB.
+System memory in use after: 140.2 MB.
+
+Unloading 32 unused Assets to reduce memory usage. Loaded Objects now: 1884.
+Total: 16.310300 ms (FindLiveObjects: 0.293300 ms CreateObjectMapping: 0.174800 ms MarkObjects: 15.691900 ms  DeleteObjects: 0.148200 ms)
+
+========================================================================
+Received Import Request.
+  path: Assets/scripts/Prosocial/prefabs/TriangleEqui.prefab
+  artifactKey: Guid(fb7b18d56799eeb47aa878509c6fbe65) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/scripts/Prosocial/prefabs/TriangleEqui.prefab using Guid(fb7b18d56799eeb47aa878509c6fbe65) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '59cecd4632469c70192b6cf757683fa3') in 0.771985 seconds
+  Import took 0.796570 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000291 seconds.
+  path: Assets/scripts/Prosocial/prefabs/ZoneMove.prefab
+  artifactKey: Guid(48328641487b8c64d80905feb1aa2985) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/scripts/Prosocial/prefabs/ZoneMove.prefab using Guid(48328641487b8c64d80905feb1aa2985) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fe5af6aba985f83be8462c47963e828f') in 0.172385 seconds
+  Import took 0.202046 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000273 seconds.
+  path: Assets/scripts/Prosocial/prefabs/ParteCirculo (1).prefab
+  artifactKey: Guid(9965c408ead389941bf306d4e85b9904) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/scripts/Prosocial/prefabs/ParteCirculo (1).prefab using Guid(9965c408ead389941bf306d4e85b9904) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '158635eddac34be6f752b04c7d5a4cb7') in 0.086309 seconds
+  Import took 0.095570 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000274 seconds.
+  path: Assets/scripts/Prosocial/prefabs/TrianguloEquiLargo.prefab
+  artifactKey: Guid(c121b95205fdda54b974999d82f222bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/scripts/Prosocial/prefabs/TrianguloEquiLargo.prefab using Guid(c121b95205fdda54b974999d82f222bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8f85fb18dc6446236a4cb534dcc267e5') in 0.145804 seconds
+  Import took 0.170282 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000513 seconds.
+  path: Assets/scripts/Prosocial/prefabs/LineaPrefab.prefab
+  artifactKey: Guid(29b95d206f653d942925ef15a7e22a0b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/scripts/Prosocial/prefabs/LineaPrefab.prefab using Guid(29b95d206f653d942925ef15a7e22a0b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'da3c56e1554928c55fae96ab97960510') in 0.050052 seconds
+  Import took 0.075543 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001329 seconds.
+  path: Assets/scripts/Prosocial/prefabs/Objective.prefab
+  artifactKey: Guid(33f5e4c299f05b1409a5215201e25b47) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/scripts/Prosocial/prefabs/Objective.prefab using Guid(33f5e4c299f05b1409a5215201e25b47) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7ffc46153a80d521418fb7751f7c99ac') in 0.094255 seconds
+  Import took 0.111735 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000337 seconds.
+  path: Assets/scripts/Prosocial/prefabs/LineaPrefab.prefab
+  artifactKey: Guid(29b95d206f653d942925ef15a7e22a0b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/scripts/Prosocial/prefabs/LineaPrefab.prefab using Guid(29b95d206f653d942925ef15a7e22a0b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'da3c56e1554928c55fae96ab97960510') in 0.029109 seconds
+  Import took 0.050306 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001227 seconds.
+  path: Assets/scripts/Prosocial/prefabs/Move_0.prefab
+  artifactKey: Guid(473c8af9cb2f9694499915660d38ad78) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/scripts/Prosocial/prefabs/Move_0.prefab using Guid(473c8af9cb2f9694499915660d38ad78) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '41f5a916530cf4d6cff260fb248fb909') in 0.622318 seconds
+  Import took 0.639328 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000066 seconds.
+  path: Assets/scripts/Prosocial/prefabs/ZoneCatchParticles.prefab
+  artifactKey: Guid(8e13519e67dc7424191ced10949a2cb5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/scripts/Prosocial/prefabs/ZoneCatchParticles.prefab using Guid(8e13519e67dc7424191ced10949a2cb5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '85b913b9cc63113a6cc9e7659dfcbc14') in 0.163198 seconds
+  Import took 0.185432 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000303 seconds.
+  path: Assets/scripts/Prosocial/prefabs/MoveZone.prefab
+  artifactKey: Guid(dd712c50118a1ed488a209b05bd741b8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/scripts/Prosocial/prefabs/MoveZone.prefab using Guid(dd712c50118a1ed488a209b05bd741b8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9f4ceccf32b334b98974dbcfc080d621') in 0.039339 seconds
+  Import took 0.159642 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000275 seconds.
+  path: Assets/scripts/Prosocial/prefabs/TrianguloPeque (1).prefab
+  artifactKey: Guid(e010552d86c1d2845a421c334408c939) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/scripts/Prosocial/prefabs/TrianguloPeque (1).prefab using Guid(e010552d86c1d2845a421c334408c939) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd574b3e9bfeadd97c319738b0cf4f0f2') in 0.105823 seconds
+  Import took 0.126449 seconds .
+
+========================================================================
+Received Prepare
+Refreshing native plugins compatible for Editor in 16.04 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 22 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 115.8 MB.
+System memory in use after: 115.9 MB.
+
+Unloading 23 unused Assets to reduce memory usage. Loaded Objects now: 1893.
+Total: 3.281300 ms (FindLiveObjects: 0.286300 ms CreateObjectMapping: 0.069100 ms MarkObjects: 2.892900 ms  DeleteObjects: 0.031500 ms)
+
+========================================================================
+Received Prepare
+Refreshing native plugins compatible for Editor in 9.52 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 22 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 115.8 MB.
+System memory in use after: 115.9 MB.
+
+Unloading 22 unused Assets to reduce memory usage. Loaded Objects now: 1893.
+Total: 5.963500 ms (FindLiveObjects: 0.365300 ms CreateObjectMapping: 0.174400 ms MarkObjects: 5.389300 ms  DeleteObjects: 0.032400 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 433.967126 seconds.
+  path: Assets/scripts/Prosocial/Materials/BolasTriangulos.mat
+  artifactKey: Guid(e09329e649447e049a13020aac03053a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/scripts/Prosocial/Materials/BolasTriangulos.mat using Guid(e09329e649447e049a13020aac03053a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd76ad960c2e643b573dbb7c892666141') in 0.150769 seconds
+  Import took 0.160622 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000476 seconds.
+  path: Assets/scripts/Prosocial/Materials/Circle.png
+  artifactKey: Guid(66902715c91ae3147805beaad5289128) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/scripts/Prosocial/Materials/Circle.png using Guid(66902715c91ae3147805beaad5289128) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5d9f20c311f3d13af7bafb54e1e5bcf4') in 0.061209 seconds
+  Import took 0.066064 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001175 seconds.
+  path: Assets/scripts/Prosocial/Materials/ObjectiveMandala.mat
+  artifactKey: Guid(b09bd0aabdb0db04d8345dec21168f59) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/scripts/Prosocial/Materials/ObjectiveMandala.mat using Guid(b09bd0aabdb0db04d8345dec21168f59) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4a570bfa95f5c38e72d4e00818adbde6') in 0.054762 seconds
+  Import took 0.069330 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000285 seconds.
+  path: Assets/scripts/Prosocial/Materials/Circle_Opt2.png
+  artifactKey: Guid(90fe046bbce93a74e8dd005ef4fa5593) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/scripts/Prosocial/Materials/Circle_Opt2.png using Guid(90fe046bbce93a74e8dd005ef4fa5593) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2fcf320a44e8f9fac51a03d6fd26558f') in 0.043004 seconds
+  Import took 0.047504 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000220 seconds.
+  path: Assets/scripts/Prosocial/Materials/Circle_Opt3.png
+  artifactKey: Guid(fee6bd1658ec3424dbdb89e72145dce5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/scripts/Prosocial/Materials/Circle_Opt3.png using Guid(fee6bd1658ec3424dbdb89e72145dce5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '91e4b4a6bd9fbda393eac729e29f675a') in 0.040605 seconds
+  Import took 0.045657 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000237 seconds.
+  path: Assets/scripts/Prosocial/Materials/circle_op1.png
+  artifactKey: Guid(a1bba83cd37fecc4699f1c4a892e80f5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/scripts/Prosocial/Materials/circle_op1.png using Guid(a1bba83cd37fecc4699f1c4a892e80f5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '99cf55941809be796d359244e4cd8e9c') in 0.043274 seconds
+  Import took 0.049484 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 23.551685 seconds.
+  path: Assets/scripts/Prosocial/Materials/Circle_opt4.png
+  artifactKey: Guid(cde092a61ca9939418cbca1bafbc2b8d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/scripts/Prosocial/Materials/Circle_opt4.png using Guid(cde092a61ca9939418cbca1bafbc2b8d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '78f685e04923b399ceef0a9198a67186') in 0.062315 seconds
+  Import took 0.068060 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 3.394955 seconds.
+  path: Assets/scripts/Prosocial/Materials/Circle_opt5.png
+  artifactKey: Guid(1066063b7654bea42a7c9dcf7583e929) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/scripts/Prosocial/Materials/Circle_opt5.png using Guid(1066063b7654bea42a7c9dcf7583e929) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd4bf715d9d43faf1449679f40440210a') in 0.031696 seconds
+  Import took 0.037235 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 78.360879 seconds.
+  path: Assets/scripts/Prosocial/Materials/Materials
+  artifactKey: Guid(a9ee614f949db384f952b5308f406e2d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/scripts/Prosocial/Materials/Materials using Guid(a9ee614f949db384f952b5308f406e2d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e712d3554c39973b370629abdc8e9fdd') in 0.016082 seconds
+  Import took 0.022462 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.620445 seconds.
+  path: Assets/scripts/Prosocial/Materials/Materials/Circle_opt5.mat
+  artifactKey: Guid(6b289d4f2e876304b9bd093dee563429) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/scripts/Prosocial/Materials/Materials/Circle_opt5.mat using Guid(6b289d4f2e876304b9bd093dee563429) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2a39f7916a250b56c8f1bf8a7460bbdf') in 0.103653 seconds
+  Import took 0.108766 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.006417 seconds.
+  path: Assets/scripts/Prosocial/Materials/Materials/Circle.mat
+  artifactKey: Guid(c65b6d108870ec7429d159bde1a708dd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/scripts/Prosocial/Materials/Materials/Circle.mat using Guid(c65b6d108870ec7429d159bde1a708dd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3f304f9de998297ed0642dd8190bd291') in 0.580277 seconds
+  Import took 0.589268 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.443863 seconds.
+  path: Assets/scripts/Prosocial/Materials/no using
+  artifactKey: Guid(efc7c7119293afb4f901919daf1ac2c9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/scripts/Prosocial/Materials/no using using Guid(efc7c7119293afb4f901919daf1ac2c9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd0327332486ab9596fb771ca366468fa') in 0.015305 seconds
+  Import took 0.021118 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.060604 seconds.
+  path: Assets/scripts/Prosocial/Materials/Materials/Circle_Opt2.mat
+  artifactKey: Guid(6da37c627083abc4caabce1d204dbcae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/scripts/Prosocial/Materials/Materials/Circle_Opt2.mat using Guid(6da37c627083abc4caabce1d204dbcae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e43fb2d8439b26832390c4cdd0ea3883') in 8.556776 seconds
+  Import took 8.562801 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 5.186626 seconds.
+  path: Assets/scripts/Prosocial/Materials/Materials/circle_op1.mat
+  artifactKey: Guid(5cc804f6846dc62479251cc470d72783) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/scripts/Prosocial/Materials/Materials/circle_op1.mat using Guid(5cc804f6846dc62479251cc470d72783) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '42b06cce80cfb75372749caeec0e8c5b') in 5.604190 seconds
+  Import took 5.609701 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000567 seconds.
+  path: Assets/scripts/Prosocial/Materials/Materials/Circle_opt4.mat
+  artifactKey: Guid(29a3494365fe35a4889e74456708d005) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/scripts/Prosocial/Materials/Materials/Circle_opt4.mat using Guid(29a3494365fe35a4889e74456708d005) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dbc2f1451af51e6f58adbc0dd0b63f90') in 0.080118 seconds
+  Import took 0.093497 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001623 seconds.
+  path: Assets/scripts/Prosocial/Materials/Materials/circle_op1.mat
+  artifactKey: Guid(5cc804f6846dc62479251cc470d72783) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/scripts/Prosocial/Materials/Materials/circle_op1.mat using Guid(5cc804f6846dc62479251cc470d72783) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '42b06cce80cfb75372749caeec0e8c5b') in 0.075112 seconds
+  Import took 0.082380 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000077 seconds.
+  path: Assets/scripts/Prosocial/Materials/Materials/Circle_Opt3.mat
+  artifactKey: Guid(6b72cd39894e0634d92eb89fc3f467f5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/scripts/Prosocial/Materials/Materials/Circle_Opt3.mat using Guid(6b72cd39894e0634d92eb89fc3f467f5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a359c4574f9a69aa6dfbfab56893d778') in 0.071021 seconds
+  Import took 0.105532 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 150.712597 seconds.
+  path: Assets/scripts/Prosocial/Materials/Materials/Circle_opt4.mat
+  artifactKey: Guid(29a3494365fe35a4889e74456708d005) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/scripts/Prosocial/Materials/Materials/Circle_opt4.mat using Guid(29a3494365fe35a4889e74456708d005) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '64403d1b9c1aa052295fdd75dec68c1e') in 13.090044 seconds
+  Import took 13.097886 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000265 seconds.
+  path: Assets/scripts/Prosocial/Materials/Materials/Circle_opt5.mat
+  artifactKey: Guid(6b289d4f2e876304b9bd093dee563429) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/scripts/Prosocial/Materials/Materials/Circle_opt5.mat using Guid(6b289d4f2e876304b9bd093dee563429) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '38fc4a4e5d1b8bbc8a79d5f62836d7ca') in 2.724608 seconds
+  Import took 2.729738 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.002138 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.76 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  6.183 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.84 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1439 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 143.6 MB.
+System memory in use after: 143.7 MB.
+
+Unloading 24 unused Assets to reduce memory usage. Loaded Objects now: 1930.
+Total: 3.124900 ms (FindLiveObjects: 0.262500 ms CreateObjectMapping: 0.080200 ms MarkObjects: 2.745800 ms  DeleteObjects: 0.034500 ms)
+
+========================================================================
+Received Prepare
+Refreshing native plugins compatible for Editor in 9.79 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 22 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 115.6 MB.
+System memory in use after: 115.7 MB.
+
+Unloading 22 unused Assets to reduce memory usage. Loaded Objects now: 1930.
+Total: 2.997000 ms (FindLiveObjects: 0.258800 ms CreateObjectMapping: 0.075700 ms MarkObjects: 2.632500 ms  DeleteObjects: 0.028400 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 953.777173 seconds.
+  path: Assets/scripts/Prosocial/prefabs/ZoneCatchParticles.prefab
+  artifactKey: Guid(8e13519e67dc7424191ced10949a2cb5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/scripts/Prosocial/prefabs/ZoneCatchParticles.prefab using Guid(8e13519e67dc7424191ced10949a2cb5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5e641b6491f17f651cda4cb5190fb1f8') in 0.176324 seconds
+  Import took 0.184190 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 13.389869 seconds.
+  path: Assets/scripts/Prosocial/prefabs/ZoneCatchParticles.prefab
+  artifactKey: Guid(8e13519e67dc7424191ced10949a2cb5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/scripts/Prosocial/prefabs/ZoneCatchParticles.prefab using Guid(8e13519e67dc7424191ced10949a2cb5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a428f2f2c6b010171909422f1035cfc3') in 0.064045 seconds
+  Import took 0.071593 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 2.767768 seconds.
+  path: Assets/scripts/Prosocial/prefabs/ZoneCatchParticles.prefab
+  artifactKey: Guid(8e13519e67dc7424191ced10949a2cb5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/scripts/Prosocial/prefabs/ZoneCatchParticles.prefab using Guid(8e13519e67dc7424191ced10949a2cb5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4b60896716f228d255e8c367c7d8f673') in 0.055829 seconds
+  Import took 0.062231 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 18.573522 seconds.
+  path: Assets/scripts/Prosocial/prefabs/ZoneCatchParticles.prefab
+  artifactKey: Guid(8e13519e67dc7424191ced10949a2cb5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/scripts/Prosocial/prefabs/ZoneCatchParticles.prefab using Guid(8e13519e67dc7424191ced10949a2cb5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '94c0d494154c94b315fcb0460c41791f') in 7.038598 seconds
+  Import took 7.050171 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 27.387653 seconds.
+  path: Assets/scripts/Prosocial/prefabs/ZoneCatchParticles.prefab
+  artifactKey: Guid(8e13519e67dc7424191ced10949a2cb5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/scripts/Prosocial/prefabs/ZoneCatchParticles.prefab using Guid(8e13519e67dc7424191ced10949a2cb5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '22a0a3b2c15cb6ec469fdbf5dfb6c0ae') in 18.152261 seconds
+  Import took 18.163109 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.289395 seconds.
+  path: Assets/scripts/Prosocial/prefabs/ZoneCatchParticles.prefab
+  artifactKey: Guid(8e13519e67dc7424191ced10949a2cb5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/scripts/Prosocial/prefabs/ZoneCatchParticles.prefab using Guid(8e13519e67dc7424191ced10949a2cb5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'de5b4bc96a131e705e7bee00f691b466') in 0.048913 seconds
+  Import took 0.055900 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 10.077798 seconds.
+  path: Assets/scripts/Prosocial/Materials
+  artifactKey: Guid(f1ea4846057723641a189556b4ec0588) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/scripts/Prosocial/Materials using Guid(f1ea4846057723641a189556b4ec0588) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '99b6420d55df7b5457a8dc76dde790db') in 0.008745 seconds
+  Import took 0.013794 seconds .
+
+========================================================================
+Received Prepare
+Refreshing native plugins compatible for Editor in 15.34 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 22 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 116.0 MB.
+System memory in use after: 116.1 MB.
+
+Unloading 23 unused Assets to reduce memory usage. Loaded Objects now: 1931.
+Total: 4.275200 ms (FindLiveObjects: 0.288400 ms CreateObjectMapping: 0.076200 ms MarkObjects: 3.865400 ms  DeleteObjects: 0.042000 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 631.575325 seconds.
+  path: Assets/scripts/Prosocial/Materials/Circle_opt4 1.png
+  artifactKey: Guid(946a07b893b770b40bbfaee77807aa61) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/scripts/Prosocial/Materials/Circle_opt4 1.png using Guid(946a07b893b770b40bbfaee77807aa61) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0a0c8714379ebd39faa12bc46f32fc0d') in 0.083551 seconds
+  Import took 0.092119 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 28.225760 seconds.
+  path: Assets/scripts/Prosocial/Materials/Materials/Circle_opt4 1.mat
+  artifactKey: Guid(b2574a8ab46f4cb47a2e6e38d17ccf96) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/scripts/Prosocial/Materials/Materials/Circle_opt4 1.mat using Guid(b2574a8ab46f4cb47a2e6e38d17ccf96) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd1b63531c76a1e98d360bd970dbf0a29') in 0.189457 seconds
+  Import took 0.197976 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 81.085041 seconds.
+  path: Assets/scripts/Prosocial/Materials/Materials/Circle_opt4 1.mat
+  artifactKey: Guid(b2574a8ab46f4cb47a2e6e38d17ccf96) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/scripts/Prosocial/Materials/Materials/Circle_opt4 1.mat using Guid(b2574a8ab46f4cb47a2e6e38d17ccf96) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5709ce068c232bfcdf0f3009ed7ac816') in 0.026382 seconds
+  Import took 0.042872 seconds .
+
+========================================================================
+Received Prepare
+Refreshing native plugins compatible for Editor in 12.68 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 22 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 116.2 MB.
+System memory in use after: 116.3 MB.
+
+Unloading 22 unused Assets to reduce memory usage. Loaded Objects now: 1931.
+Total: 7.715800 ms (FindLiveObjects: 0.271500 ms CreateObjectMapping: 0.073700 ms MarkObjects: 7.341400 ms  DeleteObjects: 0.027300 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.004476 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.81 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.643 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 1.03 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1439 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 143.7 MB.
+System memory in use after: 143.8 MB.
+
+Unloading 24 unused Assets to reduce memory usage. Loaded Objects now: 1933.
+Total: 5.198100 ms (FindLiveObjects: 0.740900 ms CreateObjectMapping: 0.094600 ms MarkObjects: 4.298900 ms  DeleteObjects: 0.060700 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 297.741786 seconds.
+  path: Assets/scripts/Prosocial/Materials/Materials/Circle_opt4 1.mat
+  artifactKey: Guid(b2574a8ab46f4cb47a2e6e38d17ccf96) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/scripts/Prosocial/Materials/Materials/Circle_opt4 1.mat using Guid(b2574a8ab46f4cb47a2e6e38d17ccf96) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b6b81ddb660b16e96a4d4e95ec59959f') in 9.197508 seconds
+  Import took 9.231774 seconds .
+
+========================================================================
+Received Prepare
+Refreshing native plugins compatible for Editor in 12.37 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 22 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 115.7 MB.
+System memory in use after: 115.8 MB.
+
+Unloading 22 unused Assets to reduce memory usage. Loaded Objects now: 1934.
+Total: 5.214700 ms (FindLiveObjects: 0.297800 ms CreateObjectMapping: 0.097200 ms MarkObjects: 4.785200 ms  DeleteObjects: 0.032600 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 131.052134 seconds.
+  path: Assets/scripts/Prosocial/Scripts
+  artifactKey: Guid(2eea62202d58134429a59baca9667ec2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/scripts/Prosocial/Scripts using Guid(2eea62202d58134429a59baca9667ec2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '05d35f13d6f307d8dda59d0b2cb7daf8') in 0.050261 seconds
+  Import took 0.061547 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 13.457311 seconds.
+  path: Assets/scripts/Prosocial/Scripts/rotateCircle.cs
+  artifactKey: Guid(21da50de6582340459c97201c5c0614a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/scripts/Prosocial/Scripts/rotateCircle.cs using Guid(21da50de6582340459c97201c5c0614a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b3e820ee002ade2bdef7b11d6772786d') in 0.471890 seconds
+  Import took 0.479899 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.003197 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 1.34 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  3.873 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.79 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1440 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 143.8 MB.
+System memory in use after: 143.9 MB.
+
+Unloading 24 unused Assets to reduce memory usage. Loaded Objects now: 1937.
+Total: 5.085800 ms (FindLiveObjects: 0.266400 ms CreateObjectMapping: 0.077500 ms MarkObjects: 4.706800 ms  DeleteObjects: 0.033000 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.015153 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.77 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  3.545 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 8.74 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1440 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 143.8 MB.
+System memory in use after: 143.9 MB.
+
+Unloading 24 unused Assets to reduce memory usage. Loaded Objects now: 1939.
+Total: 5.403600 ms (FindLiveObjects: 0.264900 ms CreateObjectMapping: 0.077400 ms MarkObjects: 5.000500 ms  DeleteObjects: 0.032700 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 277.523515 seconds.
+  path: Assets/scripts/Prosocial/prefabs/ZoneCatchParticles.prefab
+  artifactKey: Guid(8e13519e67dc7424191ced10949a2cb5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/scripts/Prosocial/prefabs/ZoneCatchParticles.prefab using Guid(8e13519e67dc7424191ced10949a2cb5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cde3da319f9ff4c724f6a1c5046888d9') in 0.191651 seconds
+  Import took 0.197731 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 46.581189 seconds.
+  path: Assets/scripts/Prosocial/Materials/circle_op1_2.png
+  artifactKey: Guid(bee29209005727649b2ee2d7d9e6012f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/scripts/Prosocial/Materials/circle_op1_2.png using Guid(bee29209005727649b2ee2d7d9e6012f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fd8f1e96139e554309dd6fbd7fda8917') in 0.067990 seconds
+  Import took 0.076026 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000266 seconds.
+  path: Assets/scripts/Prosocial/Materials/Option6.png
+  artifactKey: Guid(6fd0b08f293dd6d45a961908a78e13c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/scripts/Prosocial/Materials/Option6.png using Guid(6fd0b08f293dd6d45a961908a78e13c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c68f87ab5704b8e90be1e43dcf6f10aa') in 0.045946 seconds
+  Import took 0.056730 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000317 seconds.
+  path: Assets/scripts/Prosocial/Materials/circle_op1_2.png
+  artifactKey: Guid(bee29209005727649b2ee2d7d9e6012f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/scripts/Prosocial/Materials/circle_op1_2.png using Guid(bee29209005727649b2ee2d7d9e6012f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fd8f1e96139e554309dd6fbd7fda8917') in 0.031393 seconds
+  Import took 0.039702 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000249 seconds.
+  path: Assets/scripts/Prosocial/Materials/Option6.png
+  artifactKey: Guid(6fd0b08f293dd6d45a961908a78e13c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/scripts/Prosocial/Materials/Option6.png using Guid(6fd0b08f293dd6d45a961908a78e13c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c68f87ab5704b8e90be1e43dcf6f10aa') in 0.049819 seconds
+  Import took 0.060098 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 6.890282 seconds.
+  path: Assets/scripts/Prosocial/prefabs/ZoneCatchParticles.prefab
+  artifactKey: Guid(8e13519e67dc7424191ced10949a2cb5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/scripts/Prosocial/prefabs/ZoneCatchParticles.prefab using Guid(8e13519e67dc7424191ced10949a2cb5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '302ee26e6dbe601aecf5fb3c1c6bcad6') in 0.047121 seconds
+  Import took 0.056312 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 17.568072 seconds.
+  path: Assets/scripts/Prosocial/Materials/Materials/Option6.mat
+  artifactKey: Guid(9d156a0572baa424c8ef0907f6979517) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/scripts/Prosocial/Materials/Materials/Option6.mat using Guid(9d156a0572baa424c8ef0907f6979517) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '84008871fd9fabbd7fb43a95011507fa') in 4.340777 seconds
+  Import took 11.620581 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 51.444549 seconds.
+  path: Assets/scripts/Prosocial/Materials/Materials/Option6.mat
+  artifactKey: Guid(9d156a0572baa424c8ef0907f6979517) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/scripts/Prosocial/Materials/Materials/Option6.mat using Guid(9d156a0572baa424c8ef0907f6979517) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a2763eb7eab7edcd1e468dcbebe1a9f0') in 0.037586 seconds
+  Import took 0.045557 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 16.543736 seconds.
+  path: Assets/scripts/Prosocial/Materials/Materials/circle_op1_2.mat
+  artifactKey: Guid(3eb25c20f4f24f445885b9611edb7d1d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/scripts/Prosocial/Materials/Materials/circle_op1_2.mat using Guid(3eb25c20f4f24f445885b9611edb7d1d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ff10b94d52ef5f7b4cc255c8ebc185a5') in 13.110028 seconds
+  Import took 13.114774 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 7.924852 seconds.
+  path: Assets/scripts/Prosocial/Materials/Materials/circle_op1_2.mat
+  artifactKey: Guid(3eb25c20f4f24f445885b9611edb7d1d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/scripts/Prosocial/Materials/Materials/circle_op1_2.mat using Guid(3eb25c20f4f24f445885b9611edb7d1d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f7ebe8acb4fe61ee49324e1ee8d19dec') in 7.414993 seconds
+  Import took 7.422472 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.003699 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.75 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  2.072 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.89 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1440 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 143.8 MB.
+System memory in use after: 143.9 MB.
+
+Unloading 25 unused Assets to reduce memory usage. Loaded Objects now: 1942.
+Total: 2.162900 ms (FindLiveObjects: 0.212800 ms CreateObjectMapping: 0.059700 ms MarkObjects: 1.854600 ms  DeleteObjects: 0.034100 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.003141 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.79 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  5.141 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 1.01 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1440 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 143.8 MB.
+System memory in use after: 143.9 MB.
+
+Unloading 24 unused Assets to reduce memory usage. Loaded Objects now: 1944.
+Total: 5.515500 ms (FindLiveObjects: 1.010000 ms CreateObjectMapping: 0.120600 ms MarkObjects: 4.344100 ms  DeleteObjects: 0.037700 ms)
+
+========================================================================
+Received Prepare
+Refreshing native plugins compatible for Editor in 29.12 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 22 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 115.8 MB.
+System memory in use after: 115.9 MB.
+
+Unloading 22 unused Assets to reduce memory usage. Loaded Objects now: 1944.
+Total: 3.320600 ms (FindLiveObjects: 0.306700 ms CreateObjectMapping: 0.467000 ms MarkObjects: 2.518800 ms  DeleteObjects: 0.026600 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 709.750866 seconds.
+  path: Assets/scripts/Prosocial/prefabs/ZoneCatchParticles.prefab
+  artifactKey: Guid(8e13519e67dc7424191ced10949a2cb5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/scripts/Prosocial/prefabs/ZoneCatchParticles.prefab using Guid(8e13519e67dc7424191ced10949a2cb5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '550568f1a2216a955a63105d55b09923') in 0.214320 seconds
+  Import took 0.224237 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 8.213863 seconds.
+  path: Assets/scripts/Prosocial/prefabs/ZoneCatchParticles.prefab
+  artifactKey: Guid(8e13519e67dc7424191ced10949a2cb5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/scripts/Prosocial/prefabs/ZoneCatchParticles.prefab using Guid(8e13519e67dc7424191ced10949a2cb5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a0286026761575b1e3e1e31f48e3f5aa') in 0.105804 seconds
+  Import took 0.113974 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.458796 seconds.
+  path: Assets/scripts/Prosocial/prefabs/ZoneCatchParticles.prefab
+  artifactKey: Guid(8e13519e67dc7424191ced10949a2cb5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/scripts/Prosocial/prefabs/ZoneCatchParticles.prefab using Guid(8e13519e67dc7424191ced10949a2cb5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '633dc1414a6d70a379c6a076a8990242') in 0.200488 seconds
+  Import took 0.239595 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 3.076011 seconds.
+  path: Assets/scripts/Prosocial/prefabs/ZoneCatchParticles.prefab
+  artifactKey: Guid(8e13519e67dc7424191ced10949a2cb5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/scripts/Prosocial/prefabs/ZoneCatchParticles.prefab using Guid(8e13519e67dc7424191ced10949a2cb5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '66b83fdc1b27370e0819e816ecf1a6e5') in 0.077277 seconds
+  Import took 0.090911 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.476705 seconds.
+  path: Assets/scripts/Prosocial/prefabs/ZoneCatchParticles.prefab
+  artifactKey: Guid(8e13519e67dc7424191ced10949a2cb5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/scripts/Prosocial/prefabs/ZoneCatchParticles.prefab using Guid(8e13519e67dc7424191ced10949a2cb5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '45c8a06b3957fe4910f7031793450ac4') in 0.055327 seconds
+  Import took 0.066260 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 3.424686 seconds.
+  path: Assets/scripts/Prosocial/prefabs/ZoneCatchParticles.prefab
+  artifactKey: Guid(8e13519e67dc7424191ced10949a2cb5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/scripts/Prosocial/prefabs/ZoneCatchParticles.prefab using Guid(8e13519e67dc7424191ced10949a2cb5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dba961291adac381bb6bd1ccafbc9958') in 0.071249 seconds
+  Import took 0.082835 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.474125 seconds.
+  path: Assets/scripts/Prosocial/prefabs/ZoneCatchParticles.prefab
+  artifactKey: Guid(8e13519e67dc7424191ced10949a2cb5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/scripts/Prosocial/prefabs/ZoneCatchParticles.prefab using Guid(8e13519e67dc7424191ced10949a2cb5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7b4ec0088ae2898931aee0030625dcfc') in 0.069230 seconds
+  Import took 0.076730 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 10.237438 seconds.
+  path: Assets/scripts/Prosocial/prefabs/ZoneCatchParticles.prefab
+  artifactKey: Guid(8e13519e67dc7424191ced10949a2cb5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/scripts/Prosocial/prefabs/ZoneCatchParticles.prefab using Guid(8e13519e67dc7424191ced10949a2cb5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cceee52dcf863480ddd00d56ae786a76') in 0.049911 seconds
+  Import took 0.056305 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 3.995604 seconds.
+  path: Assets/scripts/Prosocial/prefabs/ZoneCatchParticles.prefab
+  artifactKey: Guid(8e13519e67dc7424191ced10949a2cb5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/scripts/Prosocial/prefabs/ZoneCatchParticles.prefab using Guid(8e13519e67dc7424191ced10949a2cb5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7d3ead3caa6bada8bab4fa80982db76b') in 0.050500 seconds
+  Import took 0.063067 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 3.041716 seconds.
+  path: Assets/scripts/Prosocial/prefabs/ZoneCatchParticles.prefab
+  artifactKey: Guid(8e13519e67dc7424191ced10949a2cb5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/scripts/Prosocial/prefabs/ZoneCatchParticles.prefab using Guid(8e13519e67dc7424191ced10949a2cb5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '197dc4469f3feb180c68c3541c89aa9b') in 0.062093 seconds
+  Import took 0.069819 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 3.314405 seconds.
+  path: Assets/scripts/Prosocial/prefabs/ZoneCatchParticles.prefab
+  artifactKey: Guid(8e13519e67dc7424191ced10949a2cb5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/scripts/Prosocial/prefabs/ZoneCatchParticles.prefab using Guid(8e13519e67dc7424191ced10949a2cb5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4830143af1aaf6858ea9dad125b88ee0') in 0.086515 seconds
+  Import took 0.095791 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 4.769632 seconds.
+  path: Assets/scripts/Prosocial/prefabs/ZoneCatchParticles.prefab
+  artifactKey: Guid(8e13519e67dc7424191ced10949a2cb5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/scripts/Prosocial/prefabs/ZoneCatchParticles.prefab using Guid(8e13519e67dc7424191ced10949a2cb5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e862afc83f0f719ef19f91874367d973') in 0.060689 seconds
+  Import took 0.070494 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 2.793196 seconds.
+  path: Assets/scripts/Prosocial/prefabs/ZoneCatchParticles.prefab
+  artifactKey: Guid(8e13519e67dc7424191ced10949a2cb5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/scripts/Prosocial/prefabs/ZoneCatchParticles.prefab using Guid(8e13519e67dc7424191ced10949a2cb5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c5db18a038896dca5b6d702e05ea0f7c') in 0.043423 seconds
+  Import took 0.055643 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 2.767191 seconds.
+  path: Assets/scripts/Prosocial/prefabs/ZoneCatchParticles.prefab
+  artifactKey: Guid(8e13519e67dc7424191ced10949a2cb5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/scripts/Prosocial/prefabs/ZoneCatchParticles.prefab using Guid(8e13519e67dc7424191ced10949a2cb5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '781c0a43d132bcf39b75a43dbca36b23') in 0.047070 seconds
+  Import took 0.053687 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 12.274118 seconds.
+  path: Assets/scripts/Prosocial/prefabs/ZoneCatchParticles.prefab
+  artifactKey: Guid(8e13519e67dc7424191ced10949a2cb5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/scripts/Prosocial/prefabs/ZoneCatchParticles.prefab using Guid(8e13519e67dc7424191ced10949a2cb5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8035986ac8bf3bee88e4e72822cccb7a') in 0.056563 seconds
+  Import took 0.068852 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 2.275108 seconds.
+  path: Assets/scripts/Prosocial/prefabs/ZoneCatchParticles.prefab
+  artifactKey: Guid(8e13519e67dc7424191ced10949a2cb5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/scripts/Prosocial/prefabs/ZoneCatchParticles.prefab using Guid(8e13519e67dc7424191ced10949a2cb5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a187634c11795cdd7a4a7a7378b11663') in 0.097566 seconds
+  Import took 0.109893 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 3.984202 seconds.
+  path: Assets/scripts/Prosocial/prefabs/ZoneCatchParticles.prefab
+  artifactKey: Guid(8e13519e67dc7424191ced10949a2cb5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/scripts/Prosocial/prefabs/ZoneCatchParticles.prefab using Guid(8e13519e67dc7424191ced10949a2cb5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2dc676710c1a18af2bf92c2a1fb59496') in 0.058234 seconds
+  Import took 0.066316 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.030253 seconds.
+  path: Assets/scripts/Prosocial/prefabs/ZoneCatchParticles.prefab
+  artifactKey: Guid(8e13519e67dc7424191ced10949a2cb5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/scripts/Prosocial/prefabs/ZoneCatchParticles.prefab using Guid(8e13519e67dc7424191ced10949a2cb5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2dc676710c1a18af2bf92c2a1fb59496') in 0.047769 seconds
+  Import took 0.063266 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 4.263430 seconds.
+  path: Assets/scripts/Prosocial/prefabs/ZoneCatchParticles.prefab
+  artifactKey: Guid(8e13519e67dc7424191ced10949a2cb5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/scripts/Prosocial/prefabs/ZoneCatchParticles.prefab using Guid(8e13519e67dc7424191ced10949a2cb5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0ebabc7ebfbc96d75544bef76ebe9835') in 0.056589 seconds
+  Import took 0.069071 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 12.491960 seconds.
+  path: Assets/scripts/Prosocial/prefabs/ZoneCatchParticles.prefab
+  artifactKey: Guid(8e13519e67dc7424191ced10949a2cb5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/scripts/Prosocial/prefabs/ZoneCatchParticles.prefab using Guid(8e13519e67dc7424191ced10949a2cb5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '68452d98079c1090c2559379454f6bbd') in 0.054628 seconds
+  Import took 0.062774 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 6.885698 seconds.
+  path: Assets/scripts/Prosocial/prefabs/ZoneCatchParticles.prefab
+  artifactKey: Guid(8e13519e67dc7424191ced10949a2cb5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/scripts/Prosocial/prefabs/ZoneCatchParticles.prefab using Guid(8e13519e67dc7424191ced10949a2cb5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0a8bcc3dd3db579857c4b2bb1d54557b') in 0.057502 seconds
+  Import took 0.065537 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.572314 seconds.
+  path: Assets/scripts/Prosocial/prefabs/ZoneCatchParticles.prefab
+  artifactKey: Guid(8e13519e67dc7424191ced10949a2cb5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/scripts/Prosocial/prefabs/ZoneCatchParticles.prefab using Guid(8e13519e67dc7424191ced10949a2cb5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0d7bea00a87deff50ff9cc287b2aa215') in 0.046482 seconds
+  Import took 0.057235 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 9.765403 seconds.
+  path: Assets/scripts/Prosocial/prefabs/ZoneCatchParticles.prefab
+  artifactKey: Guid(8e13519e67dc7424191ced10949a2cb5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/scripts/Prosocial/prefabs/ZoneCatchParticles.prefab using Guid(8e13519e67dc7424191ced10949a2cb5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '35d2e05534cdfb5425a3e5324299d6e3') in 0.051508 seconds
+  Import took 0.063192 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.003524 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 2.05 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  6.432 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.81 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1440 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 144.0 MB.
+System memory in use after: 144.1 MB.
+
+Unloading 25 unused Assets to reduce memory usage. Loaded Objects now: 1947.
+Total: 4.000500 ms (FindLiveObjects: 0.298000 ms CreateObjectMapping: 0.074300 ms MarkObjects: 3.576800 ms  DeleteObjects: 0.049800 ms)
+
+========================================================================
+Received Prepare
+Refreshing native plugins compatible for Editor in 9.15 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 22 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 115.9 MB.
+System memory in use after: 116.0 MB.
+
+Unloading 22 unused Assets to reduce memory usage. Loaded Objects now: 1947.
+Total: 8.171400 ms (FindLiveObjects: 3.326400 ms CreateObjectMapping: 0.282300 ms MarkObjects: 4.529200 ms  DeleteObjects: 0.030800 ms)
+
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file

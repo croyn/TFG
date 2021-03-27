@@ -103,7 +103,7 @@ public class miniRiverZone : MonoBehaviour
                     float dist = Vector3.Distance(m_rParticlesArray[iParticle].position, m_vParticlesTarget);
 
                     // Interpolate the movement towards the target with a nice quadratic easing					
-                    m_rParticlesArray[iParticle].position = Vector3.Lerp(m_rParticlesArray[iParticle].position, m_vParticlesTarget, 50.0f * Time.deltaTime / dist);
+                    m_rParticlesArray[iParticle].position = Vector3.Lerp(m_rParticlesArray[iParticle].position, m_vParticlesTarget, 20.0f * Time.deltaTime / dist);
                 }
             }
 
