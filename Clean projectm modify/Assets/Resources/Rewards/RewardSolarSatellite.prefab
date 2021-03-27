@@ -1,0 +1,172 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!95 &7654037295998623404
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2144551704191209766}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e1f4172c3d36b304c8c47efabf9033d5, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!1 &6159213421918546504
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4643634494902458631}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4643634494902458631
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6159213421918546504}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 2144551704190848262}
+  m_Father: {fileID: 8546593015146607525}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &8546593015146377093
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8546593015146607525}
+  m_Layer: 0
+  m_Name: RewardSolarSatellite
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8546593015146607525
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8546593015146377093}
+  m_LocalRotation: {x: 0.7068645, y: 0.018509835, z: 0.018509835, w: 0.7068645}
+  m_LocalPosition: {x: -18.429237, y: 40.24674, z: -36.705856}
+  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_Children:
+  - {fileID: 4643634494902458631}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 87, y: 90, z: 90}
+--- !u!1001 &2144551704191244162
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 4643634494902458631}
+    m_Modifications:
+    - target: {fileID: 100004, guid: e870e5cca3b7a3b4d9775d09b4b9ed4d, type: 3}
+      propertyPath: m_Name
+      value: Solar_Satellite_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 400004, guid: e870e5cca3b7a3b4d9775d09b4b9ed4d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400004, guid: e870e5cca3b7a3b4d9775d09b4b9ed4d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400004, guid: e870e5cca3b7a3b4d9775d09b4b9ed4d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400004, guid: e870e5cca3b7a3b4d9775d09b4b9ed4d, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.1463041
+      objectReference: {fileID: 0}
+    - target: {fileID: 400004, guid: e870e5cca3b7a3b4d9775d09b4b9ed4d, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.14630413
+      objectReference: {fileID: 0}
+    - target: {fileID: 400004, guid: e870e5cca3b7a3b4d9775d09b4b9ed4d, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.6918058
+      objectReference: {fileID: 0}
+    - target: {fileID: 400004, guid: e870e5cca3b7a3b4d9775d09b4b9ed4d, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.69180566
+      objectReference: {fileID: 0}
+    - target: {fileID: 400004, guid: e870e5cca3b7a3b4d9775d09b4b9ed4d, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400004, guid: e870e5cca3b7a3b4d9775d09b4b9ed4d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 23.882002
+      objectReference: {fileID: 0}
+    - target: {fileID: 400004, guid: e870e5cca3b7a3b4d9775d09b4b9ed4d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400004, guid: e870e5cca3b7a3b4d9775d09b4b9ed4d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 90.00001
+      objectReference: {fileID: 0}
+    - target: {fileID: 400004, guid: e870e5cca3b7a3b4d9775d09b4b9ed4d, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 400004, guid: e870e5cca3b7a3b4d9775d09b4b9ed4d, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 400004, guid: e870e5cca3b7a3b4d9775d09b4b9ed4d, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2300002, guid: e870e5cca3b7a3b4d9775d09b4b9ed4d, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b7947adf8be27524e898999cf600f28e, type: 2}
+    - target: {fileID: 2300000, guid: e870e5cca3b7a3b4d9775d09b4b9ed4d, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b7947adf8be27524e898999cf600f28e, type: 2}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e870e5cca3b7a3b4d9775d09b4b9ed4d, type: 3}
+--- !u!1 &2144551704191209766 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100004, guid: e870e5cca3b7a3b4d9775d09b4b9ed4d,
+    type: 3}
+  m_PrefabInstance: {fileID: 2144551704191244162}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &2144551704190848262 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 400004, guid: e870e5cca3b7a3b4d9775d09b4b9ed4d,
+    type: 3}
+  m_PrefabInstance: {fileID: 2144551704191244162}
+  m_PrefabAsset: {fileID: 0}
