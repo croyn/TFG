@@ -73,7 +73,7 @@ public class miniRiverZone : MonoBehaviour
 
         //sphereObjective = mandalamanager.instance.givePointFronTriangle();
         // Work only if we have something to work on :)
-        if (AffectedParticles != null && sphereObjective != null && move_to_Objective)
+        if (AffectedParticles != null && sphereObjective != null && move_to_Objective )
         {
 
             // Let's fetch active particles info
@@ -88,9 +88,9 @@ public class miniRiverZone : MonoBehaviour
 
 
             // m_iNumActiveParticles = AffectedParticles.GetParticles(m_rParticlesArray);
-            if (m_iNumActiveParticles == 0)
+            if (m_iNumActiveParticles == 0  && AffectedParticles.isStopped)
             {
-                
+
                 move_to_Objective = false;
 
             }

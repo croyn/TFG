@@ -60,11 +60,7 @@ public class timerZone : MonoBehaviour
 
                 }
             }
-        }
-
-
-
-        if (controlFase == 1)
+        }else if (controlFase == 1)
         {
             if (!ParticlesDoneAbosorving)
             {
@@ -95,6 +91,7 @@ public class timerZone : MonoBehaviour
                 deactiveMoveZones();
 
                 activateZonesCircles();
+                controlminiMoveZone = false;
                 changeFaseTo(2);
             } else if (!isDoneMoving() && ParticlesDoneAbosorving && timeBetweenFasesControl ) {
                 timeNextAppear = -1.0f;
@@ -102,19 +99,15 @@ public class timerZone : MonoBehaviour
             
 
            
-        }
-
-
-        
-        if (controlFase == 2)
+        }else if (controlFase == 2)
         {
             if (!controlminiMoveZone) {
                 activaMiniMovezones();
                 controlminiMoveZone = true;
+                timeNextAppear = 0.0f;
+                //&& timeNextAppear >= 0.4f
             }
-
-
-            if (isDoneMovingMiniZone() && controlminiMoveZone) {
+            else if (isDoneMovingMiniZone() && controlminiMoveZone ) {
                 deactiveMiniMoveZones();
                 changeFaseTo(0);
             }
@@ -346,7 +339,7 @@ public class timerZone : MonoBehaviour
 
         }
 
-        if (control == zoneListMove.Count)
+        if (control == zoneList.Count)
         {
             Debug.Log("Entro en control true");
             return true;
