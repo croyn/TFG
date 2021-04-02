@@ -256,7 +256,7 @@ public class zoneManager : MonoBehaviour
 
            
            // m_iNumActiveParticles = AffectedParticles.GetParticles(m_rParticlesArray);
-            if (m_iNumActiveParticles == 0)
+            if (m_iNumActiveParticles == 0 )
             {
                 timeExplosion = 0.0f;
                 move_to_Objective = false;

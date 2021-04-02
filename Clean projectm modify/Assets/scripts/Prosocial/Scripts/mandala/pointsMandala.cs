@@ -30,7 +30,11 @@ public class pointsMandala : MonoBehaviour
     private float firstLinesControl = 2.0f;
     public bool firstLineDraw = false;
     public bool retriveColors = false;
-
+    public Vector3 positionFinal;
+    public Vector3 positionRandom;
+    public int controlFase = 0;
+    public bool moving = false;
+    public float velocity;
     void Start()
     {
         wichLayer = 0;
@@ -48,15 +52,30 @@ public class pointsMandala : MonoBehaviour
         make_line = true;
         firstLineDraw = false;
         givePartner();
+        controlFase=0;
+        positionFinal = gameObject.transform.position;
+        positionRandom = gameObject.transform.position;
+        moving = true;
+    }
 
-
-
+    void givePositionRandom() {
+        positionRandom  = new Vector3(Random.Range(-10.0f+ positionRandom.x, 10.0f+ positionRandom.x), 0, Random.Range(-10.0f+ positionRandom.z, 10.0f+ positionRandom.z));
+        gameObject.transform.position = positionRandom;
+        controlFase = 0;
     }
 
     void giveColors() {
+        int triangleType = gameObject.GetComponentInParent<Triangle>().typeTriangle;
         ColorLine1 = mandalamanager.instance.colorSolid1;
         ColorLine2 = mandalamanager.instance.colorSolid2;
-        ColorLine3 = mandalamanager.instance.colorSolid3;
+        if (triangleType != 2)
+        {
+            ColorLine3 = mandalamanager.instance.colorSolid3;
+        }
+        else {
+            ColorLine3 = mandalamanager.instance.colorSolid2;
+        }
+        
     }
 
     public void nextLayer() {
@@ -101,14 +120,36 @@ public class pointsMandala : MonoBehaviour
 
     }
 
+
+    void moveSphere() {
+
+        float dist = Vector3.Distance(positionRandom, positionFinal);
+        positionRandom = Vector3.Lerp(positionRandom, positionFinal, velocity * (Time.deltaTime / dist));
+        gameObject.transform.position = positionRandom;
+        if (dist <= 0.05f)
+        {
+            gameObject.transform.position = positionFinal;
+            moving = false;
+            controlFase = 1;
+           
+        }
+
+
+    }
+
     // Update is called once per frame
     void Update()
     {
         if (!retriveColors) {
             giveColors();
             retriveColors = true;
+            givePositionRandom();
         }
 
+        if (moving && controlFase==0) {
+            moveSphere();
+        }else if (controlFase == 1)
+        { 
         firstLinesControl = firstLinesControl - Time.deltaTime;
         if (firstLineDraw == false) {
             assignarLinea();
@@ -138,8 +179,8 @@ public class pointsMandala : MonoBehaviour
                 gameObject.layer = 0;
             }
         }
-       
 
+        }
     }
 
 
@@ -187,6 +228,9 @@ public class pointsMandala : MonoBehaviour
 
         
     }
+
+
+
 
     void assignarLinea() {
         givePartner();

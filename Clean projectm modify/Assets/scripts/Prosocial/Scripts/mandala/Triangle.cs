@@ -117,7 +117,7 @@ public class Triangle : MonoBehaviour
 
     
 
-    public GameObject activatePointFromTriangle() {
+    public GameObject activatePointFromTriangle(bool activateLine = true) {
         List<GameObject> PointsList = queLadoToca(false);
 
         if (PointsList == null)
@@ -161,8 +161,10 @@ public class Triangle : MonoBehaviour
                     actualPoint = PointsList[indiceActualPoint].gameObject;
                 }
             }
-
-            actualPoint.GetComponent<pointsMandala>().line_true();
+            if (activateLine) {
+                actualPoint.GetComponent<pointsMandala>().line_true();
+            }
+            
             return PointsList[indiceActualPoint].gameObject;
         }
         
@@ -239,7 +241,7 @@ public class Triangle : MonoBehaviour
 
                 //third partner
                 indiceMax = LadoIzquierda.Count-1;
-                indiceMin = LadoIzquierda.Count-6;
+                indiceMin = LadoIzquierda.Count-8;
               
                 for (int i = 0; i <= indiceMax- indiceMin; i++)
                 {

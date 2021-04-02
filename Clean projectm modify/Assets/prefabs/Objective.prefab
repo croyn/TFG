@@ -240,10 +240,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   partnerPoint: {fileID: 0}
+  ColorLine1: {r: 0, g: 0, b: 0, a: 0}
+  partnerPoint1: {fileID: 0}
+  ColorLine2: {r: 0, g: 0, b: 0, a: 0}
+  partnerPoint2: {fileID: 0}
+  ColorLine3: {r: 0, g: 0, b: 0, a: 0}
+  actualPartnerPoint: {fileID: 0}
   make_line: 1
   linea: {fileID: 2088476111}
   number_particles_catch: 0
   doneAbsorv: 0
+  allowAbsorv: 0
+  particles: {fileID: 0}
+  timeFirstLine: 2
+  firstLineDraw: 0
+  retriveColors: 0
+  positionFinal: {x: 0, y: 0, z: 0}
+  positionRandom: {x: 0, y: 0, z: 0}
+  controlFase: 0
+  moving: 0
+  velocity: 20
 --- !u!54 &6737797904729298605
 Rigidbody:
   m_ObjectHideFlags: 0

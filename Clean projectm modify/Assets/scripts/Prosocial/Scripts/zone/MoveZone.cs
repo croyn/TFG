@@ -62,6 +62,11 @@ public class MoveZone : MonoBehaviour
             if (dist <= 0.05f)
             {
                 inPosition = true;
+                if (affectectParticles.gameObject.GetComponent<collisionMovingZone>() != null)
+                {
+                    affectectParticles.gameObject.GetComponent<collisionMovingZone>().allowCollision = false;
+                    affectectParticles.gameObject.GetComponent<collisionMovingZone>().ForceOff();
+                }
             }
         }
 
@@ -72,6 +77,11 @@ public class MoveZone : MonoBehaviour
             if (dist2 <= 0.05f)
             {
                 inPosition = true;
+                if (affectectParticles.gameObject.GetComponent<collisionMovingZone>() != null)
+                {
+                    affectectParticles.gameObject.GetComponent<collisionMovingZone>().allowCollision = false;
+                    affectectParticles.gameObject.GetComponent<collisionMovingZone>().ForceOff();
+                }
             }
         }
  

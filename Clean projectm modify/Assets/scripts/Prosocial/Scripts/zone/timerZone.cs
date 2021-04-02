@@ -25,6 +25,8 @@ public class timerZone : MonoBehaviour
     private bool controlminiMoveZone = false;
     public float timeBetweenFases;
     private bool timeBetweenFasesControl = false;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -60,14 +62,15 @@ public class timerZone : MonoBehaviour
 
                 }
             }
-        }else if (controlFase == 1)
+        }
+        else if (controlFase == 1)
         {
             if (!ParticlesDoneAbosorving)
             {
                 deactivateZones();
                 if (!isAbsorbParticlesDone())
                 {
-                    
+
                     ParticlesDoneAbosorving = true;
                     timeNextAppear = 0.0f;
 
@@ -75,8 +78,9 @@ public class timerZone : MonoBehaviour
                 }
             }
 
-            if (!timeBetweenFasesControl && timeNextAppear >= timeBetweenFases && ParticlesDoneAbosorving) {
-                
+            if (!timeBetweenFasesControl && timeNextAppear >= timeBetweenFases && ParticlesDoneAbosorving)
+            {
+
                 deactivateZonesCircles();
                 activaMovezones();
                 timeBetweenFasesControl = true;
@@ -93,24 +97,32 @@ public class timerZone : MonoBehaviour
                 activateZonesCircles();
                 controlminiMoveZone = false;
                 changeFaseTo(2);
-            } else if (!isDoneMoving() && ParticlesDoneAbosorving && timeBetweenFasesControl ) {
+            }
+            else if (!isDoneMoving() && ParticlesDoneAbosorving && timeBetweenFasesControl)
+            {
                 timeNextAppear = -1.0f;
             }
-            
 
-           
-        }else if (controlFase == 2)
+
+
+        }
+        else if (controlFase == 2)
         {
-            if (!controlminiMoveZone) {
+            if (!controlminiMoveZone)
+            {
                 activaMiniMovezones();
                 controlminiMoveZone = true;
                 timeNextAppear = 0.0f;
                 //&& timeNextAppear >= 0.4f
             }
-            else if (isDoneMovingMiniZone() && controlminiMoveZone ) {
+            else if (isDoneMovingMiniZone() && controlminiMoveZone)
+            {
                 deactiveMiniMoveZones();
                 changeFaseTo(0);
             }
+
+        }
+        else if (controlFase == 3) {
 
         }
 
@@ -134,9 +146,10 @@ public class timerZone : MonoBehaviour
                 timeBetweenFasesControl = false;
                 break;
             case 2://activating circles
+                pointCentralMandala.GetComponent<PointCentralMandala>().allowAbsorv = false;
                 controlminiMoveZone = false;
-
                 break;
+
 
         }
 

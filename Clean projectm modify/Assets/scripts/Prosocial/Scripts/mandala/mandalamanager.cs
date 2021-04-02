@@ -22,6 +22,7 @@ public class mandalamanager : MonoBehaviour
     public Color colorSolid2;
     public Color colorSolid3;
     private Gradient actualColor = null;
+    private bool controlTriangleVoid=true;
 
     // Start is called before the first frame update
     void Start()
@@ -32,6 +33,7 @@ public class mandalamanager : MonoBehaviour
         indiceTriangle = 0;
         layer = 0;
         interLayer = 0;
+        controlTriangleVoid = true;
     }
 
     // Update is called once per frame
@@ -57,7 +59,15 @@ public class mandalamanager : MonoBehaviour
                 actualColor = color2;
                 break;
            case 2:
-                actualColor = color3;
+                if (interLayer != 1)
+                {
+                    actualColor = color3;
+                }
+                else {
+                    actualColor = color2;
+                }
+                
+                
                 break;
 
 
@@ -75,7 +85,14 @@ public class mandalamanager : MonoBehaviour
                 actualColor = color2Move;
                 break;
             case 2:
-                actualColor = color3Move;
+                if (interLayer != 1)
+                {
+                    actualColor = color3Move;
+                }
+                else
+                {
+                    actualColor = color2Move;
+                }
                 break;
 
 
@@ -141,13 +158,18 @@ public class mandalamanager : MonoBehaviour
             actualTriangle = triangleList[actualIndexTriangle+i].gameObject;
             actualPoint = actualTriangle.GetComponent<Triangle>().activatePointFromTriangle();
         }
-        
 
 
-        if (actualPoint == null) {
+
+        if (actualPoint == null)
+        {
             interLayer = interLayer + 1;
-            timerZone.instance.gameObject.GetComponent<timerZone>().changeFaseTo(1);
-           if (interLayer>2)
+            if (!controlTriangleVoid) {
+                timerZone.instance.gameObject.GetComponent<timerZone>().changeFaseTo(1);
+                controlTriangleVoid = true;
+            }
+            
+            if (interLayer > 2)
             {
                 interLayer = 0;
                 if (((layer * numTrianglesLayer) + numTrianglesLayer) < triangleList.Capacity)
@@ -157,17 +179,45 @@ public class mandalamanager : MonoBehaviour
                     {
                         actualTriangle = triangleList[i].gameObject;
                         actualTriangle.GetComponent<Triangle>().sendNextLayerEveryPoint();
+                        
                     }
 
                 }
             }
             else
             {
+                actualIndexTriangle = interLayer * numTrianglesLayer;
+                for (int i = 0; i < numTrianglesLayer; i++)
+                {
+                    actualTriangle = triangleList[actualIndexTriangle + i].gameObject;
+                    actualPoint = actualTriangle.GetComponent<Triangle>().activatePointFromTriangle(false);
+                }
+                //miro si el triangulo que tocaria es vacio.(no tiene partners)
+                if (actualPoint == null)
+                {
+                    interLayer = interLayer + 1;
+                    if (interLayer > 2)
+                    {
+                        interLayer = 0;
+                        if (((layer * numTrianglesLayer) + numTrianglesLayer) < triangleList.Capacity)
+                        {
+                            layer = layer + 1;
+                            for (int i = 0; i < triangleList.Count; i++)
+                            {
+                                actualTriangle = triangleList[i].gameObject;
+                                actualTriangle.GetComponent<Triangle>().sendNextLayerEveryPoint();
 
+                            }
 
+                        }
+                    }
+                }
             }
 
-            
+
+        }
+        else {
+            controlTriangleVoid = false;
         }
         
 

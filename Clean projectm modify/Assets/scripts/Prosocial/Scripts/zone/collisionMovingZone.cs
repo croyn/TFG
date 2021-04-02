@@ -54,6 +54,29 @@ public class collisionMovingZone : MonoBehaviour
 
     }
 
+
+    public void ForceOff() {
+        ParticleSystem.MainModule tempMainModule = affectectParticles.gameObject.GetComponent<ParticleSystem>().main;
+        tempMainModule.startSpeed = 0.3f;
+        tempMainModule.startLifetime = 1.0f;
+        tempMainModule.maxParticles = 10000;
+        ParticleSystem.EmissionModule tempEmisionModule = affectectParticles.gameObject.GetComponent<ParticleSystem>().emission;
+        tempEmisionModule.rateOverTime = 200;
+
+        ParticleSystem.ColorOverLifetimeModule temp = affectectParticles.gameObject.GetComponent<ParticleSystem>().colorOverLifetime;
+        temp.color = gameObject.transform.parent.GetComponent<MoveZone>().colorNoTouch;
+        //affectectParticles.Stop();
+
+        /* ParticleSystem.MainModule tempMainModule2 = affectectParticles2.gameObject.GetComponent<ParticleSystem>().main;
+         tempMainModule2.startSpeed = 0.3f;
+         tempMainModule2.startLifetime = 1.0f;
+         tempMainModule2.maxParticles = 10000;
+         ParticleSystem.EmissionModule tempEmisionModule2 = affectectParticles2.gameObject.GetComponent<ParticleSystem>().emission;
+         tempEmisionModule2.rateOverTime = 200;*/
+
+        affectectParticles.Play();
+    }
+
     private void OnTriggerExit(Collider other)
     {
 

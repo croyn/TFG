@@ -88,6 +88,8 @@
     <Compile Include="Assets\scripts\Prosocial\Scripts\mandala\PointCentralMandala.cs" />
     <Compile Include="Assets\scripts\utilities\utility tracking for unity\Uniducial\TUIOConnector\OSCPacket.cs" />
     <Compile Include="Assets\scripts\utilities\utility tracking for unity\Uniducial\TUIOConnector\TuioTime.cs" />
+    <Compile Include="Assets\scripts\Prosocial\Scripts\zone\scanZone.cs" />
+    <Compile Include="Assets\scripts\Prosocial\Scripts\zone\collisionScan.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\scripts\utilities\utility tracking for unity\readme..txt" />

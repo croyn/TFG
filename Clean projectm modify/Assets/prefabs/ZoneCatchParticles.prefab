@@ -10336,6 +10336,7 @@ GameObject:
   - component: {fileID: 3072121337704296360}
   - component: {fileID: 1143323159660490203}
   - component: {fileID: 1396331734420101115}
+  - component: {fileID: 6857937460238641875}
   m_Layer: 0
   m_Name: footPrint
   m_TagString: Untagged
@@ -10384,7 +10385,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c65b6d108870ec7429d159bde1a708dd, type: 2}
+  - {fileID: 2100000, guid: 862c82f91dd646943b8e0604cc5adce9, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -10419,6 +10420,23 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &6857937460238641875
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3723575315545880487}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1add13865b27f024386ff3ba7970ec3e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  circuloBase0: {fileID: 2100000, guid: 67bf25b370c4d9d4fafc49548b1c6449, type: 2}
+  circuloBase1: {fileID: 2100000, guid: 33c0de4182ef1e7419aba1b8e1f1f26f, type: 2}
+  circuloBase2: {fileID: 2100000, guid: 788e6c05a78a5f34abd86cba4329a727, type: 2}
+  circuloBase3: {fileID: 2100000, guid: 862c82f91dd646943b8e0604cc5adce9, type: 2}
+  cualCiruclo: 0
 --- !u!1 &4136037890939965923
 GameObject:
   m_ObjectHideFlags: 0
