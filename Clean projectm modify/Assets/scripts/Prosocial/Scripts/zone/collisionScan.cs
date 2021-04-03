@@ -40,7 +40,7 @@ public class collisionScan : MonoBehaviour
         }
     }
 
-    private void changeColorTo(int cual) {
+    public void changeColorTo(int cual) {
         //GameObject foot = transform.Find("footPrint").gameObject;
         if (true) {
             Renderer footMaterial = gameObject.GetComponent<Renderer>();

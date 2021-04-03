@@ -221,6 +221,19 @@ public class zoneManager : MonoBehaviour
         tempfoot.gameObject.SetActive(false);
     }
 
+    public void activateFootPrint() {
+        Transform tempfoot = gameObject.transform.parent.Find("footPrint");
+        tempfoot.GetComponent<collisionScan>().enabled = true;
+        tempfoot.gameObject.SetActive(true);
+    }
+
+    public void deactivateFootPrint()
+    {
+        Transform tempfoot = gameObject.transform.parent.Find("footPrint");
+        tempfoot.GetComponent<collisionScan>().enabled = false;
+        tempfoot.gameObject.SetActive(false);
+    }
+
     public void deactivateZone() {
         
         positionParticles.Stop();

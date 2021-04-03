@@ -33,37 +33,80 @@ public class Triangle : MonoBehaviour
         
     }
 
-    //no se usa pendiente borrar ///*
-    /*
-    public GameObject givePoint()
+    public void deactivateAllPointsTriangle() {
+        for (int i = 0; i < LadoBase.Count; i++)
+        {
+            LadoBase[i].SetActive(false);
+
+        }
+
+        for (int i = 0; i < LadoDerecha.Count; i++)
+        {
+            LadoDerecha[i].SetActive(false);
+
+        }
+        for (int i = 0; i < LadoIzquierda.Count; i++)
+        {
+            LadoIzquierda[i].SetActive(false);
+
+        }
+        puntaCentral.SetActive(false);
+
+    }
+
+    public void activateAllPointsTriangle()
     {
-        
-
-        GameObject actualPoint = PointsList[indiceActualPoint].gameObject;
-
-        while (actualPoint.GetComponent<pointsMandala>().partnerPoint == null)
+        for (int i = 0; i < LadoBase.Count; i++)
         {
-            indiceActualPoint = indiceActualPoint + 1;
-            if (indiceActualPoint >= PointsList.Capacity) {
-                return null;
-            }
-                
-            actualPoint = PointsList[indiceActualPoint].gameObject;
+            LadoBase[i].SetActive(true);
+            LadoBase[i].GetComponent<pointsMandala>().moving = true;
         }
 
-        if (actualPoint.GetComponent<pointsMandala>().done())
+        for (int i = 0; i < LadoDerecha.Count; i++)
         {
-            indiceActualPoint = indiceActualPoint + 1;
-            if (indiceActualPoint >= PointsList.Capacity)
-            {
-                return null;
-            }
+            LadoDerecha[i].SetActive(true);
+            LadoDerecha[i].GetComponent<pointsMandala>().moving = true;
+
+        }
+        for (int i = 0; i < LadoIzquierda.Count; i++)
+        {
+            LadoIzquierda[i].SetActive(true);
+            LadoIzquierda[i].GetComponent<pointsMandala>().moving = true;
+
+        }
+        puntaCentral.SetActive(true);
+        puntaCentral.GetComponent<pointsMandala>().moving = true;
+    }
+
+    public bool checkPointsInposition() {
+
+        bool resp = true;
+
+        for (int i = 0; i < LadoBase.Count; i++)
+        {
+            resp=resp && !LadoBase[i].GetComponent<pointsMandala>().moving;
+
         }
 
+        for (int i = 0; i < LadoDerecha.Count; i++)
+        {
+            resp = resp && !LadoDerecha[i].GetComponent<pointsMandala>().moving;
+       
+
+        }
+        for (int i = 0; i < LadoIzquierda.Count; i++)
+        {
+            resp = resp && !LadoIzquierda[i].GetComponent<pointsMandala>().moving;
+           
+
+        }
+        resp=resp && !puntaCentral.GetComponent<pointsMandala>().moving;
+
+        return resp;
+    }
 
 
-        return PointsList[indiceActualPoint].gameObject;
-    }*/
+
 
     private List<GameObject> queLadoToca(bool sum) {
 

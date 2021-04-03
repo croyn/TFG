@@ -38,6 +38,7 @@ public class pointsMandala : MonoBehaviour
     void Start()
     {
         wichLayer = 0;
+        if (linea != null) {
         lineaTemp = Instantiate(linea);
         LineRenderer temp = lineaTemp.GetComponent<LineRenderer>();
         temp.SetPosition(0, gameObject.transform.position);
@@ -46,6 +47,8 @@ public class pointsMandala : MonoBehaviour
         tempColor.a = 0.2f;
         temp.startColor = tempColor;
         temp.endColor = tempColor;
+        }
+        
         retriveColors = false;
         allowAbsorv = false;
         //particles.transform.position=gameObject.transform.position;
@@ -55,7 +58,7 @@ public class pointsMandala : MonoBehaviour
         controlFase=0;
         positionFinal = gameObject.transform.position;
         positionRandom = gameObject.transform.position;
-        moving = true;
+        moving = false;
     }
 
     void givePositionRandom() {
@@ -65,6 +68,7 @@ public class pointsMandala : MonoBehaviour
     }
 
     void giveColors() {
+        if (gameObject.GetComponentInParent<Triangle>() != null) { 
         int triangleType = gameObject.GetComponentInParent<Triangle>().typeTriangle;
         ColorLine1 = mandalamanager.instance.colorSolid1;
         ColorLine2 = mandalamanager.instance.colorSolid2;
@@ -75,27 +79,31 @@ public class pointsMandala : MonoBehaviour
         else {
             ColorLine3 = mandalamanager.instance.colorSolid2;
         }
-        
+        }
     }
 
     public void nextLayer() {
 
         wichLayer = wichLayer + 1;
         givePartner();
-        lineaTemp = Instantiate(linea);
-        LineRenderer temp = lineaTemp.GetComponent<LineRenderer>();
-        temp.SetPosition(0, gameObject.transform.position);
-        temp.SetPosition(1, gameObject.transform.position);
-        Color tempColor = Color.gray;
-        tempColor.a = 0.2f;
-        temp.startColor = tempColor;
-        temp.endColor = tempColor;
+        if (linea != null) {
+            lineaTemp = Instantiate(linea);
+            LineRenderer temp = lineaTemp.GetComponent<LineRenderer>();
+            temp.SetPosition(0, gameObject.transform.position);
+            temp.SetPosition(1, gameObject.transform.position);
+            Color tempColor = Color.gray;
+            tempColor.a = 0.2f;
+            temp.startColor = tempColor;
+            temp.endColor = tempColor;
+            allowAbsorv = false;
+            //particles.transform.position=gameObject.transform.position;
+            make_line = true;
+            firstLineDraw = false;
+            firstLinesControl = timeFirstLine;
+        }
+        
 
-        allowAbsorv = false;
-        //particles.transform.position=gameObject.transform.position;
-        make_line = true;
-        firstLineDraw = false;
-        firstLinesControl = timeFirstLine;
+       
 
     }
 
@@ -155,7 +163,8 @@ public class pointsMandala : MonoBehaviour
             assignarLinea();
         }
         if (firstLinesControl <= 0.0f && firstLineDraw == false) {
-            
+           if (linea != null)
+            {
             firstLineDraw = true;
             make_line = false;
             lineaTemp = Instantiate(linea);
@@ -166,7 +175,8 @@ public class pointsMandala : MonoBehaviour
             tempColor.a = 0.6f;
             temp.startColor = tempColor;
             temp.endColor = tempColor;
-        }
+            }
+         }
 
 
         if (firstLineDraw) {

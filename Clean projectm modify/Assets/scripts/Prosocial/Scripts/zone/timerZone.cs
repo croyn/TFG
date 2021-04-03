@@ -12,13 +12,14 @@ public class timerZone : MonoBehaviour
     float timeNextOff = 0.0f;
     public List<GameObject> zoneList = null;
     public List<GameObject> zoneListMove = null;
+    public List<GameObject> zoneScan = null;
     private List<Transform> zoneListActive = new List<Transform>();
     private List<Transform> zoneListActiveMove = new List<Transform>();
     public GameObject pointCentralMandala;
     bool active = false;
     private int ControlWhichZone = 2;
     private int ControlWhichMove = 0;
-    public int controlFase = 0; //0 absorv , 1 move
+    public int controlFase = 3; //0 absorv , 1 move
     Gradient actualGradient = null;
     private bool ParticlesDoneAbosorving = false;
     private bool controlOneTimeAppering = false;
@@ -33,7 +34,8 @@ public class timerZone : MonoBehaviour
         instance = this;
         timeNextAppear = 0.0f;
         timeNextOff = 0.0f;
-        controlFase = 0;
+        controlFase = 3;
+        changeFaseTo(3);
     }
 
     // Update is called once per frame
@@ -82,7 +84,7 @@ public class timerZone : MonoBehaviour
             {
 
                 deactivateZonesCircles();
-                activaMovezones();
+                activaMovezones(0);
                 timeBetweenFasesControl = true;
                 timeNextAppear = 0.0f;
 
@@ -122,8 +124,57 @@ public class timerZone : MonoBehaviour
             }
 
         }
-        else if (controlFase == 3) {
+        else if (controlFase == 3)
+        {
+            if (!controlminiMoveZone && checkScanZones())
+            {
 
+                timeNextAppear = 0.0f;
+                controlminiMoveZone = true;
+            }
+
+            if (controlminiMoveZone && timeNextAppear > 2.0f)
+            {
+                changeFaseTo(4);
+            }
+
+        }
+        else if (controlFase == 4)
+        {
+            if (!timeBetweenFasesControl)
+            {
+
+                activaMovezones(1);
+                activateZoneScanFromMainZone();
+                timeBetweenFasesControl = true;
+
+            }
+            if (isDoneMoving() && timeBetweenFasesControl)
+            {
+
+                deactiveMoveZones();
+
+                //activateZonesCircles();
+                controlminiMoveZone = false;
+                changeFaseTo(5);
+
+
+            }
+
+        }
+        else if (controlFase == 5)
+        {
+            if (checkScanZonesFromMainZone())
+            {
+                changeFaseTo(6);
+            }
+        }
+        else if (controlFase == 6) {
+
+            if (mandalamanager.instance.checkPointsInPosition()) {
+                deactivateZoneScan(1);
+                changeFaseTo(0);
+            }
         }
 
 
@@ -149,14 +200,119 @@ public class timerZone : MonoBehaviour
                 pointCentralMandala.GetComponent<PointCentralMandala>().allowAbsorv = false;
                 controlminiMoveZone = false;
                 break;
+            case 3://first scan
+                deactivateZonesCircles();
+                pointCentralMandala.GetComponent<PointCentralMandala>().allowAbsorv = false;
+                mandalamanager.instance.deactivateAllPoints();
+                controlminiMoveZone = false;
+                break;
+            case 4://move scan
+                pointCentralMandala.GetComponent<PointCentralMandala>().allowAbsorv = false;
+                ParticlesDoneAbosorving = false;
+                timeBetweenFasesControl = false;
+                deactivateZoneScan(0);
+                break;
+            case 5://second scan
 
+                pointCentralMandala.GetComponent<PointCentralMandala>().allowAbsorv = false;
+                break;
+            case 6://appear mandala
+                
+                mandalamanager.instance.activateAllPoints();
+                break;
 
         }
 
         controlFase = cual;
     }
 
-    public void activaMovezones() {
+
+    public void deactivateZoneScan(int cual) {
+
+        if (cual == 0)
+        {
+            for (int i = 0; i < zoneScan.Count; i++) {
+                zoneScan[i].SetActive(false);
+
+            }
+
+        }
+        else if (cual == 1) {
+            for (int i = 0; i < zoneList.Count; i++) {
+                Transform tempFoot = zoneList[i].transform.Find("footPrint");
+                tempFoot.GetComponent<collisionScan>().changeColorTo(0);
+                tempFoot.GetComponent<collisionScan>().enabled = false ;
+            }
+            
+        }
+
+    }
+
+
+    public void activateZoneScanFromMainZone() {
+        for (int i = 0; i < zoneList.Count; i++) {
+            // zoneList[i].GetComponent<zoneManager>().activateFootPrint();
+            Transform tempFoot = zoneList[i].transform.Find("footPrint");
+            zoneList[i].transform.Find("footPrint");
+            tempFoot.gameObject.SetActive(true);
+            tempFoot.GetComponent<collisionScan>().enabled = true;
+
+        }
+    }
+
+    public bool checkScanZones() {
+        bool resp = true;
+        for (int i = 0; i < zoneScan.Count; i++) {
+            Transform foot = zoneScan[i].transform.Find("footPrint");
+            bool tempResp =true;
+            Color tempColor = foot.gameObject.GetComponent<collisionScan>().actualColor;
+            if (tempColor == Color.green) {
+                tempResp = true;
+            }
+            else {
+                tempResp = false;
+            }
+            resp = resp && tempResp;
+
+        }
+        if (resp)
+        {
+
+        }
+        return resp;
+    }
+
+    public bool checkScanZonesFromMainZone()
+    {
+
+        bool resp = true;
+        for (int i = 0; i < zoneList.Count; i++)
+        {
+            Transform foot = zoneList[i].transform.Find("footPrint");
+            bool tempResp = true;
+            Color tempColor = foot.gameObject.GetComponent<collisionScan>().actualColor;
+            if (tempColor == Color.green)
+            {
+                tempResp = true;
+            }
+            else
+            {
+                tempResp = false;
+            }
+            resp = resp && tempResp;
+
+        }
+        if (resp)
+        {
+
+        }
+        return resp;
+
+    }
+
+
+
+    public void activaMovezones(int cual) {
 
         ParticleSystem.ColorOverLifetimeModule temp = zoneList[0].transform.Find("derechaZone").GetComponent<zoneManager>().AffectedParticles.gameObject.GetComponent<ParticleSystem>().colorOverLifetime;
 
@@ -164,7 +320,7 @@ public class timerZone : MonoBehaviour
         ParticleSystem.MinMaxGradient colorNotouch = zoneList[0].transform.Find("derechaZone").GetComponent<zoneManager>().GradientColorMove;
         for (int i = 0; i < zoneListMove.Count;i++) {
             zoneListMove[i].GetComponent<MoveZone>().ChangeColorTo(colorNormal, colorNotouch);
-            zoneListMove[i].GetComponent<MoveZone>().initMoveZone();
+            zoneListMove[i].GetComponent<MoveZone>().initMoveZone(cual);
             
         }
     }
@@ -185,9 +341,9 @@ public class timerZone : MonoBehaviour
                 minizone1.gameObject.GetComponent<MoveZone>().ChangeColorTo(tempColor, tempColor);
                 minizone2.gameObject.GetComponent<MoveZone>().ChangeColorTo(tempColor, tempColor);
                 minizone3.gameObject.GetComponent<MoveZone>().ChangeColorTo(tempColor, tempColor);
-                minizone1.gameObject.GetComponent<MoveZone>().initMoveZone();
-                minizone2.gameObject.GetComponent<MoveZone>().initMoveZone();
-                minizone3.gameObject.GetComponent<MoveZone>().initMoveZone();
+                minizone1.gameObject.GetComponent<MoveZone>().initMoveZone(0);
+                minizone2.gameObject.GetComponent<MoveZone>().initMoveZone(0);
+                minizone3.gameObject.GetComponent<MoveZone>().initMoveZone(0);
             }
 
             if (minizone1.gameObject.GetComponent<miniRiverZone>().isActiveAndEnabled) {

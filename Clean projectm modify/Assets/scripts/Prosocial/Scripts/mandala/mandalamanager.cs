@@ -6,6 +6,7 @@ public class mandalamanager : MonoBehaviour
 {
     public static mandalamanager instance;
     public List<GameObject> triangleList = new List<GameObject>();
+    public List<GameObject> circleList = new List<GameObject>();
     private int indiceActualPoint=0;
     private int indiceTriangle = 0;
     public GameObject centralPoint = null;
@@ -47,8 +48,47 @@ public class mandalamanager : MonoBehaviour
         return centralPoint;
     }
 
-    
 
+    public void deactivateAllPoints() {
+
+        for (int i = 0; i<triangleList.Count; i++) {
+            triangleList[i].GetComponent<Triangle>().deactivateAllPointsTriangle();
+        }
+        for (int i = 0; i < circleList.Count; i++)
+        {
+            circleList[i].GetComponent<circlePart>().deactivatePoints();
+        }
+
+
+    }
+    public void activateAllPoints()
+    {
+
+        for (int i = 0; i < triangleList.Count; i++)
+        {
+            triangleList[i].GetComponent<Triangle>().activateAllPointsTriangle();
+        }
+        for (int i = 0; i < circleList.Count; i++)
+        {
+            circleList[i].GetComponent<circlePart>().activatePoints();
+        }
+        
+    }
+
+    public bool checkPointsInPosition() {
+
+        bool resp = true;
+        for (int i = 0; i < triangleList.Count; i++)
+        {
+           resp=resp &&  triangleList[i].GetComponent<Triangle>().checkPointsInposition();
+        }
+        for (int i = 0; i < circleList.Count; i++)
+        {
+            resp = resp && circleList[i].GetComponent<circlePart>().checkPointsInposition();
+           
+        }
+        return resp;
+    }
 
     public Gradient switchColor() {
         switch (layer) {

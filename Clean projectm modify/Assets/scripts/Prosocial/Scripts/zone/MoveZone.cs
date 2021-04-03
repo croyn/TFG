@@ -7,6 +7,8 @@ public class MoveZone : MonoBehaviour
 
     public GameObject initPoint;
     public GameObject finalPoint;
+    public GameObject initPointScan;
+    public GameObject finalPointScan;
     public ParticleSystem affectectParticles;
     public ParticleSystem affectectParticles2;
     private bool inPosition = false;
@@ -14,6 +16,7 @@ public class MoveZone : MonoBehaviour
     public ParticleSystem.MinMaxGradient colorTouch;
     public ParticleSystem.MinMaxGradient colorNoTouch;
     public bool allowMoving;
+    public int controlCual ;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,16 +28,22 @@ public class MoveZone : MonoBehaviour
     void Update()
     {
         if (allowMoving) {
-            moveParticlesSystem();
+            moveParticlesSystem(controlCual);
         }
        
     }
 
 
-    public void initMoveZone() {
-       
+    public void initMoveZone(int cual) {
+        controlCual = cual;
         if (affectectParticles != null) {
-            affectectParticles.gameObject.transform.position = initPoint.gameObject.transform.position;
+            if (cual == 0) {
+                affectectParticles.gameObject.transform.position = initPoint.gameObject.transform.position;
+            } else if (cual == 1)
+            {
+                affectectParticles.gameObject.transform.position = initPointScan.gameObject.transform.position;
+            }
+           
             if (affectectParticles.gameObject.GetComponent<collisionMovingZone>() != null)
             {
                 affectectParticles.gameObject.GetComponent<collisionMovingZone>().allowCollision = true;
@@ -54,11 +63,21 @@ public class MoveZone : MonoBehaviour
     }
 
 
-    public void moveParticlesSystem() {
+    public void moveParticlesSystem(int cual) {
 
         if (affectectParticles != null && finalPoint != null) {
-            float dist = Vector3.Distance(affectectParticles.gameObject.transform.position, finalPoint.gameObject.transform.position);
-            affectectParticles.gameObject.transform.position = Vector3.Lerp(affectectParticles.gameObject.transform.position, finalPoint.gameObject.transform.position, velocity * (Time.deltaTime / dist));
+            float dist = 0.0f;
+            if (cual == 0)
+            {
+                dist = Vector3.Distance(affectectParticles.gameObject.transform.position, finalPoint.gameObject.transform.position);
+                affectectParticles.gameObject.transform.position = Vector3.Lerp(affectectParticles.gameObject.transform.position, finalPoint.gameObject.transform.position, velocity * (Time.deltaTime / dist));
+            }
+            else if (cual == 1)
+            {
+                dist = Vector3.Distance(affectectParticles.gameObject.transform.position, finalPointScan.gameObject.transform.position);
+                affectectParticles.gameObject.transform.position = Vector3.Lerp(affectectParticles.gameObject.transform.position, finalPointScan.gameObject.transform.position, velocity * (Time.deltaTime / dist));
+            }
+            
             if (dist <= 0.05f)
             {
                 inPosition = true;
