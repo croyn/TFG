@@ -21,7 +21,8 @@ public class circlePart : MonoBehaviour
 
     public void activatePoints() {
         for (int i = 0; i < circlePoints.Count; i++) {
-            circlePoints[i].SetActive(true);
+           // circlePoints[i].SetActive(true);
+            circlePoints[i].GetComponent<MeshRenderer>().enabled = true;
             circlePoints[i].GetComponent<pointsMandala>().moving = true;
         }
 
@@ -30,7 +31,8 @@ public class circlePart : MonoBehaviour
     public void deactivatePoints() {
         for (int i = 0; i < circlePoints.Count; i++)
         {
-            circlePoints[i].SetActive(false);
+            //circlePoints[i].SetActive(false);
+            circlePoints[i].GetComponent<MeshRenderer>().enabled = false;
 
         }
 

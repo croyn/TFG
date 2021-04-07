@@ -36,21 +36,25 @@ public class Triangle : MonoBehaviour
     public void deactivateAllPointsTriangle() {
         for (int i = 0; i < LadoBase.Count; i++)
         {
-            LadoBase[i].SetActive(false);
+            //LadoBase[i].gameObject.SetActive(false);
+            LadoBase[i].GetComponent<MeshRenderer>().enabled = false;
 
         }
 
         for (int i = 0; i < LadoDerecha.Count; i++)
         {
-            LadoDerecha[i].SetActive(false);
+            // LadoDerecha[i].SetActive(false);
+            LadoDerecha[i].GetComponent<MeshRenderer>().enabled = false;
 
         }
         for (int i = 0; i < LadoIzquierda.Count; i++)
         {
-            LadoIzquierda[i].SetActive(false);
+            //  LadoIzquierda[i].SetActive(false);
+            LadoIzquierda[i].GetComponent<MeshRenderer>().enabled = false;
 
         }
-        puntaCentral.SetActive(false);
+        //puntaCentral.SetActive(false);
+        puntaCentral.GetComponent<MeshRenderer>().enabled = false;
 
     }
 
@@ -58,24 +62,29 @@ public class Triangle : MonoBehaviour
     {
         for (int i = 0; i < LadoBase.Count; i++)
         {
-            LadoBase[i].SetActive(true);
+           // LadoBase[i].SetActive(true);
+            LadoBase[i].GetComponent<MeshRenderer>().enabled = true;
             LadoBase[i].GetComponent<pointsMandala>().moving = true;
         }
 
         for (int i = 0; i < LadoDerecha.Count; i++)
         {
-            LadoDerecha[i].SetActive(true);
+           // LadoDerecha[i].SetActive(true);
+            LadoDerecha[i].GetComponent<MeshRenderer>().enabled = true;
             LadoDerecha[i].GetComponent<pointsMandala>().moving = true;
 
         }
         for (int i = 0; i < LadoIzquierda.Count; i++)
         {
-            LadoIzquierda[i].SetActive(true);
+           // LadoIzquierda[i].SetActive(true);
+            LadoIzquierda[i].GetComponent<MeshRenderer>().enabled = true;
             LadoIzquierda[i].GetComponent<pointsMandala>().moving = true;
 
         }
-        puntaCentral.SetActive(true);
+        //  puntaCentral.SetActive(true);
+        puntaCentral.GetComponent<MeshRenderer>().enabled = true;
         puntaCentral.GetComponent<pointsMandala>().moving = true;
+       
     }
 
     public bool checkPointsInposition() {

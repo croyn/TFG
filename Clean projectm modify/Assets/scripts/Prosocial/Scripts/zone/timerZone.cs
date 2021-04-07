@@ -145,7 +145,7 @@ public class timerZone : MonoBehaviour
             {
 
                 activaMovezones(1);
-                activateZoneScanFromMainZone();
+                
                 timeBetweenFasesControl = true;
 
             }
@@ -164,6 +164,7 @@ public class timerZone : MonoBehaviour
         }
         else if (controlFase == 5)
         {
+            
             if (checkScanZonesFromMainZone())
             {
                 changeFaseTo(6);
@@ -213,7 +214,7 @@ public class timerZone : MonoBehaviour
                 deactivateZoneScan(0);
                 break;
             case 5://second scan
-
+                activateZoneScanFromMainZone();
                 pointCentralMandala.GetComponent<PointCentralMandala>().allowAbsorv = false;
                 break;
             case 6://appear mandala

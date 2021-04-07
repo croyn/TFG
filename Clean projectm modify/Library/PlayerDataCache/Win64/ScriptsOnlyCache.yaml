@@ -7,8 +7,10 @@ ScriptsOnlyBuild:
     - MoveZone
     - PointCentralMandala
     - Triangle
+    - circlePart
     - colliderParticleToPoint
     - collisionMovingZone
+    - collisionScan
     - doublescreenCameramanager
     - mandalamanager
     - miniRiverZone
@@ -87,33 +89,37 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 2532}
     - Class: 114
-      Script: {instanceID: 2688}
+      Script: {instanceID: 2678}
     - Class: 114
-      Script: {instanceID: 2694}
+      Script: {instanceID: 2690}
     - Class: 114
-      Script: {instanceID: 2774}
+      Script: {instanceID: 2696}
     - Class: 114
-      Script: {instanceID: 2838}
+      Script: {instanceID: 2776}
     - Class: 114
-      Script: {instanceID: 2846}
+      Script: {instanceID: 2840}
     - Class: 114
-      Script: {instanceID: 3004}
+      Script: {instanceID: 2848}
     - Class: 114
-      Script: {instanceID: 3524}
+      Script: {instanceID: 3006}
     - Class: 114
-      Script: {instanceID: 3552}
+      Script: {instanceID: 3528}
     - Class: 114
-      Script: {instanceID: 3822}
+      Script: {instanceID: 3556}
     - Class: 114
-      Script: {instanceID: 3932}
+      Script: {instanceID: 3660}
     - Class: 114
-      Script: {instanceID: 3984}
+      Script: {instanceID: 3828}
     - Class: 114
-      Script: {instanceID: 4074}
+      Script: {instanceID: 3938}
     - Class: 114
-      Script: {instanceID: 4158}
+      Script: {instanceID: 3990}
     - Class: 114
-      Script: {instanceID: 4210}
+      Script: {instanceID: 4080}
+    - Class: 114
+      Script: {instanceID: 4164}
+    - Class: 114
+      Script: {instanceID: 4216}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 120
@@ -297,7 +303,7 @@ ScriptsOnlyBuild:
     className: CanvasScaler
   - hash:
       serializedVersion: 2
-      Hash: 0292516c7f632a917a133988acd93d68
+      Hash: ec54ccdab8ae86958a7bd538d53981f4
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: mandalamanager
@@ -405,6 +411,12 @@ ScriptsOnlyBuild:
     className: TestResultRendererCallback
   - hash:
       serializedVersion: 2
+      Hash: fdb8f16c2329758eb8171abf636cf8ee
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: circlePart
+  - hash:
+      serializedVersion: 2
       Hash: 748dd2a2a28da4e618912da5ac45684b
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.EventSystems
@@ -459,7 +471,7 @@ ScriptsOnlyBuild:
     className: Button
   - hash:
       serializedVersion: 2
-      Hash: aad261ad7c692c66a33c8d689980bc0e
+      Hash: c9422537fccb6251ab49bf6dcf7d2613
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: MoveZone
@@ -471,7 +483,7 @@ ScriptsOnlyBuild:
     className: TextContainer
   - hash:
       serializedVersion: 2
-      Hash: 227dee8ae11c0d9c55c26d901af80d8c
+      Hash: b83dbf910594ab19ad9ae247e19fb0fd
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: timerZone
@@ -586,6 +598,12 @@ ScriptsOnlyBuild:
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: scanZone
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: UnityEngine.TestRunner.dll
     namespaceName: UnityEngine.TestTools.TestRunner.Callbacks
     className: RemoteTestResultSender
@@ -673,6 +691,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: RectMask2D
+  - hash:
+      serializedVersion: 2
+      Hash: 8f9c7ee16fc109b4baf1bcb8bb5f0c63
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: collisionScan
   - hash:
       serializedVersion: 2
       Hash: 87ad3705a58f19c47136728d4a6e9c47
@@ -772,4 +796,4 @@ ScriptsOnlyBuild:
   platform: 19
   scenePathNames:
   - Assets/Scenes/Edgar Scene.unity
-  playerPath: C:/Users/batch_nps7xwz/Documents/GitHub/TFG/Clean projectm modify/test/Spark.exe
+  playerPath: C:/Users/batch_nps7xwz/Documents/GitHub/TFG/Clean projectm modify/a/Spark.exe

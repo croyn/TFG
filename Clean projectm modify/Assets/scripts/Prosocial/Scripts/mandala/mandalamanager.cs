@@ -24,6 +24,7 @@ public class mandalamanager : MonoBehaviour
     public Color colorSolid3;
     private Gradient actualColor = null;
     private bool controlTriangleVoid=true;
+    private bool trampa = false;
 
     // Start is called before the first frame update
     void Start()
@@ -35,6 +36,7 @@ public class mandalamanager : MonoBehaviour
         layer = 0;
         interLayer = 0;
         controlTriangleVoid = true;
+        trampa = false;
     }
 
     // Update is called once per frame
@@ -204,6 +206,19 @@ public class mandalamanager : MonoBehaviour
         if (actualPoint == null)
         {
             interLayer = interLayer + 1;
+            if (interLayer == 2 && layer ==1 && !trampa) {
+                trampa = true;
+                interLayer = 1;
+                actualIndexTriangle = interLayer * numTrianglesLayer;
+                for (int i = 0; i < numTrianglesLayer; i++)
+                {
+
+                    actualTriangle = triangleList[actualIndexTriangle + i].gameObject;
+                    actualTriangle.GetComponent<Triangle>().sendNextLayerEveryPoint();
+
+                }
+                
+            }
             if (!controlTriangleVoid) {
                 timerZone.instance.gameObject.GetComponent<timerZone>().changeFaseTo(1);
                 controlTriangleVoid = true;

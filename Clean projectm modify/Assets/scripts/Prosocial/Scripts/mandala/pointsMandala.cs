@@ -27,7 +27,7 @@ public class pointsMandala : MonoBehaviour
     private int num_particles = 0;
     private ParticleSystem.Particle[] m_rParticlesArray = null;
     public float timeFirstLine = 2.0f;
-    private float firstLinesControl = 2.0f;
+    private float firstLinesControl = 5.0f;
     public bool firstLineDraw = false;
     public bool retriveColors = false;
     public Vector3 positionFinal;
@@ -58,12 +58,14 @@ public class pointsMandala : MonoBehaviour
         controlFase=0;
         positionFinal = gameObject.transform.position;
         positionRandom = gameObject.transform.position;
+        
         moving = false;
     }
 
     void givePositionRandom() {
-        positionRandom  = new Vector3(Random.Range(-10.0f+ positionRandom.x, 10.0f+ positionRandom.x), 0, Random.Range(-10.0f+ positionRandom.z, 10.0f+ positionRandom.z));
+        positionRandom = new Vector3(Random.Range(-10.0f + positionRandom.x, 10.0f + positionRandom.x), 0, Random.Range(-10.0f + positionRandom.z, 10.0f + positionRandom.z));
         gameObject.transform.position = positionRandom;
+        moving = false;
         controlFase = 0;
     }
 
@@ -99,6 +101,7 @@ public class pointsMandala : MonoBehaviour
             //particles.transform.position=gameObject.transform.position;
             make_line = true;
             firstLineDraw = false;
+
             firstLinesControl = timeFirstLine;
         }
         
@@ -139,11 +142,13 @@ public class pointsMandala : MonoBehaviour
             gameObject.transform.position = positionFinal;
             moving = false;
             controlFase = 1;
-           
+            
         }
 
 
     }
+
+
 
     // Update is called once per frame
     void Update()
