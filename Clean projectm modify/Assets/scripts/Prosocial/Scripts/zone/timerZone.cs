@@ -135,17 +135,32 @@ public class timerZone : MonoBehaviour
 
             if (controlminiMoveZone && timeNextAppear > 2.0f)
             {
+                timeNextAppear = 0.0f;
+                timeBetweenFasesControl = true;
                 changeFaseTo(4);
             }
 
         }
-        else if (controlFase == 4)
+        else if (controlFase == 4) {
+
+            activateParticlesZoneScan(1);
+            if (timeNextAppear >= 1.0f && timeBetweenFasesControl) {
+                timeBetweenFasesControl = false;
+                activateParticlesZoneScan(0);
+            }
+
+            if (checkPartcilesCatchedZonesFromScanZones()) {
+                deactivateZoneScan(1);
+                changeFaseTo(6);
+            }
+        }
+        else if (controlFase == 5) //no se usa pendiente quitar
         {
             if (!timeBetweenFasesControl)
             {
 
                 activaMovezones(1);
-                
+
                 timeBetweenFasesControl = true;
 
             }
@@ -155,25 +170,27 @@ public class timerZone : MonoBehaviour
                 deactiveMoveZones();
 
                 //activateZonesCircles();
-                controlminiMoveZone = false;
-                changeFaseTo(5);
+                
+                changeFaseTo(6);
 
 
             }
 
         }
-        else if (controlFase == 5)
+        else if (controlFase == 6)
         {
-            
+
             if (checkScanZonesFromMainZone())
             {
-                changeFaseTo(6);
+                changeFaseTo(7);
             }
         }
-        else if (controlFase == 6) {
+        else if (controlFase == 7)
+        {
 
-            if (mandalamanager.instance.checkPointsInPosition()) {
-                deactivateZoneScan(1);
+            if (mandalamanager.instance.checkPointsInPosition())
+            {
+                deactivateZoneScan(0);
                 changeFaseTo(0);
             }
         }
@@ -207,18 +224,24 @@ public class timerZone : MonoBehaviour
                 mandalamanager.instance.deactivateAllPoints();
                 controlminiMoveZone = false;
                 break;
-            case 4://move scan
+
+            case 4://appear and capturing circle
+
+                break;
+            case 5://move scan//no se usa pendiente quitar
                 pointCentralMandala.GetComponent<PointCentralMandala>().allowAbsorv = false;
                 ParticlesDoneAbosorving = false;
                 timeBetweenFasesControl = false;
                 deactivateZoneScan(0);
                 break;
-            case 5://second scan
+            case 6://second scan
+                controlminiMoveZone = false;
                 activateZoneScanFromMainZone();
                 pointCentralMandala.GetComponent<PointCentralMandala>().allowAbsorv = false;
                 break;
-            case 6://appear mandala
-                
+            case 7://appear mandala
+                deactivateZoneScan(0);
+                deactivateZoneScan(1);
                 mandalamanager.instance.activateAllPoints();
                 break;
 
@@ -243,12 +266,37 @@ public class timerZone : MonoBehaviour
                 Transform tempFoot = zoneList[i].transform.Find("footPrint");
                 tempFoot.GetComponent<collisionScan>().changeColorTo(0);
                 tempFoot.GetComponent<collisionScan>().enabled = false ;
+                Transform zone = zoneList[i].transform.Find("frenteZone");
+                Transform circle = zone.Find("Cube");
+                circle.gameObject.SetActive(true);
             }
             
         }
 
     }
 
+    public void activateParticlesZoneScan(int cual) {
+
+        for (int i = 0; i < zoneScan.Count; i++)
+        {
+            if (cual == 0)
+            {
+                Transform zone = zoneScan[i].transform.Find("frenteZone");
+                zone.gameObject.GetComponent<simpleColliderZone>().allowCollision = true;
+                Transform particles = zone.Find("Particle System");
+                particles.gameObject.GetComponent<ParticleSystem>().Play();
+            }
+            else if (cual == 1) {
+                Transform zone = zoneScan[i].transform.Find("frenteZone");
+                zone.transform.Find("Cube").gameObject.SetActive(true);
+            }
+            
+
+        }
+
+    }
+
+    
 
     public void activateZoneScanFromMainZone() {
         for (int i = 0; i < zoneList.Count; i++) {
@@ -311,6 +359,24 @@ public class timerZone : MonoBehaviour
 
     }
 
+    public bool checkPartcilesCatchedZonesFromScanZones()
+    {
+
+        bool resp = true;
+        for (int i = 0; i < zoneScan.Count; i++)
+        {
+            Transform zone = zoneScan[i].transform.Find("frenteZone");
+            
+            resp = resp && zone.gameObject.GetComponent<simpleColliderZone>().isZoneOver();
+
+        }
+        if (resp)
+        {
+
+        }
+        return resp;
+
+    }
 
 
     public void activaMovezones(int cual) {
@@ -767,7 +833,7 @@ public class timerZone : MonoBehaviour
         }
     }
 
-    void activateZonesCircles()
+    public void activateZonesCircles()
     {
         Transform temp;
         Transform temp1;
