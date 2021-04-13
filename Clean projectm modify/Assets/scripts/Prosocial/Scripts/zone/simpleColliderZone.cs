@@ -16,6 +16,8 @@ public class simpleColliderZone : MonoBehaviour
     float timeWaiting;
     bool timeOn;
     bool timeBetweenFasesControl;
+    public Gradient touch;
+    public Gradient notouch;
     // Start is called before the first frame update
     void Start()
     {
@@ -30,6 +32,9 @@ public class simpleColliderZone : MonoBehaviour
     {
 
         if (collision ) {
+            miniRiver1.GetComponent<miniRiverZone>().ChangeColorTo(touch, notouch);
+            miniRiver2.GetComponent<miniRiverZone>().ChangeColorTo(touch, notouch);
+            miniRiver3.GetComponent<miniRiverZone>().ChangeColorTo(touch, notouch);
             miniRiver1.GetComponent<miniRiverZone>().PlayRiver();
             miniRiver2.GetComponent<miniRiverZone>().PlayRiver();
             miniRiver3.GetComponent<miniRiverZone>().PlayRiver();
@@ -44,7 +49,8 @@ public class simpleColliderZone : MonoBehaviour
             if (timeWaiting >= timeWait) {
                 if (!timeBetweenFasesControl)
                 {
-                    moveZone.GetComponent<MoveZone>().ChangeColorTo(Color.gray, Color.white);
+                    
+                    moveZone.GetComponent<MoveZone>().ChangeColorTo(touch, notouch);
                     moveZone.GetComponent<MoveZone>().initMoveZone(1);
                     transform.Find("Cube").gameObject.SetActive(false);
                     transform.parent.transform.Find("footPrint").gameObject.SetActive(false);

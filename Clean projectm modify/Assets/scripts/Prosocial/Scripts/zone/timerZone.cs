@@ -143,7 +143,7 @@ public class timerZone : MonoBehaviour
         }
         else if (controlFase == 4) {
 
-            activateParticlesZoneScan(1);
+            
             if (timeNextAppear >= 1.0f && timeBetweenFasesControl) {
                 timeBetweenFasesControl = false;
                 activateParticlesZoneScan(0);
@@ -226,7 +226,7 @@ public class timerZone : MonoBehaviour
                 break;
 
             case 4://appear and capturing circle
-
+                activateParticlesZoneScan(1);
                 break;
             case 5://move scan//no se usa pendiente quitar
                 pointCentralMandala.GetComponent<PointCentralMandala>().allowAbsorv = false;
