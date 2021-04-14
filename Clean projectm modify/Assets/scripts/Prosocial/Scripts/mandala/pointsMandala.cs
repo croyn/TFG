@@ -89,6 +89,11 @@ public class pointsMandala : MonoBehaviour
         wichLayer = wichLayer + 1;
         givePartner();
         if (linea != null) {
+            if (lineaTemp != null)
+            {
+                lineaTemp.transform.parent = mandalamanager.instance.transform;
+
+            }
             lineaTemp = Instantiate(linea);
             LineRenderer temp = lineaTemp.GetComponent<LineRenderer>();
             temp.SetPosition(0, gameObject.transform.position);

@@ -40,7 +40,14 @@ public class PointCentralMandala : MonoBehaviour
             num_particles_absorv = num_particles_absorv + 1;
             
             if (num_particles_absorv % numParticlesNextLine == 0) {
-                mandalamanager.instance.ActivatePointsTriangles();
+                if (!mandalamanager.instance.trianglesDone)
+                {
+                    mandalamanager.instance.ActivatePointsTriangles();
+                }
+                else if(mandalamanager.instance.trianglesDone && !mandalamanager.instance.circleDone ){
+                    mandalamanager.instance.ActivatePointsCircle();
+                }
+                
             }
         }
     }

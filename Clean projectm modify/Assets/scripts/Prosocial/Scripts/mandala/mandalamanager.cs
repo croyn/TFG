@@ -25,7 +25,8 @@ public class mandalamanager : MonoBehaviour
     private Gradient actualColor = null;
     private bool controlTriangleVoid=true;
     private bool trampa = false;
-
+    public bool trianglesDone = false;
+    public bool circleDone = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -37,6 +38,8 @@ public class mandalamanager : MonoBehaviour
         interLayer = 0;
         controlTriangleVoid = true;
         trampa = false;
+        trianglesDone = false;
+        circleDone = false;
     }
 
     // Update is called once per frame
@@ -142,39 +145,7 @@ public class mandalamanager : MonoBehaviour
         return actualColor;
     }
 
-    public GameObject givePointFronTriangle()
-    {
-        /*GameObject actualTriangle = triangleList[indiceTriangle].gameObject;
-       
-
-        /*GameObject actualPoint = sphereObjectivelist[indiceActualPoint].gameObject;
-
-        while(actualPoint.GetComponent<pointsMandala>().partnerPoint == null) {
-            indiceActualPoint = indiceActualPoint + 1;
-
-            actualPoint = sphereObjectivelist[indiceActualPoint].gameObject;
-        }
-
-        if (actualPoint.GetComponent<pointsMandala>().number_particles_catch > 400) {
-            indiceActualPoint = indiceActualPoint + 1;
-        }*/
-
-        /*GameObject toReturn= actualTriangle.GetComponent<Triangle>().givePoint();
-
-        while (toReturn == null && indiceTriangle< triangleList.Capacity)
-        {
-
-            indiceTriangle = indiceTriangle + 1;
-            actualTriangle = triangleList[indiceTriangle].gameObject;
-            toReturn = actualTriangle.GetComponent<Triangle>().givePoint();
-
-        }*/
-
-        return null;
-
-    }
-
-
+  
     public GameObject giveBrotherTriangle(int whoiam) {
 
 
@@ -191,6 +162,23 @@ public class mandalamanager : MonoBehaviour
         return triangleList[result+8].gameObject;
 
     }
+
+    public void ActivatePointsCircle()
+    {
+        GameObject actualCircle = null;
+        GameObject actualPoint = null;
+        for (int i = 0; i < numTrianglesLayer; i++)
+        {
+            actualCircle = circleList[i].gameObject;
+            actualPoint = actualCircle.GetComponent<circlePart>().activatePointFromCircle();
+        }
+
+        if (actualPoint==null) {
+            circleDone = true;
+        }
+
+    }
+
 
     public void ActivatePointsTriangles() {
         GameObject actualTriangle=null;
@@ -238,6 +226,11 @@ public class mandalamanager : MonoBehaviour
                     }
 
                 }
+                else
+                {
+                    trianglesDone = true;
+
+                }
             }
             else
             {
@@ -264,6 +257,9 @@ public class mandalamanager : MonoBehaviour
 
                             }
 
+                        }
+                        else {
+                            trianglesDone = true;
                         }
                     }
                 }

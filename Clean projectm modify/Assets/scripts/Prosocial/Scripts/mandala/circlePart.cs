@@ -6,17 +6,23 @@ public class circlePart : MonoBehaviour
 {
 
     public List<GameObject> circlePoints = new List<GameObject>();
-    
+    public int indiceActualPoint = 0;
+    private bool started = false;
     // Start is called before the first frame update
     void Start()
     {
-        
+        started = false;
+        indiceActualPoint = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (!started)
+        {
+            started = true;
+            LlenarConexionesPuntos();
+        }
     }
 
     public void activatePoints() {
@@ -55,4 +61,55 @@ public class circlePart : MonoBehaviour
         return resp;
     }
 
-}
+
+    public GameObject activatePointFromCircle(bool activateLine = true) {
+
+        GameObject actualPoint = circlePoints[indiceActualPoint].gameObject;
+        actualPoint.GetComponent<pointsMandala>().givePartner();
+        while (actualPoint.GetComponent<pointsMandala>().actualPartnerPoint == null)
+        {
+            indiceActualPoint = indiceActualPoint + 1;
+            if (indiceActualPoint <= circlePoints.Count - 1)
+            {
+                actualPoint = circlePoints[indiceActualPoint].gameObject;
+                
+            }
+            else {
+                
+                return null;
+            }
+
+            
+        }
+
+
+        if (actualPoint != null && actualPoint.GetComponent<pointsMandala>().make_line)
+        {
+            indiceActualPoint = indiceActualPoint + 1;
+            if (indiceActualPoint <= circlePoints.Count - 1)
+            {
+                actualPoint = circlePoints[indiceActualPoint].gameObject;
+                
+            }
+            else {
+                return null;
+            }
+        }
+        if (activateLine)
+        {
+            actualPoint.GetComponent<pointsMandala>().line_true();
+        }
+
+        return circlePoints[indiceActualPoint].gameObject;
+    }
+
+    private void LlenarConexionesPuntos()
+    {
+        for (int i = 0; i <= circlePoints.Count/2; i++)
+        {
+            circlePoints[i].GetComponent<pointsMandala>().partnerPoint = circlePoints[i+ (circlePoints.Count / 2)].gameObject;
+
+        }
+    }
+
+ }

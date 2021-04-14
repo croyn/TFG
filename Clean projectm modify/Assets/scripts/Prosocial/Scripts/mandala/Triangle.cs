@@ -203,7 +203,7 @@ public class Triangle : MonoBehaviour
            if (actualPoint != null && actualPoint.GetComponent<pointsMandala>().make_line)
             {
                 indiceActualPoint = indiceActualPoint + 1;
-                if (indiceActualPoint >= PointsList.Count - 1)
+                if (indiceActualPoint > PointsList.Count - 1)
                 {
                     PointsList = queLadoToca(true);
                     if (PointsList == null)
