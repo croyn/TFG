@@ -23775,6 +23775,8 @@ MonoBehaviour:
   pointCentralMandala: {fileID: 1117741108}
   controlFase: 0
   timeBetweenFases: 1
+  sizeFinal: {x: 6, y: 1, z: 6}
+  incrementSize: {x: 0.002, y: 0, z: 0.002}
 --- !u!1001 &1221343638
 PrefabInstance:
   m_ObjectHideFlags: 0

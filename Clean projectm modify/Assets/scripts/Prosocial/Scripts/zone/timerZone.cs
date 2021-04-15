@@ -26,7 +26,8 @@ public class timerZone : MonoBehaviour
     private bool controlminiMoveZone = false;
     public float timeBetweenFases;
     private bool timeBetweenFasesControl = false;
-
+    public Vector3 sizeFinal;
+    public Vector3 incrementSize;
 
     // Start is called before the first frame update
     void Start()
@@ -96,9 +97,18 @@ public class timerZone : MonoBehaviour
 
                 deactiveMoveZones();
 
-                activateZonesCircles();
-                controlminiMoveZone = false;
-                changeFaseTo(2);
+
+                if (mandalamanager.instance.trianglesDone && mandalamanager.instance.circleDone)
+                {
+                    changeFaseTo(6);
+                }
+                else
+                {
+                    activateZonesCircles();
+                    controlminiMoveZone = false;
+                    changeFaseTo(2);
+                }
+
             }
             else if (!isDoneMoving() && ParticlesDoneAbosorving && timeBetweenFasesControl)
             {
@@ -141,15 +151,18 @@ public class timerZone : MonoBehaviour
             }
 
         }
-        else if (controlFase == 4) {
+        else if (controlFase == 4)
+        {
 
-            
-            if (timeNextAppear >= 1.0f && timeBetweenFasesControl) {
+
+            if (timeNextAppear >= 1.0f && timeBetweenFasesControl)
+            {
                 timeBetweenFasesControl = false;
                 activateParticlesZoneScan(0);
             }
 
-            if (checkPartcilesCatchedZonesFromScanZones()) {
+            if (checkPartcilesCatchedZonesFromScanZones())
+            {
                 deactivateZoneScan(1);
                 changeFaseTo(6);
             }
@@ -170,7 +183,7 @@ public class timerZone : MonoBehaviour
                 deactiveMoveZones();
 
                 //activateZonesCircles();
-                
+
                 changeFaseTo(6);
 
 
@@ -182,7 +195,16 @@ public class timerZone : MonoBehaviour
 
             if (checkScanZonesFromMainZone())
             {
-                changeFaseTo(7);
+                if (mandalamanager.instance.trianglesDone && mandalamanager.instance.circleDone)
+                {
+                    //deactivateZoneScan(2);
+                    changeFaseTo(8);
+                }
+                else
+                {
+                    changeFaseTo(7);
+                }
+
             }
         }
         else if (controlFase == 7)
@@ -194,7 +216,29 @@ public class timerZone : MonoBehaviour
                 changeFaseTo(0);
             }
         }
+        else if (controlFase == 8) {
 
+            if (reSizeMandala()) {
+                Debug.Log("SE ACABO");
+            }
+
+        }
+
+
+    }
+
+    public bool reSizeMandala() {
+        float x = mandalamanager.instance.gameObject.transform.localScale.x;
+        float y = mandalamanager.instance.gameObject.transform.localScale.y;
+        float z = mandalamanager.instance.gameObject.transform.localScale.z;
+        if (x+incrementSize.x <= sizeFinal.x && y+incrementSize.y <= sizeFinal.y && z+incrementSize.z <= sizeFinal.z) {
+            mandalamanager.instance.gameObject.transform.localScale = mandalamanager.instance.gameObject.transform.localScale + incrementSize;
+            return false;
+        }
+        else
+        {
+            return true;
+        }
 
     }
 
@@ -235,6 +279,15 @@ public class timerZone : MonoBehaviour
                 deactivateZoneScan(0);
                 break;
             case 6://second scan
+                if (mandalamanager.instance.trianglesDone && mandalamanager.instance.circleDone)
+                {
+                    deactivateZoneScan(2);
+                }
+                else
+                {
+                    deactivateZoneScan(1);
+                }
+                    
                 controlminiMoveZone = false;
                 activateZoneScanFromMainZone();
                 pointCentralMandala.GetComponent<PointCentralMandala>().allowAbsorv = false;
@@ -243,6 +296,10 @@ public class timerZone : MonoBehaviour
                 deactivateZoneScan(0);
                 deactivateZoneScan(1);
                 mandalamanager.instance.activateAllPoints();
+                break;
+            case 8://final
+                deactivateZoneScan(2);
+
                 break;
 
         }
@@ -255,23 +312,37 @@ public class timerZone : MonoBehaviour
 
         if (cual == 0)
         {
-            for (int i = 0; i < zoneScan.Count; i++) {
+            for (int i = 0; i < zoneScan.Count; i++)
+            {
                 zoneScan[i].SetActive(false);
 
             }
 
         }
-        else if (cual == 1) {
-            for (int i = 0; i < zoneList.Count; i++) {
+        else if (cual == 1)
+        {
+            for (int i = 0; i < zoneList.Count; i++)
+            {
                 Transform tempFoot = zoneList[i].transform.Find("footPrint");
+                tempFoot.GetComponent<collisionScan>().timeIn = 0.0f;
                 tempFoot.GetComponent<collisionScan>().changeColorTo(0);
-                tempFoot.GetComponent<collisionScan>().enabled = false ;
+                tempFoot.GetComponent<collisionScan>().enabled = false;
                 Transform zone = zoneList[i].transform.Find("frenteZone");
                 Transform circle = zone.Find("Cube");
                 circle.gameObject.SetActive(true);
             }
-            
+
         }
+        else if (cual == 2) {
+            for (int i = 0; i < zoneList.Count; i++)
+            {
+                Transform tempFoot = zoneList[i].transform.Find("footPrint");
+                tempFoot.GetComponent<collisionScan>().changeColorTo(0);
+                tempFoot.GetComponent<collisionScan>().enabled = false;
+
+            }
+        }
+        
 
     }
 
@@ -302,7 +373,6 @@ public class timerZone : MonoBehaviour
         for (int i = 0; i < zoneList.Count; i++) {
             // zoneList[i].GetComponent<zoneManager>().activateFootPrint();
             Transform tempFoot = zoneList[i].transform.Find("footPrint");
-            zoneList[i].transform.Find("footPrint");
             tempFoot.gameObject.SetActive(true);
             tempFoot.GetComponent<collisionScan>().enabled = true;
 

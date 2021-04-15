@@ -11,7 +11,7 @@ public class collisionScan : MonoBehaviour
     void Start()
     {
         isIn = false;
-
+        timeIn = 0.0f;
 
     }
 

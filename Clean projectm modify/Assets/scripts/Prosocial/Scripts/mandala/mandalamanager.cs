@@ -96,52 +96,68 @@ public class mandalamanager : MonoBehaviour
     }
 
     public Gradient switchColor() {
-        switch (layer) {
-            case 0:
-                actualColor = color1;
-                break;
-            case 1:
-                actualColor = color2;
-                break;
-           case 2:
-                if (interLayer != 1)
-                {
-                    actualColor = color3;
-                }
-                else {
+        if (!trianglesDone)
+        {
+            switch (layer)
+            {
+                case 0:
+                    actualColor = color1;
+                    break;
+                case 1:
                     actualColor = color2;
-                }
-                
-                
-                break;
+                    break;
+                case 2:
+                    if (interLayer != 1)
+                    {
+                        actualColor = color3;
+                    }
+                    else
+                    {
+                        actualColor = color2;
+                    }
 
 
+                    break;
+
+
+            }
         }
+        else {
+            actualColor = color3;
+        }
+        
         return actualColor;
     }
     public Gradient switchColorMove()
     {
-        switch (layer)
+        if (!trianglesDone)
         {
-            case 0:
-                actualColor = color1Move;
-                break;
-            case 1:
-                actualColor = color2Move;
-                break;
-            case 2:
-                if (interLayer != 1)
-                {
-                    actualColor = color3Move;
-                }
-                else
-                {
+            switch (layer)
+            {
+                case 0:
+                    actualColor = color1Move;
+                    break;
+                case 1:
                     actualColor = color2Move;
-                }
-                break;
+                    break;
+                case 2:
+                    if (interLayer != 1)
+                    {
+                        actualColor = color3Move;
+                    }
+                    else
+                    {
+                        actualColor = color2Move;
+                    }
+                    break;
 
 
+            }
         }
+        else {
+            actualColor = color3Move;
+        }
+            
         return actualColor;
     }
 
@@ -174,6 +190,7 @@ public class mandalamanager : MonoBehaviour
         }
 
         if (actualPoint==null) {
+            timerZone.instance.gameObject.GetComponent<timerZone>().changeFaseTo(1);
             circleDone = true;
         }
 
