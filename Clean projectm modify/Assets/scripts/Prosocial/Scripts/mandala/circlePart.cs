@@ -8,6 +8,7 @@ public class circlePart : MonoBehaviour
     public List<GameObject> circlePoints = new List<GameObject>();
     public int indiceActualPoint = 0;
     private bool started = false;
+    public int numLineasCapa1=0;
     // Start is called before the first frame update
     void Start()
     {
@@ -107,6 +108,7 @@ public class circlePart : MonoBehaviour
     {
         for (int i = 0; i <= circlePoints.Count/2; i++)
         {
+            numLineasCapa1 = numLineasCapa1 + 1;
             circlePoints[i].GetComponent<pointsMandala>().partnerPoint = circlePoints[i+ (circlePoints.Count / 2)].gameObject;
 
         }

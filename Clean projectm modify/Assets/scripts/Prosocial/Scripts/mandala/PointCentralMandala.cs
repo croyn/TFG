@@ -10,13 +10,17 @@ public class PointCentralMandala : MonoBehaviour
     public float timeNextLine=0.0f;
     public float maxNextLine = 1.0f;
     public int numParticlesNextLine = 60;
-
-    public
+    public float numActivationAvailable;
+    public bool allowLine=false;
+    float timeOff = 0.0f;
 
     // Start is called before the first frame update
     void Start()
     {
         allowAbsorv = false;
+        numActivationAvailable = 0.0f;
+        allowLine = false;
+        timeOff = 0.0f;
     }
 
     // Update is called once per frame
@@ -32,12 +36,38 @@ public class PointCentralMandala : MonoBehaviour
         {
             mandalamanager.instance.ActivatePointsTriangles();
         }
+        timeOff = timeOff+ Time.deltaTime;
+
+        if (numActivationAvailable >=1.0f && allowLine)//&& timeOff>0.4f
+        {
+            Debug.Log("Central numActive " + numActivationAvailable);
+            numActivationAvailable = numActivationAvailable - 1.0f;
+            if (!mandalamanager.instance.trianglesDone)
+            {
+
+                if (mandalamanager.instance.ActivatePointsTriangles()) {
+                    Debug.Log("Lanzo linea");
+                }
+                timeOff = 0;
+            }
+            else if (mandalamanager.instance.trianglesDone && !mandalamanager.instance.circleDone)
+            {
+                mandalamanager.instance.ActivatePointsCircle();
+                timeOff = 0;
+            }
+            
+                
+        }
+        if (numActivationAvailable == 0.0f)
+        {
+            allowLine = false;
+        }
     }
 
     public void addParticle() {
 
-        if (allowAbsorv) { 
-            num_particles_absorv = num_particles_absorv + 1;
+        if (allowAbsorv) {
+            /*num_particles_absorv = num_particles_absorv + 1;
             
             if (num_particles_absorv % numParticlesNextLine == 0) {
                 if (!mandalamanager.instance.trianglesDone)
@@ -48,7 +78,15 @@ public class PointCentralMandala : MonoBehaviour
                     mandalamanager.instance.ActivatePointsCircle();
                 }
                 
+            }*/
+            if (numActivationAvailable >=1.0f) {
+                allowLine = true;
             }
+            
+
+
+
+
         }
     }
 

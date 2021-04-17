@@ -15816,6 +15816,9 @@ MonoBehaviour:
   indiceActualPoint: 0
   typeTriangle: 0
   id_triangle: 0
+  numLineasCapa1: 0
+  numLineasCapa2: 0
+  numLineasCapa3: 0
 --- !u!1 &730743383 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 116349929765870618, guid: c121b95205fdda54b974999d82f222bd,
@@ -21846,6 +21849,8 @@ MonoBehaviour:
   timeNextLine: 0
   maxNextLine: 1
   numParticlesNextLine: 60
+  numActivationAvailable: 0
+  allowLine: 0
 --- !u!1001 &1119957365
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -23755,8 +23760,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fd6e2c236cddaf47b3f42640f5df0a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeToNext: 3
-  timeToOffZones: 2
+  timeToNext: 4
+  timeToOffZones: 3
   zoneList:
   - {fileID: 480343192}
   - {fileID: 2099173064}
@@ -23777,6 +23782,10 @@ MonoBehaviour:
   timeBetweenFases: 1
   sizeFinal: {x: 6, y: 1, z: 6}
   incrementSize: {x: 0.002, y: 0, z: 0.002}
+  tempMaxFirstLayer: 44
+  tempMaxSecondLayer: 36
+  tempMaxThirdLayer: 20
+  tempMaxCircleLayer: 12
 --- !u!1001 &1221343638
 PrefabInstance:
   m_ObjectHideFlags: 0

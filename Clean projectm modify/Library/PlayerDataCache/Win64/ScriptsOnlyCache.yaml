@@ -16,6 +16,7 @@ ScriptsOnlyBuild:
     - miniRiverZone
     - pointsMandala
     - rotateCircle
+    - simpleColliderZone
     - timerZone
     - zoneManager
     - zoneManagerMove
@@ -77,49 +78,51 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1976}
     - Class: 114
-      Script: {instanceID: 2174}
+      Script: {instanceID: 2170}
     - Class: 114
-      Script: {instanceID: 2276}
+      Script: {instanceID: 2176}
     - Class: 114
-      Script: {instanceID: 2328}
+      Script: {instanceID: 2278}
     - Class: 114
-      Script: {instanceID: 2380}
+      Script: {instanceID: 2330}
     - Class: 114
-      Script: {instanceID: 2398}
+      Script: {instanceID: 2382}
     - Class: 114
-      Script: {instanceID: 2532}
+      Script: {instanceID: 2400}
     - Class: 114
-      Script: {instanceID: 2678}
+      Script: {instanceID: 2534}
     - Class: 114
-      Script: {instanceID: 2690}
+      Script: {instanceID: 2680}
     - Class: 114
-      Script: {instanceID: 2696}
+      Script: {instanceID: 2692}
     - Class: 114
-      Script: {instanceID: 2776}
+      Script: {instanceID: 2698}
     - Class: 114
-      Script: {instanceID: 2840}
+      Script: {instanceID: 2778}
     - Class: 114
-      Script: {instanceID: 2848}
+      Script: {instanceID: 2842}
     - Class: 114
-      Script: {instanceID: 3006}
+      Script: {instanceID: 2850}
     - Class: 114
-      Script: {instanceID: 3528}
+      Script: {instanceID: 3008}
     - Class: 114
-      Script: {instanceID: 3556}
+      Script: {instanceID: 3530}
     - Class: 114
-      Script: {instanceID: 3660}
+      Script: {instanceID: 3558}
     - Class: 114
-      Script: {instanceID: 3828}
+      Script: {instanceID: 3662}
     - Class: 114
-      Script: {instanceID: 3938}
+      Script: {instanceID: 3830}
     - Class: 114
-      Script: {instanceID: 3990}
+      Script: {instanceID: 3940}
     - Class: 114
-      Script: {instanceID: 4080}
+      Script: {instanceID: 3992}
     - Class: 114
-      Script: {instanceID: 4164}
+      Script: {instanceID: 4082}
     - Class: 114
-      Script: {instanceID: 4216}
+      Script: {instanceID: 4166}
+    - Class: 114
+      Script: {instanceID: 4218}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 120
@@ -279,6 +282,12 @@ ScriptsOnlyBuild:
     className: RawImage
   - hash:
       serializedVersion: 2
+      Hash: 3ff41a0db69e3a87def816c1db3386d2
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: simpleColliderZone
+  - hash:
+      serializedVersion: 2
       Hash: d1a92f55cbba87ac90580439309a3c28
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
@@ -303,7 +312,7 @@ ScriptsOnlyBuild:
     className: CanvasScaler
   - hash:
       serializedVersion: 2
-      Hash: ec54ccdab8ae86958a7bd538d53981f4
+      Hash: 1a9aff541c4c3da79907dac8380ed9ee
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: mandalamanager
@@ -411,7 +420,7 @@ ScriptsOnlyBuild:
     className: TestResultRendererCallback
   - hash:
       serializedVersion: 2
-      Hash: fdb8f16c2329758eb8171abf636cf8ee
+      Hash: 83e954619143b1a4941991fed53b097b
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: circlePart
@@ -483,7 +492,7 @@ ScriptsOnlyBuild:
     className: TextContainer
   - hash:
       serializedVersion: 2
-      Hash: b83dbf910594ab19ad9ae247e19fb0fd
+      Hash: dddfab3e43d86d621c32f0a52d68e52f
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: timerZone
@@ -735,7 +744,7 @@ ScriptsOnlyBuild:
     className: TMP_ScrollbarEventHandler
   - hash:
       serializedVersion: 2
-      Hash: 861b977731023bc063b948412e9be6ef
+      Hash: 06cf19b5f9959cb031853f52166f13de
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Triangle
@@ -777,7 +786,7 @@ ScriptsOnlyBuild:
     className: ActivationPlayableAsset
   - hash:
       serializedVersion: 2
-      Hash: 41b96eb47a5f44eb106869034365febe
+      Hash: c49ec77c010160e775b3298dcb410234
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PointCentralMandala

@@ -77,13 +77,13 @@ public class collisionScan : MonoBehaviour
 
 
     private void OnTriggerStay(Collider other) {
-        Debug.Log("Entro scan");
+      //  Debug.Log("Entro scan");
         isIn = true;
     }
 
     private void OnTriggerExit(Collider other)
     {
-        Debug.Log("Salgo scan");
+       // Debug.Log("Salgo scan");
         isIn = false;
 
 

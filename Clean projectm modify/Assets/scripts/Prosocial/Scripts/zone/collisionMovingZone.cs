@@ -24,7 +24,7 @@ public class collisionMovingZone : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        Debug.Log(" COLLISION BOLA " + other.name);
+        //Debug.Log(" COLLISION BOLA " + other.name);
         if (allowCollision)
         {
 

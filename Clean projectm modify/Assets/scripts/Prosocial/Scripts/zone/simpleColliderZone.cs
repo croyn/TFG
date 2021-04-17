@@ -81,7 +81,7 @@ public class simpleColliderZone : MonoBehaviour
     {
         if (allowCollision)
         {
-            Debug.Log("Entro collider bola simple");
+            //Debug.Log("Entro collider bola simple");
             Transform derecha=zoneObjective.transform.Find("derechaZone");
             Transform frente = zoneObjective.transform.Find("frenteZone");
             Transform izquierda = zoneObjective.transform.Find("izquierdaZone");

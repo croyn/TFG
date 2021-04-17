@@ -28,7 +28,10 @@ public class timerZone : MonoBehaviour
     private bool timeBetweenFasesControl = false;
     public Vector3 sizeFinal;
     public Vector3 incrementSize;
-
+    public float tempMaxFirstLayer ;
+    public float tempMaxSecondLayer;
+    public float tempMaxThirdLayer ;
+    public float tempMaxCircleLayer ;
     // Start is called before the first frame update
     void Start()
     {
@@ -474,7 +477,7 @@ public class timerZone : MonoBehaviour
             Transform minizone2 = zoneList[i].transform.Find("MiniMoveZone2");
             Transform minizone3 = zoneList[i].transform.Find("MiniMoveZone3");
             if (minizone1.gameObject.GetComponent<MoveZone>().isActiveAndEnabled) {
-                Debug.Log("Entro moveZone activate");
+                //Debug.Log("Entro moveZone activate");
                 minizone1.gameObject.GetComponent<MoveZone>().ChangeColorTo(tempColor, tempColor);
                 minizone2.gameObject.GetComponent<MoveZone>().ChangeColorTo(tempColor, tempColor);
                 minizone3.gameObject.GetComponent<MoveZone>().ChangeColorTo(tempColor, tempColor);
@@ -484,7 +487,7 @@ public class timerZone : MonoBehaviour
             }
 
             if (minizone1.gameObject.GetComponent<miniRiverZone>().isActiveAndEnabled) {
-                Debug.Log("Entro miniRiverZone activate");
+             //   Debug.Log("Entro miniRiverZone activate");
                 minizone1.gameObject.GetComponent<miniRiverZone>().ChangeColorTo(tempColor, tempColor);
                 minizone2.gameObject.GetComponent<miniRiverZone>().ChangeColorTo(tempColor, tempColor);
                 minizone3.gameObject.GetComponent<miniRiverZone>().ChangeColorTo(tempColor, tempColor);
@@ -516,16 +519,51 @@ public class timerZone : MonoBehaviour
 
     private void activeZonesTouched() {
         Transform temp = null;
+        bool controlOneActive = false;
         for (int i = 0; i < zoneListActive.Count; i++)
         {
 
             temp = zoneListActive[i];
             if (temp.GetComponent<zoneManager>().isCatched()) {
                 temp.GetComponent<zoneManager>().activeExplosion();
+                controlOneActive = true;
             }
             
             
 
+        }
+
+        if (controlOneActive) {
+            float timeTemp = 0.0f;
+            if (!mandalamanager.instance.trianglesDone)
+            {
+                switch (mandalamanager.instance.layer)
+                {
+                    case 0:
+                        timeTemp = tempMaxFirstLayer;
+                        break;
+                    case 1:
+                        timeTemp = tempMaxSecondLayer;
+                        break;
+                    case 2:  
+                        timeTemp = tempMaxThirdLayer;
+                        break;
+                }
+            }
+            else {
+                timeTemp = tempMaxCircleLayer;
+            }
+            Debug.Log("Time " + timeTemp);
+            timeTemp = timeTemp / timeToNext;
+            Debug.Log("timeToNext " + timeToNext);
+            Debug.Log("timeTemp calc " + timeTemp);
+            float num = mandalamanager.instance.actulgetNumberLines();
+            Debug.Log("num lines total " + num);
+            float numLines = num / timeTemp;
+            Debug.Log("numLines calc " + numLines);
+            float calc = mandalamanager.instance.centralPoint.GetComponent<PointCentralMandala>().numActivationAvailable + (numLines) * 2;
+            Debug.Log("Tiene point centralDesdeTimer " + calc);
+            mandalamanager.instance.centralPoint.GetComponent<PointCentralMandala>().numActivationAvailable = calc;
         }
 
     }
@@ -624,7 +662,7 @@ public class timerZone : MonoBehaviour
             bool inPos2 = false;
             bool inPos3 = false;
             if (minizone1.gameObject.GetComponent<MoveZone>().isActiveAndEnabled) {
-                Debug.Log("Entro movezone doneMoving:");
+                //Debug.Log("Entro movezone doneMoving:");
                 inPos1 = minizone1.gameObject.GetComponent<MoveZone>().isInPosition();
                 inPos2 = minizone2.gameObject.GetComponent<MoveZone>().isInPosition();
                 inPos3 = minizone3.gameObject.GetComponent<MoveZone>().isInPosition();
@@ -632,7 +670,7 @@ public class timerZone : MonoBehaviour
 
             if (minizone1.gameObject.GetComponent<miniRiverZone>().isActiveAndEnabled)
             {
-                Debug.Log("Entro miniRiverZone doneMoving:");
+                //Debug.Log("Entro miniRiverZone doneMoving:");
                 inPos1 = minizone1.gameObject.GetComponent<miniRiverZone>().movingDone();
                 inPos2 = minizone2.gameObject.GetComponent<miniRiverZone>().movingDone();
                 inPos3 = minizone3.gameObject.GetComponent<miniRiverZone>().movingDone();
@@ -647,7 +685,7 @@ public class timerZone : MonoBehaviour
 
         if (control == zoneList.Count)
         {
-            Debug.Log("Entro en control true");
+            //Debug.Log("Entro en control true");
             return true;
         }
         else

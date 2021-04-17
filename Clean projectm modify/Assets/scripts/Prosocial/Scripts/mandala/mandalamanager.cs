@@ -48,6 +48,33 @@ public class mandalamanager : MonoBehaviour
 
     }
 
+    public float actulgetNumberLines() {
+        int num = 0;
+        int actualIndexTriangle = interLayer * numTrianglesLayer;
+        GameObject actualTriangle = triangleList[actualIndexTriangle].gameObject;
+        if (!trianglesDone)
+        {
+            switch (layer)
+            {
+                case 0:
+                    num = actualTriangle.GetComponent<Triangle>().numLineasCapa1;
+                    break;
+                case 1:
+                    num = actualTriangle.GetComponent<Triangle>().numLineasCapa2;
+                    break;
+                case 2:
+                    num = actualTriangle.GetComponent<Triangle>().numLineasCapa3;
+                    break;
+
+            }
+        }
+        else {
+            num=circleList[0].GetComponent<circlePart>().numLineasCapa1;
+        }
+
+
+        return (float)num;
+    }
 
     public GameObject giveCentralPoint() {
         return centralPoint;
@@ -197,7 +224,8 @@ public class mandalamanager : MonoBehaviour
     }
 
 
-    public void ActivatePointsTriangles() {
+    public bool ActivatePointsTriangles() {
+        Debug.Log("Me lanzo");
         GameObject actualTriangle=null;
         GameObject actualPoint = null;
         int actualIndexTriangle = interLayer * numTrianglesLayer;
@@ -211,6 +239,7 @@ public class mandalamanager : MonoBehaviour
         if (actualPoint == null)
         {
             interLayer = interLayer + 1;
+            centralPoint.GetComponent<PointCentralMandala>().numActivationAvailable = 0;
             if (interLayer == 2 && layer ==1 && !trampa) {
                 trampa = true;
                 interLayer = 1;
@@ -287,8 +316,8 @@ public class mandalamanager : MonoBehaviour
         else {
             controlTriangleVoid = false;
         }
-        
-
+        Debug.Log("Acabo");
+        return true;
     }
     
 }

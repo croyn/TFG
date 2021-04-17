@@ -14,6 +14,10 @@ public class Triangle : MonoBehaviour
     private int ladoMirando=0;//0 base , 1 izquierda , 2 derecha , 3 next
     public int id_triangle = 0;
     bool started = false;
+    public int numLineasCapa1 = 0;
+    public int numLineasCapa2 = 0;
+    public int numLineasCapa3 = 0;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -266,6 +270,7 @@ public class Triangle : MonoBehaviour
                 indiceMin = 0;
                 for (int i = indiceMin; i <= indiceMax; i++)
                 {
+                    numLineasCapa3 = numLineasCapa3 + 1;
                     LadoIzquierda[indiceMax - i].GetComponent<pointsMandala>().partnerPoint2 = LadoDerecha[i].gameObject;
 
                 }
@@ -277,6 +282,7 @@ public class Triangle : MonoBehaviour
                 indiceMin = 0;
                 
                 for (int i = indiceMin; i <= indiceMax; i++) {
+                    numLineasCapa1 = numLineasCapa1 + 2;
                     LadoIzquierda[i].GetComponent<pointsMandala>().partnerPoint = LadoBase[i].gameObject;
                     LadoDerecha[indiceMax - i].GetComponent<pointsMandala>().partnerPoint = LadoBase[i].gameObject;
                 }
@@ -287,6 +293,7 @@ public class Triangle : MonoBehaviour
                 indiceMin = 0;
                 for (int i = indiceMin; i<=indiceMax; i++)
                 {
+                    numLineasCapa2 = numLineasCapa2 + 1;
                     LadoIzquierda[indiceMax- i].GetComponent<pointsMandala>().partnerPoint1 = LadoDerecha[i].gameObject;
                     
                 }
@@ -297,6 +304,7 @@ public class Triangle : MonoBehaviour
               
                 for (int i = 0; i <= indiceMax- indiceMin; i++)
                 {
+                    numLineasCapa3 = numLineasCapa3 + 1;
                     LadoIzquierda[indiceMax-i].GetComponent<pointsMandala>().partnerPoint2 = LadoDerecha[indiceMin+i].gameObject;
 
                 }
@@ -311,6 +319,7 @@ public class Triangle : MonoBehaviour
 
                 for (int i = indiceMin; i <= indiceMax; i++)
                 {
+                    numLineasCapa1 = numLineasCapa1 + 2;
                     LadoIzquierda[i].GetComponent<pointsMandala>().partnerPoint = LadoBase[i].gameObject;
                     LadoDerecha[indiceMax - i].GetComponent<pointsMandala>().partnerPoint = LadoBase[i].gameObject;
                 }
@@ -328,6 +337,7 @@ public class Triangle : MonoBehaviour
                 indiceMin = 0;
                 for (int i = indiceMin; i <= indiceMax; i++)
                 {
+                    numLineasCapa2 = numLineasCapa2 + 1;
                     tempTriangle.GetComponent<Triangle>().LadoIzquierda[indiceMax-i].GetComponent<pointsMandala>().partnerPoint1 = LadoDerecha[i].gameObject;
                 }
 
@@ -336,6 +346,7 @@ public class Triangle : MonoBehaviour
                 indiceMin = 0;
                 for (int i = indiceMin; i <= indiceMax; i++)
                 {
+                    numLineasCapa3 = numLineasCapa3 + 1;
                     LadoIzquierda[indiceMax - i].GetComponent<pointsMandala>().partnerPoint2 = LadoDerecha[i].gameObject;
 
                 }
