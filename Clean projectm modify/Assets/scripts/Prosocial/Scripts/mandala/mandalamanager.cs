@@ -223,6 +223,34 @@ public class mandalamanager : MonoBehaviour
 
     }
 
+    public int whichSong() {
+        int resp = 0;
+        if (!trianglesDone)
+        {
+            switch (layer)
+            {
+                case 0:
+                    resp=0;
+                    break;
+                case 1:
+                    resp = 1;
+                    break;
+                case 2:
+                    resp = 1;
+                    break;
+
+
+            }
+        }
+        else
+        {
+            resp = 2;
+        }
+
+
+        return resp;
+    }
+
 
     public bool ActivatePointsTriangles() {
         Debug.Log("Me lanzo");

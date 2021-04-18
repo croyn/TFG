@@ -7,6 +7,7 @@ ScriptsOnlyBuild:
     - MoveZone
     - PointCentralMandala
     - Triangle
+    - audioController
     - circlePart
     - colliderParticleToPoint
     - collisionMovingZone
@@ -69,6 +70,10 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
+    - Class: 82
+      Script: {instanceID: 0}
+    - Class: 83
+      Script: {instanceID: 0}
     - Class: 104
       Script: {instanceID: 0}
     - Class: 108
@@ -123,6 +128,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 4166}
     - Class: 114
       Script: {instanceID: 4218}
+    - Class: 114
+      Script: {instanceID: 177452}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 120
@@ -492,7 +499,7 @@ ScriptsOnlyBuild:
     className: TextContainer
   - hash:
       serializedVersion: 2
-      Hash: dddfab3e43d86d621c32f0a52d68e52f
+      Hash: 2a3aedfbfc726a3d3678829253efbb0f
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: timerZone
@@ -786,7 +793,7 @@ ScriptsOnlyBuild:
     className: ActivationPlayableAsset
   - hash:
       serializedVersion: 2
-      Hash: c49ec77c010160e775b3298dcb410234
+      Hash: 970817c1a6142aba959149bb3ad8ee95
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PointCentralMandala
@@ -802,6 +809,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.EventSystems
     className: TouchInputModule
+  - hash:
+      serializedVersion: 2
+      Hash: 55e84f4a3b6583dc790f1abde103ce6c
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: audioController
   platform: 19
   scenePathNames:
   - Assets/Scenes/Edgar Scene.unity

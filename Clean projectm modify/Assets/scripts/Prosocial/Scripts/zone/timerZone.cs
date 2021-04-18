@@ -88,6 +88,7 @@ public class timerZone : MonoBehaviour
             {
 
                 deactivateZonesCircles();
+                audioController.instance.playAudio(3);
                 activaMovezones(0);
                 timeBetweenFasesControl = true;
                 timeNextAppear = 0.0f;
@@ -115,7 +116,7 @@ public class timerZone : MonoBehaviour
             }
             else if (!isDoneMoving() && ParticlesDoneAbosorving && timeBetweenFasesControl)
             {
-                timeNextAppear = -1.0f;
+                timeNextAppear = 0.0f;
             }
 
 
@@ -250,18 +251,21 @@ public class timerZone : MonoBehaviour
 
         switch (cual) {
             case 0://absorv
-                ControlWhichZone = 2;
+                audioController.instance.playAudio(mandalamanager.instance.whichSong());
+                ControlWhichZone = 3;
                 pointCentralMandala.GetComponent<PointCentralMandala>().allowAbsorv = true;
                 //deactivateZonesMove();
-                timeNextAppear = -1.0f;
+                timeNextAppear = 0.0f;
                 activateZonesCircles();
                 break;
             case 1://move
+                
                 pointCentralMandala.GetComponent<PointCentralMandala>().allowAbsorv = false;
                 ParticlesDoneAbosorving = false;
                 timeBetweenFasesControl = false;
                 break;
             case 2://activating circles
+                
                 pointCentralMandala.GetComponent<PointCentralMandala>().allowAbsorv = false;
                 controlminiMoveZone = false;
                 break;
@@ -554,7 +558,7 @@ public class timerZone : MonoBehaviour
                 timeTemp = tempMaxCircleLayer;
             }
             Debug.Log("Time " + timeTemp);
-            timeTemp = timeTemp / timeToNext;
+            //timeTemp = timeTemp / timeToNext;
             Debug.Log("timeToNext " + timeToNext);
             Debug.Log("timeTemp calc " + timeTemp);
             float num = mandalamanager.instance.actulgetNumberLines();
@@ -624,7 +628,10 @@ public class timerZone : MonoBehaviour
                 break;
             case 1: ControlWhichZone = 2;
                 break;
-            case 2: ControlWhichZone = 0;
+            case 2: ControlWhichZone = 3;
+                break;
+            case 3:
+                ControlWhichZone = 0;
                 break;
         }
         

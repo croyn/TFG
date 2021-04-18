@@ -334,7 +334,7 @@ public class Triangle : MonoBehaviour
                 GameObject tempTriangle = mandalamanager.instance.gameObject.GetComponent<mandalamanager>().giveBrotherTriangle(id_triangle);
 
                 indiceMax = LadoDerecha.Count-1;
-                indiceMin = 0;
+                indiceMin = 1;
                 for (int i = indiceMin; i <= indiceMax; i++)
                 {
                     numLineasCapa2 = numLineasCapa2 + 1;
