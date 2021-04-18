@@ -16,6 +16,7 @@ public class timerZone : MonoBehaviour
     private List<Transform> zoneListActive = new List<Transform>();
     private List<Transform> zoneListActiveMove = new List<Transform>();
     public GameObject pointCentralMandala;
+    public GameObject blackCircle;
     bool active = false;
     private int ControlWhichZone = 2;
     private int ControlWhichMove = 0;
@@ -28,6 +29,8 @@ public class timerZone : MonoBehaviour
     private bool timeBetweenFasesControl = false;
     public Vector3 sizeFinal;
     public Vector3 incrementSize;
+    public Vector3 sizeFinalCircle;
+    public Vector3 incrementSizeCircle;
     public float tempMaxFirstLayer ;
     public float tempMaxSecondLayer;
     public float tempMaxThirdLayer ;
@@ -80,7 +83,7 @@ public class timerZone : MonoBehaviour
                     ParticlesDoneAbosorving = true;
                     timeNextAppear = 0.0f;
 
-
+                    audioController.instance.playAudio(3);
                 }
             }
 
@@ -88,7 +91,7 @@ public class timerZone : MonoBehaviour
             {
 
                 deactivateZonesCircles();
-                audioController.instance.playAudio(3);
+                
                 activaMovezones(0);
                 timeBetweenFasesControl = true;
                 timeNextAppear = 0.0f;
@@ -221,10 +224,18 @@ public class timerZone : MonoBehaviour
             }
         }
         else if (controlFase == 8) {
-
-            if (reSizeMandala()) {
-                Debug.Log("SE ACABO");
+            
+            if (timeNextAppear <= 2.0f)
+            {
+                reSizeMandala();
             }
+            else {
+                if (reSizeMandala() && reSizeBlackCircle())
+                {
+                    Debug.Log("SE ACABO");
+                }
+            }
+            
 
         }
 
@@ -237,6 +248,26 @@ public class timerZone : MonoBehaviour
         float z = mandalamanager.instance.gameObject.transform.localScale.z;
         if (x+incrementSize.x <= sizeFinal.x && y+incrementSize.y <= sizeFinal.y && z+incrementSize.z <= sizeFinal.z) {
             mandalamanager.instance.gameObject.transform.localScale = mandalamanager.instance.gameObject.transform.localScale + incrementSize;
+            return false;
+        }
+        else
+        {
+            return true;
+        }
+
+    }
+
+    public bool reSizeBlackCircle()
+    {
+        
+    
+        blackCircle.SetActive(true);
+        float x = blackCircle.transform.localScale.x;
+        float y = blackCircle.transform.localScale.y;
+        float z = blackCircle.transform.localScale.z;
+        if (x + incrementSizeCircle.x <= sizeFinalCircle.x && y + incrementSizeCircle.y <= sizeFinalCircle.y && z + incrementSizeCircle.z <= sizeFinalCircle.z)
+        {
+            blackCircle.transform.localScale = blackCircle.transform.localScale + incrementSizeCircle;
             return false;
         }
         else
@@ -306,7 +337,7 @@ public class timerZone : MonoBehaviour
                 break;
             case 8://final
                 deactivateZoneScan(2);
-
+                timeNextAppear = 0.0f;
                 break;
 
         }

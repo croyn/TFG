@@ -150,7 +150,7 @@ public class mandalamanager : MonoBehaviour
             }
         }
         else {
-            actualColor = color3;
+            actualColor = color2;
         }
         
         return actualColor;
@@ -182,7 +182,7 @@ public class mandalamanager : MonoBehaviour
             }
         }
         else {
-            actualColor = color3Move;
+            actualColor = color2Move;
         }
             
         return actualColor;
