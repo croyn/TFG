@@ -13,6 +13,7 @@ public class MoveZone : MonoBehaviour
     public ParticleSystem affectectParticles2;
     private bool inPosition = false;
     public float velocity;
+    public float velocityMoveScan;
     public ParticleSystem.MinMaxGradient colorTouch;
     public ParticleSystem.MinMaxGradient colorNoTouch;
     public bool allowMoving;
@@ -75,7 +76,7 @@ public class MoveZone : MonoBehaviour
             else if (cual == 1)
             {
                 dist = Vector3.Distance(affectectParticles.gameObject.transform.position, finalPointScan.gameObject.transform.position);
-                affectectParticles.gameObject.transform.position = Vector3.Lerp(affectectParticles.gameObject.transform.position, finalPointScan.gameObject.transform.position, velocity * (Time.deltaTime / dist));
+                affectectParticles.gameObject.transform.position = Vector3.Lerp(affectectParticles.gameObject.transform.position, finalPointScan.gameObject.transform.position, velocityMoveScan * (Time.deltaTime / dist));
             }
             
             if (dist <= 0.05f)

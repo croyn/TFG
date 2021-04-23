@@ -430,6 +430,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 54150724}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &58093844 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3122749662104552059, guid: 31f90b98aa07e5a4a9d9403dbc8eae77,
+    type: 3}
+  m_PrefabInstance: {fileID: 781940991}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &59485272
 GameObject:
   m_ObjectHideFlags: 0
@@ -10116,7 +10122,7 @@ PrefabInstance:
     - target: {fileID: 3122749662104552058, guid: 31f90b98aa07e5a4a9d9403dbc8eae77,
         type: 3}
       propertyPath: cualCiruclo
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3122749662104552062, guid: 31f90b98aa07e5a4a9d9403dbc8eae77,
         type: 3}
@@ -12112,12 +12118,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 5576526630609655404}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &482975109 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1946492329187796287, guid: 31f90b98aa07e5a4a9d9403dbc8eae77,
-    type: 3}
-  m_PrefabInstance: {fileID: 1081633159}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &493478090
 GameObject:
   m_ObjectHideFlags: 0
@@ -13381,6 +13381,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 620731372}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &626890362 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3122749662104552059, guid: 31f90b98aa07e5a4a9d9403dbc8eae77,
+    type: 3}
+  m_PrefabInstance: {fileID: 299710419}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &631411019
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14494,7 +14500,7 @@ PrefabInstance:
         type: 3}
       propertyPath: initPointScan
       value: 
-      objectReference: {fileID: 1540385760}
+      objectReference: {fileID: 735902658}
     - target: {fileID: 8314713060081341257, guid: dd712c50118a1ed488a209b05bd741b8,
         type: 3}
       propertyPath: finalPointScan
@@ -15542,7 +15548,7 @@ PrefabInstance:
         type: 3}
       propertyPath: initPointScan
       value: 
-      objectReference: {fileID: 1683202001}
+      objectReference: {fileID: 58093844}
     - target: {fileID: 8314713060081341257, guid: dd712c50118a1ed488a209b05bd741b8,
         type: 3}
       propertyPath: finalPointScan
@@ -15830,6 +15836,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 116349929765870597, guid: c121b95205fdda54b974999d82f222bd,
     type: 3}
   m_PrefabInstance: {fileID: 1408915952}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &735902658 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3122749662104552059, guid: 31f90b98aa07e5a4a9d9403dbc8eae77,
+    type: 3}
+  m_PrefabInstance: {fileID: 3122749661468696113}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &736876016
 PrefabInstance:
@@ -16686,7 +16698,7 @@ PrefabInstance:
     - target: {fileID: 3122749662104552058, guid: 31f90b98aa07e5a4a9d9403dbc8eae77,
         type: 3}
       propertyPath: cualCiruclo
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3122749662104552062, guid: 31f90b98aa07e5a4a9d9403dbc8eae77,
         type: 3}
@@ -20855,7 +20867,7 @@ PrefabInstance:
     - target: {fileID: 3122749662104552058, guid: 31f90b98aa07e5a4a9d9403dbc8eae77,
         type: 3}
       propertyPath: cualCiruclo
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3122749662104552062, guid: 31f90b98aa07e5a4a9d9403dbc8eae77,
         type: 3}
@@ -23878,8 +23890,8 @@ MonoBehaviour:
   timeBetweenFases: 1
   sizeFinal: {x: 6, y: 1, z: 6}
   incrementSize: {x: 0.008, y: 0, z: 0.008}
-  sizeFinalCircle: {x: 110, y: 1, z: 110}
-  incrementSizeCircle: {x: 1, y: 0, z: 1}
+  sizeFinalCircle: {x: 120, y: 1, z: 120}
+  incrementSizeCircle: {x: 0.8, y: 0, z: 0.8}
   tempMaxFirstLayer: 8
   tempMaxSecondLayer: 5
   tempMaxThirdLayer: 5
@@ -28786,6 +28798,12 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1467179779}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1477784240 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3122749662104552059, guid: 31f90b98aa07e5a4a9d9403dbc8eae77,
+    type: 3}
+  m_PrefabInstance: {fileID: 1081633159}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1480957962
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -29034,7 +29052,7 @@ PrefabInstance:
         type: 3}
       propertyPath: initPointScan
       value: 
-      objectReference: {fileID: 482975109}
+      objectReference: {fileID: 1477784240}
     - target: {fileID: 8314713060081341257, guid: dd712c50118a1ed488a209b05bd741b8,
         type: 3}
       propertyPath: finalPointScan
@@ -29659,12 +29677,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1537351067}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &1540385760 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1946492329187796287, guid: 31f90b98aa07e5a4a9d9403dbc8eae77,
-    type: 3}
-  m_PrefabInstance: {fileID: 3122749661468696113}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1560096250
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -31393,12 +31405,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5576526629906016195, guid: 8e13519e67dc7424191ced10949a2cb5,
     type: 3}
   m_PrefabInstance: {fileID: 1285837404}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1683202001 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1946492329187796287, guid: 31f90b98aa07e5a4a9d9403dbc8eae77,
-    type: 3}
-  m_PrefabInstance: {fileID: 781940991}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1691765926
 PrefabInstance:
@@ -41934,12 +41940,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 116349931474068949}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &2072802009 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1946492329187796287, guid: 31f90b98aa07e5a4a9d9403dbc8eae77,
-    type: 3}
-  m_PrefabInstance: {fileID: 299710419}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2076468577
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -45710,7 +45710,7 @@ PrefabInstance:
         type: 3}
       propertyPath: initPointScan
       value: 
-      objectReference: {fileID: 2072802009}
+      objectReference: {fileID: 626890362}
     - target: {fileID: 8314713060081341257, guid: dd712c50118a1ed488a209b05bd741b8,
         type: 3}
       propertyPath: finalPointScan

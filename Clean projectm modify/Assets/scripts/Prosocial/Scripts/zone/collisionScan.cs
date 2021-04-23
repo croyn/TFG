@@ -7,6 +7,7 @@ public class collisionScan : MonoBehaviour
     public float timeIn = 0.0f;
     public bool isIn;
     public Color actualColor;
+    public Color ColorGreen;
     // Start is called before the first frame update
     void Start()
     {
@@ -51,7 +52,7 @@ public class collisionScan : MonoBehaviour
                     actualColor= Color.white;
                     break;
                 case 1:
-                    footMaterial.material.SetColor("_Color", Color.green);
+                    footMaterial.material.SetColor("_Color", ColorGreen);
                     actualColor = Color.green;
                     
                     break;

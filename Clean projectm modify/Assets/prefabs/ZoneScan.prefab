@@ -5374,7 +5374,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 90ea0a9f9f72a1843833465ce2ba0acf, type: 2}
+  - {fileID: 2100000, guid: 55dd716909afcb745a57bd2b5c719d29, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5423,8 +5423,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   circuloBase0: {fileID: 2100000, guid: 38f48180263693f48833d0a8d4bddb16, type: 2}
   circuloBase1: {fileID: 2100000, guid: 90ea0a9f9f72a1843833465ce2ba0acf, type: 2}
-  circuloBase2: {fileID: 2100000, guid: 788e6c05a78a5f34abd86cba4329a727, type: 2}
-  circuloBase3: {fileID: 2100000, guid: 862c82f91dd646943b8e0604cc5adce9, type: 2}
+  circuloBase2: {fileID: 2100000, guid: f1d1ebff68483f446bac09bb35e72bec, type: 2}
+  circuloBase3: {fileID: 2100000, guid: 55dd716909afcb745a57bd2b5c719d29, type: 2}
   cualCiruclo: 3
 --- !u!114 &3122749662104552033
 MonoBehaviour:
@@ -5441,6 +5441,7 @@ MonoBehaviour:
   timeIn: 0
   isIn: 0
   actualColor: {r: 0, g: 0, b: 0, a: 0}
+  ColorGreen: {r: 0.26666668, g: 0.8862745, b: 0.5529412, a: 1}
 --- !u!1 &4223470008436825176
 GameObject:
   m_ObjectHideFlags: 0

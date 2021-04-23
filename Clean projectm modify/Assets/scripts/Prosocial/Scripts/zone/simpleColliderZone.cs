@@ -61,7 +61,8 @@ public class simpleColliderZone : MonoBehaviour
                 {
 
                     moveZone.GetComponent<MoveZone>().deactiveMoveZone();
-
+                    Transform izquierda = zoneObjective.transform.Find("izquierdaZone");
+                    izquierda.gameObject.GetComponent<zoneManager>().actiaveCircle(true);
                     isOver = true;
 
                 }
@@ -85,9 +86,9 @@ public class simpleColliderZone : MonoBehaviour
             Transform derecha=zoneObjective.transform.Find("derechaZone");
             Transform frente = zoneObjective.transform.Find("frenteZone");
             Transform izquierda = zoneObjective.transform.Find("izquierdaZone");
-            derecha.gameObject.GetComponent<zoneManager>().actiaveCircle();
-            frente.gameObject.GetComponent<zoneManager>().actiaveCircle();
-            izquierda.gameObject.GetComponent<zoneManager>().actiaveCircle();
+            derecha.gameObject.GetComponent<zoneManager>().actiaveCircle(false);
+            frente.gameObject.GetComponent<zoneManager>().actiaveCircle(false);
+            izquierda.gameObject.GetComponent<zoneManager>().actiaveCircle(false);
             collision = true;
             Transform particles = gameObject.transform.Find("Particle System");
             particles.gameObject.GetComponent<ParticleSystem>().Stop();

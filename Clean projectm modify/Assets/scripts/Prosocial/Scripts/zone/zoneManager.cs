@@ -207,11 +207,11 @@ public class zoneManager : MonoBehaviour
     }
 
 
-    public void actiaveCircle()
+    public void actiaveCircle(bool activateFoot=true)
     {
         transform.Find("Cube").gameObject.SetActive(true);
         Transform tempfoot = gameObject.transform.parent.Find("footPrint");
-        tempfoot.gameObject.SetActive(true);
+        tempfoot.gameObject.SetActive(activateFoot);
 
     }
 

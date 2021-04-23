@@ -23,8 +23,6 @@ ScriptsOnlyBuild:
     - zoneManagerMove
     Unity.2D.Tilemap.Editor.dll:
     - UnityEditor.Tilemaps.GridPaintingState
-    - UnityEditor.Tilemaps.GridPaletteBrushes
-    - UnityEditor.Tilemaps.GridPalettes
     - UnityEditor.Tilemaps.SceneViewGridManager
     - UnityEditor.Tilemaps.SceneViewOpenTilePaletteHelper
     - UnityEditor.Tilemaps.TileDragAndDropManager
@@ -499,7 +497,7 @@ ScriptsOnlyBuild:
     className: TextContainer
   - hash:
       serializedVersion: 2
-      Hash: 2a3aedfbfc726a3d3678829253efbb0f
+      Hash: 47bf4801a3f37a34cecc3222cd227dbc
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: timerZone

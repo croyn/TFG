@@ -494,7 +494,7 @@ public class timerZone : MonoBehaviour
         ParticleSystem.MinMaxGradient colorNormal = temp.color;
         ParticleSystem.MinMaxGradient colorNotouch = zoneList[0].transform.Find("derechaZone").GetComponent<zoneManager>().GradientColorMove;
         for (int i = 0; i < zoneListMove.Count;i++) {
-            zoneListMove[i].GetComponent<MoveZone>().ChangeColorTo(colorNormal, colorNotouch);
+            zoneListMove[i].GetComponent<MoveZone>().ChangeColorTo(mandalamanager.instance.switchColor(), mandalamanager.instance.switchColorMove());
             zoneListMove[i].GetComponent<MoveZone>().initMoveZone(cual);
             
         }
@@ -513,9 +513,9 @@ public class timerZone : MonoBehaviour
             Transform minizone3 = zoneList[i].transform.Find("MiniMoveZone3");
             if (minizone1.gameObject.GetComponent<MoveZone>().isActiveAndEnabled) {
                 //Debug.Log("Entro moveZone activate");
-                minizone1.gameObject.GetComponent<MoveZone>().ChangeColorTo(tempColor, tempColor);
-                minizone2.gameObject.GetComponent<MoveZone>().ChangeColorTo(tempColor, tempColor);
-                minizone3.gameObject.GetComponent<MoveZone>().ChangeColorTo(tempColor, tempColor);
+                minizone1.gameObject.GetComponent<MoveZone>().ChangeColorTo(mandalamanager.instance.switchColor(), mandalamanager.instance.switchColor());
+                minizone2.gameObject.GetComponent<MoveZone>().ChangeColorTo(mandalamanager.instance.switchColor(), mandalamanager.instance.switchColor());
+                minizone3.gameObject.GetComponent<MoveZone>().ChangeColorTo(mandalamanager.instance.switchColor(), mandalamanager.instance.switchColor());
                 minizone1.gameObject.GetComponent<MoveZone>().initMoveZone(0);
                 minizone2.gameObject.GetComponent<MoveZone>().initMoveZone(0);
                 minizone3.gameObject.GetComponent<MoveZone>().initMoveZone(0);
@@ -523,9 +523,9 @@ public class timerZone : MonoBehaviour
 
             if (minizone1.gameObject.GetComponent<miniRiverZone>().isActiveAndEnabled) {
              //   Debug.Log("Entro miniRiverZone activate");
-                minizone1.gameObject.GetComponent<miniRiverZone>().ChangeColorTo(tempColor, tempColor);
-                minizone2.gameObject.GetComponent<miniRiverZone>().ChangeColorTo(tempColor, tempColor);
-                minizone3.gameObject.GetComponent<miniRiverZone>().ChangeColorTo(tempColor, tempColor);
+                minizone1.gameObject.GetComponent<miniRiverZone>().ChangeColorTo(mandalamanager.instance.switchColor(), mandalamanager.instance.switchColor());
+                minizone2.gameObject.GetComponent<miniRiverZone>().ChangeColorTo(mandalamanager.instance.switchColor(), mandalamanager.instance.switchColor());
+                minizone3.gameObject.GetComponent<miniRiverZone>().ChangeColorTo(mandalamanager.instance.switchColor(), mandalamanager.instance.switchColor());
                 minizone1.gameObject.GetComponent<miniRiverZone>().PlayRiver();
                 minizone2.gameObject.GetComponent<miniRiverZone>().PlayRiver();
                 minizone3.gameObject.GetComponent<miniRiverZone>().PlayRiver();
@@ -655,13 +655,16 @@ public class timerZone : MonoBehaviour
     private void ChangeZone() {
 
         switch (ControlWhichZone) {
-            case 0: ControlWhichZone = 1;
+            case 0://derecha
+                ControlWhichZone = 2;
                 break;
-            case 1: ControlWhichZone = 2;
+            case 1://frente
+                ControlWhichZone = 3;
                 break;
-            case 2: ControlWhichZone = 3;
+            case 2://izquierda
+                ControlWhichZone = 1;
                 break;
-            case 3:
+            case 3://silencio
                 ControlWhichZone = 0;
                 break;
         }
