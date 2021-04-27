@@ -262,7 +262,7 @@ public class pointsMandala : MonoBehaviour
             LineRenderer temp = lineaTemp.GetComponent<LineRenderer>();
             temp.SetPosition(0, gameObject.transform.position);
 
-            Vector3 punto = Vector3.Lerp( temp.GetPosition(1), actualPartnerPoint.transform.position, 0.05f);
+            Vector3 punto = Vector3.Lerp( temp.GetPosition(1), actualPartnerPoint.transform.position, 0.09f);
 
             temp.SetPosition(1, punto);
 

@@ -111,6 +111,7 @@ public class colliderParticleToPoint : MonoBehaviour
 
         if (other.tag == "objectiveTriangle" && other.layer==11)
         {
+            //quitar
             if (other.GetComponent<PointCentralMandala>().allowAbsorv) {
                 //other.SendMessage("OnCollisionEnter");
                 other.GetComponent<PointCentralMandala>().addParticle();

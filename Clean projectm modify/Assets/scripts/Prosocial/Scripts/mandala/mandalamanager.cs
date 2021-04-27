@@ -267,7 +267,8 @@ public class mandalamanager : MonoBehaviour
         if (actualPoint == null)
         {
             interLayer = interLayer + 1;
-            centralPoint.GetComponent<PointCentralMandala>().numActivationAvailable = 0;
+            centralPoint.GetComponent<PointCentralMandala>().numActivationAvailable = 0.0f;
+            centralPoint.GetComponent<PointCentralMandala>().numNotCatched = 0.0f;
             if (interLayer == 2 && layer ==1 && !trampa) {
                 trampa = true;
                 interLayer = 1;

@@ -35,6 +35,7 @@ public class timerZone : MonoBehaviour
     public float tempMaxSecondLayer;
     public float tempMaxThirdLayer ;
     public float tempMaxCircleLayer ;
+    public int contadorIterations;
     // Start is called before the first frame update
     void Start()
     {
@@ -42,6 +43,7 @@ public class timerZone : MonoBehaviour
         timeNextAppear = 0.0f;
         timeNextOff = 0.0f;
         controlFase = 3;
+        contadorIterations = 0;
         changeFaseTo(3);
     }
 
@@ -290,7 +292,7 @@ public class timerZone : MonoBehaviour
                 activateZonesCircles();
                 break;
             case 1://move
-                
+                contadorIterations = 0;
                 pointCentralMandala.GetComponent<PointCentralMandala>().allowAbsorv = false;
                 ParticlesDoneAbosorving = false;
                 timeBetweenFasesControl = false;
@@ -568,38 +570,85 @@ public class timerZone : MonoBehaviour
 
         }
 
-        if (controlOneActive) {
-            float timeTemp = 0.0f;
-            if (!mandalamanager.instance.trianglesDone)
+
+        float timeTemp = 0.0f;
+        if (!mandalamanager.instance.trianglesDone)
+        {
+            switch (mandalamanager.instance.layer)
             {
-                switch (mandalamanager.instance.layer)
-                {
-                    case 0:
-                        timeTemp = tempMaxFirstLayer;
-                        break;
-                    case 1:
-                        timeTemp = tempMaxSecondLayer;
-                        break;
-                    case 2:  
-                        timeTemp = tempMaxThirdLayer;
-                        break;
-                }
+                case 0:
+                    timeTemp = tempMaxFirstLayer;
+                    break;
+                case 1:
+                    timeTemp = tempMaxSecondLayer;
+                    break;
+                case 2:
+                    timeTemp = tempMaxThirdLayer;
+                    break;
             }
-            else {
-                timeTemp = tempMaxCircleLayer;
-            }
-            Debug.Log("Time " + timeTemp);
-            //timeTemp = timeTemp / timeToNext;
-            Debug.Log("timeToNext " + timeToNext);
-            Debug.Log("timeTemp calc " + timeTemp);
-            float num = mandalamanager.instance.actulgetNumberLines();
-            Debug.Log("num lines total " + num);
-            float numLines = num / timeTemp;
-            Debug.Log("numLines calc " + numLines);
-            float calc = mandalamanager.instance.centralPoint.GetComponent<PointCentralMandala>().numActivationAvailable + (numLines) * 2;
-            Debug.Log("Tiene point centralDesdeTimer " + calc);
-            mandalamanager.instance.centralPoint.GetComponent<PointCentralMandala>().numActivationAvailable = calc;
         }
+        else
+        {
+            timeTemp = tempMaxCircleLayer;
+        }
+
+        if (contadorIterations == 0) {
+            mandalamanager.instance.centralPoint.GetComponent<PointCentralMandala>().numActivationAvailable = 0.0f;
+            mandalamanager.instance.centralPoint.GetComponent<PointCentralMandala>().numNotCatched = 0.0f;
+        }
+            contadorIterations = contadorIterations + 1;
+        
+       
+
+        if (controlOneActive)
+        {
+
+            //Debug.Log("Time " + timeTemp);
+            //timeTemp = timeTemp / timeToNext;
+            //Debug.Log("timeToNext " + timeToNext);
+            // Debug.Log("timeTemp calc " + timeTemp);
+            float num = mandalamanager.instance.actulgetNumberLines();
+            // Debug.Log("num lines total " + num);
+            float numLines = num / timeTemp;
+            //Debug.Log("numLines calc " + numLines);
+            float calc = mandalamanager.instance.centralPoint.GetComponent<PointCentralMandala>().numActivationAvailable + (numLines) * 2;
+            // Debug.Log("Tiene point centralDesdeTimer " + calc);
+            mandalamanager.instance.centralPoint.GetComponent<PointCentralMandala>().numActivationAvailable = calc + mandalamanager.instance.centralPoint.GetComponent<PointCentralMandala>().numNotCatched;
+            mandalamanager.instance.centralPoint.GetComponent<PointCentralMandala>().numNotCatched = 0.0f;
+        }
+        else if(!controlOneActive && ControlWhichZone!=3) {
+
+            // Debug.Log("Time " + timeTemp);
+            //timeTemp = timeTemp / timeToNext;
+            // Debug.Log("timeToNext " + timeToNext);
+            // Debug.Log("timeTemp calc " + timeTemp);
+            float num = mandalamanager.instance.actulgetNumberLines();
+            //Debug.Log("num lines total " + num);
+            float numLines = num / timeTemp;
+            // Debug.Log("numLines calc " + numLines);
+            float calc = mandalamanager.instance.centralPoint.GetComponent<PointCentralMandala>().numNotCatched + (numLines) * 2;
+            // Debug.Log("Tiene point centralDesdeTimer " + calc);
+            mandalamanager.instance.centralPoint.GetComponent<PointCentralMandala>().numNotCatched = mandalamanager.instance.centralPoint.GetComponent<PointCentralMandala>().numNotCatched +calc;
+
+
+        }
+
+
+
+
+        if (contadorIterations >= (timeTemp + 1) + ((timeTemp + 1) / 3.0f) && !mandalamanager.instance.trianglesDone)
+        {
+            mandalamanager.instance.centralPoint.GetComponent<PointCentralMandala>().numActivationAvailable = mandalamanager.instance.centralPoint.GetComponent<PointCentralMandala>().numActivationAvailable + mandalamanager.instance.centralPoint.GetComponent<PointCentralMandala>().numNotCatched;
+            mandalamanager.instance.centralPoint.GetComponent<PointCentralMandala>().numNotCatched = 0.0f;
+            contadorIterations = 0;
+        }
+        else if (contadorIterations >= (timeTemp ) && mandalamanager.instance.trianglesDone) {
+            mandalamanager.instance.centralPoint.GetComponent<PointCentralMandala>().numActivationAvailable = mandalamanager.instance.centralPoint.GetComponent<PointCentralMandala>().numActivationAvailable + mandalamanager.instance.centralPoint.GetComponent<PointCentralMandala>().numNotCatched;
+            mandalamanager.instance.centralPoint.GetComponent<PointCentralMandala>().numNotCatched = 0.0f;
+            contadorIterations = 0;
+        }
+        
+
 
     }
 

@@ -21957,7 +21957,7 @@ MonoBehaviour:
   maxNextLine: 1
   numParticlesNextLine: 60
   numActivationAvailable: 0
-  allowLine: 0
+  numNotCatched: 0
 --- !u!1001 &1119957365
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -23895,7 +23895,8 @@ MonoBehaviour:
   tempMaxFirstLayer: 8
   tempMaxSecondLayer: 5
   tempMaxThirdLayer: 5
-  tempMaxCircleLayer: 5
+  tempMaxCircleLayer: 4
+  contadorIterations: 0
 --- !u!1001 &1221343638
 PrefabInstance:
   m_ObjectHideFlags: 0

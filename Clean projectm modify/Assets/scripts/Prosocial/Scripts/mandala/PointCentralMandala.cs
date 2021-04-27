@@ -11,7 +11,7 @@ public class PointCentralMandala : MonoBehaviour
     public float maxNextLine = 1.0f;
     public int numParticlesNextLine = 60;
     public float numActivationAvailable;
-    public bool allowLine=false;
+    public float numNotCatched;
     float timeOff = 0.0f;
 
     // Start is called before the first frame update
@@ -19,8 +19,9 @@ public class PointCentralMandala : MonoBehaviour
     {
         allowAbsorv = false;
         numActivationAvailable = 0.0f;
-        allowLine = false;
+        
         timeOff = 0.0f;
+        numNotCatched = 0.0f;
     }
 
     // Update is called once per frame
@@ -38,7 +39,7 @@ public class PointCentralMandala : MonoBehaviour
         }
         timeOff = timeOff+ Time.deltaTime;
 
-        if (numActivationAvailable >=1.0f && allowLine)//&& timeOff>0.4f
+        if (numActivationAvailable >=1.0f && timeOff > 0.01f)//&&
         {
             Debug.Log("Central numActive " + numActivationAvailable);
             numActivationAvailable = numActivationAvailable - 1.0f;
@@ -48,20 +49,20 @@ public class PointCentralMandala : MonoBehaviour
                 if (mandalamanager.instance.ActivatePointsTriangles()) {
                     Debug.Log("Lanzo linea");
                 }
-                timeOff = 0;
+                timeOff = 0.0f;
             }
             else if (mandalamanager.instance.trianglesDone && !mandalamanager.instance.circleDone)
             {
                 mandalamanager.instance.ActivatePointsCircle();
-                timeOff = 0;
+                timeOff = 0.0f;
             }
             
                 
         }
-        if (numActivationAvailable == 0.0f)
+       /* if (numActivationAvailable == 0.0f)
         {
             allowLine = false;
-        }
+        }*/
     }
 
     public void addParticle() {
@@ -79,9 +80,7 @@ public class PointCentralMandala : MonoBehaviour
                 }
                 
             }*/
-            if (numActivationAvailable >=1.0f) {
-                allowLine = true;
-            }
+
             
 
 
