@@ -26,8 +26,9 @@ public class zoneManager : MonoBehaviour
     private bool animationPlaying = false;
     private bool explosion = false;
     private bool allowCollision = false;
-    private float whenCollision = 0.0f;
+    private System.DateTime whenCollision ;
     private bool catched = false;
+    private string WhatUser;
 
     // Start is called before the first frame update
     void Start()
@@ -74,6 +75,11 @@ public class zoneManager : MonoBehaviour
 
     }
 
+    public string getUserCatch()
+    {
+        return WhatUser;
+
+    }
 
     public bool isMovingParticles() {
 
@@ -130,12 +136,14 @@ public class zoneManager : MonoBehaviour
         //Debug.Log("entro collider");
 
         if (allowCollision) {
-            whenCollision = Time.time;
+            
 
             allowCollision = false;
             if (!catched)
             {
+                whenCollision = System.DateTime.Now;
                 catched = true;
+                WhatUser = other.gameObject.name;
             }
 
         }
@@ -151,18 +159,20 @@ public class zoneManager : MonoBehaviour
     {
         if (allowCollision)
         {
-            whenCollision = Time.time;
+           
 
             allowCollision = false;
             if (!catched)
             {
+                whenCollision = System.DateTime.Now;
                 catched = true;
+                WhatUser = other.gameObject.name;
             }
 
         }
     }
 
-    public float getWhenCollision() {
+    public System.DateTime getWhenCollision() {
         return whenCollision;
     }
 
@@ -188,6 +198,7 @@ public class zoneManager : MonoBehaviour
        // gameObject.SetActive(true);
         explosion = false;
         catched = false;
+        WhatUser = "";
         positionParticles.gameObject.SetActive(true);
         positionParticles.Play();
         allowCollision = true;
@@ -239,7 +250,7 @@ public class zoneManager : MonoBehaviour
         positionParticles.Stop();
         positionParticles.gameObject.SetActive(false);
         allowCollision = false;
-        whenCollision = 0.0f;
+        
     }
 
 

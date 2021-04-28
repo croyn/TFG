@@ -563,6 +563,7 @@ public class timerZone : MonoBehaviour
             temp = zoneListActive[i];
             if (temp.GetComponent<zoneManager>().isCatched()) {
                 temp.GetComponent<zoneManager>().activeExplosion();
+                Logger.addParticlesCatch(temp.name, temp.GetComponent<zoneManager>().getUserCatch(), temp.GetComponent<zoneManager>().getWhenCollision());
                 controlOneActive = true;
             }
             
@@ -652,7 +653,7 @@ public class timerZone : MonoBehaviour
 
     }
 
-    void getAllTimes() {
+    /*void getAllTimes() {
         bool control = true;
         Transform temp = null;
         List<float> times = new List<float>();
@@ -699,7 +700,7 @@ public class timerZone : MonoBehaviour
         times.Clear();
 
 
-    }
+    }*/
 
     private void ChangeZone() {
 
@@ -972,7 +973,12 @@ public class timerZone : MonoBehaviour
                 // temp.GetComponent<zoneManager>().updateSpherePoint();
             }
         }
-        
+
+
+        if (internalZone != null) {
+            Logger.addParticlesAppear(internalZone.name);
+        }
+
         timeStartAppear = Time.time;
         active = true;
 

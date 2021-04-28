@@ -19,7 +19,34 @@ public class collisionMovingZone : MonoBehaviour
         
     }
 
-    
+    private void forceOn() {
+        ParticleSystem.MainModule tempMainModule = affectectParticles.gameObject.GetComponent<ParticleSystem>().main;
+        tempMainModule.startSpeed = 5.0f;
+        tempMainModule.startLifetime = 2.5f;
+        tempMainModule.maxParticles = 10000;
+        ParticleSystem.EmissionModule tempEmisionModule = affectectParticles.gameObject.GetComponent<ParticleSystem>().emission;
+        tempEmisionModule.rateOverTime = 800;
+ 
+        affectectParticles.Play();
+
+        ParticleSystem.ColorOverLifetimeModule temp = affectectParticles.gameObject.GetComponent<ParticleSystem>().colorOverLifetime;
+        temp.color = gameObject.transform.parent.GetComponent<MoveZone>().colorTouch;
+        affectectParticles.Play();
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        //Debug.Log(" COLLISION BOLA " + other.name);
+        if (allowCollision)
+        {
+
+            forceOn();
+            Logger.addTouchingMoving(gameObject.name, other.name);
+
+        }
+
+    }
+
 
 
     private void OnTriggerStay(Collider other)
@@ -27,29 +54,7 @@ public class collisionMovingZone : MonoBehaviour
         //Debug.Log(" COLLISION BOLA " + other.name);
         if (allowCollision)
         {
-
-            //affectectParticles2.Play();
-
-           ParticleSystem.MainModule tempMainModule = affectectParticles.gameObject.GetComponent<ParticleSystem>().main;
-            tempMainModule.startSpeed = 5.0f;
-            tempMainModule.startLifetime = 2.5f;
-            tempMainModule.maxParticles = 10000;
-            ParticleSystem.EmissionModule tempEmisionModule = affectectParticles.gameObject.GetComponent<ParticleSystem>().emission;
-            tempEmisionModule.rateOverTime = 800;
-            //affectectParticles.Stop();
-            affectectParticles.Play();
-            /*ParticleSystem.MainModule tempMainModule2 = affectectParticles2.gameObject.GetComponent<ParticleSystem>().main;
-            tempMainModule2.startSpeed = 5.0f;
-            tempMainModule2.startLifetime = 2.5f;
-            tempMainModule2.maxParticles = 10000;
-            ParticleSystem.EmissionModule tempEmisionModule2 = affectectParticles2.gameObject.GetComponent<ParticleSystem>().emission;
-            tempEmisionModule2.rateOverTime = 800;
-            //affectectParticles.Stop();*/
-            ParticleSystem.ColorOverLifetimeModule temp = affectectParticles.gameObject.GetComponent<ParticleSystem>().colorOverLifetime;
-            temp.color = gameObject.transform.parent.GetComponent<MoveZone>().colorTouch;
-            affectectParticles.Play();
-
-            //affectectParticles2.Play();
+            forceOn();
         }
 
     }
@@ -65,14 +70,6 @@ public class collisionMovingZone : MonoBehaviour
 
         ParticleSystem.ColorOverLifetimeModule temp = affectectParticles.gameObject.GetComponent<ParticleSystem>().colorOverLifetime;
         temp.color = gameObject.transform.parent.GetComponent<MoveZone>().colorNoTouch;
-        //affectectParticles.Stop();
-
-        /* ParticleSystem.MainModule tempMainModule2 = affectectParticles2.gameObject.GetComponent<ParticleSystem>().main;
-         tempMainModule2.startSpeed = 0.3f;
-         tempMainModule2.startLifetime = 1.0f;
-         tempMainModule2.maxParticles = 10000;
-         ParticleSystem.EmissionModule tempEmisionModule2 = affectectParticles2.gameObject.GetComponent<ParticleSystem>().emission;
-         tempEmisionModule2.rateOverTime = 200;*/
 
         affectectParticles.Play();
     }
@@ -83,27 +80,8 @@ public class collisionMovingZone : MonoBehaviour
         if (allowCollision)
         {
 
-            //affectectParticles2.Stop();
-            ParticleSystem.MainModule tempMainModule = affectectParticles.gameObject.GetComponent<ParticleSystem>().main;
-            tempMainModule.startSpeed = 0.3f;
-            tempMainModule.startLifetime = 1.0f;
-            tempMainModule.maxParticles = 10000;
-            ParticleSystem.EmissionModule tempEmisionModule=affectectParticles.gameObject.GetComponent<ParticleSystem>().emission;
-            tempEmisionModule.rateOverTime = 200;
-           
-           ParticleSystem.ColorOverLifetimeModule temp = affectectParticles.gameObject.GetComponent<ParticleSystem>().colorOverLifetime;
-           temp.color=gameObject.transform.parent.GetComponent<MoveZone>().colorNoTouch;
-            //affectectParticles.Stop();
-
-           /* ParticleSystem.MainModule tempMainModule2 = affectectParticles2.gameObject.GetComponent<ParticleSystem>().main;
-            tempMainModule2.startSpeed = 0.3f;
-            tempMainModule2.startLifetime = 1.0f;
-            tempMainModule2.maxParticles = 10000;
-            ParticleSystem.EmissionModule tempEmisionModule2 = affectectParticles2.gameObject.GetComponent<ParticleSystem>().emission;
-            tempEmisionModule2.rateOverTime = 200;*/
-
-            affectectParticles.Play();
-            //affectectParticles2.Play();
+            ForceOff();
+            Logger.addNotTouchingMoving(gameObject.name, other.name);
         }
     }
 

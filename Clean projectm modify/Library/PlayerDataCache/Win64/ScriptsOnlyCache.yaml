@@ -4,6 +4,7 @@ ScriptsOnlyBuild:
     - AutoTimerForTrials
     - CambioCiruclos
     - FiducialController
+    - Logger
     - MoveZone
     - PointCentralMandala
     - Triangle
@@ -23,6 +24,8 @@ ScriptsOnlyBuild:
     - zoneManagerMove
     Unity.2D.Tilemap.Editor.dll:
     - UnityEditor.Tilemaps.GridPaintingState
+    - UnityEditor.Tilemaps.GridPaletteBrushes
+    - UnityEditor.Tilemaps.GridPalettes
     - UnityEditor.Tilemaps.SceneViewGridManager
     - UnityEditor.Tilemaps.SceneViewOpenTilePaletteHelper
     - UnityEditor.Tilemaps.TileDragAndDropManager
@@ -92,6 +95,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 2382}
     - Class: 114
       Script: {instanceID: 2400}
+    - Class: 114
+      Script: {instanceID: 2434}
     - Class: 114
       Script: {instanceID: 2534}
     - Class: 114
@@ -485,7 +490,7 @@ ScriptsOnlyBuild:
     className: Button
   - hash:
       serializedVersion: 2
-      Hash: c9422537fccb6251ab49bf6dcf7d2613
+      Hash: 06aab76bf879163bc514384e1d90e0d2
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: MoveZone
@@ -497,7 +502,7 @@ ScriptsOnlyBuild:
     className: TextContainer
   - hash:
       serializedVersion: 2
-      Hash: 47bf4801a3f37a34cecc3222cd227dbc
+      Hash: 74ad3ecfc38522acfec379a158f2b1cd
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: timerZone
@@ -713,7 +718,7 @@ ScriptsOnlyBuild:
     className: RectMask2D
   - hash:
       serializedVersion: 2
-      Hash: 8f9c7ee16fc109b4baf1bcb8bb5f0c63
+      Hash: c74d859af7407ee239328ef9c041a1be
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: collisionScan
@@ -797,7 +802,7 @@ ScriptsOnlyBuild:
     className: ActivationPlayableAsset
   - hash:
       serializedVersion: 2
-      Hash: 970817c1a6142aba959149bb3ad8ee95
+      Hash: cdde559e00cebf24ac7d48c9a259d4cc
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PointCentralMandala
@@ -816,4 +821,4 @@ ScriptsOnlyBuild:
   platform: 19
   scenePathNames:
   - Assets/Scenes/Edgar Scene.unity
-  playerPath: C:/Users/batch_nps7xwz/Documents/GitHub/TFG/Clean projectm modify/a/Spark.exe
+  playerPath: C:/Users/batch_nps7xwz/Documents/GitHub/TFG/Clean projectm modify/a/Prosocial.exe
