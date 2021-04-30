@@ -5,15 +5,16 @@ using UnityEngine;
 public class audioController : MonoBehaviour
 {
     // Start is called before the first frame update
-    public static audioController instance;
-    public AudioSource audioSource;
-    public AudioClip audio1;
-    public AudioClip audio2;
-    public AudioClip audio3;
-    public AudioClip audio4;
-    public float volume = 0.5f;
+    public static audioController instance; //singleton
+    public AudioSource audioSource;//GameObject audio source
+    public AudioClip audio1;//1 audio file
+    public AudioClip audio2;//2 audio file
+    public AudioClip audio3;//3 audio file
+    public AudioClip audio4;//4 audio file
+    public float volume = 0.5f;//control global volume
     void Start()
     {
+        //singleton
         instance = this;
     }
 
@@ -23,6 +24,7 @@ public class audioController : MonoBehaviour
         
     }
 
+    //function to acces from anywhere to the audio we need and play it
     public void playAudio(int wich) {
         AudioClip actual=null;
         switch (wich) {
@@ -41,7 +43,10 @@ public class audioController : MonoBehaviour
 
 
         }
+
+        //if there is a audio
         if (actual != null) {
+            //play one time
             audioSource.PlayOneShot(actual, volume);
         }
         

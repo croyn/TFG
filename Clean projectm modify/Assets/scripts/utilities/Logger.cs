@@ -22,11 +22,11 @@ public class Logger : MonoBehaviour
 
     void OnApplicationQuit()
     {
-        #if UNITY_EDITOR
+        //#if UNITY_EDITOR
 
-         return;
-        #endif
-        Debug.Log("Guardo en " + filepath);
+        // return;
+       // #endif
+       // Debug.Log("Guardo en " + filepath);
 
         string fullog = File.ReadAllText(filepath);
         if (fullog.Length > 1)
@@ -54,10 +54,10 @@ public class Logger : MonoBehaviour
 
     private static void addUserPositionLogLine(string content, bool ending = false)
     {
-#if UNITY_EDITOR
+//#if UNITY_EDITOR
 
-       return;
-#endif
+///       return;
+//#endif
         if (ending)
         {
             File.AppendAllText(fileUserpath, content);
@@ -69,10 +69,10 @@ public class Logger : MonoBehaviour
     }
 
     private static void addLogLine(string content, bool ending = false) {
-#if UNITY_EDITOR
+//#if UNITY_EDITOR
 
-        return;
-#endif
+//        return;
+//#endif
         if (ending)
         {
             File.AppendAllText(filepath, content);
@@ -83,7 +83,7 @@ public class Logger : MonoBehaviour
         }
     }
 
-    #region ParticlesAppear
+     #region ParticlesAppear
 
     public static void addParticlesAppear(string where) {
         Dictionary<string, string> val = new Dictionary<string, string>();
@@ -134,7 +134,48 @@ public class Logger : MonoBehaviour
     #endregion
 
 
+    #region Scan
 
+    public static void addParticlesScanZoneAppear(string where)
+    {
+        Dictionary<string, string> val = new Dictionary<string, string>();
+        val.Add("Time", System.DateTime.Now.ToString(DateTimeFormat));
+        val.Add("Event", "Appear particles in Scan zone");
+        val.Add("Position", where);
+        addLogLine(JsonFormat(val));
+    }
+
+    public static void addParticlesCatchScan(string whatZone, string wichUser, System.DateTime whenIsCatched)
+    {
+        Dictionary<string, string> val = new Dictionary<string, string>();
+        val.Add("Time", whenIsCatched.ToString(DateTimeFormat));
+        val.Add("Event", "Particles Catch");
+        val.Add("What zone", whatZone);
+        val.Add("User", wichUser);
+        addLogLine(JsonFormat(val));
+    }
+
+    public static void addScannedIn(string whatZone, string wichUser, System.DateTime whenIsCatched)
+    {
+        Dictionary<string, string> val = new Dictionary<string, string>();
+        val.Add("Time", whenIsCatched.ToString(DateTimeFormat));
+        val.Add("Event", "Scanned User in");
+        val.Add("What zone", whatZone);
+        val.Add("User", wichUser);
+        addLogLine(JsonFormat(val));
+    }
+
+    public static void addScannedOut(string whatZone, string wichUser, System.DateTime whenIsCatched)
+    {
+        Dictionary<string, string> val = new Dictionary<string, string>();
+        val.Add("Time", whenIsCatched.ToString(DateTimeFormat));
+        val.Add("Event", "Scanned User out");
+        val.Add("What zone", whatZone);
+        val.Add("User", wichUser);
+        addLogLine(JsonFormat(val));
+    }
+
+    #endregion
 
     //viejo
     //  #region WhiteHoleLog

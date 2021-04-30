@@ -2,46 +2,49 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//its the manager of all the process of the system
 public class timerZone : MonoBehaviour
 {
-    public static timerZone instance;
-    float timeStartAppear = 0.0f;
-    float timeNextAppear = 0.0f;
-    public float timeToNext=1.0f;
-    public float timeToOffZones = 1.0f;
-    float timeNextOff = 0.0f;
-    public List<GameObject> zoneList = null;
-    public List<GameObject> zoneListMove = null;
-    public List<GameObject> zoneScan = null;
-    private List<Transform> zoneListActive = new List<Transform>();
-    private List<Transform> zoneListActiveMove = new List<Transform>();
-    public GameObject pointCentralMandala;
-    public GameObject blackCircle;
-    bool active = false;
-    private int ControlWhichZone = 2;
-    private int ControlWhichMove = 0;
-    public int controlFase = 3; //0 absorv , 1 move
-    Gradient actualGradient = null;
-    private bool ParticlesDoneAbosorving = false;
-    private bool controlOneTimeAppering = false;
-    private bool controlminiMoveZone = false;
-    public float timeBetweenFases;
-    private bool timeBetweenFasesControl = false;
-    public Vector3 sizeFinal;
-    public Vector3 incrementSize;
-    public Vector3 sizeFinalCircle;
-    public Vector3 incrementSizeCircle;
-    public float tempMaxFirstLayer ;
-    public float tempMaxSecondLayer;
-    public float tempMaxThirdLayer ;
-    public float tempMaxCircleLayer ;
-    public int contadorIterations;
+    public static timerZone instance; //singleton
+    float timeStartAppear = 0.0f; //float control start time to appear something
+    float timeNextAppear = 0.0f; //float control next appear
+    public float timeToNext=1.0f; //public variable to control the next zone appear
+    public float timeToOffZones = 1.0f;//public variable to control the next zone dissapear
+    float timeNextOff = 0.0f; //control the actual time passing by
+    public List<GameObject> zoneList = null; //list of catchZones. Now 4 . One for every user and corner of the game
+    public List<GameObject> zoneListMove = null;//list of moving zones. 
+    public List<GameObject> zoneScan = null;//list of zoneScans
+    private List<Transform> zoneListActive = new List<Transform>(); //internal list to save what zone are active
+    private List<Transform> zoneListActiveMove = new List<Transform>();//internal list to save what moving zone are active
+    public GameObject pointCentralMandala; //reference to central point mandala
+    public GameObject blackCircle;//reference to final black circle
+    bool active = false;//boolean to control if is active
+    private int ControlWhichZone = 2; //control wich zone is going
+    private int ControlWhichMove = 0;//control wich move is going
+    public int controlFase = 3; //control which fase is going on in the flow if the system
+    Gradient actualGradient = null; //actual color going on in the flow
+    private bool ParticlesDoneAbosorving = false; //check if the particles are done 
+    private bool controlOneTimeAppering = false; //check if certain functions are done one time
+    private bool controlminiMoveZone = false; //check if the zone are done
+    public float timeBetweenFases; //control actual time beetween fases
+    private bool timeBetweenFasesControl = false;//control if the time is done
+    public Vector3 sizeFinal;//control what size is the final size to the mandala in the end fase
+    public Vector3 incrementSize;//the increment vector that will make grow the mandala in the end fase
+    public Vector3 sizeFinalCircle;//control what size is the final size to the blackcircle in the end fase
+    public Vector3 incrementSizeCircle;//the increment vector that will grow the blackcircle in the end fase
+    public float tempMaxFirstLayer ;//number of zones we want to be cacthed before the moving fase start -1 in first layer
+    public float tempMaxSecondLayer;//number of zones we want to be cacthed before the moving fase start -1 in second layer
+    public float tempMaxThirdLayer;//number of zones we want to be cacthed before the moving fase start -1 in third layer
+    public float tempMaxCircleLayer;//number of zones we want to be cacthed before the moving fase start -1 in circle layer
+    public int contadorIterations; //control number of iterations according to the max that we choose in every layer
     // Start is called before the first frame update
     void Start()
     {
+        //set the initial asigments
         instance = this;
         timeNextAppear = 0.0f;
         timeNextOff = 0.0f;
+        //start in fase 3
         controlFase = 3;
         contadorIterations = 0;
         changeFaseTo(3);
@@ -50,35 +53,43 @@ public class timerZone : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //control time going on
         timeNextAppear = timeNextAppear + Time.deltaTime;
 
-
+        //if fase is catch particles
         if (controlFase == 0)
         {
+            //if the time is what we need
             if (timeNextAppear >= timeToNext)
             {
-
+                //activate the zone where the particles appear
                 activateZones();
-
+                //restart time
                 timeNextAppear = 0.0f;
             }
-            else if (timeNextAppear >= timeToNext - timeToOffZones)
+            else if (timeNextAppear >= timeToNext - timeToOffZones)//this is for deactivate the particles that where doesn catch according to the time we configurate to be active
             {
+                //if we are active
                 if (active)
                 {
                     //getAllTimes();
-
+                    //make that the touched particles in every zone go at the same time
                     activeZonesTouched();
+                    //deactivate all the zones that where not catched
                     deactivateZones();
 
                 }
             }
         }
-        else if (controlFase == 1)
+        else if (controlFase == 1) //moving fase
         {
+
+            //if particle not donde absorving
             if (!ParticlesDoneAbosorving)
             {
+                //deactivate zones 
                 deactivateZones();
+                //
                 if (!isAbsorbParticlesDone())
                 {
 
