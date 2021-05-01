@@ -20,7 +20,7 @@ public class timerZone : MonoBehaviour
     public GameObject blackCircle;//reference to final black circle
     bool active = false;//boolean to control if is active
     private int ControlWhichZone = 2; //control wich zone is going
-    private int ControlWhichMove = 0;//control wich move is going
+    private int ControlWhichMove = 0;//control wich move is going//not used in the actual flow 
     public int controlFase = 3; //control which fase is going on in the flow if the system
     Gradient actualGradient = null; //actual color going on in the flow
     private bool ParticlesDoneAbosorving = false; //check if the particles are done 
@@ -37,6 +37,9 @@ public class timerZone : MonoBehaviour
     public float tempMaxThirdLayer;//number of zones we want to be cacthed before the moving fase start -1 in third layer
     public float tempMaxCircleLayer;//number of zones we want to be cacthed before the moving fase start -1 in circle layer
     public int contadorIterations; //control number of iterations according to the max that we choose in every layer
+    bool firstLog = false;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -50,6 +53,7 @@ public class timerZone : MonoBehaviour
         changeFaseTo(3);
     }
 
+ 
     // Update is called once per frame
     void Update()
     {
@@ -89,48 +93,56 @@ public class timerZone : MonoBehaviour
             {
                 //deactivate zones 
                 deactivateZones();
-                //
+                //if every zone has finished to move particles
                 if (!isAbsorbParticlesDone())
                 {
-
+                    //particles done absorving
                     ParticlesDoneAbosorving = true;
+                    //restart time
                     timeNextAppear = 0.0f;
-
+                    //play move music
                     audioController.instance.playAudio(3);
                 }
             }
 
+            //if timeBetweenFasesControl is false and the time pass and particles are done moving
             if (!timeBetweenFasesControl && timeNextAppear >= timeBetweenFases && ParticlesDoneAbosorving)
             {
-
+                //deactivate the circles from the zones catch
                 deactivateZonesCircles();
-                
+                //activate the moving zones between zones catch
                 activaMovezones(0);
+                //now its done
                 timeBetweenFasesControl = true;
+                //restart time
                 timeNextAppear = 0.0f;
 
             }
 
-
+            //when the moving zones are in the final position and all the previus are ok
             if (isDoneMoving() && ParticlesDoneAbosorving && timeBetweenFasesControl && timeNextAppear >= timeBetweenFases)
             {
-
+                //deactivate the moving zones
                 deactiveMoveZones();
 
-
+                //if the mandala is done
                 if (mandalamanager.instance.trianglesDone && mandalamanager.instance.circleDone)
                 {
+                    //go to final scan
                     changeFaseTo(6);
                 }
                 else
                 {
+                    //activate the circles in the zones catch
                     activateZonesCircles();
+                    //restart control of mini moving zones
                     controlminiMoveZone = false;
+                    //change to mini moving zones fase
                     changeFaseTo(2);
                 }
 
             }
-            else if (!isDoneMoving() && ParticlesDoneAbosorving && timeBetweenFasesControl)
+            else if (!isDoneMoving() && ParticlesDoneAbosorving && timeBetweenFasesControl) //if not done moving restart time
             {
                 timeNextAppear = 0.0f;
             }
@@ -138,56 +150,80 @@ public class timerZone : MonoBehaviour
 
 
         }
-        else if (controlFase == 2)
+        else if (controlFase == 2) //mini moving fase
         {
+            //if false
             if (!controlminiMoveZone)
             {
+                //activate mini move zones
                 activaMiniMovezones();
+                //done
                 controlminiMoveZone = true;
+                //restart time
                 timeNextAppear = 0.0f;
                 //&& timeNextAppear >= 0.4f
             }
-            else if (isDoneMovingMiniZone() && controlminiMoveZone)
+            else if (isDoneMovingMiniZone() && controlminiMoveZone)//if mini move zones are done moving and were activate before
             {
+                //deactivate mini moving zones
                 deactiveMiniMoveZones();
+                //change to fase catch particles
                 changeFaseTo(0);
             }
 
         }
-        else if (controlFase == 3)
+        else if (controlFase == 3) //first scan fase
         {
+            if (!firstLog) {
+                firstLog = true;
+                //#if !UNITY_EDITOR
+                 Logger.addChangeFase("First Scan Fase");
+
+                //#endif
+            }
+            //if false and all the zones are in green
             if (!controlminiMoveZone && checkScanZones())
             {
-
+                //restart time
                 timeNextAppear = 0.0f;
+                //done
                 controlminiMoveZone = true;
             }
 
+            //wait 2 seconds
             if (controlminiMoveZone && timeNextAppear > 2.0f)
             {
+                //restart
                 timeNextAppear = 0.0f;
+                //declare are done
                 timeBetweenFasesControl = true;
+                //change fase
                 changeFaseTo(4);
             }
 
         }
-        else if (controlFase == 4)
+        else if (controlFase == 4) //tutorial catch particles on front of every player fase
         {
 
-
+            //if a secongs past away 
             if (timeNextAppear >= 1.0f && timeBetweenFasesControl)
             {
+                //change to false for next fase
                 timeBetweenFasesControl = false;
+                //activate the front particles of every user
                 activateParticlesZoneScan(0);
             }
 
+            //check if all the front zone are cacthed .
             if (checkPartcilesCatchedZonesFromScanZones())
             {
+                //restart zones
                 deactivateZoneScan(1);
+
                 changeFaseTo(6);
             }
         }
-        else if (controlFase == 5) //no se usa pendiente quitar
+        else if (controlFase == 5) //Used in other flow that was denied
         {
             if (!timeBetweenFasesControl)
             {
@@ -210,40 +246,47 @@ public class timerZone : MonoBehaviour
             }
 
         }
-        else if (controlFase == 6)
+        else if (controlFase == 6) ////second scan and third scan fase
         {
-
+            //check if the foot print in the zones catch are in green
             if (checkScanZonesFromMainZone())
             {
+                //if the mandala is done
                 if (mandalamanager.instance.trianglesDone && mandalamanager.instance.circleDone)
                 {
-                    //deactivateZoneScan(2);
+                    deactivateZoneScan(2);
+                    //change to final fase
                     changeFaseTo(8);
                 }
                 else
                 {
+                    //Change to reordering points fase
                     changeFaseTo(7);
                 }
 
             }
         }
-        else if (controlFase == 7)
+        else if (controlFase == 7) //reordering points fase
         {
-
+            //if all the points on the mandala are in their final position
             if (mandalamanager.instance.checkPointsInPosition())
             {
+                //deactivate scan zone script
                 deactivateZoneScan(0);
+                //change to catch particles fase
                 changeFaseTo(0);
             }
         }
-        else if (controlFase == 8) {
-            
+        else if (controlFase == 8)//final fase
+        {
+            //if we are in the first 2 seconds make mandala grow 
             if (timeNextAppear <= 2.0f)
             {
+                //make bigger the mandala
                 reSizeMandala();
             }
             else {
-                if (reSizeMandala() && reSizeBlackCircle())
+                if (reSizeMandala() && reSizeBlackCircle()) //when the mandala and the black circle are in their final size we finish the game
                 {
                     Debug.Log("SE ACABO");
                 }
@@ -255,72 +298,96 @@ public class timerZone : MonoBehaviour
 
     }
 
-    public bool reSizeMandala() {
+
+    //function that allows to reSize the Mandala to their final size
+    private bool reSizeMandala() {
+        //recolect the local Scale of the mandala
         float x = mandalamanager.instance.gameObject.transform.localScale.x;
         float y = mandalamanager.instance.gameObject.transform.localScale.y;
         float z = mandalamanager.instance.gameObject.transform.localScale.z;
+        //check if we increment the final size is reached
         if (x+incrementSize.x <= sizeFinal.x && y+incrementSize.y <= sizeFinal.y && z+incrementSize.z <= sizeFinal.z) {
+            //do the increment of size
             mandalamanager.instance.gameObject.transform.localScale = mandalamanager.instance.gameObject.transform.localScale + incrementSize;
+            //we are not done yet
             return false;
         }
         else
         {
+            //we are on the size we want
             return true;
         }
 
     }
-
-    public bool reSizeBlackCircle()
+    //function that allows to reSize the black circle to the final size
+    private bool reSizeBlackCircle()
     {
         
-    
+        //make visible the black circle
         blackCircle.SetActive(true);
+        //recolect the local scale
         float x = blackCircle.transform.localScale.x;
         float y = blackCircle.transform.localScale.y;
         float z = blackCircle.transform.localScale.z;
+        //check if final size reached
         if (x + incrementSizeCircle.x <= sizeFinalCircle.x && y + incrementSizeCircle.y <= sizeFinalCircle.y && z + incrementSizeCircle.z <= sizeFinalCircle.z)
         {
+            //increment the size
             blackCircle.transform.localScale = blackCircle.transform.localScale + incrementSizeCircle;
+            //not done yet
             return false;
         }
         else
         {
+            //done resizing
             return true;
         }
 
     }
 
-
-    public void changeFaseTo(int cual) {
-
-        switch (cual) {
-            case 0://absorv
-                audioController.instance.playAudio(mandalamanager.instance.whichSong());
-                ControlWhichZone = 3;
-                pointCentralMandala.GetComponent<PointCentralMandala>().allowAbsorv = true;
+    //function that allows the change of fases in the flow of the program
+    public void changeFaseTo(int which) {
+        //according to the fase we prepare what we need
+        switch (which) {
+            case 0://catch particles
+                //#if !UNITY_EDITOR
+                Logger.addChangeFase("Catch Particles Fase");
+                
+                //#endif
+                audioController.instance.playAudio(mandalamanager.instance.whichSong());//play the song
+                ControlWhichZone = 3;//start in right zone to appear
+                pointCentralMandala.GetComponent<PointCentralMandala>().allowAbsorv = true;//allow the collision in the central point
                 //deactivateZonesMove();
-                timeNextAppear = 0.0f;
-                activateZonesCircles();
+                timeNextAppear = 0.0f;//restart time
+                activateZonesCircles();//activate circle from catch zone
                 break;
             case 1://move
-                contadorIterations = 0;
-                pointCentralMandala.GetComponent<PointCentralMandala>().allowAbsorv = false;
-                ParticlesDoneAbosorving = false;
-                timeBetweenFasesControl = false;
+                //#if !UNITY_EDITOR
+                Logger.addChangeFase("Moving transition Fase");
+
+                //#endif
+                contadorIterations = 0;//control of iterations done in fase catch particles
+                pointCentralMandala.GetComponent<PointCentralMandala>().allowAbsorv = false;//dont allow collision
+                ParticlesDoneAbosorving = false; //restart varible
+                timeBetweenFasesControl = false;//restart control
                 break;
             case 2://activating circles
                 
-                pointCentralMandala.GetComponent<PointCentralMandala>().allowAbsorv = false;
-                controlminiMoveZone = false;
+                pointCentralMandala.GetComponent<PointCentralMandala>().allowAbsorv = false;//dont allow collision
+                controlminiMoveZone = false;//restart variable
                 break;
             case 3://first scan
-                deactivateZonesCircles();
-                pointCentralMandala.GetComponent<PointCentralMandala>().allowAbsorv = false;
+                 
+                deactivateZonesCircles();//deactivate circle zone
+                pointCentralMandala.GetComponent<PointCentralMandala>().allowAbsorv = false;//dont allow colli
                 mandalamanager.instance.deactivateAllPoints();
                 controlminiMoveZone = false;
                 break;
 
             case 4://appear and capturing circle
+                   //#if !UNITY_EDITOR
+                Logger.addChangeFase("First Scan Appear Circle Fase");
+                //#endif
                 activateParticlesZoneScan(1);
                 break;
             case 5://move scan//no se usa pendiente quitar
@@ -329,39 +396,60 @@ public class timerZone : MonoBehaviour
                 timeBetweenFasesControl = false;
                 deactivateZoneScan(0);
                 break;
-            case 6://second scan
+            case 6://second scan and third scan
+                  
+                //if mandala done
                 if (mandalamanager.instance.trianglesDone && mandalamanager.instance.circleDone)
                 {
+                    //deactivate scan zone
+                    //#if !UNITY_EDITOR
+                    Logger.addChangeFase("Third Scan Fase");
+                    //#endif
                     deactivateZoneScan(2);
                 }
                 else
                 {
+                    //#if !UNITY_EDITOR
+                    Logger.addChangeFase("Second Scan Fase");
+                    //#endif
+                    //deactivate scan zone and circles restarting variable
                     deactivateZoneScan(1);
                 }
                     
-                controlminiMoveZone = false;
-                activateZoneScanFromMainZone();
-                pointCentralMandala.GetComponent<PointCentralMandala>().allowAbsorv = false;
+                controlminiMoveZone = false; //restart variable
+                activateZoneScanFromMainZone();//activate the script scanZone on frootprint in zone catch
+                pointCentralMandala.GetComponent<PointCentralMandala>().allowAbsorv = false;//dont allow collision
                 break;
             case 7://appear mandala
+                   //#if !UNITY_EDITOR
+                Logger.addChangeFase("Appear Mandala Fase");
+                //#endif
+                //deactivate the zoneScan from first scan
                 deactivateZoneScan(0);
+                //deactivate scan zone and circles restarting variable
                 deactivateZoneScan(1);
+                //make visible and make the mandala appear
                 mandalamanager.instance.activateAllPoints();
                 break;
             case 8://final
+                //deactivate scan zone
+                Logger.addChangeFase("Final Fase");
                 deactivateZoneScan(2);
+                //restart time
                 timeNextAppear = 0.0f;
                 break;
 
         }
-
-        controlFase = cual;
+        //save what fase we are
+        controlFase = which;
     }
 
 
-    public void deactivateZoneScan(int cual) {
+    //allow to deactivate scan zone according to the arg
+    private void deactivateZoneScan(int which) {
 
-        if (cual == 0)
+        //if arg 0 we set to disable the zoneScan for the first scan fase
+        if (which == 0)
         {
             for (int i = 0; i < zoneScan.Count; i++)
             {
@@ -370,7 +458,7 @@ public class timerZone : MonoBehaviour
             }
 
         }
-        else if (cual == 1)
+        else if (which == 1) //if arg 1 we restart the script collison and then disable . For the flow we set visible the front circle of the zone to
         {
             for (int i = 0; i < zoneList.Count; i++)
             {
@@ -384,7 +472,8 @@ public class timerZone : MonoBehaviour
             }
 
         }
-        else if (cual == 2) {
+        else if (which == 2) //if arg 2 only change the color to white and disable the script
+        {
             for (int i = 0; i < zoneList.Count; i++)
             {
                 Transform tempFoot = zoneList[i].transform.Find("footPrint");
@@ -397,18 +486,21 @@ public class timerZone : MonoBehaviour
 
     }
 
-    public void activateParticlesZoneScan(int cual) {
+
+    //activate the zoneScan for the first scan
+    private void activateParticlesZoneScan(int which) {
 
         for (int i = 0; i < zoneScan.Count; i++)
         {
-            if (cual == 0)
+            if (which == 0)//if arg 0 activate the circle and the particle system
             {
                 Transform zone = zoneScan[i].transform.Find("frenteZone");
                 zone.gameObject.GetComponent<simpleColliderZone>().allowCollision = true;
                 Transform particles = zone.Find("Particle System");
                 particles.gameObject.GetComponent<ParticleSystem>().Play();
             }
-            else if (cual == 1) {
+            else if (which == 1)//if arg 1 activate only the circle
+            {
                 Transform zone = zoneScan[i].transform.Find("frenteZone");
                 zone.transform.Find("Cube").gameObject.SetActive(true);
             }
@@ -419,8 +511,8 @@ public class timerZone : MonoBehaviour
     }
 
     
-
-    public void activateZoneScanFromMainZone() {
+    //activate the footprint and the scritp for the cathc zones
+    private void activateZoneScanFromMainZone() {
         for (int i = 0; i < zoneList.Count; i++) {
             // zoneList[i].GetComponent<zoneManager>().activateFootPrint();
             Transform tempFoot = zoneList[i].transform.Find("footPrint");
@@ -430,115 +522,153 @@ public class timerZone : MonoBehaviour
         }
     }
 
+
+    //function to  check if all the scan zone are in green , so scanned
     public bool checkScanZones() {
+        //to check the final result
         bool resp = true;
+        //for every scan zone
         for (int i = 0; i < zoneScan.Count; i++) {
+            //find the footPrint
             Transform foot = zoneScan[i].transform.Find("footPrint");
+            //temp
             bool tempResp =true;
+            //get actual color
             Color tempColor = foot.gameObject.GetComponent<collisionScan>().actualColor;
+
+            //if green means that is scanned
             if (tempColor == Color.green) {
+                //set true
                 tempResp = true;
             }
             else {
+                //set false
                 tempResp = false;
             }
+            //accumulate
             resp = resp && tempResp;
 
         }
-        if (resp)
-        {
-
-        }
+        //final 
         return resp;
     }
 
+
+    //function to  check if all the scan zone on the catch zone are in green , so scanned
     public bool checkScanZonesFromMainZone()
     {
-
+        //to check the final result
         bool resp = true;
+
+        //for every catch zone
         for (int i = 0; i < zoneList.Count; i++)
         {
+            //find the footprint
             Transform foot = zoneList[i].transform.Find("footPrint");
+            //temp
             bool tempResp = true;
+            //get the color
             Color tempColor = foot.gameObject.GetComponent<collisionScan>().actualColor;
+
+            //if green is scanned
             if (tempColor == Color.green)
             {
+                //set true
                 tempResp = true;
             }
             else
             {
+                //set false
                 tempResp = false;
             }
+            //acccumulate
             resp = resp && tempResp;
 
         }
-        if (resp)
-        {
 
-        }
+        //final
         return resp;
 
     }
 
+    //check if all the particles on the front circles in the scan zone are touched
     public bool checkPartcilesCatchedZonesFromScanZones()
     {
-
+        //to check
         bool resp = true;
+        
+        //for every scan zone
         for (int i = 0; i < zoneScan.Count; i++)
         {
+            //find the front zone
             Transform zone = zoneScan[i].transform.Find("frenteZone");
             
+            //accumulate result of the function that give us as result if the flow of every zone is done
             resp = resp && zone.gameObject.GetComponent<simpleColliderZone>().isZoneOver();
 
         }
-        if (resp)
-        {
 
-        }
+        //final result
         return resp;
 
     }
 
+    //Activate the moving zone and setup the color configuration the arg for which allows to say if we want the move from scan zone to catch zone or beetween cacth zones.
+    public void activaMovezones(int which) {
 
-    public void activaMovezones(int cual) {
+        //this makes that the color will have the moving zone be the last one that we have in the catch fase
+        //ParticleSystem.ColorOverLifetimeModule temp = zoneList[0].transform.Find("derechaZone").GetComponent<zoneManager>().AffectedParticles.gameObject.GetComponent<ParticleSystem>().colorOverLifetime;
+        //ParticleSystem.MinMaxGradient colorNormal = temp.color;
+        //ParticleSystem.MinMaxGradient colorNotouch = zoneList[0].transform.Find("derechaZone").GetComponent<zoneManager>().GradientColorMove;
 
-        ParticleSystem.ColorOverLifetimeModule temp = zoneList[0].transform.Find("derechaZone").GetComponent<zoneManager>().AffectedParticles.gameObject.GetComponent<ParticleSystem>().colorOverLifetime;
-
-        ParticleSystem.MinMaxGradient colorNormal = temp.color;
-        ParticleSystem.MinMaxGradient colorNotouch = zoneList[0].transform.Find("derechaZone").GetComponent<zoneManager>().GradientColorMove;
+        //the actual flow will have the color that the next layer will have
         for (int i = 0; i < zoneListMove.Count;i++) {
+            //change the color configuration on the moving zone with the actual color that the mandala use,so its the actual next layer already setup
             zoneListMove[i].GetComponent<MoveZone>().ChangeColorTo(mandalamanager.instance.switchColor(), mandalamanager.instance.switchColorMove());
-            zoneListMove[i].GetComponent<MoveZone>().initMoveZone(cual);
+            //for which allows to say if we want the move from scan zone to catch zone or beetween cacth zones.
+            zoneListMove[i].GetComponent<MoveZone>().initMoveZone(which);
             
         }
     }
 
-
+    //activate mini zones. According to the script enable on the gameobject do the different acces to it. This is because there exists two flows to this mechaninc
+    //one that is on use in the actual flow that are the mini rivers . The other actually disable allows us to have 3 little group of particles moving .
     public void activaMiniMovezones()
     {
-        ParticleSystem.ColorOverLifetimeModule temp = zoneList[0].transform.Find("derechaZone").GetComponent<zoneManager>().AffectedParticles.gameObject.GetComponent<ParticleSystem>().colorOverLifetime;
-
-        ParticleSystem.MinMaxGradient tempColor = temp.color;
+        //flow used if we want the last color used on catch particles fase
+        //recolect the color from right zone of the first catch zone because have the color we want
+        //ParticleSystem.ColorOverLifetimeModule temp = zoneList[0].transform.Find("derechaZone").GetComponent<zoneManager>().AffectedParticles.gameObject.GetComponent<ParticleSystem>().colorOverLifetime;
+        //recolect the gradient
+        //ParticleSystem.MinMaxGradient tempColor = temp.color;
+        //for every cacth zone
         for (int i = 0; i < zoneList.Count; i++)
         {
+            //recolect the references of the 3 gameObjects tranform
             Transform minizone1 = zoneList[i].transform.Find("MiniMoveZone1");
             Transform minizone2 = zoneList[i].transform.Find("MiniMoveZone2");
             Transform minizone3 = zoneList[i].transform.Find("MiniMoveZone3");
+
+            //if the script of the first minizone have enable is moveZone we can assume all of them too
             if (minizone1.gameObject.GetComponent<MoveZone>().isActiveAndEnabled) {
-                //Debug.Log("Entro moveZone activate");
+                
+                //change the color configuration of the 3 minizone .
                 minizone1.gameObject.GetComponent<MoveZone>().ChangeColorTo(mandalamanager.instance.switchColor(), mandalamanager.instance.switchColor());
                 minizone2.gameObject.GetComponent<MoveZone>().ChangeColorTo(mandalamanager.instance.switchColor(), mandalamanager.instance.switchColor());
                 minizone3.gameObject.GetComponent<MoveZone>().ChangeColorTo(mandalamanager.instance.switchColor(), mandalamanager.instance.switchColor());
+
+                //init the flow of the script that make move the 3 mini group of particles go(need the right particle system configuration , Look gameObject disable "baseMINI")
                 minizone1.gameObject.GetComponent<MoveZone>().initMoveZone(0);
                 minizone2.gameObject.GetComponent<MoveZone>().initMoveZone(0);
                 minizone3.gameObject.GetComponent<MoveZone>().initMoveZone(0);
             }
-
+            //if the script of the first miniRiverZone have enable is moveZone we can assume all of them too
             if (minizone1.gameObject.GetComponent<miniRiverZone>().isActiveAndEnabled) {
-             //   Debug.Log("Entro miniRiverZone activate");
+             // change the color configuration of the miniRivers
                 minizone1.gameObject.GetComponent<miniRiverZone>().ChangeColorTo(mandalamanager.instance.switchColor(), mandalamanager.instance.switchColor());
                 minizone2.gameObject.GetComponent<miniRiverZone>().ChangeColorTo(mandalamanager.instance.switchColor(), mandalamanager.instance.switchColor());
                 minizone3.gameObject.GetComponent<miniRiverZone>().ChangeColorTo(mandalamanager.instance.switchColor(), mandalamanager.instance.switchColor());
+
+                //init the flow of the script that make move the 3 mini rivers of particles go(need the right particle system configuration , Look gameObject disable "baseRIVER")
                 minizone1.gameObject.GetComponent<miniRiverZone>().PlayRiver();
                 minizone2.gameObject.GetComponent<miniRiverZone>().PlayRiver();
                 minizone3.gameObject.GetComponent<miniRiverZone>().PlayRiver();
@@ -548,33 +678,46 @@ public class timerZone : MonoBehaviour
  
     }
 
-
+    //control if every particle system is done to moving particles on the catch zones.
     private bool isAbsorbParticlesDone()
     {
+        //for accumulate
         bool control = false;
+        //for every zone
         for (int i = 0; i < zoneList.Count; i++)
         {
+            //check if it is done
             control= control || zoneList[i].transform.Find("derechaZone").GetComponent<zoneManager>().isMovingParticles();
             control = control || zoneList[i].transform.Find("frenteZone").GetComponent<zoneManager>().isMovingParticles();
             control = control || zoneList[i].transform.Find("izquierdaZone").GetComponent<zoneManager>().isMovingParticles();
      
         }
 
+        //result
         return control;
 
     }
 
-
+    //activate the explosion of particles only on the zones that are catched
     private void activeZonesTouched() {
+        //temp object
         Transform temp = null;
-        bool controlOneActive = false;
+        bool controlOneActive = false;//control if one zone catched the iteration
+
+        //for every active catch zone 
         for (int i = 0; i < zoneListActive.Count; i++)
         {
-
+            //get the object
             temp = zoneListActive[i];
+
+            //check if it is catched for some player
             if (temp.GetComponent<zoneManager>().isCatched()) {
+                //activate the explosion effect
                 temp.GetComponent<zoneManager>().activeExplosion();
+//#if !UNITY_EDITOR
                 Logger.addParticlesCatch(temp.name, temp.GetComponent<zoneManager>().getUserCatch(), temp.GetComponent<zoneManager>().getWhenCollision());
+//#endif
+                   //set the control to true
                 controlOneActive = true;
             }
             
@@ -582,36 +725,42 @@ public class timerZone : MonoBehaviour
 
         }
 
-
+        //for set up the iterations that need to make
         float timeTemp = 0.0f;
+        //if triangles are not done on the mandala flow
         if (!mandalamanager.instance.trianglesDone)
         {
+            //see what layer is the mandala
             switch (mandalamanager.instance.layer)
             {
-                case 0:
+                case 0://first layer
                     timeTemp = tempMaxFirstLayer;
                     break;
-                case 1:
+                case 1://second layer
                     timeTemp = tempMaxSecondLayer;
                     break;
-                case 2:
+                case 2://third layer
                     timeTemp = tempMaxThirdLayer;
                     break;
             }
         }
         else
         {
+            //this is the circle configuration
             timeTemp = tempMaxCircleLayer;
+
         }
 
+        //if contadorIterations is 0 need to restart the central point of the mandala
         if (contadorIterations == 0) {
             mandalamanager.instance.centralPoint.GetComponent<PointCentralMandala>().numActivationAvailable = 0.0f;
             mandalamanager.instance.centralPoint.GetComponent<PointCentralMandala>().numNotCatched = 0.0f;
         }
+        //new iteration
             contadorIterations = contadorIterations + 1;
         
        
-
+        //if someone touched a group of particles this iteration
         if (controlOneActive)
         {
 
@@ -619,16 +768,21 @@ public class timerZone : MonoBehaviour
             //timeTemp = timeTemp / timeToNext;
             //Debug.Log("timeToNext " + timeToNext);
             // Debug.Log("timeTemp calc " + timeTemp);
-            float num = mandalamanager.instance.actulgetNumberLines();
+            float num = mandalamanager.instance.actulgetNumberLines(); //get the number of lines that is configurate in that layer
             // Debug.Log("num lines total " + num);
-            float numLines = num / timeTemp;
+            float numLines = num / timeTemp; //get the ponderation that we need to make this iteration
             //Debug.Log("numLines calc " + numLines);
-            float calc = mandalamanager.instance.centralPoint.GetComponent<PointCentralMandala>().numActivationAvailable + (numLines) * 2;
+
+            // for the flow system we need to make two calls for each line to happen and we need to have in account if there is some more from before there.
+            float calc = mandalamanager.instance.centralPoint.GetComponent<PointCentralMandala>().numActivationAvailable + (numLines) * 2; 
             // Debug.Log("Tiene point centralDesdeTimer " + calc);
+
+            //accumulate the calc + the number of particles accumulate for not touching it
             mandalamanager.instance.centralPoint.GetComponent<PointCentralMandala>().numActivationAvailable = calc + mandalamanager.instance.centralPoint.GetComponent<PointCentralMandala>().numNotCatched;
+            //restart the particles accumulate not touched
             mandalamanager.instance.centralPoint.GetComponent<PointCentralMandala>().numNotCatched = 0.0f;
         }
-        else if(!controlOneActive && ControlWhichZone!=3) {
+        else if(!controlOneActive && ControlWhichZone!=3) { //if anybody touch a group of particles this 
 
             // Debug.Log("Time " + timeTemp);
             //timeTemp = timeTemp / timeToNext;
@@ -664,6 +818,292 @@ public class timerZone : MonoBehaviour
 
     }
 
+
+   
+
+
+    //function that controls the flow of the appearing catch zone in terms of which need to appear
+    private void ChangeZone() {
+
+        switch (ControlWhichZone) {
+            case 0://derecha , right
+                ControlWhichZone = 2;
+                break;
+            case 1://frente ,front
+                ControlWhichZone = 3;
+                break;
+            case 2://izquierda, left
+                ControlWhichZone = 1;
+                break;
+            case 3://silencio, silence
+                ControlWhichZone = 0;
+                break;
+        }
+        
+    }
+
+
+    //check if the moving zones are done in their movement
+    private bool isDoneMoving() {
+
+        int control = 0; //check the number of moving zone that are in position
+
+        //for every moving zone in the list
+        for (int i = 0; i < zoneListMove.Count; i++) {
+            //check if the moving zone is in position
+            if (zoneListMove[i].GetComponent<MoveZone>().isInPosition()) {
+                control = control + 1;
+            }
+
+        }
+
+        //if the number of list in position is the same as the list
+        if (control == zoneListMove.Count)
+        {
+            //is done
+            return true;
+        }
+        else {
+            //not yet
+            return false;
+        }
+
+    }
+
+
+    //check if the flow of a mini moving zone or MiniRiver is done
+    private bool isDoneMovingMiniZone()
+    {
+
+        int control = 0;
+        //for every catch zone
+        for (int i = 0; i < zoneList.Count; i++)
+        {
+            //find the miniMoveZone
+            Transform minizone1= zoneList[i].transform.Find("MiniMoveZone1");
+            Transform minizone2 = zoneList[i].transform.Find("MiniMoveZone2");
+            Transform minizone3 = zoneList[i].transform.Find("MiniMoveZone3");
+            //set init variable to check
+            bool inPos1=false;
+            bool inPos2 = false;
+            bool inPos3 = false;
+
+            //we can assume if the first has the script MoveZone active the other too
+            if (minizone1.gameObject.GetComponent<MoveZone>().isActiveAndEnabled) {
+                //check for every minizone if is in position
+                inPos1 = minizone1.gameObject.GetComponent<MoveZone>().isInPosition();
+                inPos2 = minizone2.gameObject.GetComponent<MoveZone>().isInPosition();
+                inPos3 = minizone3.gameObject.GetComponent<MoveZone>().isInPosition();
+            }
+            //we can assume if the first has the script miniRiverZone active the other too
+            if (minizone1.gameObject.GetComponent<miniRiverZone>().isActiveAndEnabled)
+            {
+                //check for every minizone if is done moving
+                //Debug.Log("Entro miniRiverZone doneMoving:");
+                inPos1 = minizone1.gameObject.GetComponent<miniRiverZone>().movingDone();
+                inPos2 = minizone2.gameObject.GetComponent<miniRiverZone>().movingDone();
+                inPos3 = minizone3.gameObject.GetComponent<miniRiverZone>().movingDone();
+            }
+
+            //check the 3 are done
+            if (inPos1 && inPos2 && inPos3)
+            {
+                //check this zone as good
+                control = control + 1;
+            }
+
+        }
+
+        //if all the zone are done
+        if (control == zoneList.Count)
+        {
+            //Debug.Log("Entro en control true");
+            return true;
+        }
+        else
+        {
+            //not yet
+            return false;
+        }
+
+    }
+
+    //deactivate the moving zones
+    private void deactiveMoveZones()
+    {
+
+        //for every moving zone
+        for (int i = 0; i < zoneListMove.Count; i++)
+        {
+            //deactivate
+            zoneListMove[i].GetComponent<MoveZone>().deactiveMoveZone();
+
+        }
+
+    }
+
+
+    //function tu deactivate the minizones when uses the MoveZone script . MiniRiver doesnt needed
+    private void deactiveMiniMoveZones()
+    {
+
+        for (int i = 0; i < zoneList.Count; i++)
+        {
+            Transform minizone1 = zoneList[i].transform.Find("MiniMoveZone1");
+            Transform minizone2 = zoneList[i].transform.Find("MiniMoveZone2");
+            Transform minizone3 = zoneList[i].transform.Find("MiniMoveZone3");
+            minizone1.gameObject.GetComponent<MoveZone>().deactiveMoveZone();
+            minizone2.gameObject.GetComponent<MoveZone>().deactiveMoveZone();
+            minizone3.gameObject.GetComponent<MoveZone>().deactiveMoveZone();
+
+
+        }
+
+    }
+
+
+   
+
+
+   
+
+
+    //activate the catch zone it need in this time iteration
+    void activateZones() {
+        //temp variable
+        Transform internalZone = null;
+        //change what zone it is now
+        ChangeZone();
+        //give the colors that the mandala has configurate in this layer
+        Gradient colorActual = mandalamanager.instance.switchColor(); 
+         Gradient colorActualMove = mandalamanager.instance.switchColorMove();
+
+        //for every catch zone
+        for (int i = 0; i < zoneList.Count; i++)
+        {
+            //int result = Random.Range(0, 3);
+            //result = 1;
+            
+            //which zone its now
+            switch (ControlWhichZone)
+            {
+
+                case 0://right
+
+                    internalZone = zoneList[i].transform.Find("derechaZone");
+                    break;
+                case 1://front
+                    internalZone = zoneList[i].transform.Find("frenteZone");
+                    break;
+                case 2://left
+                    internalZone = zoneList[i].transform.Find("izquierdaZone");
+                    break;
+            }
+            
+            //if it is not null it means that is not silence too
+            if (internalZone != null)
+            {
+                //set the color configuration to the zone
+                internalZone.GetComponent<zoneManager>().ChangeColorTo(colorActual, colorActualMove);
+                //activate that zone
+                internalZone.GetComponent<zoneManager>().activateZone();
+                //save in the active list of catchzones
+                zoneListActive.Add(internalZone);
+                // temp.GetComponent<zoneManager>().updateSpherePoint();
+            }
+        }
+
+        //#if !UNITY_EDITOR
+        if (internalZone != null) {
+            Logger.addParticlesAppear(internalZone.name);
+        }
+        //#endif
+
+        //when all the zone are active
+        timeStartAppear = Time.time;
+        //set active to true
+        active = true;
+
+    }
+
+   
+
+    //deactivate only the catch zone that are active
+    void deactivateZones() {
+
+        
+        Transform temp = null;
+
+        //for every active catch zone
+        for (int i = 0; i < zoneListActive.Count;i++)
+        {
+            
+            temp = zoneListActive[i];
+            //deactivate
+            temp.GetComponent<zoneManager>().deactivateZone();
+            
+        }
+        //clear the list
+        zoneListActive.Clear();
+
+        //the zones are not active anymore
+        active = false;
+    }
+
+
+    //deactivate the circles on every catch zone
+    void deactivateZonesCircles() {
+        Transform temp;
+        Transform temp1;
+        Transform temp2;
+
+        //for every catch zone
+        for (int i = 0; i < zoneList.Count; i++) {
+
+            //find the reference
+            //right zone
+            temp = zoneList[i].transform.Find("derechaZone");
+            //front zone
+            temp1 = zoneList[i].transform.Find("frenteZone");
+            //left zone
+            temp2 = zoneList[i].transform.Find("izquierdaZone");
+
+            //deactivate circle in all 3
+            temp.gameObject.GetComponent<zoneManager>().deactiaveCircle();
+            temp1.gameObject.GetComponent<zoneManager>().deactiaveCircle();
+            temp2.gameObject.GetComponent<zoneManager>().deactiaveCircle();
+        }
+    }
+
+
+    //activate the circles on the catch zones
+    public void activateZonesCircles()
+    {
+        Transform temp;
+        Transform temp1;
+        Transform temp2;
+
+        //for every catch zone
+        for (int i = 0; i < zoneList.Count; i++)
+        {
+            //find the references
+            //right zone
+            temp = zoneList[i].transform.Find("derechaZone");
+            //front zone
+            temp1 = zoneList[i].transform.Find("frenteZone");
+            //left zone
+            temp2 = zoneList[i].transform.Find("izquierdaZone");
+
+            //activate the circles of all 3
+            temp.gameObject.GetComponent<zoneManager>().actiaveCircle();
+            temp1.gameObject.GetComponent<zoneManager>().actiaveCircle();
+            temp2.gameObject.GetComponent<zoneManager>().actiaveCircle();
+        }
+    }
+
+
+    #region NotUsedAnyMore
+    //function not used. Makes that the number of particles change if all the childs catch all the particles in a time beetwen t.min<0.2<t.max
     /*void getAllTimes() {
         bool control = true;
         Transform temp = null;
@@ -713,193 +1153,10 @@ public class timerZone : MonoBehaviour
 
     }*/
 
-    private void ChangeZone() {
 
-        switch (ControlWhichZone) {
-            case 0://derecha
-                ControlWhichZone = 2;
-                break;
-            case 1://frente
-                ControlWhichZone = 3;
-                break;
-            case 2://izquierda
-                ControlWhichZone = 1;
-                break;
-            case 3://silencio
-                ControlWhichZone = 0;
-                break;
-        }
-        
-    }
-
-    private bool isDoneMoving() {
-
-        int control = 0;
-        for (int i = 0; i < zoneListMove.Count; i++) {
-            if (zoneListMove[i].GetComponent<MoveZone>().isInPosition()) {
-                control = control + 1;
-            }
-
-        }
-
-        if (control == zoneListMove.Count)
-        {
-            return true;
-        }
-        else {
-            return false;
-        }
-
-    }
-    private bool isDoneMovingMiniZone()
+    //not used Anymore. Function that active the next circle in the way beetween catch zone in moving fase.
+    void activateNextMove()
     {
-
-        int control = 0;
-        for (int i = 0; i < zoneList.Count; i++)
-        {
-            Transform minizone1= zoneList[i].transform.Find("MiniMoveZone1");
-            Transform minizone2 = zoneList[i].transform.Find("MiniMoveZone2");
-            Transform minizone3 = zoneList[i].transform.Find("MiniMoveZone3");
-            bool inPos1=false;
-            bool inPos2 = false;
-            bool inPos3 = false;
-            if (minizone1.gameObject.GetComponent<MoveZone>().isActiveAndEnabled) {
-                //Debug.Log("Entro movezone doneMoving:");
-                inPos1 = minizone1.gameObject.GetComponent<MoveZone>().isInPosition();
-                inPos2 = minizone2.gameObject.GetComponent<MoveZone>().isInPosition();
-                inPos3 = minizone3.gameObject.GetComponent<MoveZone>().isInPosition();
-            }
-
-            if (minizone1.gameObject.GetComponent<miniRiverZone>().isActiveAndEnabled)
-            {
-                //Debug.Log("Entro miniRiverZone doneMoving:");
-                inPos1 = minizone1.gameObject.GetComponent<miniRiverZone>().movingDone();
-                inPos2 = minizone2.gameObject.GetComponent<miniRiverZone>().movingDone();
-                inPos3 = minizone3.gameObject.GetComponent<miniRiverZone>().movingDone();
-            }
-
-            if (inPos1 && inPos2 && inPos3)
-            {
-                control = control + 1;
-            }
-
-        }
-
-        if (control == zoneList.Count)
-        {
-            //Debug.Log("Entro en control true");
-            return true;
-        }
-        else
-        {
-            return false;
-        }
-
-    }
-
-
-    private void deactiveMoveZones() {
-
-        for (int i = 0; i < zoneListMove.Count; i++)
-        {
-            zoneListMove[i].GetComponent<MoveZone>().deactiveMoveZone();
-
-        }
-
-    }
-    private void deactiveMiniMoveZones()
-    {
-
-        for (int i = 0; i < zoneList.Count; i++)
-        {
-            Transform minizone1 = zoneList[i].transform.Find("MiniMoveZone1");
-            Transform minizone2 = zoneList[i].transform.Find("MiniMoveZone2");
-            Transform minizone3 = zoneList[i].transform.Find("MiniMoveZone3");
-            minizone1.gameObject.GetComponent<MoveZone>().deactiveMoveZone();
-            minizone2.gameObject.GetComponent<MoveZone>().deactiveMoveZone();
-            minizone3.gameObject.GetComponent<MoveZone>().deactiveMoveZone();
-
-
-        }
-
-    }
-
-
-
-    private void ChangeZoneMove()
-    {
-        ControlWhichMove = ControlWhichMove + 1;
-
-
-        if (ControlWhichMove > 7) {
-            ControlWhichMove = -1;
-        }
-
-    }
-
-    void activateZonesMove() {
-
-        Transform temp = null;
-        Transform temp1 = null;
-        
-        for (int i = 0; i < zoneListMove.Capacity; i++)
-        {
-            //int result = Random.Range(0, 3);
-            //result = 1;
-
-            switch (ControlWhichMove)
-            {
-
-                case 0:
-                    temp = zoneListMove[i].transform.Find("Move_0");
-                   // temp1= zoneListMove[i].transform.Find("Move_1");
-                    break;
-                case 1:
-                    temp = zoneListMove[i].transform.Find("Move_1");
-                    //temp1 = zoneListMove[i].transform.Find("Move_2");
-                    break;
-                case 2:
-                    temp = zoneListMove[i].transform.Find("Move_2");
-                    //temp1 = zoneListMove[i].transform.Find("Move_3");
-                    break;
-                case 3:
-                    temp = zoneListMove[i].transform.Find("Move_3");
-                    temp1 = zoneListMove[i].transform.Find("Move_4");
-                    break;
-                case 4:
-                    temp = zoneListMove[i].transform.Find("Move_4");
-                   // temp1 = zoneListMove[i].transform.Find("Move_5");
-                    break;
-                case 5:
-                    temp = zoneListMove[i].transform.Find("Move_5");
-                   // temp1 = zoneListMove[i].transform.Find("Move_6");
-                    break;
-                case 6:
-                    temp = zoneListMove[i].transform.Find("Move_6");
-                    //temp1 = zoneListMove[i].transform.Find("Move_6");
-                    break;
-                case 7:
-                    temp = null;
-                    break;
-            }
-
-            if (temp != null)
-            {
-                temp.GetComponent<zoneManagerMove>().activateZone();
-                //temp1.GetComponent<zoneManagerMove>().actiaveCircle();
-                zoneListActiveMove.Add(temp);
-                // temp.GetComponent<zoneManager>().updateSpherePoint();
-            }
-        }
-
-        timeStartAppear = Time.time;
-        active = true;
-        ChangeZoneMove();
-        
-        
-    }
-
-    void activateNextMove() {
         Transform temp = null;
         for (int i = 0; i < zoneListMove.Count; i++)
         {
@@ -950,55 +1207,12 @@ public class timerZone : MonoBehaviour
 
     }
 
-    void activateZones() {
-        Transform internalZone = null;
-        ChangeZone();
-        Gradient colorActual = mandalamanager.instance.switchColor(); 
-         Gradient colorActualMove = mandalamanager.instance.switchColorMove();
-        for (int i = 0; i < zoneList.Count; i++)
-        {
-            //int result = Random.Range(0, 3);
-            //result = 1;
-            
-            switch (ControlWhichZone)
-            {
-
-                case 0:
-
-                    internalZone = zoneList[i].transform.Find("derechaZone");
-                    break;
-                case 1:
-                    internalZone = zoneList[i].transform.Find("frenteZone");
-                    break;
-                case 2:
-                    internalZone = zoneList[i].transform.Find("izquierdaZone");
-                    break;
-            }
-            
-            if (internalZone != null)
-            {
-                internalZone.GetComponent<zoneManager>().ChangeColorTo(colorActual, colorActualMove);
-                internalZone.GetComponent<zoneManager>().activateZone();
-                
-                zoneListActive.Add(internalZone);
-                // temp.GetComponent<zoneManager>().updateSpherePoint();
-            }
-        }
-
-
-        if (internalZone != null) {
-            Logger.addParticlesAppear(internalZone.name);
-        }
-
-        timeStartAppear = Time.time;
-        active = true;
-
-    }
-
-
-    public void deactivateZonesMove() {
+    //not used Anymore.deactivate only the active move zones that are active
+    public void deactivateZonesMove()
+    {
         Transform temp = null;
-        
+
+        //
         for (int i = 0; i < zoneListActiveMove.Count; i++)
         {
 
@@ -1014,58 +1228,83 @@ public class timerZone : MonoBehaviour
         active = false;
     }
 
-    void deactivateZones() {
-
-        
-        Transform temp = null;
-
-        for (int i = 0; i < zoneListActive.Count;i++)
-        {
-            
-            temp = zoneListActive[i];
-            temp.GetComponent<zoneManager>().deactivateZone();
-            
-        }
-        zoneListActive.Clear();
-        active = false;
-    }
-
-    void deactivateZonesCircles() {
-        Transform temp;
-        Transform temp1;
-        Transform temp2;
-
-
-        for (int i = 0; i < zoneList.Count; i++) {
-
-            temp = zoneList[i].transform.Find("derechaZone");
-            temp1 = zoneList[i].transform.Find("frenteZone");
-            temp2 = zoneList[i].transform.Find("izquierdaZone");
-
-            temp.gameObject.GetComponent<zoneManager>().deactiaveCircle();
-            temp1.gameObject.GetComponent<zoneManager>().deactiaveCircle();
-            temp2.gameObject.GetComponent<zoneManager>().deactiaveCircle();
-        }
-    }
-
-    public void activateZonesCircles()
+    //Not used Anymore.function that allows to make a flow mechanic beetween moving zones.
+    private void ChangeZoneMove()
     {
-        Transform temp;
-        Transform temp1;
-        Transform temp2;
+        ControlWhichMove = ControlWhichMove + 1;
 
 
-        for (int i = 0; i < zoneList.Count; i++)
+        if (ControlWhichMove > 7)
         {
-
-            temp = zoneList[i].transform.Find("derechaZone");
-            temp1 = zoneList[i].transform.Find("frenteZone");
-            temp2 = zoneList[i].transform.Find("izquierdaZone");
-
-            temp.gameObject.GetComponent<zoneManager>().actiaveCircle();
-            temp1.gameObject.GetComponent<zoneManager>().actiaveCircle();
-            temp2.gameObject.GetComponent<zoneManager>().actiaveCircle();
+            ControlWhichMove = -1;
         }
+
     }
+
+    //Not used Anymore.l Function that manage the activation of the moving zones in a mechanic declained that makes a way of circles beetwen every catch zone in moving fase.
+    void activateZonesMove()
+    {
+
+        Transform temp = null;
+        Transform temp1 = null;
+
+        for (int i = 0; i < zoneListMove.Capacity; i++)
+        {
+            //int result = Random.Range(0, 3);
+            //result = 1;
+
+            switch (ControlWhichMove)
+            {
+
+                case 0:
+                    temp = zoneListMove[i].transform.Find("Move_0");
+                    // temp1= zoneListMove[i].transform.Find("Move_1");
+                    break;
+                case 1:
+                    temp = zoneListMove[i].transform.Find("Move_1");
+                    //temp1 = zoneListMove[i].transform.Find("Move_2");
+                    break;
+                case 2:
+                    temp = zoneListMove[i].transform.Find("Move_2");
+                    //temp1 = zoneListMove[i].transform.Find("Move_3");
+                    break;
+                case 3:
+                    temp = zoneListMove[i].transform.Find("Move_3");
+                    temp1 = zoneListMove[i].transform.Find("Move_4");
+                    break;
+                case 4:
+                    temp = zoneListMove[i].transform.Find("Move_4");
+                    // temp1 = zoneListMove[i].transform.Find("Move_5");
+                    break;
+                case 5:
+                    temp = zoneListMove[i].transform.Find("Move_5");
+                    // temp1 = zoneListMove[i].transform.Find("Move_6");
+                    break;
+                case 6:
+                    temp = zoneListMove[i].transform.Find("Move_6");
+                    //temp1 = zoneListMove[i].transform.Find("Move_6");
+                    break;
+                case 7:
+                    temp = null;
+                    break;
+            }
+
+            if (temp != null)
+            {
+                temp.GetComponent<zoneManagerMove>().activateZone();
+                //temp1.GetComponent<zoneManagerMove>().actiaveCircle();
+                zoneListActiveMove.Add(temp);
+                // temp.GetComponent<zoneManager>().updateSpherePoint();
+            }
+        }
+
+        timeStartAppear = Time.time;
+        active = true;
+        ChangeZoneMove();
+
+
+    }
+
+    #endregion
 
 }

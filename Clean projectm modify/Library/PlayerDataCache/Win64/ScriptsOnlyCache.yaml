@@ -298,7 +298,7 @@ ScriptsOnlyBuild:
     className: simpleColliderZone
   - hash:
       serializedVersion: 2
-      Hash: d1a92f55cbba87ac90580439309a3c28
+      Hash: 1819f26f198abbf77cf7084667a1a060
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: collisionMovingZone
@@ -478,7 +478,7 @@ ScriptsOnlyBuild:
     className: ToggleGroup
   - hash:
       serializedVersion: 2
-      Hash: 4b29361044698af7a26df5db0ff47eb4
+      Hash: 40f65176f7a1fd2fc0c7df4b78eb1010
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: pointsMandala
@@ -802,7 +802,7 @@ ScriptsOnlyBuild:
     className: ActivationPlayableAsset
   - hash:
       serializedVersion: 2
-      Hash: cdde559e00cebf24ac7d48c9a259d4cc
+      Hash: ed354b6b3807f468519401e785d27bab
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PointCentralMandala

@@ -107,6 +107,17 @@ public class Logger : MonoBehaviour
 
     #endregion
 
+    #region changeFase
+
+    #endregion
+    public static void addChangeFase(string whatFase)
+    {
+        Dictionary<string, string> val = new Dictionary<string, string>();
+        val.Add("Time", System.DateTime.Now.ToString(DateTimeFormat));
+        val.Add("Event", "Change Fase");
+        val.Add("What Fase", whatFase);
+        addLogLine(JsonFormat(val));
+    }
 
     #region moving
 

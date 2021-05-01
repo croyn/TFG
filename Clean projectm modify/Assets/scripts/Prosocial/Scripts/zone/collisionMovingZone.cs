@@ -133,6 +133,8 @@ public class collisionMovingZone : MonoBehaviour
             ForceOff();
 
             //if name is Cube it take the parents name that is the player.
+
+            //#if !UNITY_EDITOR
             if (other.name == "Cube")
             {
                 Logger.addNotTouchingMoving(gameObject.transform.parent.name, other.gameObject.transform.parent.name);
@@ -142,7 +144,7 @@ public class collisionMovingZone : MonoBehaviour
             {
                 Logger.addNotTouchingMoving(gameObject.transform.parent.name, other.name);
             }
-            
+            //#endif
         }
     }
 

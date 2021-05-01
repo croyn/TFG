@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//NOT USED ANYMORE IN THIS FLOW
 public class zoneManagerMove : MonoBehaviour
 {
     public ParticleSystem AffectedParticles = null;

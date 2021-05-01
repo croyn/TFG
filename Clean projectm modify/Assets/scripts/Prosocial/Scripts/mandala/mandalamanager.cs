@@ -49,7 +49,7 @@ public class mandalamanager : MonoBehaviour
 
     }
 
-    //give the number of lines that a layer have according to a base triangle in that layer.
+    //give the number of lines that a layer have according to a base triangle or circle in that layer.
     public float actulgetNumberLines() {
         int num = 0;
         //calculate the actual index in the triangle list in that moment of the flow
