@@ -331,7 +331,7 @@ public class pointsMandala : MonoBehaviour
             //set the initial point
             temp.SetPosition(0, gameObject.transform.position);
             //calc the temp final point
-            Vector3 punto = Vector3.Lerp( temp.GetPosition(1), actualPartnerPoint.transform.position, 0.09f);
+            Vector3 punto = Vector3.Lerp( temp.GetPosition(1), actualPartnerPoint.transform.position, 0.15f);
             //set the final of the line
             temp.SetPosition(1, punto);
 
