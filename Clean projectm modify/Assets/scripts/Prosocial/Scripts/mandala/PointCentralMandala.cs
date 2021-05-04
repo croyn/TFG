@@ -29,7 +29,7 @@ public class PointCentralMandala : MonoBehaviour
         timeOff = timeOff+ Time.deltaTime;
 
         
-        if (numActivationAvailable >=1.0f && timeOff > 0.01f)//if we have a number availabe >1 
+        if (numActivationAvailable >=1.0f && timeOff > 0.1f)//if we have a number availabe >1 
         {
  #if UNITY_EDITOR
             Debug.Log("Central numActive " + numActivationAvailable);

@@ -8,6 +8,8 @@ public class Logger : MonoBehaviour
     static string filepath;
     static string fileUserpath;
     static string DateTimeFormat = "yyyy/MM/dd HH:mm:ss.ffff";
+    static List<Dictionary<string, string>> listLog = new List<Dictionary<string, string>>();
+    static List<Dictionary<string, string>> listPosition = new List<Dictionary<string, string>>();
 
     // Start is called before the first frame update
     void Start()
@@ -22,11 +24,20 @@ public class Logger : MonoBehaviour
 
     void OnApplicationQuit()
     {
-        //#if UNITY_EDITOR
+#if !UNITY_EDITOR
 
         // return;
-       // #endif
-       // Debug.Log("Guardo en " + filepath);
+         
+        // Debug.Log("Guardo en " + filepath);
+
+        for (int i = 0; i < listLog.Count; i++) {
+            addLogLine(JsonFormat(listLog[i]));
+        }
+        for (int i = 0; i < listPosition.Count; i++)
+        {
+            addUserPositionLogLine(JsonFormat(listLog[i]));
+        }
+
 
         string fullog = File.ReadAllText(filepath);
         if (fullog.Length > 1)
@@ -50,6 +61,7 @@ public class Logger : MonoBehaviour
         else {
             File.Delete(fileUserpath);
         }
+#endif
     }
 
     private static void addUserPositionLogLine(string content, bool ending = false)
@@ -90,7 +102,8 @@ public class Logger : MonoBehaviour
         val.Add("Time", System.DateTime.Now.ToString(DateTimeFormat));
         val.Add("Event", "Appear particles");
         val.Add("Position", where);
-        addLogLine(JsonFormat(val));
+        //addLogLine(JsonFormat(val));
+        listLog.Add(val);
     }
 
 
@@ -101,7 +114,8 @@ public class Logger : MonoBehaviour
         val.Add("Event", "Particles Catch");
         val.Add("What zone", whatZone);
         val.Add("User", wichUser);
-        addLogLine(JsonFormat(val));
+        //addLogLine(JsonFormat(val));
+        listLog.Add(val);
     }
 
 
@@ -116,7 +130,8 @@ public class Logger : MonoBehaviour
         val.Add("Time", System.DateTime.Now.ToString(DateTimeFormat));
         val.Add("Event", "Change Fase");
         val.Add("What Fase", whatFase);
-        addLogLine(JsonFormat(val));
+        //addLogLine(JsonFormat(val));
+        listLog.Add(val);
     }
 
     #region moving
@@ -128,7 +143,8 @@ public class Logger : MonoBehaviour
         val.Add("Event", "Moving Particles Catch");
         val.Add("What moving zone", whatZone);
         val.Add("User", wichUser);
-        addLogLine(JsonFormat(val));
+        //addLogLine(JsonFormat(val));
+        listLog.Add(val);
     }
 
     public static void addNotTouchingMoving(string whatZone, string wichUser)
@@ -138,7 +154,8 @@ public class Logger : MonoBehaviour
         val.Add("Event", "Moving Particles Not Catch");
         val.Add("What moving zone", whatZone);
         val.Add("User", wichUser);
-        addLogLine(JsonFormat(val));
+        //addLogLine(JsonFormat(val));
+        listLog.Add(val);
     }
 
 
@@ -153,7 +170,8 @@ public class Logger : MonoBehaviour
         val.Add("Time", System.DateTime.Now.ToString(DateTimeFormat));
         val.Add("Event", "Appear particles in Scan zone");
         val.Add("Position", where);
-        addLogLine(JsonFormat(val));
+        //addLogLine(JsonFormat(val));
+        listLog.Add(val);
     }
 
     public static void addParticlesCatchScan(string whatZone, string wichUser, System.DateTime whenIsCatched)
@@ -163,7 +181,8 @@ public class Logger : MonoBehaviour
         val.Add("Event", "Particles Catch");
         val.Add("What zone", whatZone);
         val.Add("User", wichUser);
-        addLogLine(JsonFormat(val));
+        //addLogLine(JsonFormat(val));
+        listLog.Add(val);
     }
 
     public static void addScannedIn(string whatZone, string wichUser, System.DateTime whenIsCatched)
@@ -173,7 +192,8 @@ public class Logger : MonoBehaviour
         val.Add("Event", "Scanned User in");
         val.Add("What zone", whatZone);
         val.Add("User", wichUser);
-        addLogLine(JsonFormat(val));
+        //addLogLine(JsonFormat(val));
+        listLog.Add(val);
     }
 
     public static void addScannedOut(string whatZone, string wichUser, System.DateTime whenIsCatched)
@@ -183,7 +203,8 @@ public class Logger : MonoBehaviour
         val.Add("Event", "Scanned User out");
         val.Add("What zone", whatZone);
         val.Add("User", wichUser);
-        addLogLine(JsonFormat(val));
+        //addLogLine(JsonFormat(val));
+        listLog.Add(val);
     }
 
     #endregion
@@ -476,7 +497,8 @@ public class Logger : MonoBehaviour
         val.Add("Player.Color", playerID.ToString());
         val.Add("Position.X", position.x.ToString());
         val.Add("Position.Y", position.z.ToString());
-        addUserPositionLogLine(JsonFormat(val));
+        //addUserPositionLogLine(JsonFormat(val));
+        listPosition.Add(val);
     }
     #endregion
 

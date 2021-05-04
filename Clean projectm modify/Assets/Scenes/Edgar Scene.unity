@@ -5313,7 +5313,6 @@ MonoBehaviour:
   number_particles_catch: 0
   doneAbsorv: 0
   allowAbsorv: 1
-  particles: {fileID: 1730292703}
   timeFirstLine: 2
   firstLineDraw: 0
   retriveColors: 0
@@ -6015,7 +6014,6 @@ MonoBehaviour:
   number_particles_catch: 0
   doneAbsorv: 0
   allowAbsorv: 1
-  particles: {fileID: 1730292703}
   timeFirstLine: 2
   firstLineDraw: 0
   retriveColors: 0
@@ -6185,7 +6183,6 @@ MonoBehaviour:
   number_particles_catch: 0
   doneAbsorv: 0
   allowAbsorv: 1
-  particles: {fileID: 1730292703}
   timeFirstLine: 2
   firstLineDraw: 0
   retriveColors: 0
@@ -6332,7 +6329,6 @@ MonoBehaviour:
   number_particles_catch: 0
   doneAbsorv: 0
   allowAbsorv: 1
-  particles: {fileID: 1730292703}
   timeFirstLine: 2
   firstLineDraw: 0
   retriveColors: 0
@@ -7396,7 +7392,6 @@ MonoBehaviour:
   number_particles_catch: 0
   doneAbsorv: 0
   allowAbsorv: 1
-  particles: {fileID: 1730292703}
   timeFirstLine: 2
   firstLineDraw: 0
   retriveColors: 0
@@ -7668,7 +7663,6 @@ MonoBehaviour:
   number_particles_catch: 0
   doneAbsorv: 0
   allowAbsorv: 1
-  particles: {fileID: 1730292703}
   timeFirstLine: 2
   firstLineDraw: 0
   retriveColors: 0
@@ -9452,7 +9446,6 @@ MonoBehaviour:
   number_particles_catch: 0
   doneAbsorv: 0
   allowAbsorv: 1
-  particles: {fileID: 1730292703}
   timeFirstLine: 2
   firstLineDraw: 0
   retriveColors: 0
@@ -9685,7 +9678,6 @@ MonoBehaviour:
   number_particles_catch: 0
   doneAbsorv: 0
   allowAbsorv: 1
-  particles: {fileID: 1730292703}
   timeFirstLine: 2
   firstLineDraw: 0
   retriveColors: 0
@@ -10479,7 +10471,6 @@ MonoBehaviour:
   number_particles_catch: 0
   doneAbsorv: 0
   allowAbsorv: 1
-  particles: {fileID: 1730292703}
   timeFirstLine: 2
   firstLineDraw: 0
   retriveColors: 0
@@ -11145,7 +11136,6 @@ MonoBehaviour:
   number_particles_catch: 0
   doneAbsorv: 0
   allowAbsorv: 1
-  particles: {fileID: 1730292703}
   timeFirstLine: 2
   firstLineDraw: 0
   retriveColors: 0
@@ -12041,7 +12031,6 @@ MonoBehaviour:
   number_particles_catch: 0
   doneAbsorv: 0
   allowAbsorv: 1
-  particles: {fileID: 1730292703}
   timeFirstLine: 2
   firstLineDraw: 0
   retriveColors: 0
@@ -13022,7 +13011,6 @@ MonoBehaviour:
   number_particles_catch: 0
   doneAbsorv: 0
   allowAbsorv: 1
-  particles: {fileID: 1730292703}
   timeFirstLine: 2
   firstLineDraw: 0
   retriveColors: 0
@@ -13814,7 +13802,6 @@ MonoBehaviour:
   number_particles_catch: 0
   doneAbsorv: 0
   allowAbsorv: 1
-  particles: {fileID: 1730292703}
   timeFirstLine: 2
   firstLineDraw: 0
   retriveColors: 0
@@ -13967,7 +13954,6 @@ MonoBehaviour:
   number_particles_catch: 0
   doneAbsorv: 0
   allowAbsorv: 1
-  particles: {fileID: 1730292703}
   timeFirstLine: 2
   firstLineDraw: 0
   retriveColors: 0
@@ -14237,7 +14223,6 @@ MonoBehaviour:
   number_particles_catch: 0
   doneAbsorv: 0
   allowAbsorv: 1
-  particles: {fileID: 1730292703}
   timeFirstLine: 2
   firstLineDraw: 0
   retriveColors: 0
@@ -14403,7 +14388,6 @@ MonoBehaviour:
   number_particles_catch: 0
   doneAbsorv: 0
   allowAbsorv: 1
-  particles: {fileID: 1730292703}
   timeFirstLine: 2
   firstLineDraw: 0
   retriveColors: 0
@@ -15292,7 +15276,6 @@ MonoBehaviour:
   number_particles_catch: 0
   doneAbsorv: 0
   allowAbsorv: 1
-  particles: {fileID: 1730292703}
   timeFirstLine: 2
   firstLineDraw: 0
   retriveColors: 0
@@ -15439,7 +15422,6 @@ MonoBehaviour:
   number_particles_catch: 0
   doneAbsorv: 0
   allowAbsorv: 1
-  particles: {fileID: 1730292703}
   timeFirstLine: 2
   firstLineDraw: 0
   retriveColors: 0
@@ -15698,7 +15680,6 @@ MonoBehaviour:
   number_particles_catch: 0
   doneAbsorv: 0
   allowAbsorv: 1
-  particles: {fileID: 1730292703}
   timeFirstLine: 2
   firstLineDraw: 0
   retriveColors: 0
@@ -15999,7 +15980,6 @@ MonoBehaviour:
   number_particles_catch: 0
   doneAbsorv: 0
   allowAbsorv: 1
-  particles: {fileID: 1730292703}
   timeFirstLine: 2
   firstLineDraw: 0
   retriveColors: 0
@@ -16146,7 +16126,6 @@ MonoBehaviour:
   number_particles_catch: 0
   doneAbsorv: 0
   allowAbsorv: 1
-  particles: {fileID: 1730292703}
   timeFirstLine: 2
   firstLineDraw: 0
   retriveColors: 0
@@ -16293,7 +16272,6 @@ MonoBehaviour:
   number_particles_catch: 0
   doneAbsorv: 0
   allowAbsorv: 1
-  particles: {fileID: 1730292703}
   timeFirstLine: 2
   firstLineDraw: 0
   retriveColors: 0
@@ -16848,7 +16826,6 @@ MonoBehaviour:
   number_particles_catch: 0
   doneAbsorv: 0
   allowAbsorv: 1
-  particles: {fileID: 1730292703}
   timeFirstLine: 2
   firstLineDraw: 0
   retriveColors: 0
@@ -17254,7 +17231,6 @@ MonoBehaviour:
   number_particles_catch: 0
   doneAbsorv: 0
   allowAbsorv: 1
-  particles: {fileID: 1730292703}
   timeFirstLine: 2
   firstLineDraw: 0
   retriveColors: 0
@@ -18162,7 +18138,6 @@ MonoBehaviour:
   number_particles_catch: 0
   doneAbsorv: 0
   allowAbsorv: 1
-  particles: {fileID: 1730292703}
   timeFirstLine: 2
   firstLineDraw: 0
   retriveColors: 0
@@ -18700,7 +18675,6 @@ MonoBehaviour:
   number_particles_catch: 0
   doneAbsorv: 0
   allowAbsorv: 1
-  particles: {fileID: 1730292703}
   timeFirstLine: 2
   firstLineDraw: 0
   retriveColors: 0
@@ -20297,7 +20271,6 @@ MonoBehaviour:
   number_particles_catch: 0
   doneAbsorv: 0
   allowAbsorv: 1
-  particles: {fileID: 1730292703}
   timeFirstLine: 2
   firstLineDraw: 0
   retriveColors: 0
@@ -20435,7 +20408,6 @@ MonoBehaviour:
   number_particles_catch: 0
   doneAbsorv: 0
   allowAbsorv: 1
-  particles: {fileID: 1730292703}
   timeFirstLine: 2
   firstLineDraw: 0
   retriveColors: 0
@@ -20726,7 +20698,6 @@ MonoBehaviour:
   number_particles_catch: 0
   doneAbsorv: 0
   allowAbsorv: 1
-  particles: {fileID: 1730292703}
   timeFirstLine: 2
   firstLineDraw: 0
   retriveColors: 0
@@ -21550,7 +21521,6 @@ MonoBehaviour:
   number_particles_catch: 0
   doneAbsorv: 0
   allowAbsorv: 1
-  particles: {fileID: 1730292703}
   timeFirstLine: 2
   firstLineDraw: 0
   retriveColors: 0
@@ -21772,7 +21742,6 @@ MonoBehaviour:
   number_particles_catch: 0
   doneAbsorv: 0
   allowAbsorv: 1
-  particles: {fileID: 1730292703}
   timeFirstLine: 2
   firstLineDraw: 0
   retriveColors: 0
@@ -21953,8 +21922,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   allowAbsorv: 0
   num_particles_absorv: 0
-  timeNextLine: 0
-  maxNextLine: 1
   numParticlesNextLine: 60
   numActivationAvailable: 0
   numNotCatched: 0
@@ -22613,7 +22580,6 @@ MonoBehaviour:
   number_particles_catch: 0
   doneAbsorv: 0
   allowAbsorv: 1
-  particles: {fileID: 1730292703}
   timeFirstLine: 2
   firstLineDraw: 0
   retriveColors: 0
@@ -22760,7 +22726,6 @@ MonoBehaviour:
   number_particles_catch: 0
   doneAbsorv: 0
   allowAbsorv: 1
-  particles: {fileID: 1730292703}
   timeFirstLine: 2
   firstLineDraw: 0
   retriveColors: 0
@@ -22892,7 +22857,6 @@ MonoBehaviour:
   number_particles_catch: 0
   doneAbsorv: 0
   allowAbsorv: 1
-  particles: {fileID: 1730292703}
   timeFirstLine: 2
   firstLineDraw: 0
   retriveColors: 0
@@ -24067,7 +24031,6 @@ MonoBehaviour:
   number_particles_catch: 0
   doneAbsorv: 0
   allowAbsorv: 1
-  particles: {fileID: 1730292703}
   timeFirstLine: 2
   firstLineDraw: 0
   retriveColors: 0
@@ -26511,7 +26474,6 @@ MonoBehaviour:
   number_particles_catch: 0
   doneAbsorv: 0
   allowAbsorv: 1
-  particles: {fileID: 1730292703}
   timeFirstLine: 2
   firstLineDraw: 0
   retriveColors: 0
@@ -27263,7 +27225,6 @@ MonoBehaviour:
   number_particles_catch: 0
   doneAbsorv: 0
   allowAbsorv: 1
-  particles: {fileID: 1730292703}
   timeFirstLine: 2
   firstLineDraw: 0
   retriveColors: 0
@@ -28296,7 +28257,6 @@ MonoBehaviour:
   number_particles_catch: 0
   doneAbsorv: 0
   allowAbsorv: 1
-  particles: {fileID: 1730292703}
   timeFirstLine: 2
   firstLineDraw: 0
   retriveColors: 0
@@ -28741,7 +28701,6 @@ MonoBehaviour:
   number_particles_catch: 0
   doneAbsorv: 0
   allowAbsorv: 1
-  particles: {fileID: 1730292703}
   timeFirstLine: 2
   firstLineDraw: 0
   retriveColors: 0
@@ -28969,7 +28928,6 @@ MonoBehaviour:
   number_particles_catch: 0
   doneAbsorv: 0
   allowAbsorv: 1
-  particles: {fileID: 1730292703}
   timeFirstLine: 2
   firstLineDraw: 0
   retriveColors: 0
@@ -29412,7 +29370,6 @@ MonoBehaviour:
   number_particles_catch: 0
   doneAbsorv: 0
   allowAbsorv: 1
-  particles: {fileID: 1730292703}
   timeFirstLine: 2
   firstLineDraw: 0
   retriveColors: 0
@@ -29620,7 +29577,6 @@ MonoBehaviour:
   number_particles_catch: 0
   doneAbsorv: 0
   allowAbsorv: 1
-  particles: {fileID: 1730292703}
   timeFirstLine: 2
   firstLineDraw: 0
   retriveColors: 0
@@ -30032,7 +29988,6 @@ MonoBehaviour:
   number_particles_catch: 0
   doneAbsorv: 0
   allowAbsorv: 1
-  particles: {fileID: 1730292703}
   timeFirstLine: 2
   firstLineDraw: 0
   retriveColors: 0
@@ -30699,7 +30654,6 @@ MonoBehaviour:
   number_particles_catch: 0
   doneAbsorv: 0
   allowAbsorv: 1
-  particles: {fileID: 1730292703}
   timeFirstLine: 2
   firstLineDraw: 0
   retriveColors: 0
@@ -31002,7 +30956,6 @@ MonoBehaviour:
   number_particles_catch: 0
   doneAbsorv: 0
   allowAbsorv: 1
-  particles: {fileID: 1730292703}
   timeFirstLine: 2
   firstLineDraw: 0
   retriveColors: 0
@@ -31872,7 +31825,6 @@ MonoBehaviour:
   number_particles_catch: 0
   doneAbsorv: 0
   allowAbsorv: 1
-  particles: {fileID: 1730292703}
   timeFirstLine: 2
   firstLineDraw: 0
   retriveColors: 0
@@ -32019,7 +31971,6 @@ MonoBehaviour:
   number_particles_catch: 0
   doneAbsorv: 0
   allowAbsorv: 1
-  particles: {fileID: 1730292703}
   timeFirstLine: 2
   firstLineDraw: 0
   retriveColors: 0
@@ -38298,7 +38249,6 @@ MonoBehaviour:
   number_particles_catch: 0
   doneAbsorv: 0
   allowAbsorv: 1
-  particles: {fileID: 1730292703}
   timeFirstLine: 2
   firstLineDraw: 0
   retriveColors: 0
@@ -38661,7 +38611,6 @@ MonoBehaviour:
   number_particles_catch: 0
   doneAbsorv: 0
   allowAbsorv: 1
-  particles: {fileID: 1730292703}
   timeFirstLine: 2
   firstLineDraw: 0
   retriveColors: 0
@@ -38900,7 +38849,6 @@ MonoBehaviour:
   number_particles_catch: 0
   doneAbsorv: 0
   allowAbsorv: 1
-  particles: {fileID: 1730292703}
   timeFirstLine: 2
   firstLineDraw: 0
   retriveColors: 0
@@ -39176,7 +39124,6 @@ MonoBehaviour:
   number_particles_catch: 0
   doneAbsorv: 0
   allowAbsorv: 1
-  particles: {fileID: 1730292703}
   timeFirstLine: 2
   firstLineDraw: 0
   retriveColors: 0
@@ -39811,7 +39758,6 @@ MonoBehaviour:
   number_particles_catch: 0
   doneAbsorv: 0
   allowAbsorv: 1
-  particles: {fileID: 1730292703}
   timeFirstLine: 2
   firstLineDraw: 0
   retriveColors: 0
@@ -40138,7 +40084,6 @@ MonoBehaviour:
   number_particles_catch: 0
   doneAbsorv: 0
   allowAbsorv: 1
-  particles: {fileID: 1730292703}
   timeFirstLine: 2
   firstLineDraw: 0
   retriveColors: 0
@@ -40602,7 +40547,6 @@ MonoBehaviour:
   number_particles_catch: 0
   doneAbsorv: 0
   allowAbsorv: 1
-  particles: {fileID: 1730292703}
   timeFirstLine: 2
   firstLineDraw: 0
   retriveColors: 0
@@ -40894,7 +40838,6 @@ MonoBehaviour:
   number_particles_catch: 0
   doneAbsorv: 0
   allowAbsorv: 1
-  particles: {fileID: 1730292703}
   timeFirstLine: 2
   firstLineDraw: 0
   retriveColors: 0
@@ -41056,7 +40999,6 @@ MonoBehaviour:
   number_particles_catch: 0
   doneAbsorv: 0
   allowAbsorv: 1
-  particles: {fileID: 1730292703}
   timeFirstLine: 2
   firstLineDraw: 0
   retriveColors: 0
@@ -41344,7 +41286,6 @@ MonoBehaviour:
   number_particles_catch: 0
   doneAbsorv: 0
   allowAbsorv: 1
-  particles: {fileID: 1730292703}
   timeFirstLine: 2
   firstLineDraw: 0
   retriveColors: 0
@@ -41491,7 +41432,6 @@ MonoBehaviour:
   number_particles_catch: 0
   doneAbsorv: 0
   allowAbsorv: 1
-  particles: {fileID: 1730292703}
   timeFirstLine: 2
   firstLineDraw: 0
   retriveColors: 0

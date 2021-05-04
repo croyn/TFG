@@ -4963,6 +4963,7 @@ MonoBehaviour:
   affectectParticles: {fileID: 5999118337161223508}
   affectectParticles2: {fileID: 0}
   velocity: 3
+  velocityMoveScan: 0
   colorTouch:
     m_Mode: 0
     m_GradientMin:
@@ -5270,7 +5271,7 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2984024125646441917}
   serializedVersion: 7
-  lengthInSec: 1
+  lengthInSec: 3
   simulationSpeed: 1
   stopAction: 0
   cullingMode: 0
@@ -6095,7 +6096,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 200
+      scalar: 400
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -10065,6 +10066,7 @@ MonoBehaviour:
   affectectParticles: {fileID: 7946819393511823795}
   affectectParticles2: {fileID: 0}
   velocity: 3
+  velocityMoveScan: 0
   colorTouch:
     m_Mode: 0
     m_GradientMin:
@@ -10502,7 +10504,7 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4136037890939965923}
   serializedVersion: 7
-  lengthInSec: 1
+  lengthInSec: 3
   simulationSpeed: 1
   stopAction: 0
   cullingMode: 0
@@ -11327,7 +11329,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 200
+      scalar: 400
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -15297,6 +15299,7 @@ MonoBehaviour:
   affectectParticles: {fileID: 1022431226782726308}
   affectectParticles2: {fileID: 0}
   velocity: 3
+  velocityMoveScan: 0
   colorTouch:
     m_Mode: 0
     m_GradientMin:
@@ -50147,6 +50150,7 @@ MonoBehaviour:
   affectectParticles: {fileID: 8593502439854874178}
   affectectParticles2: {fileID: 0}
   velocity: 3
+  velocityMoveScan: 0
   colorTouch:
     m_Mode: 0
     m_GradientMin:
@@ -50580,7 +50584,7 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8095058521671092271}
   serializedVersion: 7
-  lengthInSec: 1
+  lengthInSec: 3
   simulationSpeed: 1
   stopAction: 0
   cullingMode: 0
@@ -51405,7 +51409,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 200
+      scalar: 400
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -55375,6 +55379,7 @@ MonoBehaviour:
   affectectParticles: {fileID: 8019540252456151464}
   affectectParticles2: {fileID: 0}
   velocity: 3
+  velocityMoveScan: 0
   colorTouch:
     m_Mode: 0
     m_GradientMin:

@@ -374,7 +374,7 @@ public class mandalamanager : MonoBehaviour
             if (!controlTriangleVoid) {
                
                 //change to move from zones fase
-                timerZone.instance.gameObject.GetComponent<timerZone>().changeFaseTo(1);
+               // timerZone.instance.gameObject.GetComponent<timerZone>().changeFaseTo(1);
                 //restart the boolen to void
                 controlTriangleVoid = true;
             }

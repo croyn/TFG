@@ -38,7 +38,7 @@ public class timerZone : MonoBehaviour
     public float tempMaxCircleLayer;//number of zones we want to be cacthed before the moving fase start -1 in circle layer
     public int contadorIterations; //control number of iterations according to the max that we choose in every layer
     bool firstLog = false;
-
+    bool firstSong = false;
 
     // Start is called before the first frame update
     void Start()
@@ -49,6 +49,7 @@ public class timerZone : MonoBehaviour
         timeNextOff = 0.0f;
         //start in fase 3
         controlFase = 3;
+        firstSong = false;
         contadorIterations = 0;
         changeFaseTo(3);
     }
@@ -156,6 +157,11 @@ public class timerZone : MonoBehaviour
             if (!controlminiMoveZone)
             {
                 //activate mini move zones
+                if (firstSong)
+                {
+                    //play the song
+                    audioController.instance.playAudio(mandalamanager.instance.whichSong());
+                }
                 activaMiniMovezones();
                 //done
                 controlminiMoveZone = true;
@@ -352,19 +358,30 @@ public class timerZone : MonoBehaviour
             case 0://catch particles
                 //#if !UNITY_EDITOR
                 Logger.addChangeFase("Catch Particles Fase");
-                
+
                 //#endif
-                audioController.instance.playAudio(mandalamanager.instance.whichSong());//play the song
+                if (!firstSong) {
+                    //play the song
+                    firstSong = true;
+                    audioController.instance.playAudio(mandalamanager.instance.whichSong());
+                    timeNextAppear = 0.0f;
+                }
+                else
+                {
+                    timeNextAppear = timeToNext;
+                }
+                
                 ControlWhichZone = 3;//start in right zone to appear
                 pointCentralMandala.GetComponent<PointCentralMandala>().allowAbsorv = true;//allow the collision in the central point
                 //deactivateZonesMove();
-                timeNextAppear = 0.0f;//restart time
+                //timeNextAppear = timeToNext;//restart time
+                //timeNextAppear = 0.0f;
                 activateZonesCircles();//activate circle from catch zone
                 break;
             case 1://move
                 //#if !UNITY_EDITOR
                 Logger.addChangeFase("Moving transition Fase");
-
+                activateTheRest();
                 //#endif
                 contadorIterations = 0;//control of iterations done in fase catch particles
                 pointCentralMandala.GetComponent<PointCentralMandala>().allowAbsorv = false;//dont allow collision
@@ -794,13 +811,70 @@ public class timerZone : MonoBehaviour
             // Debug.Log("numLines calc " + numLines);
             float calc = mandalamanager.instance.centralPoint.GetComponent<PointCentralMandala>().numNotCatched + (numLines) * 2;
             // Debug.Log("Tiene point centralDesdeTimer " + calc);
-            mandalamanager.instance.centralPoint.GetComponent<PointCentralMandala>().numNotCatched = mandalamanager.instance.centralPoint.GetComponent<PointCentralMandala>().numNotCatched +calc;
+            mandalamanager.instance.centralPoint.GetComponent<PointCentralMandala>().numNotCatched = calc;
 
 
         }
 
 
 
+
+        /* if (contadorIterations >= (timeTemp + 1) + ((timeTemp + 1) / 3.0f) && !mandalamanager.instance.trianglesDone)
+         {
+             mandalamanager.instance.centralPoint.GetComponent<PointCentralMandala>().numActivationAvailable = mandalamanager.instance.centralPoint.GetComponent<PointCentralMandala>().numActivationAvailable + mandalamanager.instance.centralPoint.GetComponent<PointCentralMandala>().numNotCatched;
+             mandalamanager.instance.centralPoint.GetComponent<PointCentralMandala>().numNotCatched = 0.0f;
+             contadorIterations = 0;
+         }
+         else if (contadorIterations >= (timeTemp ) && mandalamanager.instance.trianglesDone) {
+             mandalamanager.instance.centralPoint.GetComponent<PointCentralMandala>().numActivationAvailable = mandalamanager.instance.centralPoint.GetComponent<PointCentralMandala>().numActivationAvailable + mandalamanager.instance.centralPoint.GetComponent<PointCentralMandala>().numNotCatched;
+             mandalamanager.instance.centralPoint.GetComponent<PointCentralMandala>().numNotCatched = 0.0f;
+             contadorIterations = 0;
+         }*/
+        if (contadorIterations >= (timeTemp + 1) + ((timeTemp + 1) / 3.0f) && !mandalamanager.instance.trianglesDone)
+        {
+            timerZone.instance.gameObject.GetComponent<timerZone>().changeFaseTo(1);
+        }
+        else if (contadorIterations >= (timeTemp) && mandalamanager.instance.trianglesDone)
+        {
+            timerZone.instance.gameObject.GetComponent<timerZone>().changeFaseTo(1);
+        }
+    }
+
+
+    private float getNumberIterations() {
+         //for set up the iterations that need to make
+        float timeTemp = 0.0f;
+        //if triangles are not done on the mandala flow
+        if (!mandalamanager.instance.trianglesDone)
+        {
+            //see what layer is the mandala
+            switch (mandalamanager.instance.layer)
+            {
+                case 0://first layer
+                    timeTemp = tempMaxFirstLayer;
+                    break;
+                case 1://second layer
+                    timeTemp = tempMaxSecondLayer;
+                    break;
+                case 2://third layer
+                    timeTemp = tempMaxThirdLayer;
+                    break;
+            }
+        }
+        else
+        {
+            //this is the circle configuration
+            timeTemp = tempMaxCircleLayer;
+
+        }
+
+    return timeTemp;
+
+    }
+
+    private void activateTheRest() {
+
+        float timeTemp = getNumberIterations();
 
         if (contadorIterations >= (timeTemp + 1) + ((timeTemp + 1) / 3.0f) && !mandalamanager.instance.trianglesDone)
         {
@@ -808,18 +882,14 @@ public class timerZone : MonoBehaviour
             mandalamanager.instance.centralPoint.GetComponent<PointCentralMandala>().numNotCatched = 0.0f;
             contadorIterations = 0;
         }
-        else if (contadorIterations >= (timeTemp ) && mandalamanager.instance.trianglesDone) {
+        else if (contadorIterations >= (timeTemp) && mandalamanager.instance.trianglesDone)
+        {
             mandalamanager.instance.centralPoint.GetComponent<PointCentralMandala>().numActivationAvailable = mandalamanager.instance.centralPoint.GetComponent<PointCentralMandala>().numActivationAvailable + mandalamanager.instance.centralPoint.GetComponent<PointCentralMandala>().numNotCatched;
             mandalamanager.instance.centralPoint.GetComponent<PointCentralMandala>().numNotCatched = 0.0f;
             contadorIterations = 0;
         }
-        
-
 
     }
-
-
-   
 
 
     //function that controls the flow of the appearing catch zone in terms of which need to appear
