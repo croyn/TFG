@@ -39,6 +39,7 @@ public class timerZone : MonoBehaviour
     public int contadorIterations; //control number of iterations according to the max that we choose in every layer
     bool firstLog = false;
     bool firstSong = false;
+    bool songPlayIt = false;
 
     // Start is called before the first frame update
     void Start()
@@ -71,8 +72,14 @@ public class timerZone : MonoBehaviour
                 activateZones();
                 //restart time
                 timeNextAppear = 0.0f;
+
+
+
             }
-            else if (timeNextAppear >= timeToNext - timeToOffZones)//this is for deactivate the particles that where doesn catch according to the time we configurate to be active
+
+            
+
+            if (timeNextAppear >= timeToNext - timeToOffZones)//this is for deactivate the particles that where doesn catch according to the time we configurate to be active
             {
                 //if we are active
                 if (active)
@@ -85,9 +92,19 @@ public class timerZone : MonoBehaviour
 
                 }
             }
+
+
+           
+
         }
         else if (controlFase == 1) //moving fase
         {
+            if (!songPlayIt) {
+               // audioController.instance.playAudio(4);
+                songPlayIt = true;
+            }
+            
+
 
             //if particle not donde absorving
             if (!ParticlesDoneAbosorving)
@@ -102,12 +119,12 @@ public class timerZone : MonoBehaviour
                     //restart time
                     timeNextAppear = 0.0f;
                     //play move music
-                    audioController.instance.playAudio(3);
+                    
                 }
             }
 
             //if timeBetweenFasesControl is false and the time pass and particles are done moving
-            if (!timeBetweenFasesControl && timeNextAppear >= timeBetweenFases && ParticlesDoneAbosorving)
+            if (!timeBetweenFasesControl  && ParticlesDoneAbosorving && timeNextAppear >= timeBetweenFases)
             {
                 //deactivate the circles from the zones catch
                 deactivateZonesCircles();
@@ -121,7 +138,7 @@ public class timerZone : MonoBehaviour
             }
 
             //when the moving zones are in the final position and all the previus are ok
-            if (isDoneMoving() && ParticlesDoneAbosorving && timeBetweenFasesControl && timeNextAppear >= timeBetweenFases)
+            if (isDoneMoving() && ParticlesDoneAbosorving && timeBetweenFasesControl && timeNextAppear >= timeBetweenFases-0.2f)
             {
                 //deactivate the moving zones
                 deactiveMoveZones();
@@ -131,6 +148,7 @@ public class timerZone : MonoBehaviour
                 {
                     //go to final scan
                     changeFaseTo(6);
+                    return;
                 }
                 else
                 {
@@ -140,6 +158,12 @@ public class timerZone : MonoBehaviour
                     controlminiMoveZone = false;
                     //change to mini moving zones fase
                     changeFaseTo(2);
+                    if (firstSong)
+                    {
+                        //play the song
+                        audioController.instance.playAudio(mandalamanager.instance.whichSong());
+                    }
+                    return;
                 }
 
             }
@@ -157,11 +181,7 @@ public class timerZone : MonoBehaviour
             if (!controlminiMoveZone)
             {
                 //activate mini move zones
-                if (firstSong)
-                {
-                    //play the song
-                    audioController.instance.playAudio(mandalamanager.instance.whichSong());
-                }
+                
                 activaMiniMovezones();
                 //done
                 controlminiMoveZone = true;
@@ -175,6 +195,7 @@ public class timerZone : MonoBehaviour
                 deactiveMiniMoveZones();
                 //change to fase catch particles
                 changeFaseTo(0);
+                return;
             }
 
         }
@@ -194,6 +215,7 @@ public class timerZone : MonoBehaviour
                 timeNextAppear = 0.0f;
                 //done
                 controlminiMoveZone = true;
+                audioController.instance.playAudio(6);
             }
 
             //wait 2 seconds
@@ -205,6 +227,7 @@ public class timerZone : MonoBehaviour
                 timeBetweenFasesControl = true;
                 //change fase
                 changeFaseTo(4);
+                return;
             }
 
         }
@@ -227,6 +250,7 @@ public class timerZone : MonoBehaviour
                 deactivateZoneScan(1);
 
                 changeFaseTo(6);
+                return;
             }
         }
         else if (controlFase == 5) //Used in other flow that was denied
@@ -247,6 +271,7 @@ public class timerZone : MonoBehaviour
                 //activateZonesCircles();
 
                 changeFaseTo(6);
+                return;
 
 
             }
@@ -257,17 +282,20 @@ public class timerZone : MonoBehaviour
             //check if the foot print in the zones catch are in green
             if (checkScanZonesFromMainZone())
             {
+                //audioController.instance.playAudio(6);
                 //if the mandala is done
                 if (mandalamanager.instance.trianglesDone && mandalamanager.instance.circleDone)
                 {
                     deactivateZoneScan(2);
                     //change to final fase
                     changeFaseTo(8);
+                    return;
                 }
                 else
                 {
                     //Change to reordering points fase
                     changeFaseTo(7);
+                    return;
                 }
 
             }
@@ -281,6 +309,7 @@ public class timerZone : MonoBehaviour
                 deactivateZoneScan(0);
                 //change to catch particles fase
                 changeFaseTo(0);
+                return;
             }
         }
         else if (controlFase == 8)//final fase
@@ -292,6 +321,8 @@ public class timerZone : MonoBehaviour
                 reSizeMandala();
             }
             else {
+                reSizeMandala();
+                reSizeBlackCircle();
                 if (reSizeMandala() && reSizeBlackCircle()) //when the mandala and the black circle are in their final size we finish the game
                 {
                     Debug.Log("SE ACABO");
@@ -381,12 +412,14 @@ public class timerZone : MonoBehaviour
             case 1://move
                 //#if !UNITY_EDITOR
                 Logger.addChangeFase("Moving transition Fase");
+                songPlayIt = false;
                 activateTheRest();
                 //#endif
                 contadorIterations = 0;//control of iterations done in fase catch particles
                 pointCentralMandala.GetComponent<PointCentralMandala>().allowAbsorv = false;//dont allow collision
                 ParticlesDoneAbosorving = false; //restart varible
                 timeBetweenFasesControl = false;//restart control
+               
                 break;
             case 2://activating circles
                 
@@ -445,6 +478,7 @@ public class timerZone : MonoBehaviour
                 deactivateZoneScan(0);
                 //deactivate scan zone and circles restarting variable
                 deactivateZoneScan(1);
+                audioController.instance.playAudio(5);
                 //make visible and make the mandala appear
                 mandalamanager.instance.activateAllPoints();
                 break;
@@ -453,6 +487,7 @@ public class timerZone : MonoBehaviour
                 Logger.addChangeFase("Final Fase");
                 deactivateZoneScan(2);
                 //restart time
+                audioController.instance.playAudio(7);
                 timeNextAppear = 0.0f;
                 break;
 
@@ -774,7 +809,7 @@ public class timerZone : MonoBehaviour
             mandalamanager.instance.centralPoint.GetComponent<PointCentralMandala>().numNotCatched = 0.0f;
         }
         //new iteration
-            contadorIterations = contadorIterations + 1;
+            //contadorIterations = contadorIterations + 1;
         
        
         //if someone touched a group of particles this iteration
@@ -830,14 +865,17 @@ public class timerZone : MonoBehaviour
              mandalamanager.instance.centralPoint.GetComponent<PointCentralMandala>().numNotCatched = 0.0f;
              contadorIterations = 0;
          }*/
-        if (contadorIterations >= (timeTemp + 1) + ((timeTemp + 1) / 3.0f) && !mandalamanager.instance.trianglesDone)
+      /*  if (contadorIterations >= (timeTemp+1 ) + ((timeTemp + 1) / 3.0f) && !mandalamanager.instance.trianglesDone)
         {
             timerZone.instance.gameObject.GetComponent<timerZone>().changeFaseTo(1);
+            audioController.instance.playAudio(4);
+
         }
-        else if (contadorIterations >= (timeTemp) && mandalamanager.instance.trianglesDone)
+        else if (contadorIterations >= (timeTemp+1) && mandalamanager.instance.trianglesDone)
         {
             timerZone.instance.gameObject.GetComponent<timerZone>().changeFaseTo(1);
-        }
+            audioController.instance.playAudio(4);
+        }*/
     }
 
 
@@ -876,19 +914,20 @@ public class timerZone : MonoBehaviour
 
         float timeTemp = getNumberIterations();
 
-        if (contadorIterations >= (timeTemp + 1) + ((timeTemp + 1) / 3.0f) && !mandalamanager.instance.trianglesDone)
+        if (contadorIterations >= (timeTemp+1 ) + ((timeTemp + 1) / 3.0f) && !mandalamanager.instance.trianglesDone)
         {
             mandalamanager.instance.centralPoint.GetComponent<PointCentralMandala>().numActivationAvailable = mandalamanager.instance.centralPoint.GetComponent<PointCentralMandala>().numActivationAvailable + mandalamanager.instance.centralPoint.GetComponent<PointCentralMandala>().numNotCatched;
             mandalamanager.instance.centralPoint.GetComponent<PointCentralMandala>().numNotCatched = 0.0f;
             contadorIterations = 0;
         }
-        else if (contadorIterations >= (timeTemp) && mandalamanager.instance.trianglesDone)
+        else if (contadorIterations >= (timeTemp+1) && mandalamanager.instance.trianglesDone)
         {
             mandalamanager.instance.centralPoint.GetComponent<PointCentralMandala>().numActivationAvailable = mandalamanager.instance.centralPoint.GetComponent<PointCentralMandala>().numActivationAvailable + mandalamanager.instance.centralPoint.GetComponent<PointCentralMandala>().numNotCatched;
             mandalamanager.instance.centralPoint.GetComponent<PointCentralMandala>().numNotCatched = 0.0f;
             contadorIterations = 0;
         }
 
+       
     }
 
 
@@ -1047,7 +1086,7 @@ public class timerZone : MonoBehaviour
         //give the colors that the mandala has configurate in this layer
         Gradient colorActual = mandalamanager.instance.switchColor(); 
          Gradient colorActualMove = mandalamanager.instance.switchColorMove();
-
+        contadorIterations=contadorIterations + 1;
         //for every catch zone
         for (int i = 0; i < zoneList.Count; i++)
         {
@@ -1088,6 +1127,44 @@ public class timerZone : MonoBehaviour
             Logger.addParticlesAppear(internalZone.name);
         }
         //#endif
+        //for set up the iterations that need to make
+        float timeTemp = 0.0f;
+        //if triangles are not done on the mandala flow
+        if (!mandalamanager.instance.trianglesDone)
+        {
+            //see what layer is the mandala
+            switch (mandalamanager.instance.layer)
+            {
+                case 0://first layer
+                    timeTemp = tempMaxFirstLayer;
+                    break;
+                case 1://second layer
+                    timeTemp = tempMaxSecondLayer;
+                    break;
+                case 2://third layer
+                    timeTemp = tempMaxThirdLayer;
+                    break;
+            }
+        }
+        else
+        {
+            //this is the circle configuration
+            timeTemp = tempMaxCircleLayer;
+
+        }
+
+        //control if we need to change of fase
+        if (contadorIterations >= (timeTemp + 1) + ((timeTemp + 1) / 3.0f) && !mandalamanager.instance.trianglesDone)
+        {
+            timerZone.instance.gameObject.GetComponent<timerZone>().changeFaseTo(1);
+            audioController.instance.playAudio(4);
+
+        }
+        else if (contadorIterations >= (timeTemp + 1) && mandalamanager.instance.trianglesDone)
+        {
+            timerZone.instance.gameObject.GetComponent<timerZone>().changeFaseTo(1);
+            audioController.instance.playAudio(4);
+        }
 
         //when all the zone are active
         timeStartAppear = Time.time;

@@ -74,7 +74,7 @@ public class pointsMandala : MonoBehaviour
     //function that setup the random initial position of the point
     void givePositionRandom() {
         //get random new positon
-        positionRandom = new Vector3(Random.Range(-10.0f + positionRandom.x, 10.0f + positionRandom.x), 0, Random.Range(-10.0f + positionRandom.z, 10.0f + positionRandom.z));
+        positionRandom = new Vector3(Random.Range(-20.0f + positionRandom.x, 20.0f + positionRandom.x), 0, Random.Range(-20.0f + positionRandom.z, 20.0f + positionRandom.z));
         //setup on the object
         gameObject.transform.position = positionRandom;
         //not moving

@@ -106,7 +106,7 @@ public class MoveZone : MonoBehaviour
             }
             
             //if the particle system and the objective are realy close
-            if (dist <= 0.05f)
+            if (dist <= 0.1f)
             {
                 //we considerer that is in the correct final position
                 inPosition = true;
@@ -128,7 +128,7 @@ public class MoveZone : MonoBehaviour
         {
             float dist2 = Vector3.Distance(affectectParticles2.gameObject.transform.position, finalPoint.gameObject.transform.position);
             affectectParticles2.gameObject.transform.position = Vector3.Lerp(affectectParticles2.gameObject.transform.position, finalPoint.gameObject.transform.position, velocity * (Time.deltaTime / dist2));
-            if (dist2 <= 0.05f)
+            if (dist2 <= 0.1f)
             {
                 inPosition = true;
                 if (affectectParticles.gameObject.GetComponent<collisionMovingZone>() != null)

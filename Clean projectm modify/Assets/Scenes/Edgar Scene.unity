@@ -7583,7 +7583,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_BoundingSphereOverride: {x: 1e-45, y: 3e-45, z: 4e-45, w: 7.6100193e-10}
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
@@ -7596,7 +7596,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 170076733}
   m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
-  m_LocalPosition: {x: 0, y: 3, z: 0}
+  m_LocalPosition: {x: 58.2, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -10114,7 +10114,7 @@ PrefabInstance:
     - target: {fileID: 3122749662104552058, guid: 31f90b98aa07e5a4a9d9403dbc8eae77,
         type: 3}
       propertyPath: cualCiruclo
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3122749662104552062, guid: 31f90b98aa07e5a4a9d9403dbc8eae77,
         type: 3}
@@ -16676,7 +16676,7 @@ PrefabInstance:
     - target: {fileID: 3122749662104552058, guid: 31f90b98aa07e5a4a9d9403dbc8eae77,
         type: 3}
       propertyPath: cualCiruclo
-      value: 3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3122749662104552062, guid: 31f90b98aa07e5a4a9d9403dbc8eae77,
         type: 3}
@@ -17942,7 +17942,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 872965253}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 50.5, y: 1.56, z: 49.9}
+  m_LocalPosition: {x: 50.5, y: 8.3, z: 49.9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -20838,7 +20838,7 @@ PrefabInstance:
     - target: {fileID: 3122749662104552058, guid: 31f90b98aa07e5a4a9d9403dbc8eae77,
         type: 3}
       propertyPath: cualCiruclo
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3122749662104552062, guid: 31f90b98aa07e5a4a9d9403dbc8eae77,
         type: 3}
@@ -23853,9 +23853,9 @@ MonoBehaviour:
   blackCircle: {fileID: 872965253}
   controlFase: 0
   timeBetweenFases: 1
-  sizeFinal: {x: 6, y: 1, z: 6}
-  incrementSize: {x: 0.008, y: 0, z: 0.008}
-  sizeFinalCircle: {x: 120, y: 1, z: 120}
+  sizeFinal: {x: 10, y: 1, z: 10}
+  incrementSize: {x: 0.0095, y: 0, z: 0.0095}
+  sizeFinalCircle: {x: 200, y: 1, z: 200}
   incrementSizeCircle: {x: 0.8, y: 0, z: 0.8}
   tempMaxFirstLayer: 8
   tempMaxSecondLayer: 5
@@ -37424,11 +37424,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioSource: {fileID: 1751053200}
-  audio1: {fileID: 8300000, guid: f734e8f4051156b4ba3106c36aa55859, type: 3}
-  audio2: {fileID: 8300000, guid: eed5c810b64d9a640b0d7d60e0f81e04, type: 3}
-  audio3: {fileID: 8300000, guid: 817847f5d9439e64abfe2b1657c8629b, type: 3}
-  audio4: {fileID: 8300000, guid: 5454c07ce541a1c46883a60cc1562391, type: 3}
-  volume: 0.5
+  audioFirstLayer: {fileID: 8300000, guid: 4609de4c7957f8048b07637d5a9abc28, type: 3}
+  audioSecondLayer: {fileID: 8300000, guid: 47406e843614105468547729f2b322a8, type: 3}
+  audioThirdLayer: {fileID: 8300000, guid: 476ce9b3cb3dbec49b63434b5874ec86, type: 3}
+  audioCircle: {fileID: 8300000, guid: 8355870f0ce6b3d44ab5bfd1194ae267, type: 3}
+  audioTransition: {fileID: 8300000, guid: 12637355a8e78ec46b9f1dd5616470fd, type: 3}
+  audioAppearMandala: {fileID: 8300000, guid: d32c6f8c061ce5844a860b3eef906151, type: 3}
+  audioGoodScan: {fileID: 8300000, guid: 2d75fdf5c173c4d458577e8cecd5d24a, type: 3}
+  audioEnding: {fileID: 8300000, guid: 10718b0eb0c93a64694785ae5438a608, type: 3}
+  volume: 0.9
 --- !u!82 &1751053200
 AudioSource:
   m_ObjectHideFlags: 0

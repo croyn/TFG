@@ -278,7 +278,7 @@ public class mandalamanager : MonoBehaviour
         //if there is no point to activate
         if (actualPoint==null) {
             //change the fase in the timer zone to move beetween zones
-            timerZone.instance.gameObject.GetComponent<timerZone>().changeFaseTo(1);
+            //timerZone.instance.gameObject.GetComponent<timerZone>().changeFaseTo(1);
             //indicate that all points in circle are done
             circleDone = true;
         }
@@ -305,7 +305,7 @@ public class mandalamanager : MonoBehaviour
                     break;
                 case 2:
                     //audo 1 - 32s
-                    resp = 1;
+                    resp =2;
                     break;
 
 
@@ -315,7 +315,7 @@ public class mandalamanager : MonoBehaviour
         {
             //circle audio
             //audo 2 - 16s
-            resp = 2;
+            resp = 3;
         }
 
 
