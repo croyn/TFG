@@ -23832,7 +23832,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fd6e2c236cddaf47b3f42640f5df0a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeToNext: 4
+  timeToNext: 1
   timeToOffZones: 3
   zoneList:
   - {fileID: 480343192}
@@ -23857,11 +23857,27 @@ MonoBehaviour:
   incrementSize: {x: 0.01, y: 0, z: 0.01}
   sizeFinalCircle: {x: 200, y: 1, z: 200}
   incrementSizeCircle: {x: 0.4, y: 0, z: 0.4}
-  tempMaxFirstLayer: 8
-  tempMaxSecondLayer: 5
-  tempMaxThirdLayer: 5
-  tempMaxCircleLayer: 4
+  tempMaxFirstLayer: 54
+  tempMaxSecondLayer: 36
+  tempMaxThirdLayer: 36
+  tempMaxCircleLayer: 18
   contadorIterations: 0
+  ControlWhichMovePlayerOne: 0
+  contadorIterationsPlayerOne: 0
+  ControlWhichMovePlayerTwo: 0
+  contadorIterationsPlayerTwo: 0
+  ControlWhichMovePlayerThree: 0
+  contadorIterationsPlayerThree: 0
+  ControlWhichMovePlayerFour: 0
+  contadorIterationsPlayerFour: 0
+  numItersOnePlayerLayerOne: 10
+  numItersOnePlayerLayerTwo: 7
+  numItersOnePlayerLayerThree: 7
+  numItersOnePlayerLayerCircle: 4
+  whatZoneIsPlayerOne: 0
+  whatZoneIsPlayerTwo: 1
+  whatZoneIsPlayerThree: 2
+  whatZoneIsPlayerFour: 3
 --- !u!114 &1217379342
 MonoBehaviour:
   m_ObjectHideFlags: 0
