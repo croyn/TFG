@@ -172,6 +172,8 @@ public class timerZone : MonoBehaviour
             //when the moving zones are in the final position and all the previus are ok
             if (isDoneMoving() && ParticlesDoneAbosorving && timeBetweenFasesControl && timeNextAppear >= timeBetweenFases - 0.2f)
             {
+                //change where the users are
+                changeWhatZoneIsUser();
                 //deactivate the moving zones
                 deactiveMoveZones();
                 if (contadorIterations == 0)
@@ -825,7 +827,7 @@ public class timerZone : MonoBehaviour
             switch (mandalamanager.instance.layer)
             {
                 case 0://first layer
-                    timeTemp = (((float)numItersOnePlayerLayerOne-2.0f) * 4.0f);
+                    timeTemp = (((float)numItersOnePlayerLayerOne-2.0f) * 4.0f)+2.0f;
                     break;
                 case 1://second layer
                     
@@ -1335,6 +1337,30 @@ public class timerZone : MonoBehaviour
 
     }
 
+
+    private void changeWhatZoneIsUser() {
+
+        whatZoneIsPlayerOne = whatZoneIsPlayerOne - 1;
+        if (whatZoneIsPlayerOne <0)
+        {
+            whatZoneIsPlayerOne = 3;
+        }
+        whatZoneIsPlayerTwo = whatZoneIsPlayerTwo - 1;
+        if (whatZoneIsPlayerTwo < 0)
+        {
+            whatZoneIsPlayerTwo = 3;
+        }
+        whatZoneIsPlayerThree = whatZoneIsPlayerThree - 1;
+        if (whatZoneIsPlayerThree < 0)
+        {
+            whatZoneIsPlayerThree = 3;
+        }
+        whatZoneIsPlayerFour = whatZoneIsPlayerFour - 1;
+        if (whatZoneIsPlayerFour < 0)
+        {
+            whatZoneIsPlayerFour = 3;
+        }
+    }
 
     private void activateUseDetectingWhatZone(int whichPlayer,int what) {
         int zoneToActive = whatZoneIsUser(whichPlayer);
