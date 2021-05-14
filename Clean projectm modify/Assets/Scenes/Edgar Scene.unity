@@ -37431,8 +37431,18 @@ MonoBehaviour:
   audioTransition: {fileID: 8300000, guid: 12637355a8e78ec46b9f1dd5616470fd, type: 3}
   audioAppearMandala: {fileID: 8300000, guid: d32c6f8c061ce5844a860b3eef906151, type: 3}
   audioGoodScan: {fileID: 8300000, guid: 2d75fdf5c173c4d458577e8cecd5d24a, type: 3}
-  audioEnding: {fileID: 8300000, guid: 10718b0eb0c93a64694785ae5438a608, type: 3}
+  audioEnding: {fileID: 8300000, guid: 4456149fd7494094586ed5a4fec70076, type: 3}
+  audioFirstLayerElectro: {fileID: 8300000, guid: 7a5ea6c2a461e314b91ffe36982dd779,
+    type: 3}
+  audioSecondLayerElectro: {fileID: 8300000, guid: 0a30ee288c7ffd1499a4af2459388030,
+    type: 3}
+  audioThirdLayerElectro: {fileID: 8300000, guid: 036754507f3e37a41acc9317550200f6,
+    type: 3}
+  audioCircleElectro: {fileID: 8300000, guid: ef88ca4c47563be449a3946137acd64e, type: 3}
+  audioTransitionElectro: {fileID: 8300000, guid: 7ac2f9c13eb61c1468f1ee93db787c7f,
+    type: 3}
   volume: 0.9
+  electronic: 1
 --- !u!82 &1751053200
 AudioSource:
   m_ObjectHideFlags: 0

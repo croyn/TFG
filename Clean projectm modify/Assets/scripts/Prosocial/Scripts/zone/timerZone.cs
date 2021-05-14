@@ -938,16 +938,16 @@ public class timerZone : MonoBehaviour
 
         switch (ControlWhichZone) {
             case 0://derecha , right
-                ControlWhichZone = 2;
+                ControlWhichZone = 3;
                 break;
             case 1://frente ,front
-                ControlWhichZone = 3;
+                ControlWhichZone = 0;
                 break;
             case 2://izquierda, left
                 ControlWhichZone = 1;
                 break;
             case 3://silencio, silence
-                ControlWhichZone = 0;
+                ControlWhichZone = 2;
                 break;
         }
         

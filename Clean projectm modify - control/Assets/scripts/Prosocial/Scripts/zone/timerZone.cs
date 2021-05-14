@@ -40,13 +40,13 @@ public class timerZone : MonoBehaviour
     bool firstLog = false;
     bool firstSong = false;
     bool songPlayIt = false;
-    public int ControlWhichMovePlayerOne = 0;
+    public int ControlWhichMovePlayerOne = 2;
     public int contadorIterationsPlayerOne = 0;
-    public int ControlWhichMovePlayerTwo = 0;
+    public int ControlWhichMovePlayerTwo = 2;
     public int contadorIterationsPlayerTwo = 0;
-    public int ControlWhichMovePlayerThree = 0;
+    public int ControlWhichMovePlayerThree = 2;
     public int contadorIterationsPlayerThree = 0;
-    public int ControlWhichMovePlayerFour = 0;
+    public int ControlWhichMovePlayerFour = 2;
     public int contadorIterationsPlayerFour = 0;
     public int numItersOnePlayerLayerOne = 0;
     public int numItersOnePlayerLayerTwo = 0;
@@ -433,7 +433,7 @@ public class timerZone : MonoBehaviour
                 if (!firstSong) {
                     //play the song
                     firstSong = true;
-                    //audioController.instance.playAudio(mandalamanager.instance.whichSong());
+                    audioController.instance.playAudio(0);
                     timeNextAppear = 0.0f;
                 }
                 else

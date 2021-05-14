@@ -15,7 +15,16 @@ public class audioController : MonoBehaviour
     public AudioClip audioAppearMandala;//6 audio file
     public AudioClip audioGoodScan;//7 audio file
     public AudioClip audioEnding;//8 audio file
+    //electronic
+    public AudioClip audioFirstLayerElectro;
+    public AudioClip audioSecondLayerElectro;
+    public AudioClip audioThirdLayerElectro;
+    public AudioClip audioCircleElectro;
+    public AudioClip audioTransitionElectro;
+
     public float volume = 0.5f;//control global volume
+    public bool electronic = false;
+
     void Start()
     {
         //singleton
@@ -31,34 +40,73 @@ public class audioController : MonoBehaviour
     //function to acces from anywhere to the audio we need and play it
     public void playAudio(int wich) {
         AudioClip actual=null;
-        switch (wich) {
-            case 0:
-                actual = audioFirstLayer;
-                break;
-            case 1:
-                actual = audioSecondLayer;
-                break;
-            case 2:
-                actual = audioThirdLayer;
-                break;
-            case 3:
-                actual = audioCircle;
-                break;
-            case 4:
-                actual = audioTransition;
-                break;
-            case 5:
-                actual = audioAppearMandala;
-                break;
-            case 6:
-                actual = audioGoodScan;
-                break;
-            case 7:
-                actual = audioEnding;
-                break;
 
+        if (electronic)
+        {
+            switch (wich)
+            {
+                case 0:
+                    actual = audioFirstLayerElectro;
+                    break;
+                case 1:
+                    actual = audioSecondLayerElectro;
+                    break;
+                case 2:
+                    actual = audioThirdLayerElectro;
+                    break;
+                case 3:
+                    actual = audioCircleElectro;
+                    break;
+                case 4:
+                    actual = audioTransitionElectro;
+                    break;
+                case 5:
+                    actual = audioAppearMandala;
+                    break;
+                case 6:
+                    actual = audioGoodScan;
+                    break;
+                case 7:
+                    actual = audioEnding;
+                    break;
+
+
+            }
+        }
+        else {
+            switch (wich)
+            {
+                case 0:
+                    actual = audioFirstLayer;
+                    break;
+                case 1:
+                    actual = audioSecondLayer;
+                    break;
+                case 2:
+                    actual = audioThirdLayer;
+                    break;
+                case 3:
+                    actual = audioCircle;
+                    break;
+                case 4:
+                    actual = audioTransition;
+                    break;
+                case 5:
+                    actual = audioAppearMandala;
+                    break;
+                case 6:
+                    actual = audioGoodScan;
+                    break;
+                case 7:
+                    actual = audioEnding;
+                    break;
+
+
+            }
 
         }
+
+        
 
         //if there is a audio
         if (actual != null) {

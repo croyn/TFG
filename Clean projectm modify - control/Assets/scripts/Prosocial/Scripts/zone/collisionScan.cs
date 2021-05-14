@@ -28,7 +28,7 @@ public class collisionScan : MonoBehaviour
         if (isIn)
         {
             //add time if doesn go > 20
-            if (timeIn + Time.deltaTime <= 3.1f) {
+            if (timeIn + Time.deltaTime <= 5.0f) {
                 timeIn = timeIn + Time.deltaTime;
                 if (checkTimeIn())
                 {
@@ -87,8 +87,8 @@ public class collisionScan : MonoBehaviour
                     actualColor= Color.white;
                     break;
                 case 1:
-                //footMaterial.material.SetColor("_Color", ColorGreen);
-                footMaterial.material.SetColor("_Color", Color.green);
+                footMaterial.material.SetColor("_Color", ColorGreen);
+                //footMaterial.material.SetColor("_Color", Color.green);
                 actualColor = Color.green;
                     
                     break;

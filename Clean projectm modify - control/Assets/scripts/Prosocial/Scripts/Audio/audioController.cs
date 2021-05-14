@@ -7,9 +7,9 @@ public class audioController : MonoBehaviour
     // Start is called before the first frame update
     public static audioController instance; //singleton
     public AudioSource audioSource;//GameObject audio source
-    public AudioClip audioFirstLayer;//1 audio file
-    public AudioClip audioSecondLayer;//2 audio file
-    public AudioClip audioThirdLayer;//3 audio file
+    public AudioClip audioFull1;//1 audio file
+    public AudioClip audioFull2;//2 audio file
+    public AudioClip audioFull3;//3 audio file
     public AudioClip audioCircle;//4 audio file
     public AudioClip audioTransition;//5 audio file
     public AudioClip audioAppearMandala;//6 audio file
@@ -33,13 +33,13 @@ public class audioController : MonoBehaviour
         AudioClip actual=null;
         switch (wich) {
             case 0:
-                actual = audioFirstLayer;
+                actual = audioFull1;
                 break;
             case 1:
-                actual = audioSecondLayer;
+                actual = audioFull2;
                 break;
             case 2:
-                actual = audioThirdLayer;
+                actual = audioFull3;
                 break;
             case 3:
                 actual = audioCircle;
