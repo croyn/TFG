@@ -56,8 +56,9 @@ public class timerZone : MonoBehaviour
     public int whatZoneIsPlayerTwo = 1;
     public int whatZoneIsPlayerThree = 2;
     public int whatZoneIsPlayerFour = 3;
+    public int actualLayerNum = 0;
 
-    enum usertoActivateEnum { none, one, two, three, four, two_four, one_three, one_two_three, three_four };
+    enum usertoActivateEnum { none, one, two, three, four, two_four, one_three, one_two_three, three_four,one_two, one_four };
 
     // Start is called before the first frame update
     void Start()
@@ -427,13 +428,14 @@ public class timerZone : MonoBehaviour
         switch (which) {
             case 0://catch particles
                 //#if !UNITY_EDITOR
+                actualLayerNum = actualLayerNum + 1;
                 Logger.addChangeFase("Catch Particles Fase");
 
                 //#endif
                 if (!firstSong) {
                     //play the song
                     firstSong = true;
-                    audioController.instance.playAudio(0);
+                    audioController.instance.playAudio(2);
                     timeNextAppear = 0.0f;
                 }
                 else
@@ -796,7 +798,8 @@ public class timerZone : MonoBehaviour
         //temp object
         Transform temp = null;
         bool controlOneActive = false;//control if one zone catched the iteration
-
+        float numberZoneActive = 0.0f;
+        float numberZoneNonActive = 0.0f;
         //for every active catch zone 
         for (int i = 0; i < zoneListActive.Count; i++)
         {
@@ -804,7 +807,8 @@ public class timerZone : MonoBehaviour
             temp = zoneListActive[i];
 
             //check if it is catched for some player
-            if (temp.GetComponent<zoneManager>().isCatched()) {
+            if (temp.GetComponent<zoneManager>().isCatched())
+            {
                 //activate the explosion effect
                 temp.GetComponent<zoneManager>().activeExplosion();
                 //#if !UNITY_EDITOR
@@ -812,6 +816,10 @@ public class timerZone : MonoBehaviour
                 //#endif
                 //set the control to true
                 controlOneActive = true;
+                numberZoneActive = numberZoneActive + 1.0f;
+            }
+            else {
+                numberZoneNonActive = numberZoneNonActive + 1.0f;
             }
 
 
@@ -821,31 +829,33 @@ public class timerZone : MonoBehaviour
         //for set up the iterations that need to make
         float timeTemp = 0.0f;
         //if triangles are not done on the mandala flow
+        
+
         if (!mandalamanager.instance.trianglesDone)
         {
             //see what layer is the mandala
             switch (mandalamanager.instance.layer)
             {
                 case 0://first layer
-                    timeTemp = (((float)numItersOnePlayerLayerOne-2.0f) * 4.0f)+2.0f;
+                    timeTemp = ((((float)numItersOnePlayerLayerOne)-1.0f) * 4.0f)-1.0f;
                     break;
                 case 1://second layer
                     
-                    timeTemp = (((float)numItersOnePlayerLayerTwo - 1.0f) * 4.0f)-2.0f ;
+                    timeTemp = (((float)numItersOnePlayerLayerTwo - 1.0f) * 4.0f) - 1.0f;
                     break;
                 case 2://third layer
-                    timeTemp = (((float)(numItersOnePlayerLayerThree) - 2.0f) * 4.0f) ;
+                    timeTemp = (((float)(numItersOnePlayerLayerThree) - 1.0f) * 4.0f)-1.0f;
                     break;
             }
         }
         else
         {
             //this is the circle configuration
-            timeTemp = (((float)(numItersOnePlayerLayerCircle) - 2.0f) * 4.0f); ;
+            timeTemp = (((float)(numItersOnePlayerLayerCircle) - 1.0f) * 4.0f);
 
         }
+        
 
-       
         //new iteration
         //contadorIterations = contadorIterations + 1;
 
@@ -868,7 +878,7 @@ public class timerZone : MonoBehaviour
             // Debug.Log("Tiene point centralDesdeTimer " + calc);
 
             //accumulate the calc + the number of particles accumulate for not touching it
-            mandalamanager.instance.centralPoint.GetComponent<PointCentralMandala>().numActivationAvailable = calc + mandalamanager.instance.centralPoint.GetComponent<PointCentralMandala>().numNotCatched;
+            mandalamanager.instance.centralPoint.GetComponent<PointCentralMandala>().numActivationAvailable = numberZoneActive*calc + mandalamanager.instance.centralPoint.GetComponent<PointCentralMandala>().numNotCatched;
             //restart the particles accumulate not touched
             mandalamanager.instance.centralPoint.GetComponent<PointCentralMandala>().numNotCatched = 0.0f;
         }
@@ -882,7 +892,7 @@ public class timerZone : MonoBehaviour
             //Debug.Log("num lines total " + num);
             float numLines = num / timeTemp;
             // Debug.Log("numLines calc " + numLines);
-            float calc = mandalamanager.instance.centralPoint.GetComponent<PointCentralMandala>().numNotCatched + (numLines) * 2.0f;
+            float calc = mandalamanager.instance.centralPoint.GetComponent<PointCentralMandala>().numNotCatched + (numberZoneNonActive*numLines) * 2.0f;
             // Debug.Log("Tiene point centralDesdeTimer " + calc);
             mandalamanager.instance.centralPoint.GetComponent<PointCentralMandala>().numNotCatched = calc;
 
@@ -963,10 +973,27 @@ public class timerZone : MonoBehaviour
         else
         {
             //this is the circle configuration
-            timeTemp = tempMaxCircleLayer;
+            if (sum)
+            {
+                timeTemp = tempMaxCircleLayer + 5.0f;
+            }
+            else
+            {
+                timeTemp = tempMaxCircleLayer;
+            }
+            
 
         }
-
+        if (actualLayerNum == 7) {
+            if (sum)
+            {
+                timeTemp = tempMaxThirdLayer + 6.0f;
+            }
+            else
+            {
+                timeTemp = tempMaxThirdLayer;
+            }
+        }
         return timeTemp;
 
     }
@@ -1159,7 +1186,7 @@ public class timerZone : MonoBehaviour
         //for set up the iterations that need to make
         float timeTemp = 0.0f;
         //if triangles are not done on the mandala flow
-        if (!mandalamanager.instance.trianglesDone)
+        if (!mandalamanager.instance.trianglesDone || contadorIterations>35)
         {
             //see what layer is the mandala
             switch (mandalamanager.instance.layer)
@@ -1181,7 +1208,10 @@ public class timerZone : MonoBehaviour
             timeTemp = tempMaxCircleLayer;
 
         }
-
+        if (actualLayerNum == 7)
+        {
+            timeTemp = tempMaxThirdLayer;
+        }
         //control if we need to change of fase
         if (contadorIterations >= timeTemp && !mandalamanager.instance.trianglesDone)
         {
@@ -1193,7 +1223,7 @@ public class timerZone : MonoBehaviour
             //audioController.instance.playAudio(4);
 
         }
-        else if (contadorIterations >= (timeTemp) && mandalamanager.instance.trianglesDone)
+        else if (contadorIterations >= (timeTemp)  && mandalamanager.instance.trianglesDone)
         {
             activateTheRest();
             active = false;
@@ -1300,8 +1330,15 @@ public class timerZone : MonoBehaviour
         {
             if (zoneListMove[i].GetComponent<MoveZone>().initPoint.Equals(whatInit)) {
                 Debug.Log("Encuentro move zone.");
+                if (actualLayerNum == 7)
+                {
+                    zoneListMove[i].GetComponent<MoveZone>().ChangeColorTo(mandalamanager.instance.color3, mandalamanager.instance.color3Move);
+                }
+                else {
+                    zoneListMove[i].GetComponent<MoveZone>().ChangeColorTo(mandalamanager.instance.switchColor(), mandalamanager.instance.switchColorMove());
+                }
                 //change the color configuration on the moving zone with the actual color that the mandala use,so its the actual next layer already setup
-                zoneListMove[i].GetComponent<MoveZone>().ChangeColorTo(mandalamanager.instance.switchColor(), mandalamanager.instance.switchColorMove());
+                
                 //to calculate the velocity according to the time left to the layer.
                 if (which == 0) {
                     float dist = Vector3.Distance(zoneListMove[i].GetComponent<MoveZone>().initPoint.transform.position, zoneListMove[i].GetComponent<MoveZone>().finalPoint.transform.position);
@@ -1386,6 +1423,10 @@ public class timerZone : MonoBehaviour
             {
                 Gradient colorActual = mandalamanager.instance.switchColor();
                 Gradient colorActualMove = mandalamanager.instance.switchColorMove();
+                if (actualLayerNum == 7) {
+                    colorActual = mandalamanager.instance.color3;
+                    colorActualMove = mandalamanager.instance.color3Move;
+                }
                 //set the color configuration to the zone
                 tempWhatZone.GetComponent<zoneManager>().ChangeColorTo(colorActual, colorActualMove);
                 //activate that zone
@@ -1462,6 +1503,14 @@ public class timerZone : MonoBehaviour
                 break;
             case usertoActivateEnum.three_four:
                 playerThree = true;
+                playerFour = true;
+                break;
+            case usertoActivateEnum.one_two:
+                playerOne = true;
+                playerTwo = true;
+                break;
+            case usertoActivateEnum.one_four:
+                playerOne = true;
                 playerFour = true;
                 break;
             default:
@@ -1668,6 +1717,10 @@ public class timerZone : MonoBehaviour
 
     private usertoActivateEnum getPlayerFlow() {
 
+        if (actualLayerNum == 7) {
+            return whatUserLayerTwo();
+        }
+
         if (!mandalamanager.instance.trianglesDone)
         {
             switch (mandalamanager.instance.layer)
@@ -1710,97 +1763,97 @@ public class timerZone : MonoBehaviour
             case 5:
                 return usertoActivateEnum.one;
             case 6:
-                return usertoActivateEnum.two;
+                return usertoActivateEnum.none;
             case 7:
-                return usertoActivateEnum.four;
+                return usertoActivateEnum.two;
             case 8:
                 return usertoActivateEnum.three;
             case 9:
-                return usertoActivateEnum.two;
+                return usertoActivateEnum.four;
             case 10:
                 return usertoActivateEnum.one;
             case 11:
-                return usertoActivateEnum.three;
+                return usertoActivateEnum.none;
             case 12:
-                return usertoActivateEnum.four;
-            case 13:
-                return usertoActivateEnum.none;
-            case 14:
-                return usertoActivateEnum.none;
-            case 15:
                 return usertoActivateEnum.two;
+            case 13:
+                return usertoActivateEnum.three;
+            case 14:
+                return usertoActivateEnum.four;
+            case 15:
+                return usertoActivateEnum.one;
             case 16:
                 return usertoActivateEnum.none;
             case 17:
-                return usertoActivateEnum.one;
+                return usertoActivateEnum.none;
             case 18:
-                return usertoActivateEnum.three;
-            case 19:
                 return usertoActivateEnum.two;
-            case 20:
-                return usertoActivateEnum.none;
-            case 21:
+            case 19:
                 return usertoActivateEnum.one;
-            case 22:
-                return usertoActivateEnum.two_four;//user 2 + 4
-            case 23:
+            case 20:
                 return usertoActivateEnum.three;
-            case 24:
+            case 21:
                 return usertoActivateEnum.none;
-            case 25:
+            case 22:
                 return usertoActivateEnum.four;
+            case 23:
+                return usertoActivateEnum.two;
+            case 24:
+                return usertoActivateEnum.one;
+            case 25:
+                return usertoActivateEnum.three;
             case 26:
-                return usertoActivateEnum.one_three;//user 1+3
-            case 27:
                 return usertoActivateEnum.none;
+            case 27:
+                return usertoActivateEnum.four;
             case 28:
                 return usertoActivateEnum.two;
             case 29:
-                return usertoActivateEnum.none;
+                return usertoActivateEnum.one;
             case 30:
-                return usertoActivateEnum.four;
+                return usertoActivateEnum.three;
             case 31:
                 return usertoActivateEnum.none;
             case 32:
-                return usertoActivateEnum.two;
+                return usertoActivateEnum.four;
             case 33:
-                return usertoActivateEnum.one_three;
+                return usertoActivateEnum.one;
             case 34:
-                return usertoActivateEnum.none;
-            case 35:
                 return usertoActivateEnum.two;
+            case 35:
+                return usertoActivateEnum.none;
             case 36:
                 return usertoActivateEnum.none;
             case 37:
-                return usertoActivateEnum.one;
-            case 38:
                 return usertoActivateEnum.three;
+            case 38:
+                return usertoActivateEnum.one;
             case 39:
                 return usertoActivateEnum.two;
             case 40:
                 return usertoActivateEnum.four;
             case 41:
-                return usertoActivateEnum.four;
+                return usertoActivateEnum.none;
             case 42:
-                return usertoActivateEnum.one;
+                return usertoActivateEnum.one_three;
             case 43:
-                return usertoActivateEnum.four;
+                return usertoActivateEnum.none;
             case 44:
-                return usertoActivateEnum.three;
+                return usertoActivateEnum.two;
             case 45:
-                return usertoActivateEnum.three;
+                return usertoActivateEnum.four;
             case 46:
                 return usertoActivateEnum.none;
             case 47:
-                return usertoActivateEnum.none;
+                return usertoActivateEnum.three;
             case 48:
-                return usertoActivateEnum.one;
+                return usertoActivateEnum.two;
             case 49:
                 return usertoActivateEnum.none;
             case 50:
-                return usertoActivateEnum.none;
+                return usertoActivateEnum.four;
             case 51:
-                return usertoActivateEnum.none;
+                return usertoActivateEnum.three;
             case 52:
                 return usertoActivateEnum.none;
             case 53:
@@ -1830,63 +1883,63 @@ public class timerZone : MonoBehaviour
             case 5:
                 return usertoActivateEnum.one;
             case 6:
-                return usertoActivateEnum.two;
+                return usertoActivateEnum.none;
             case 7:
-                return usertoActivateEnum.four;
+                return usertoActivateEnum.two;
             case 8:
                 return usertoActivateEnum.three;
             case 9:
-                return usertoActivateEnum.two;
+                return usertoActivateEnum.four;
             case 10:
                 return usertoActivateEnum.one;
             case 11:
-                return usertoActivateEnum.three;
+                return usertoActivateEnum.none;
             case 12:
-                return usertoActivateEnum.four;
-            case 13:
-                return usertoActivateEnum.none;
-            case 14:
-                return usertoActivateEnum.none;
-            case 15:
                 return usertoActivateEnum.two;
+            case 13:
+                return usertoActivateEnum.three;
+            case 14:
+                return usertoActivateEnum.four;
+            case 15:
+                return usertoActivateEnum.one;
             case 16:
                 return usertoActivateEnum.none;
             case 17:
-                return usertoActivateEnum.one;
+                return usertoActivateEnum.none;
             case 18:
-                return usertoActivateEnum.three;
-            case 19:
                 return usertoActivateEnum.two;
-            case 20:
-                return usertoActivateEnum.none;
-            case 21:
+            case 19:
                 return usertoActivateEnum.one;
-            case 22:
-                return usertoActivateEnum.two_four;//user 2 + 4
-            case 23:
+            case 20:
                 return usertoActivateEnum.three;
-            case 24:
+            case 21:
                 return usertoActivateEnum.none;
-            case 25:
+            case 22:
                 return usertoActivateEnum.four;
+            case 23:
+                return usertoActivateEnum.two;
+            case 24:
+                return usertoActivateEnum.one;
+            case 25:
+                return usertoActivateEnum.three;
             case 26:
-                return usertoActivateEnum.one_two_three;//user 1+3
+                return usertoActivateEnum.none;
             case 27:
-                return usertoActivateEnum.none;
+                return usertoActivateEnum.four;
             case 28:
-                return usertoActivateEnum.none;
+                return usertoActivateEnum.one_two;
             case 29:
                 return usertoActivateEnum.none;
             case 30:
-                return usertoActivateEnum.three_four;
+                return usertoActivateEnum.three;
             case 31:
                 return usertoActivateEnum.none;
             case 32:
-                return usertoActivateEnum.one;
+                return usertoActivateEnum.two_four;
             case 33:
                 return usertoActivateEnum.none;
             case 34:
-                return usertoActivateEnum.none;
+                return usertoActivateEnum.three;
             case 35:
                 return usertoActivateEnum.none;
             case 36:
@@ -1914,30 +1967,36 @@ public class timerZone : MonoBehaviour
             case 5:
                 return usertoActivateEnum.one;
             case 6:
-                return usertoActivateEnum.two;
+                return usertoActivateEnum.none;
             case 7:
-                return usertoActivateEnum.four;
+                return usertoActivateEnum.two;
             case 8:
                 return usertoActivateEnum.three;
             case 9:
-                return usertoActivateEnum.two;
+                return usertoActivateEnum.four;
             case 10:
                 return usertoActivateEnum.one;
             case 11:
-                return usertoActivateEnum.three;
+                return usertoActivateEnum.none;
             case 12:
-                return usertoActivateEnum.four;
-            case 13:
                 return usertoActivateEnum.two;
-            case 14:
-                return usertoActivateEnum.none;
-            case 15:
+            case 13:
                 return usertoActivateEnum.three;
-            case 16:
-                return usertoActivateEnum.one;
-            case 17:
+            case 14:
+                return usertoActivateEnum.one_four;
+            case 15:
                 return usertoActivateEnum.none;
+            case 16:
+                return usertoActivateEnum.two;
+            case 17:
+                return usertoActivateEnum.three;
             case 18:
+                return usertoActivateEnum.four;
+            case 34:
+                return usertoActivateEnum.three;
+            case 35:
+                return usertoActivateEnum.none;
+            case 36:
                 return usertoActivateEnum.four;
             default:
                 return usertoActivateEnum.none;

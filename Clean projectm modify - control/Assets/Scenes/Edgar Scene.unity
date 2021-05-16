@@ -23859,7 +23859,7 @@ MonoBehaviour:
   incrementSizeCircle: {x: 0.4, y: 0, z: 0.4}
   tempMaxFirstLayer: 54
   tempMaxSecondLayer: 36
-  tempMaxThirdLayer: 36
+  tempMaxThirdLayer: 37
   tempMaxCircleLayer: 18
   contadorIterations: 0
   ControlWhichMovePlayerOne: 2

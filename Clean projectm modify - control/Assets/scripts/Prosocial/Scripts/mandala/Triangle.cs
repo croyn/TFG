@@ -354,6 +354,9 @@ public class Triangle : MonoBehaviour
                     LadoIzquierda[indiceMax - i].GetComponent<pointsMandala>().partnerPoint2 = LadoDerecha[i].gameObject;
 
                 }
+
+                numLineasCapa3 = numLineasCapa3 + 1;
+
                 break;
             //normal
             case 1:
@@ -392,7 +395,7 @@ public class Triangle : MonoBehaviour
 
                 }
 
-                
+                numLineasCapa3 = numLineasCapa3 + 1;
                 break;
             //grande
             case 2:
