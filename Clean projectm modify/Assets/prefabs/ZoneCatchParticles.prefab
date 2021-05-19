@@ -10461,7 +10461,8 @@ MonoBehaviour:
   timeIn: 0
   isIn: 0
   actualColor: {r: 0, g: 0, b: 0, a: 0}
-  ColorGreen: {r: 0.26666668, g: 0.8862745, b: 0.5529412, a: 1}
+  ColorGreen: {r: 0.27058825, g: 0.8980392, b: 0.45882353, a: 1}
+  playSong: 0
 --- !u!1 &4136037890939965923
 GameObject:
   m_ObjectHideFlags: 0

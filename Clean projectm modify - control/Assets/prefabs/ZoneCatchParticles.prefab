@@ -10462,6 +10462,7 @@ MonoBehaviour:
   isIn: 0
   actualColor: {r: 0, g: 0, b: 0, a: 0}
   ColorGreen: {r: 0.26666668, g: 0.8862745, b: 0.5529412, a: 1}
+  playSong: 0
 --- !u!1 &4136037890939965923
 GameObject:
   m_ObjectHideFlags: 0
@@ -15651,7 +15652,7 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5576526629708123690}
   serializedVersion: 7
-  lengthInSec: 2
+  lengthInSec: 0.75
   simulationSpeed: 1
   stopAction: 0
   cullingMode: 0
@@ -25468,7 +25469,7 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5576526629888017076}
   serializedVersion: 7
-  lengthInSec: 2
+  lengthInSec: 0.75
   simulationSpeed: 1
   stopAction: 0
   cullingMode: 0
@@ -35583,7 +35584,7 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5576526631185758455}
   serializedVersion: 7
-  lengthInSec: 2
+  lengthInSec: 0.75
   simulationSpeed: 1
   stopAction: 0
   cullingMode: 0

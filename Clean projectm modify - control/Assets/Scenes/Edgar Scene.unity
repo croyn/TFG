@@ -23859,7 +23859,7 @@ MonoBehaviour:
   incrementSizeCircle: {x: 0.4, y: 0, z: 0.4}
   tempMaxFirstLayer: 54
   tempMaxSecondLayer: 36
-  tempMaxThirdLayer: 37
+  tempMaxThirdLayer: 36
   tempMaxCircleLayer: 18
   contadorIterations: 0
   ControlWhichMovePlayerOne: 2
@@ -23878,6 +23878,7 @@ MonoBehaviour:
   whatZoneIsPlayerTwo: 1
   whatZoneIsPlayerThree: 2
   whatZoneIsPlayerFour: 3
+  actualLayerNum: 0
 --- !u!114 &1217379342
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44980,7 +44981,7 @@ PrefabInstance:
     - target: {fileID: 5576526631185758450, guid: 8e13519e67dc7424191ced10949a2cb5,
         type: 3}
       propertyPath: lengthInSec
-      value: 2
+      value: 0.75
       objectReference: {fileID: 0}
     - target: {fileID: 5576526631185758450, guid: 8e13519e67dc7424191ced10949a2cb5,
         type: 3}

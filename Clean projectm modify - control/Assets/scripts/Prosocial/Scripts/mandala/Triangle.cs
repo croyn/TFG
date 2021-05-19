@@ -355,7 +355,7 @@ public class Triangle : MonoBehaviour
 
                 }
 
-                numLineasCapa3 = numLineasCapa3 + 1;
+                numLineasCapa3 = numLineasCapa3+1;
 
                 break;
             //normal
@@ -385,7 +385,7 @@ public class Triangle : MonoBehaviour
 
                 //third partner
                 indiceMax = LadoIzquierda.Count-1;
-                indiceMin = LadoIzquierda.Count-8;
+                indiceMin = LadoIzquierda.Count-9;
               
                 for (int i = 0; i <= indiceMax- indiceMin; i++)
                 {
@@ -395,7 +395,7 @@ public class Triangle : MonoBehaviour
 
                 }
 
-                numLineasCapa3 = numLineasCapa3 + 1;
+                //numLineasCapa3 = numLineasCapa3 + 1;
                 break;
             //grande
             case 2:

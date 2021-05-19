@@ -4837,6 +4837,7 @@ MonoBehaviour:
   affectectParticles: {fileID: 5049863330518208435}
   affectectParticles2: {fileID: 0}
   velocity: 3
+  velocityMoveScan: 0
   colorTouch:
     m_Mode: 0
     m_GradientMin:
@@ -5441,7 +5442,8 @@ MonoBehaviour:
   timeIn: 0
   isIn: 0
   actualColor: {r: 0, g: 0, b: 0, a: 0}
-  ColorGreen: {r: 0.26666668, g: 0.8862745, b: 0.5529412, a: 1}
+  ColorGreen: {r: 0.27058825, g: 0.8980392, b: 0.45882353, a: 1}
+  playSong: 0
 --- !u!1 &4223470008436825176
 GameObject:
   m_ObjectHideFlags: 0
@@ -15221,6 +15223,7 @@ MonoBehaviour:
   affectectParticles: {fileID: 1894795185993861757}
   affectectParticles2: {fileID: 0}
   velocity: 3
+  velocityMoveScan: 0
   colorTouch:
     m_Mode: 0
     m_GradientMin:
@@ -20323,6 +20326,7 @@ MonoBehaviour:
   affectectParticles: {fileID: 6664438748043755527}
   affectectParticles2: {fileID: 0}
   velocity: 3
+  velocityMoveScan: 0
   colorTouch:
     m_Mode: 0
     m_GradientMin:
