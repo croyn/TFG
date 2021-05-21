@@ -355,7 +355,7 @@ public class Triangle : MonoBehaviour
 
                 }
 
-                numLineasCapa3 = numLineasCapa3+1;
+                numLineasCapa3 = numLineasCapa3+2;
 
                 break;
             //normal

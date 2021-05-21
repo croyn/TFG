@@ -401,7 +401,7 @@ public class mandalamanager : MonoBehaviour
                 else
                 {
                     //if we cannot acces means that the triangles part are done.
-                    trianglesDone = true;
+                   // trianglesDone = true;
 
                 }
             }
@@ -437,7 +437,8 @@ public class mandalamanager : MonoBehaviour
 
                         }
                         else {
-                            trianglesDone = true;
+                            //now is controled but timerZone to be more accurate.
+                           // trianglesDone = true;
                         }
                     }
                 }

@@ -37442,7 +37442,7 @@ MonoBehaviour:
   audioTransitionElectro: {fileID: 8300000, guid: 7ac2f9c13eb61c1468f1ee93db787c7f,
     type: 3}
   volume: 0.9
-  electronic: 1
+  electronic: 0
 --- !u!82 &1751053200
 AudioSource:
   m_ObjectHideFlags: 0

@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1904
     height: 981
   m_ShowMode: 4
-  m_Title: Game
+  m_Title: Inspector
   m_RootView: {fileID: 2}
   m_MinSize: {x: 875, y: 542}
   m_MaxSize: {x: 10000, y: 10000}
@@ -46,7 +46,7 @@ MonoBehaviour:
     y: 0
     width: 1904
     height: 981
-  m_MinSize: {x: 875, y: 542}
+  m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
   m_UseTopView: 1
   m_TopViewHeight: 30
@@ -122,7 +122,7 @@ MonoBehaviour:
   m_MinSize: {x: 876, y: 492}
   m_MaxSize: {x: 16001, y: 14042}
   vertical: 0
-  controlID: 90
+  controlID: 89
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -147,7 +147,7 @@ MonoBehaviour:
   m_MinSize: {x: 601, y: 492}
   m_MaxSize: {x: 12001, y: 14042}
   vertical: 1
-  controlID: 91
+  controlID: 90
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -173,7 +173,7 @@ MonoBehaviour:
   m_MinSize: {x: 601, y: 221}
   m_MaxSize: {x: 12001, y: 4021}
   vertical: 0
-  controlID: 92
+  controlID: 91
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -424,10 +424,10 @@ MonoBehaviour:
   m_ViewDataDictionary: {fileID: 0}
   m_SceneHierarchy:
     m_TreeViewState:
-      scrollPos: {x: 0, y: 360}
-      m_SelectedIDs: 7c440000
-      m_LastClickedID: 17532
-      m_ExpandedIDs: 4cfbffff883e0000f43e00000640000058440000
+      scrollPos: {x: 0, y: 0}
+      m_SelectedIDs: 28430000
+      m_LastClickedID: 17192
+      m_ExpandedIDs: 4cfbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -516,7 +516,7 @@ MonoBehaviour:
   m_Position:
     m_Target: {x: 47.11597, y: 53.06012, z: 8.893625}
     speed: 2
-    m_Value: {x: 75.7, y: 0, z: 29.4}
+    m_Value: {x: 47.11597, y: 53.06012, z: 8.893625}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -565,11 +565,11 @@ MonoBehaviour:
   m_Rotation:
     m_Target: {x: -0.02707384, y: 0.75138205, z: -0.6586412, w: -0.030914633}
     speed: 2
-    m_Value: {x: -0.42876822, y: 0.494701, z: -0.6906977, w: -0.30718952}
+    m_Value: {x: -0.027072866, y: 0.751355, z: -0.6586175, w: -0.03091352}
   m_Size:
     m_Target: 16.004614
     speed: 2
-    m_Value: 9.020457
+    m_Value: 16.004614
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -633,22 +633,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/prefabs
+    - Assets/scripts/Prosocial/Scripts/zone
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/prefabs
+  - Assets/scripts/Prosocial/Scripts/zone
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\batch_nps7xwz\Documents\GitHub\TFG\Clean projectm modify
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 64}
-    m_SelectedIDs: d0500000
-    m_LastClickedID: 20688
-    m_ExpandedIDs: 00000000b4500000b6500000b8500000ba500000bc500000be500000c0500000c2500000c4500000c6500000ca500000d450000000ca9a3b
+    scrollPos: {x: 0, y: 0}
+    m_SelectedIDs: 16510000
+    m_LastClickedID: 20758
+    m_ExpandedIDs: 00000000b4500000b6500000b8500000ba500000bc500000be500000c0500000c2500000c4500000c6500000e050000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 

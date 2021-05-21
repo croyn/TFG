@@ -353,6 +353,16 @@ public class timerZone : MonoBehaviour
                 changeFaseTo(0);
                 return;
             }
+            else if (mandalamanager.instance.checkPointsInPosition()) {
+                if (!firstSong)
+                {
+                    //play the song
+                    firstSong = true;
+                    audioController.instance.playAudio(1);
+                    //timeNextAppear = 0.0f;
+                }
+
+            }
         }
         else if (controlFase == 8)//final fase
         {
@@ -1579,25 +1589,25 @@ public class timerZone : MonoBehaviour
     private void changeWhatZoneIsUser()
     {
 
-        whatZoneIsPlayerOne = whatZoneIsPlayerOne - 1;
-        if (whatZoneIsPlayerOne < 0)
+        whatZoneIsPlayerOne = whatZoneIsPlayerOne + 1;
+        if (whatZoneIsPlayerOne > 3)
         {
-            whatZoneIsPlayerOne = 3;
+            whatZoneIsPlayerOne = 0;
         }
-        whatZoneIsPlayerTwo = whatZoneIsPlayerTwo - 1;
-        if (whatZoneIsPlayerTwo < 0)
+        whatZoneIsPlayerTwo = whatZoneIsPlayerTwo + 1;
+        if (whatZoneIsPlayerTwo > 3)
         {
-            whatZoneIsPlayerTwo = 3;
+            whatZoneIsPlayerTwo = 0;
         }
-        whatZoneIsPlayerThree = whatZoneIsPlayerThree - 1;
-        if (whatZoneIsPlayerThree < 0)
+        whatZoneIsPlayerThree = whatZoneIsPlayerThree + 1;
+        if (whatZoneIsPlayerThree > 3)
         {
-            whatZoneIsPlayerThree = 3;
+            whatZoneIsPlayerThree = 0;
         }
-        whatZoneIsPlayerFour = whatZoneIsPlayerFour - 1;
-        if (whatZoneIsPlayerFour < 0)
+        whatZoneIsPlayerFour = whatZoneIsPlayerFour + 1;
+        if (whatZoneIsPlayerFour > 3)
         {
-            whatZoneIsPlayerFour = 3;
+            whatZoneIsPlayerFour = 0;
         }
     }
 

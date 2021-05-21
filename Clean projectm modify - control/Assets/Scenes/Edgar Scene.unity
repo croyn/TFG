@@ -23835,10 +23835,10 @@ MonoBehaviour:
   timeToNext: 1
   timeToOffZones: 3
   zoneList:
-  - {fileID: 480343192}
   - {fileID: 2099173064}
-  - {fileID: 1677868472}
+  - {fileID: 480343192}
   - {fileID: 285430701}
+  - {fileID: 1677868472}
   zoneListMove:
   - {fileID: 2085605980}
   - {fileID: 678520628}
@@ -37442,7 +37442,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioSource: {fileID: 1751053200}
   audioFull1: {fileID: 8300000, guid: 915047183b3eed6469bb44643b29bd92, type: 3}
-  audioFull2: {fileID: 8300000, guid: 9e68c7624a09d544abafbec911b7ed9e, type: 3}
+  audioFull2: {fileID: 8300000, guid: 196ce9c325a4c64438057f9488fdf9c5, type: 3}
   audioFull3: {fileID: 8300000, guid: beaf89cf665733144bfa054fabd66760, type: 3}
   audioCircle: {fileID: 8300000, guid: 8355870f0ce6b3d44ab5bfd1194ae267, type: 3}
   audioTransition: {fileID: 8300000, guid: 12637355a8e78ec46b9f1dd5616470fd, type: 3}

@@ -147,7 +147,9 @@ public class timerZone : MonoBehaviour
                 if (mandalamanager.instance.trianglesDone && mandalamanager.instance.circleDone)
                 {
                     //go to final scan
-                    changeFaseTo(6);
+                    //changeFaseTo(6);
+                    //go to final fase
+                    changeFaseTo(8);
                     return;
                 }
                 else
