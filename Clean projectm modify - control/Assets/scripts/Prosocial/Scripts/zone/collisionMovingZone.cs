@@ -84,7 +84,7 @@ public class collisionMovingZone : MonoBehaviour
             forceOn();
 
             //if name is Cube it take the parents name that is the player.
-//#if !UNITY_EDITOR
+#if !UNITY_EDITOR
             if (other.name == "Cube")
             {
                 Logger.addTouchingMoving(gameObject.transform.parent.name, other.gameObject.transform.parent.name);
@@ -93,7 +93,7 @@ public class collisionMovingZone : MonoBehaviour
             {
                 Logger.addTouchingMoving(gameObject.transform.parent.name, other.name);
             }
-//#endif  
+#endif  
 
         }
 
@@ -108,7 +108,7 @@ public class collisionMovingZone : MonoBehaviour
         {
             //the particles setup go to active mode
             forceOn();
-            //#if !UNITY_EDITOR
+            #if !UNITY_EDITOR
             //if name is Cube it take the parents name that is the player.
             if (other.name == "Cube")
             {
@@ -117,7 +117,7 @@ public class collisionMovingZone : MonoBehaviour
             else {
                 Logger.addTouchingMoving(gameObject.transform.parent.name, other.name);
             }
-            //#endif
+            #endif
         }
 
     }
@@ -134,7 +134,7 @@ public class collisionMovingZone : MonoBehaviour
 
             //if name is Cube it take the parents name that is the player.
 
-            //#if !UNITY_EDITOR
+            #if !UNITY_EDITOR
             if (other.name == "Cube")
             {
                 Logger.addNotTouchingMoving(gameObject.transform.parent.name, other.gameObject.transform.parent.name);
@@ -144,7 +144,7 @@ public class collisionMovingZone : MonoBehaviour
             {
                 Logger.addNotTouchingMoving(gameObject.transform.parent.name, other.name);
             }
-            //#endif
+            #endif
         }
     }
 

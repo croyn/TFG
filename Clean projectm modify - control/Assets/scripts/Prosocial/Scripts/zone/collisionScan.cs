@@ -117,7 +117,7 @@ public class collisionScan : MonoBehaviour
         //user is in
         isIn = true;
 
-        //#if !UNITY_EDITOR
+        #if !UNITY_EDITOR
         if (other.name == "Cube")
         {
             Logger.addScannedIn(gameObject.transform.parent.name, other.gameObject.transform.parent.name, System.DateTime.Now);
@@ -126,14 +126,14 @@ public class collisionScan : MonoBehaviour
         {
             Logger.addScannedIn(gameObject.transform.parent.name, other.name, System.DateTime.Now);
         }
-        //#endif
+        #endif
     }
 
     private void OnTriggerExit(Collider other)
     {
         //user is out
         isIn = false;
-        //#if !UNITY_EDITOR
+        #if !UNITY_EDITOR
         if (other.name == "Cube")
         {
             Logger.addScannedOut(gameObject.transform.parent.name, other.gameObject.transform.parent.name, System.DateTime.Now);
@@ -142,7 +142,7 @@ public class collisionScan : MonoBehaviour
         {
             Logger.addScannedOut(gameObject.transform.parent.name, other.name, System.DateTime.Now);
         }
-        //#endif
+        #endif
 
     }
 }

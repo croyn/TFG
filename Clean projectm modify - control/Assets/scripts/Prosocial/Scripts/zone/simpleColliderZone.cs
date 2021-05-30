@@ -129,7 +129,7 @@ public class simpleColliderZone : MonoBehaviour
                 izquierda.gameObject.GetComponent<zoneManager>().actiaveCircle(false);
                 //notice that we collide with something
                 collision = true;
-//#if !UNITY_EDITOR
+#if !UNITY_EDITOR
                 if (other.name == "Cube")
                 {
                     Logger.addParticlesCatchScan(gameObject.transform.parent.name, other.gameObject.transform.parent.name,System.DateTime.Now);
@@ -138,7 +138,7 @@ public class simpleColliderZone : MonoBehaviour
                 {
                     Logger.addParticlesCatchScan(gameObject.transform.parent.name, other.name, System.DateTime.Now);
                 }
-//#endif
+#endif
                 //Stop the actual particle System 
                 Transform particles = gameObject.transform.Find("Particle System");
                 particles.gameObject.GetComponent<ParticleSystem>().Stop();

@@ -22,7 +22,7 @@ public class circlePart : MonoBehaviour
         //if it is not started
         if (!started)
         {
-            //not it is
+            //now it is
             started = true;
             //make algorithm to setup the partens to make the line
             LlenarConexionesPuntos();

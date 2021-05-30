@@ -24,10 +24,10 @@ public class Logger : MonoBehaviour
 
     void OnApplicationQuit()
     {
-        /*
+        
 #if !UNITY_EDITOR
 
-        // return;
+        
          
         // Debug.Log("Guardo en " + filepath);
 
@@ -62,15 +62,15 @@ public class Logger : MonoBehaviour
         else {
             File.Delete(fileUserpath);
         }
-#endif*/
+#endif
     }
 
     private static void addUserPositionLogLine(string content, bool ending = false)
     {
-//#if UNITY_EDITOR
+#if UNITY_EDITOR
 
-///       return;
-//#endif
+       return;
+#endif
         if (ending)
         {
             File.AppendAllText(fileUserpath, content);
@@ -82,10 +82,10 @@ public class Logger : MonoBehaviour
     }
 
     private static void addLogLine(string content, bool ending = false) {
-//#if UNITY_EDITOR
+#if UNITY_EDITOR
 
-//        return;
-//#endif
+        return;
+#endif
         if (ending)
         {
             File.AppendAllText(filepath, content);
