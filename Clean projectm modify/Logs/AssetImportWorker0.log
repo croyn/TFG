@@ -1,0 +1,261 @@
+Using pre-set license
+Built from '2020.2/release' branch; Version is '2020.2.4f1 (becced5a802b) revision 12504301'; Using compiler version '192528614'; Build Type 'Release'
+OS: 'Windows 10 Home; OS build 19042.985; Version 2009; 64bit' Language: 'es' Physical Memory: 16276 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 0
+
+ COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity\Hub\Editor\2020.2.4f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker0
+-projectPath
+C:/Users/batch_nps7xwz/Documents/GitHub/TFG/Clean projectm modify
+-logFile
+Logs/AssetImportWorker0.log
+-srvPort
+56270
+Successfully changed project path to: C:/Users/batch_nps7xwz/Documents/GitHub/TFG/Clean projectm modify
+C:/Users/batch_nps7xwz/Documents/GitHub/TFG/Clean projectm modify
+Using Asset Import Pipeline V2.
+Refreshing native plugins compatible for Editor in 111.56 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2020.2.4f1 (becced5a802b)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2020.2.4f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/Users/batch_nps7xwz/Documents/GitHub/TFG/Clean projectm modify/Assets
+GfxDevice: creating device client; threaded=0
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: AMD Radeon (TM) R9 380 Series (ID=0x6939)
+    Vendor:   
+    VRAM:     4070 MB
+    Driver:   27.20.21003.8013
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2020.2.4f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2020.2.4f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/2020.2.4f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56152
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.2.4f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.005453 seconds.
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 63.66 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  2.539 seconds
+Platform modules already initialized, skipping
+Registering precompiled user dll's ...
+Registered in 0.005739 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.59 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.769 seconds
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.09 seconds
+Refreshing native plugins compatible for Editor in 0.59 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1417 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 138.0 MB.
+System memory in use after: 138.1 MB.
+
+Unloading 32 unused Assets to reduce memory usage. Loaded Objects now: 1856.
+Total: 2.807100 ms (FindLiveObjects: 0.228900 ms CreateObjectMapping: 0.063600 ms MarkObjects: 2.461500 ms  DeleteObjects: 0.051000 ms)
+
+========================================================================
+Received Import Request.
+  path: Assets/scripts/Prosocial/Scripts/mandala/circlePart.cs
+  artifactKey: Guid(5132ab9519dd27145936a1f708f3a96e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/scripts/Prosocial/Scripts/mandala/circlePart.cs using Guid(5132ab9519dd27145936a1f708f3a96e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c7d5688c18b69486198ce5c97fef7997') in 0.101591 seconds
+  Import took 0.106731 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.005252 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.60 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.933 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.64 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1411 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 137.9 MB.
+System memory in use after: 138.0 MB.
+
+Unloading 24 unused Assets to reduce memory usage. Loaded Objects now: 1858.
+Total: 2.497200 ms (FindLiveObjects: 0.196300 ms CreateObjectMapping: 0.081900 ms MarkObjects: 2.184600 ms  DeleteObjects: 0.031900 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 381.881977 seconds.
+  path: Assets/scripts/Prosocial/Scripts/mandala/Triangle.cs
+  artifactKey: Guid(3f32227a57ff5bc479fc126b3f8244c9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/scripts/Prosocial/Scripts/mandala/Triangle.cs using Guid(3f32227a57ff5bc479fc126b3f8244c9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8d8dc107253d1e2530143e9dec2b6100') in 0.009998 seconds
+  Import took 0.014114 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.005409 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.82 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.760 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.59 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1411 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 137.9 MB.
+System memory in use after: 138.0 MB.
+
+Unloading 24 unused Assets to reduce memory usage. Loaded Objects now: 1860.
+Total: 2.385600 ms (FindLiveObjects: 0.284000 ms CreateObjectMapping: 0.069800 ms MarkObjects: 1.999200 ms  DeleteObjects: 0.030100 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 252.516038 seconds.
+  path: Assets/scripts/Prosocial/Scripts/mandala/PointCentralMandala.cs
+  artifactKey: Guid(701f238bdc5c8174482ab5ea47c08f70) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/scripts/Prosocial/Scripts/mandala/PointCentralMandala.cs using Guid(701f238bdc5c8174482ab5ea47c08f70) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c4240e86c6ab321fbd20128696edb2d5') in 0.008169 seconds
+  Import took 0.012866 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.007581 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.82 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  2.313 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 1.32 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1411 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 137.9 MB.
+System memory in use after: 138.1 MB.
+
+Unloading 24 unused Assets to reduce memory usage. Loaded Objects now: 1862.
+Total: 2.668400 ms (FindLiveObjects: 0.210400 ms CreateObjectMapping: 0.060100 ms MarkObjects: 2.369500 ms  DeleteObjects: 0.026200 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 549.122043 seconds.
+  path: Assets/scripts/Prosocial/Scripts/mandala/mandalamanager.cs
+  artifactKey: Guid(2047c417ea43a0245b0ee1c01f82068b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/scripts/Prosocial/Scripts/mandala/mandalamanager.cs using Guid(2047c417ea43a0245b0ee1c01f82068b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '74e95f8daffa304793ae06af1583581e') in 0.014541 seconds
+  Import took 0.020283 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.005247 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 1.43 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.716 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 1.04 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1411 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 138.0 MB.
+System memory in use after: 138.1 MB.
+
+Unloading 24 unused Assets to reduce memory usage. Loaded Objects now: 1864.
+Total: 2.644400 ms (FindLiveObjects: 0.307300 ms CreateObjectMapping: 0.120200 ms MarkObjects: 2.186700 ms  DeleteObjects: 0.028000 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.006334 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.78 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.864 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 1.07 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1411 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 138.0 MB.
+System memory in use after: 138.1 MB.
+
+Unloading 24 unused Assets to reduce memory usage. Loaded Objects now: 1866.
+Total: 2.391900 ms (FindLiveObjects: 0.298300 ms CreateObjectMapping: 0.078500 ms MarkObjects: 1.988700 ms  DeleteObjects: 0.024400 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 216.519221 seconds.
+  path: Assets/scripts/Prosocial/Scripts/zone/CambioCiruclos.cs
+  artifactKey: Guid(1add13865b27f024386ff3ba7970ec3e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/scripts/Prosocial/Scripts/zone/CambioCiruclos.cs using Guid(1add13865b27f024386ff3ba7970ec3e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c4ed33994c40add527fc65d8b24c966c') in 0.010760 seconds
+  Import took 0.014826 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.006733 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.58 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.470 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.97 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1411 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 138.0 MB.
+System memory in use after: 138.1 MB.
+
+Unloading 24 unused Assets to reduce memory usage. Loaded Objects now: 1868.
+Total: 2.391700 ms (FindLiveObjects: 0.225000 ms CreateObjectMapping: 0.059000 ms MarkObjects: 2.083500 ms  DeleteObjects: 0.022200 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 1365.416409 seconds.
+  path: Assets/scripts/Prosocial/Scripts/zone/rotateCircle.cs
+  artifactKey: Guid(21da50de6582340459c97201c5c0614a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/scripts/Prosocial/Scripts/zone/rotateCircle.cs using Guid(21da50de6582340459c97201c5c0614a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2d476a0830fc226241b1093011e75d3c') in 0.008507 seconds
+  Import took 0.011723 seconds .
+
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file

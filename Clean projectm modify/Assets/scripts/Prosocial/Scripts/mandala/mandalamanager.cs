@@ -24,7 +24,7 @@ public class mandalamanager : MonoBehaviour
     public Color colorSolid3;//color lines third layer
     private Gradient actualColor = null;//actual gradient color using
     private bool controlTriangleVoid=true;//boolean to control if a triangle is empty and force the next triangle that is not empty
-    private bool trampa = false; //a boolean to cheat during the flow. Its needed to have the exact configuration that we need
+    private bool redirectFlow = false; //a boolean to cheat during the flow. Its needed to have the exact configuration that we need
     public bool trianglesDone = false; //boolean that says if the triangle part is done
     public bool circleDone = false; //boolean that says if the circle part is done
 
@@ -38,7 +38,7 @@ public class mandalamanager : MonoBehaviour
         layer = 0;
         interLayer = 0;
         controlTriangleVoid = true;
-        trampa = false;
+        redirectFlow = false;
         trianglesDone = false;
         circleDone = false;
     }
@@ -349,9 +349,9 @@ public class mandalamanager : MonoBehaviour
             centralPoint.GetComponent<PointCentralMandala>().numNotCatched = 0.0f;
 
             //if we are in the interLayer 2 and the layer 1 and the boolean trampa is false means that in the flow the cheat doest have done yer
-            if (interLayer == 2 && layer ==1 && !trampa) {
+            if (interLayer == 2 && layer ==1 && !redirectFlow) {
                 //now the cheat of the flow is done
-                trampa = true;
+                redirectFlow = true;
                 //force to go to interLayer 1 again
                 interLayer = 1;
                 //calculate the index

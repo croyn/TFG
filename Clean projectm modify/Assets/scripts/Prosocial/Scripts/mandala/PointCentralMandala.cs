@@ -28,10 +28,18 @@ public class PointCentralMandala : MonoBehaviour
         //controltime
         timeOff = timeOff+ Time.deltaTime;
 
-        
-        if (numActivationAvailable >=1.0f && timeOff > 0.1f)//if we have a number availabe >1 
+        chargeMandala();
+
+
+
+
+    }
+
+
+    private void chargeMandala() {
+        if (numActivationAvailable >= 1.0f && timeOff > 0.1f)//if we have a number availabe >1 
         {
- #if UNITY_EDITOR
+#if UNITY_EDITOR
             Debug.Log("Central numActive " + numActivationAvailable);
 #endif
             //substract 1
@@ -41,7 +49,8 @@ public class PointCentralMandala : MonoBehaviour
             if (!mandalamanager.instance.trianglesDone)
             {
                 //activate a Point in the mandala to send a line in the triangle part
-                if (mandalamanager.instance.ActivatePointsTriangles()) {
+                if (mandalamanager.instance.ActivatePointsTriangles())
+                {
 #if UNITY_EDITOR
                     Debug.Log("Lanzo linea");
 #endif
@@ -54,12 +63,11 @@ public class PointCentralMandala : MonoBehaviour
                 mandalamanager.instance.ActivatePointsCircle(); //activate a Point in tne mandala to send in the circle part
                 timeOff = 0.0f;//reboot the time
             }
-            
-                
-        }
 
-       
+
+        }
     }
+
 
     public void addParticle() {
 

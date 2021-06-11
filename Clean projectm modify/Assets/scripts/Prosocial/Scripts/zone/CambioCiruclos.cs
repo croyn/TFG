@@ -15,6 +15,18 @@ public class CambioCiruclos : MonoBehaviour
     void Start()
     {
 
+        activeCircleMaterial();
+
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+       
+    }
+
+    void activeCircleMaterial() {
+
         Renderer temp = gameObject.GetComponent<Renderer>();
         switch (cualCiruclo)
         {
@@ -33,12 +45,6 @@ public class CambioCiruclos : MonoBehaviour
                 break;
 
         }
-
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-       
-    }
 }

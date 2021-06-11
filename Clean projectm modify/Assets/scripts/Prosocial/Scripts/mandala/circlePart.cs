@@ -25,7 +25,7 @@ public class circlePart : MonoBehaviour
             //now it is
             started = true;
             //make algorithm to setup the partens to make the line
-            LlenarConexionesPuntos();
+            FillConectionsPoints();
         }
     }
 
@@ -124,7 +124,7 @@ public class circlePart : MonoBehaviour
     }
 
     //function that make the algorithm to asociate points to make lines
-    private void LlenarConexionesPuntos()
+    private void FillConectionsPoints()
     {
         //for the 1/2 of the points
         for (int i = 0; i <= circlePoints.Count/2; i++)

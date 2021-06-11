@@ -43,7 +43,7 @@ public class Triangle : MonoBehaviour
             //start
             started = true;
             //fillup the line configuratios in every points of the triangle
-            LlenarConexionesPuntos();
+            FillConectionsPoints();
         }
         
     }
@@ -334,7 +334,7 @@ public class Triangle : MonoBehaviour
     }
 
     //function that make the algorithm of association of objective and initial positon of the lines in each type of triangle
-    private void LlenarConexionesPuntos() {
+    private void FillConectionsPoints() {
         //init
         int indiceMax = -1;
         int indiceMin = -1;
